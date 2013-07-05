@@ -72,15 +72,21 @@ public class BuzzCoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BuzzCorePackage.TWITTER_LINK: {
-				TwitterLink twitterLink = (TwitterLink)theEObject;
-				T result = caseTwitterLink(twitterLink);
+			case BuzzCorePackage.TWITTER_APP_LINK: {
+				TwitterAppLink twitterAppLink = (TwitterAppLink)theEObject;
+				T result = caseTwitterAppLink(twitterAppLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BuzzCorePackage.BUZZ_ACCOUNTS: {
 				BuzzAccounts buzzAccounts = (BuzzAccounts)theEObject;
 				T result = caseBuzzAccounts(buzzAccounts);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BuzzCorePackage.TWITTER_USER_LINK: {
+				TwitterUserLink twitterUserLink = (TwitterUserLink)theEObject;
+				T result = caseTwitterUserLink(twitterUserLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -104,17 +110,17 @@ public class BuzzCoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Twitter Link</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Twitter App Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Twitter Link</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Twitter App Link</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTwitterLink(TwitterLink object) {
+	public T caseTwitterAppLink(TwitterAppLink object) {
 		return null;
 	}
 
@@ -130,6 +136,21 @@ public class BuzzCoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBuzzAccounts(BuzzAccounts object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Twitter User Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Twitter User Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTwitterUserLink(TwitterUserLink object) {
 		return null;
 	}
 

@@ -31,13 +31,13 @@ public interface BuzzCoreFactory extends EFactory {
 	BuzzAccount createBuzzAccount();
 
 	/**
-	 * Returns a new object of class '<em>Twitter Link</em>'.
+	 * Returns a new object of class '<em>Twitter App Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter Link</em>'.
+	 * @return a new object of class '<em>Twitter App Link</em>'.
 	 * @generated
 	 */
-	TwitterLink createTwitterLink();
+	TwitterAppLink createTwitterAppLink();
 
 	/**
 	 * Returns a new object of class '<em>Buzz Accounts</em>'.
@@ -47,6 +47,15 @@ public interface BuzzCoreFactory extends EFactory {
 	 * @generated
 	 */
 	BuzzAccounts createBuzzAccounts();
+
+	/**
+	 * Returns a new object of class '<em>Twitter User Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Twitter User Link</em>'.
+	 * @generated
+	 */
+	TwitterUserLink createTwitterUserLink();
 
 	/**
 	 * Returns the package supported by this factory.

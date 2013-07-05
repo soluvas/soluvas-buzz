@@ -72,12 +72,16 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 				return createBuzzAccountAdapter();
 			}
 			@Override
-			public Adapter caseTwitterLink(TwitterLink object) {
-				return createTwitterLinkAdapter();
+			public Adapter caseTwitterAppLink(TwitterAppLink object) {
+				return createTwitterAppLinkAdapter();
 			}
 			@Override
 			public Adapter caseBuzzAccounts(BuzzAccounts object) {
 				return createBuzzAccountsAdapter();
+			}
+			@Override
+			public Adapter caseTwitterUserLink(TwitterUserLink object) {
+				return createTwitterUserLinkAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -114,16 +118,16 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.TwitterLink <em>Twitter Link</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.TwitterAppLink <em>Twitter App Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.soluvas.buzz.core.TwitterLink
+	 * @see org.soluvas.buzz.core.TwitterAppLink
 	 * @generated
 	 */
-	public Adapter createTwitterLinkAdapter() {
+	public Adapter createTwitterAppLinkAdapter() {
 		return null;
 	}
 
@@ -138,6 +142,20 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBuzzAccountsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.TwitterUserLink <em>Twitter User Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.buzz.core.TwitterUserLink
+	 * @generated
+	 */
+	public Adapter createTwitterUserLinkAdapter() {
 		return null;
 	}
 

@@ -1,0 +1,217 @@
+/**
+ */
+package org.soluvas.buzz.core.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.soluvas.buzz.core.BuzzCorePackage;
+import org.soluvas.buzz.core.TwitterAppLink;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Twitter App Link</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl#getConsumerKey <em>Consumer Key</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl#getConsumerSecret <em>Consumer Secret</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
+	/**
+	 * The default value of the '{@link #getConsumerKey() <em>Consumer Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsumerKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONSUMER_KEY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getConsumerKey() <em>Consumer Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsumerKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected String consumerKey = CONSUMER_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getConsumerSecret() <em>Consumer Secret</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsumerSecret()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONSUMER_SECRET_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getConsumerSecret() <em>Consumer Secret</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsumerSecret()
+	 * @generated
+	 * @ordered
+	 */
+	protected String consumerSecret = CONSUMER_SECRET_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TwitterAppLinkImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return BuzzCorePackage.Literals.TWITTER_APP_LINK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getConsumerKey() {
+		return consumerKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConsumerKey(String newConsumerKey) {
+		String oldConsumerKey = consumerKey;
+		consumerKey = newConsumerKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY, oldConsumerKey, consumerKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getConsumerSecret() {
+		return consumerSecret;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConsumerSecret(String newConsumerSecret) {
+		String oldConsumerSecret = consumerSecret;
+		consumerSecret = newConsumerSecret;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET, oldConsumerSecret, consumerSecret));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+				return getConsumerKey();
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+				return getConsumerSecret();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+				setConsumerKey((String)newValue);
+				return;
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+				setConsumerSecret((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+				setConsumerKey(CONSUMER_KEY_EDEFAULT);
+				return;
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+				setConsumerSecret(CONSUMER_SECRET_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+				return CONSUMER_KEY_EDEFAULT == null ? consumerKey != null : !CONSUMER_KEY_EDEFAULT.equals(consumerKey);
+			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+				return CONSUMER_SECRET_EDEFAULT == null ? consumerSecret != null : !CONSUMER_SECRET_EDEFAULT.equals(consumerSecret);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (consumerKey: ");
+		result.append(consumerKey);
+		result.append(", consumerSecret: ");
+		result.append(consumerSecret);
+		result.append(')');
+		return result.toString();
+	}
+
+} //TwitterAppLinkImpl

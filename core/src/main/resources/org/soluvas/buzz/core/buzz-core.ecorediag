@@ -24,28 +24,12 @@
     <children xmi:type="notation:Node" xmi:id="_BBmxcOVgEeKNheVBGlkP_w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_BBnYgOVgEeKNheVBGlkP_w" type="5001">
       <children xmi:type="notation:Node" xmi:id="_IzBfUOVgEeKNheVBGlkP_w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterLink/consumerKey"/>
+        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterAppLink/consumerKey"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_IzBfUeVgEeKNheVBGlkP_w"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_Jv4wMOVgEeKNheVBGlkP_w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterLink/consumerSecret"/>
+        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterAppLink/consumerSecret"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Jv4wMeVgEeKNheVBGlkP_w"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_Km4CkOVgEeKNheVBGlkP_w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterLink/token"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Km4CkeVgEeKNheVBGlkP_w"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_LSImEOVgEeKNheVBGlkP_w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterLink/tokenSecret"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_LSImEeVgEeKNheVBGlkP_w"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_NTwfkOVgEeKNheVBGlkP_w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterLink/screenName"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_NTxGoOVgEeKNheVBGlkP_w"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_OnYDkOVgEeKNheVBGlkP_w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterLink/twitterId"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OnYDkeVgEeKNheVBGlkP_w"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_BBn_kOVgEeKNheVBGlkP_w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_BBn_keVgEeKNheVBGlkP_w"/>
@@ -57,8 +41,8 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_BBpNs-VgEeKNheVBGlkP_w"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_BBk8QeVgEeKNheVBGlkP_w" fontColor="4210752" fontName="DejaVu Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="buzz-core.ecore#//TwitterLink"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BBk8QuVgEeKNheVBGlkP_w" x="454" y="243"/>
+    <element xmi:type="ecore:EClass" href="buzz-core.ecore#//TwitterAppLink"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BBk8QuVgEeKNheVBGlkP_w" x="444" y="60"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Sn4roOVgEeKNheVBGlkP_w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Sn5SsOVgEeKNheVBGlkP_w" type="4001"/>
@@ -76,6 +60,38 @@
     <element xmi:type="ecore:EClass" href="buzz-core.ecore#//BuzzAccounts"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sn4rouVgEeKNheVBGlkP_w" x="110" y="427"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_vh6qoOVjEeKNheVBGlkP_w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_vh9G4OVjEeKNheVBGlkP_w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_vh9t8OVjEeKNheVBGlkP_w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_Km4CkOVgEeKNheVBGlkP_w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterUserLink/token"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Km4CkeVgEeKNheVBGlkP_w"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_LSImEOVgEeKNheVBGlkP_w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterUserLink/tokenSecret"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LSImEeVgEeKNheVBGlkP_w"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_OnYDkOVgEeKNheVBGlkP_w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterUserLink/twitterId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OnYDkeVgEeKNheVBGlkP_w"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_NTwfkOVgEeKNheVBGlkP_w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="buzz-core.ecore#//TwitterUserLink/screenName"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NTxGoOVgEeKNheVBGlkP_w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_vh9t8eVjEeKNheVBGlkP_w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vh9t8uVjEeKNheVBGlkP_w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vh9t8-VjEeKNheVBGlkP_w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_vh-8EOVjEeKNheVBGlkP_w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_vh-8EeVjEeKNheVBGlkP_w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vh_jIOVjEeKNheVBGlkP_w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vh_jIeVjEeKNheVBGlkP_w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_vh6qoeVjEeKNheVBGlkP_w" fontColor="4210752" fontName="DejaVu Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="buzz-core.ecore#//TwitterUserLink"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vh7RsOVjEeKNheVBGlkP_w" x="468" y="360"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_8TfcgOVfEeKNheVBGlkP_w"/>
   <element xmi:type="ecore:EPackage" href="buzz-core.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_DlRoEOVgEeKNheVBGlkP_w" type="3002" source="_AE9jAOVgEeKNheVBGlkP_w" target="_BBk8QOVgEeKNheVBGlkP_w">
@@ -87,7 +103,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_DlRoEeVgEeKNheVBGlkP_w" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_DlRoEuVgEeKNheVBGlkP_w" fontColor="4210752" fontName="DejaVu Sans" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="buzz-core.ecore#//BuzzAccount/twitter"/>
+    <element xmi:type="ecore:EReference" href="buzz-core.ecore#//BuzzAccount/twitterApp"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DlRoE-VgEeKNheVBGlkP_w" points="[51, -11, -173, 42]$[274, -54, 50, -1]"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_b-dZcOVgEeKNheVBGlkP_w" type="3002" source="_Sn4roOVgEeKNheVBGlkP_w" target="_AE9jAOVgEeKNheVBGlkP_w">
@@ -101,5 +117,32 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_b-dZcuVgEeKNheVBGlkP_w" fontColor="4210752" fontName="DejaVu Sans" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="buzz-core.ecore#//BuzzAccounts/accounts"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_b-dZc-VgEeKNheVBGlkP_w" points="[15, -20, -101, 107]$[65, -128, -51, -1]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_3gqp4OVjEeKNheVBGlkP_w" type="3002" source="_AE9jAOVgEeKNheVBGlkP_w" target="_vh6qoOVjEeKNheVBGlkP_w">
+    <children xmi:type="notation:Node" xmi:id="_3gr4AOVjEeKNheVBGlkP_w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_3gr4AeVjEeKNheVBGlkP_w" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_3gr4AuVjEeKNheVBGlkP_w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_3gr4A-VjEeKNheVBGlkP_w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_3gqp4eVjEeKNheVBGlkP_w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_3gqp4uVjEeKNheVBGlkP_w" fontColor="4210752" fontName="DejaVu Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="buzz-core.ecore#//BuzzAccount/twitterAppUser"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3grQ8OVjEeKNheVBGlkP_w" points="[51, 17, -153, -48]$[205, 81, 1, 16]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3gx-oOVjEeKNheVBGlkP_w" id="(0.14655172413793102,0.627906976744186)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5Q54cOVjEeKNheVBGlkP_w" type="3002" source="_AE9jAOVgEeKNheVBGlkP_w" target="_vh6qoOVjEeKNheVBGlkP_w">
+    <children xmi:type="notation:Node" xmi:id="_5Q7toOVjEeKNheVBGlkP_w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5Q7toeVjEeKNheVBGlkP_w" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5Q8UsOVjEeKNheVBGlkP_w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5Q87wOVjEeKNheVBGlkP_w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5Q54ceVjEeKNheVBGlkP_w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5Q54cuVjEeKNheVBGlkP_w" fontColor="4210752" fontName="DejaVu Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="buzz-core.ecore#//BuzzAccount/twitterUsers"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5Q6fgOVjEeKNheVBGlkP_w" points="[25, 6, -163, -41]$[189, 31, 1, -16]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5RDpcOVjEeKNheVBGlkP_w" id="(0.7596153846153846,0.6862745098039216)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5RDpceVjEeKNheVBGlkP_w" id="(0.23275862068965517,0.3953488372093023)"/>
   </edges>
 </notation:Diagram>

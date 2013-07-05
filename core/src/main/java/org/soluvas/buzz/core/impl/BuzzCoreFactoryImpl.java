@@ -57,8 +57,9 @@ public class BuzzCoreFactoryImpl extends EFactoryImpl implements BuzzCoreFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BuzzCorePackage.BUZZ_ACCOUNT: return createBuzzAccount();
-			case BuzzCorePackage.TWITTER_LINK: return createTwitterLink();
+			case BuzzCorePackage.TWITTER_APP_LINK: return createTwitterAppLink();
 			case BuzzCorePackage.BUZZ_ACCOUNTS: return createBuzzAccounts();
+			case BuzzCorePackage.TWITTER_USER_LINK: return createTwitterUserLink();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,9 +80,9 @@ public class BuzzCoreFactoryImpl extends EFactoryImpl implements BuzzCoreFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterLink createTwitterLink() {
-		TwitterLinkImpl twitterLink = new TwitterLinkImpl();
-		return twitterLink;
+	public TwitterAppLink createTwitterAppLink() {
+		TwitterAppLinkImpl twitterAppLink = new TwitterAppLinkImpl();
+		return twitterAppLink;
 	}
 
 	/**
@@ -92,6 +93,16 @@ public class BuzzCoreFactoryImpl extends EFactoryImpl implements BuzzCoreFactory
 	public BuzzAccounts createBuzzAccounts() {
 		BuzzAccountsImpl buzzAccounts = new BuzzAccountsImpl();
 		return buzzAccounts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TwitterUserLink createTwitterUserLink() {
+		TwitterUserLinkImpl twitterUserLink = new TwitterUserLinkImpl();
+		return twitterUserLink;
 	}
 
 	/**

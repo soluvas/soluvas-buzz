@@ -66,13 +66,13 @@ public interface BuzzCorePackage extends EPackage {
 	int BUZZ_ACCOUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Twitter</b></em>' containment reference.
+	 * The feature id for the '<em><b>Twitter App</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUZZ_ACCOUNT__TWITTER = 0;
+	int BUZZ_ACCOUNT__TWITTER_APP = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -84,23 +84,41 @@ public interface BuzzCorePackage extends EPackage {
 	int BUZZ_ACCOUNT__ID = 1;
 
 	/**
+	 * The feature id for the '<em><b>Twitter App User</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZ_ACCOUNT__TWITTER_APP_USER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Twitter Users</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZ_ACCOUNT__TWITTER_USERS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Buzz Account</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUZZ_ACCOUNT_FEATURE_COUNT = 2;
+	int BUZZ_ACCOUNT_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.TwitterLinkImpl <em>Twitter Link</em>}' class.
+	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl <em>Twitter App Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.soluvas.buzz.core.impl.TwitterLinkImpl
-	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterLink()
+	 * @see org.soluvas.buzz.core.impl.TwitterAppLinkImpl
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterAppLink()
 	 * @generated
 	 */
-	int TWITTER_LINK = 1;
+	int TWITTER_APP_LINK = 1;
 
 	/**
 	 * The feature id for the '<em><b>Consumer Key</b></em>' attribute.
@@ -109,7 +127,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_LINK__CONSUMER_KEY = 0;
+	int TWITTER_APP_LINK__CONSUMER_KEY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Consumer Secret</b></em>' attribute.
@@ -118,52 +136,16 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_LINK__CONSUMER_SECRET = 1;
+	int TWITTER_APP_LINK__CONSUMER_SECRET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Token</b></em>' attribute.
+	 * The number of structural features of the '<em>Twitter App Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_LINK__TOKEN = 2;
-
-	/**
-	 * The feature id for the '<em><b>Token Secret</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_LINK__TOKEN_SECRET = 3;
-
-	/**
-	 * The feature id for the '<em><b>Screen Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_LINK__SCREEN_NAME = 4;
-
-	/**
-	 * The feature id for the '<em><b>Twitter Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_LINK__TWITTER_ID = 5;
-
-	/**
-	 * The number of structural features of the '<em>Twitter Link</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_LINK_FEATURE_COUNT = 6;
+	int TWITTER_APP_LINK_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.BuzzAccountsImpl <em>Buzz Accounts</em>}' class.
@@ -195,6 +177,62 @@ public interface BuzzCorePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl <em>Twitter User Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.soluvas.buzz.core.impl.TwitterUserLinkImpl
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterUserLink()
+	 * @generated
+	 */
+	int TWITTER_USER_LINK = 3;
+
+	/**
+	 * The feature id for the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_USER_LINK__TOKEN = 0;
+
+	/**
+	 * The feature id for the '<em><b>Token Secret</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_USER_LINK__TOKEN_SECRET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Twitter Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_USER_LINK__TWITTER_ID = 2;
+
+	/**
+	 * The feature id for the '<em><b>Screen Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_USER_LINK__SCREEN_NAME = 3;
+
+	/**
+	 * The number of structural features of the '<em>Twitter User Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_USER_LINK_FEATURE_COUNT = 4;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.soluvas.buzz.core.BuzzAccount <em>Buzz Account</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,15 +243,15 @@ public interface BuzzCorePackage extends EPackage {
 	EClass getBuzzAccount();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.soluvas.buzz.core.BuzzAccount#getTwitter <em>Twitter</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.soluvas.buzz.core.BuzzAccount#getTwitterApp <em>Twitter App</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Twitter</em>'.
-	 * @see org.soluvas.buzz.core.BuzzAccount#getTwitter()
+	 * @return the meta object for the containment reference '<em>Twitter App</em>'.
+	 * @see org.soluvas.buzz.core.BuzzAccount#getTwitterApp()
 	 * @see #getBuzzAccount()
 	 * @generated
 	 */
-	EReference getBuzzAccount_Twitter();
+	EReference getBuzzAccount_TwitterApp();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.BuzzAccount#getId <em>Id</em>}'.
@@ -227,80 +265,58 @@ public interface BuzzCorePackage extends EPackage {
 	EAttribute getBuzzAccount_Id();
 
 	/**
-	 * Returns the meta object for class '{@link org.soluvas.buzz.core.TwitterLink <em>Twitter Link</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.soluvas.buzz.core.BuzzAccount#getTwitterAppUser <em>Twitter App User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Twitter Link</em>'.
-	 * @see org.soluvas.buzz.core.TwitterLink
+	 * @return the meta object for the containment reference '<em>Twitter App User</em>'.
+	 * @see org.soluvas.buzz.core.BuzzAccount#getTwitterAppUser()
+	 * @see #getBuzzAccount()
 	 * @generated
 	 */
-	EClass getTwitterLink();
+	EReference getBuzzAccount_TwitterAppUser();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterLink#getConsumerKey <em>Consumer Key</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.soluvas.buzz.core.BuzzAccount#getTwitterUsers <em>Twitter Users</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Twitter Users</em>'.
+	 * @see org.soluvas.buzz.core.BuzzAccount#getTwitterUsers()
+	 * @see #getBuzzAccount()
+	 * @generated
+	 */
+	EReference getBuzzAccount_TwitterUsers();
+
+	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.TwitterAppLink <em>Twitter App Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Twitter App Link</em>'.
+	 * @see org.soluvas.buzz.core.TwitterAppLink
+	 * @generated
+	 */
+	EClass getTwitterAppLink();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerKey <em>Consumer Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Consumer Key</em>'.
-	 * @see org.soluvas.buzz.core.TwitterLink#getConsumerKey()
-	 * @see #getTwitterLink()
+	 * @see org.soluvas.buzz.core.TwitterAppLink#getConsumerKey()
+	 * @see #getTwitterAppLink()
 	 * @generated
 	 */
-	EAttribute getTwitterLink_ConsumerKey();
+	EAttribute getTwitterAppLink_ConsumerKey();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterLink#getConsumerSecret <em>Consumer Secret</em>}'.
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerSecret <em>Consumer Secret</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Consumer Secret</em>'.
-	 * @see org.soluvas.buzz.core.TwitterLink#getConsumerSecret()
-	 * @see #getTwitterLink()
+	 * @see org.soluvas.buzz.core.TwitterAppLink#getConsumerSecret()
+	 * @see #getTwitterAppLink()
 	 * @generated
 	 */
-	EAttribute getTwitterLink_ConsumerSecret();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterLink#getToken <em>Token</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Token</em>'.
-	 * @see org.soluvas.buzz.core.TwitterLink#getToken()
-	 * @see #getTwitterLink()
-	 * @generated
-	 */
-	EAttribute getTwitterLink_Token();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterLink#getTokenSecret <em>Token Secret</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Token Secret</em>'.
-	 * @see org.soluvas.buzz.core.TwitterLink#getTokenSecret()
-	 * @see #getTwitterLink()
-	 * @generated
-	 */
-	EAttribute getTwitterLink_TokenSecret();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterLink#getScreenName <em>Screen Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Screen Name</em>'.
-	 * @see org.soluvas.buzz.core.TwitterLink#getScreenName()
-	 * @see #getTwitterLink()
-	 * @generated
-	 */
-	EAttribute getTwitterLink_ScreenName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterLink#getTwitterId <em>Twitter Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Twitter Id</em>'.
-	 * @see org.soluvas.buzz.core.TwitterLink#getTwitterId()
-	 * @see #getTwitterLink()
-	 * @generated
-	 */
-	EAttribute getTwitterLink_TwitterId();
+	EAttribute getTwitterAppLink_ConsumerSecret();
 
 	/**
 	 * Returns the meta object for class '{@link org.soluvas.buzz.core.BuzzAccounts <em>Buzz Accounts</em>}'.
@@ -322,6 +338,60 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBuzzAccounts_Accounts();
+
+	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.TwitterUserLink <em>Twitter User Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Twitter User Link</em>'.
+	 * @see org.soluvas.buzz.core.TwitterUserLink
+	 * @generated
+	 */
+	EClass getTwitterUserLink();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterUserLink#getToken <em>Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Token</em>'.
+	 * @see org.soluvas.buzz.core.TwitterUserLink#getToken()
+	 * @see #getTwitterUserLink()
+	 * @generated
+	 */
+	EAttribute getTwitterUserLink_Token();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterUserLink#getTokenSecret <em>Token Secret</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Token Secret</em>'.
+	 * @see org.soluvas.buzz.core.TwitterUserLink#getTokenSecret()
+	 * @see #getTwitterUserLink()
+	 * @generated
+	 */
+	EAttribute getTwitterUserLink_TokenSecret();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterUserLink#getTwitterId <em>Twitter Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Twitter Id</em>'.
+	 * @see org.soluvas.buzz.core.TwitterUserLink#getTwitterId()
+	 * @see #getTwitterUserLink()
+	 * @generated
+	 */
+	EAttribute getTwitterUserLink_TwitterId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterUserLink#getScreenName <em>Screen Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Screen Name</em>'.
+	 * @see org.soluvas.buzz.core.TwitterUserLink#getScreenName()
+	 * @see #getTwitterUserLink()
+	 * @generated
+	 */
+	EAttribute getTwitterUserLink_ScreenName();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -356,12 +426,12 @@ public interface BuzzCorePackage extends EPackage {
 		EClass BUZZ_ACCOUNT = eINSTANCE.getBuzzAccount();
 
 		/**
-		 * The meta object literal for the '<em><b>Twitter</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Twitter App</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUZZ_ACCOUNT__TWITTER = eINSTANCE.getBuzzAccount_Twitter();
+		EReference BUZZ_ACCOUNT__TWITTER_APP = eINSTANCE.getBuzzAccount_TwitterApp();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -372,14 +442,30 @@ public interface BuzzCorePackage extends EPackage {
 		EAttribute BUZZ_ACCOUNT__ID = eINSTANCE.getBuzzAccount_Id();
 
 		/**
-		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.TwitterLinkImpl <em>Twitter Link</em>}' class.
+		 * The meta object literal for the '<em><b>Twitter App User</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.soluvas.buzz.core.impl.TwitterLinkImpl
-		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterLink()
 		 * @generated
 		 */
-		EClass TWITTER_LINK = eINSTANCE.getTwitterLink();
+		EReference BUZZ_ACCOUNT__TWITTER_APP_USER = eINSTANCE.getBuzzAccount_TwitterAppUser();
+
+		/**
+		 * The meta object literal for the '<em><b>Twitter Users</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUZZ_ACCOUNT__TWITTER_USERS = eINSTANCE.getBuzzAccount_TwitterUsers();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl <em>Twitter App Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.impl.TwitterAppLinkImpl
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterAppLink()
+		 * @generated
+		 */
+		EClass TWITTER_APP_LINK = eINSTANCE.getTwitterAppLink();
 
 		/**
 		 * The meta object literal for the '<em><b>Consumer Key</b></em>' attribute feature.
@@ -387,7 +473,7 @@ public interface BuzzCorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TWITTER_LINK__CONSUMER_KEY = eINSTANCE.getTwitterLink_ConsumerKey();
+		EAttribute TWITTER_APP_LINK__CONSUMER_KEY = eINSTANCE.getTwitterAppLink_ConsumerKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Consumer Secret</b></em>' attribute feature.
@@ -395,39 +481,7 @@ public interface BuzzCorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TWITTER_LINK__CONSUMER_SECRET = eINSTANCE.getTwitterLink_ConsumerSecret();
-
-		/**
-		 * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TWITTER_LINK__TOKEN = eINSTANCE.getTwitterLink_Token();
-
-		/**
-		 * The meta object literal for the '<em><b>Token Secret</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TWITTER_LINK__TOKEN_SECRET = eINSTANCE.getTwitterLink_TokenSecret();
-
-		/**
-		 * The meta object literal for the '<em><b>Screen Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TWITTER_LINK__SCREEN_NAME = eINSTANCE.getTwitterLink_ScreenName();
-
-		/**
-		 * The meta object literal for the '<em><b>Twitter Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TWITTER_LINK__TWITTER_ID = eINSTANCE.getTwitterLink_TwitterId();
+		EAttribute TWITTER_APP_LINK__CONSUMER_SECRET = eINSTANCE.getTwitterAppLink_ConsumerSecret();
 
 		/**
 		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.BuzzAccountsImpl <em>Buzz Accounts</em>}' class.
@@ -446,6 +500,48 @@ public interface BuzzCorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BUZZ_ACCOUNTS__ACCOUNTS = eINSTANCE.getBuzzAccounts_Accounts();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl <em>Twitter User Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.impl.TwitterUserLinkImpl
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterUserLink()
+		 * @generated
+		 */
+		EClass TWITTER_USER_LINK = eINSTANCE.getTwitterUserLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TWITTER_USER_LINK__TOKEN = eINSTANCE.getTwitterUserLink_Token();
+
+		/**
+		 * The meta object literal for the '<em><b>Token Secret</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TWITTER_USER_LINK__TOKEN_SECRET = eINSTANCE.getTwitterUserLink_TokenSecret();
+
+		/**
+		 * The meta object literal for the '<em><b>Twitter Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TWITTER_USER_LINK__TWITTER_ID = eINSTANCE.getTwitterUserLink_TwitterId();
+
+		/**
+		 * The meta object literal for the '<em><b>Screen Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TWITTER_USER_LINK__SCREEN_NAME = eINSTANCE.getTwitterUserLink_ScreenName();
 
 	}
 
