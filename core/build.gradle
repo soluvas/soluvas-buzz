@@ -3,4 +3,7 @@ apply plugin: 'java'
 dependencies {
 	compile libraries.guava
 	compile libraries.emf
+	compile libraries.findbugs
+	compile 'org.soluvas:org.soluvas.commons:2.1.0-SNAPSHOT'
+	testCompile libraries.junit
 }
