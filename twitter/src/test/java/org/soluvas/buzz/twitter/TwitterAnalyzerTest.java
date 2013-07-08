@@ -1,5 +1,6 @@
 package org.soluvas.buzz.twitter;
 
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.Assert.assertThat;
 
@@ -20,12 +21,17 @@ import org.soluvas.commons.OnDemandXmiLoader;
 public class TwitterAnalyzerTest {
 	private static final Logger log = LoggerFactory
 			.getLogger(TwitterAnalyzerTest.class);
+	private BuzzAccount aksimataAccount;
+	private TwitterAnalyzer analyzer;
 	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		final BuzzAccounts accounts = new OnDemandXmiLoader<BuzzAccounts>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/twitter.BuzzAccounts.xmi" ).get();
+		aksimataAccount = accounts.getAccounts().get(0);
+		analyzer = new TwitterAnalyzer(aksimataAccount.getTwitterApp(), aksimataAccount.getTwitterAppUser());
 	}
 
 	/**
@@ -37,13 +43,23 @@ public class TwitterAnalyzerTest {
 
 	@Test
 	public void followersCountOfDila() {
-		final BuzzAccounts accounts = new OnDemandXmiLoader<BuzzAccounts>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/twitter.BuzzAccounts.xmi" ).get();
-		final BuzzAccount account = accounts.getAccounts().get(0);
-		final TwitterAnalyzer analyzer = new TwitterAnalyzer(account.getTwitterApp(), account.getTwitterAppUser());
 		final String targetScreenName = "dilamala";
 		final long followersCount = analyzer.getFollowersCount(targetScreenName);
 		log.info("Followers count of {}: {}", targetScreenName, followersCount);
 		assertThat(followersCount, greaterThanOrEqualTo(1L));
+	}
+
+	@Test
+	public void friendRatioSet() {
+		final String targetScreenName = "lexdepraxis";
+		final FriendRatioSet friendRatioSet = analyzer.calculateFriendRatioSet(targetScreenName);
+		log.info("FriendRatioSet of {}: {}", targetScreenName, friendRatioSet);
+		assertThat(friendRatioSet.getFollowingCount(), greaterThanOrEqualTo(1L));
+		assertThat(friendRatioSet.getFollowerCount(), greaterThanOrEqualTo(1L));
+		assertThat(friendRatioSet.getMutualCount(), greaterThanOrEqualTo(1L));
+		assertThat(friendRatioSet.getReciprocityRatio(), greaterThan(0d));
+		assertThat(friendRatioSet.getSociabilityRatio(), greaterThan(0d));
+		assertThat(friendRatioSet.getPopularityRatio(), greaterThanOrEqualTo(1d));
 	}
 
 }

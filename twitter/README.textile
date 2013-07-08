@@ -1,0 +1,22 @@
+h1. Soluvas Buzz Twitter
+
+h2. Planned Stories
+
+h3. Foundational
+
+1. Cache retrieved Twitter user's data, ready statistics, and calculated stats (i.e. following rate)
+2. Preload select parts of Twitter user's data, ready statistics, and calculated stats; to be used
+   in offline processing
+
+h3. Ad-Hoc Analysis
+
+1. Calculate "popularity" ratio: Mutual friends count divided by followers count. A naturally popular asymmetric user
+   would have < 10%. A synthetic auto-follow-back user would have > 90%. 
+2. Calculate "sociable" ratio: Mutual friends count divided by following count. A naturally sociable user
+   would have > 90%. A user that's unable to get a follow-back would have < 90%. 
+
+h3. Historical Analysis
+
+1. Store the number of followings, followers, and tweets over time for a particular (your) Twitter user
+2. Chart in a graph (using D3 or JasperReports) the number of followings, followers, and tweets over time for a particular (your) Twitter user
+

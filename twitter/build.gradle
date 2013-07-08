@@ -6,6 +6,7 @@ dependencies {
 	testCompile libraries.junit
 	testCompile libraries.hamcrest
 	compile 'org.soluvas:org.soluvas.commons:2.1.0-SNAPSHOT'
+	compile 'org.soluvas:org.soluvas.data:2.1.0-SNAPSHOT'
 	
 	compile project(':core')
 }
