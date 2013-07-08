@@ -51,7 +51,7 @@ public class TwitterAnalyzerTest {
 
 	@Test
 	public void friendRatioSet() {
-		final String targetScreenName = "lexdepraxis";
+		final String targetScreenName = "hitmansystem";
 		final FriendRatioSet friendRatioSet = analyzer.calculateFriendRatioSet(targetScreenName);
 		log.info("FriendRatioSet of {}: {}", targetScreenName, friendRatioSet);
 		assertThat(friendRatioSet.getFollowingCount(), greaterThanOrEqualTo(1L));
