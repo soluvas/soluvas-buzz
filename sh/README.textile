@@ -1,0 +1,11 @@
+h1. Soluvas Buzz Shell
+
+Considered shell technologies:
+
+1. Groovy shell (used by Gremlin/Neo4j). Can use ad-hoc objects. Limited API completion. Seems to have SSH support or even AJAX web-based?
+   Full programmability using Groovy syntax. No command help.
+2. Scala shell (used by sbt). Can use ad-hoc objects. Good API completion. SSH support unknown, AJAX unknown. Not sure if it's embeddable,
+   especially in non-Scala project. Full programmability using Scala syntax. No command help.
+3. Blast Shell (fork of Karaf Console). Need to use specialized ExtCommandSupport Spring beans. Commands must be instantiable, otherwise
+   one broken command will break the entire shell. SSH support working. Limited programmability but convenient. Commands can be composed (pipe).
+   Nice command help support.
