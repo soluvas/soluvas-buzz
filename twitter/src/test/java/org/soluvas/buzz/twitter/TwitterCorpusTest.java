@@ -43,7 +43,7 @@ public class TwitterCorpusTest {
 	@Test
 	public void ensureFollower() {
 		final TwitterFollower follower = new TwitterFollower();
-		follower.setFetchRev(1);
+		follower.setRevId(1);
 		follower.setFetchTime(new DateTime());
 		follower.setTwitterId(1L);
 		follower.setTwitterScreenName("bob");

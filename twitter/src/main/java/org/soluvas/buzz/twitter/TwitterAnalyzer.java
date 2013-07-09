@@ -12,6 +12,7 @@ import twitter4j.IDs;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.User;
 import twitter4j.conf.Configuration;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -51,7 +52,7 @@ public class TwitterAnalyzer {
 		try {
 			followersCount = twitter.showUser(screenName).getFollowersCount();
 		} catch (TwitterException e) {
-			throw new RuntimeException("Cannot get followersCount for " + screenName, e);
+			throw new RuntimeException("Cannot get followersCount for @" + screenName, e);
 		}
 		return followersCount;
 	}
@@ -61,9 +62,17 @@ public class TwitterAnalyzer {
 		try {
 			followingsCount = twitter.showUser(screenName).getFriendsCount();
 		} catch (TwitterException e) {
-			throw new RuntimeException("Cannot get followingsCount for " + screenName, e);
+			throw new RuntimeException("Cannot get followingsCount for @" + screenName, e);
 		}
 		return followingsCount;
+	}
+	
+	public User getProfile(String screenName) {
+		try {
+			return twitter.showUser(screenName);
+		} catch (TwitterException e) {
+			throw new RuntimeException("Cannot get Twitter profile for @" + screenName, e);
+		}
 	}
 
 //	public long getFriendsCount(String screenName) {

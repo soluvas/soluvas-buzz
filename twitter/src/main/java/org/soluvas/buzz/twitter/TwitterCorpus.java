@@ -17,9 +17,15 @@ public class TwitterCorpus {
 	private EntityManager em;
 	
 	@Transactional
-	public TwitterFollower ensureFollower(TwitterFollower entity) {
-		em.persist(entity);
-		return entity;
+	public TwitterFollower ensureFollower(TwitterFollower follower) {
+		em.persist(follower);
+		return follower;
+	}
+
+	@Transactional
+	public TwitterFollowing ensureFollowing(TwitterFollowing following) {
+		em.persist(following);
+		return following;
 	}
 
 }

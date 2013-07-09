@@ -31,8 +31,8 @@ public class TwitterFollower implements Serializable {
 	private Long followerId;
 	@Index(name="follower_screen_name_idx")
 	private String followerScreenName;
-	@Column(nullable=false) @Index(name="fetch_rev_idx")
-	private int fetchRev;
+	@Column(nullable=false) @Index(name="rev_id_idx")
+	private int revId;
 	@Column(nullable=false) @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime fetchTime;
 	
@@ -93,12 +93,12 @@ public class TwitterFollower implements Serializable {
 	/**
 	 * Revision number of this data. 
 	 */
-	public int getFetchRev() {
-		return fetchRev;
+	public int getRevId() {
+		return revId;
 	}
 	
-	public void setFetchRev(int fetchRev) {
-		this.fetchRev = fetchRev;
+	public void setRevId(int revId) {
+		this.revId = revId;
 	}
 	
 	/**
@@ -122,7 +122,7 @@ public class TwitterFollower implements Serializable {
 				+ (followerId != null ? "followerId=" + followerId + ", " : "")
 				+ (followerScreenName != null ? "followerScreenName="
 						+ followerScreenName + ", " : "") + "fetchRev="
-				+ fetchRev + ", "
+				+ revId + ", "
 				+ (fetchTime != null ? "fetchTime=" + fetchTime : "") + "]";
 	}
 	
