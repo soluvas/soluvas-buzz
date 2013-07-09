@@ -18,7 +18,8 @@ public class TwitterCorpus {
 	
 	@Transactional
 	public TwitterFollower ensureFollower(TwitterFollower entity) {
-		return em.merge(entity);
+		em.persist(entity);
+		return entity;
 	}
 
 }
