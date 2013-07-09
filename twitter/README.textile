@@ -4,9 +4,11 @@ h2. Planned Stories
 
 h3. Foundational
 
-1. Cache retrieved Twitter user's data, ready statistics, and calculated stats (i.e. following rate)
+1. Cache in "Corpus" retrieved Twitter user's data, ready statistics, and calculated stats (i.e. following rate)
 2. Preload select parts of Twitter user's data, ready statistics, and calculated stats; to be used
    in offline processing
+3. Corpus contains historical data, revisioned ("_rev") with timestamp
+4. Export/import corpus from/to XMI or TURTLE
 
 h3. Ad-Hoc Analysis
 

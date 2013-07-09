@@ -5,8 +5,21 @@ dependencies {
 	compile 'org.twitter4j:twitter4j-core:3.0.3'
 	testCompile libraries.junit
 	testCompile libraries.hamcrest
+	//compile 'org.ow2.asm:asm-commons:4.1'
+	//compile 'cglib:cglib-nodep:3.0'
+	
+	compile libraries.spring
+	testCompile libraries.spring_test
+	compile 'commons-dbcp:commons-dbcp:1.4'
+	compile 'org.hibernate:hibernate-entitymanager:4.2.2.Final'
+	compile 'org.postgresql:postgresql:9.2-1003-jdbc4'
+	
 	compile 'org.soluvas:org.soluvas.commons:2.1.0-SNAPSHOT'
 	compile 'org.soluvas:org.soluvas.data:2.1.0-SNAPSHOT'
 	
 	compile project(':core')
+}
+
+configurations {
+	all*.exclude module: 'commons-logging'
 }
