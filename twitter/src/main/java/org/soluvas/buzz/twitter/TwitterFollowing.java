@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.Index;
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 /**
@@ -32,7 +33,7 @@ public class TwitterFollowing implements Serializable {
 	private String followingScreenName;
 	@Column(nullable=false) @Index(name="fetch_rev_idx")
 	private int fetchRev;
-	@Column(nullable=false)
+	@Column(nullable=false) @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime fetchTime;
 
 	/**
