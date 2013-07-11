@@ -28,4 +28,10 @@ public class TwitterCorpus {
 		return following;
 	}
 
+	@Transactional
+	public TwitterUser ensureUser(TwitterUser user) {
+		em.persist(user);
+		return user;
+	}
+
 }

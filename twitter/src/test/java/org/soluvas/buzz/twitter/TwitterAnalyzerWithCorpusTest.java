@@ -94,6 +94,14 @@ public class TwitterAnalyzerWithCorpusTest {
 		}
 	}
 
+	@Test
+	public void saveUserToCorpus() {
+		final String targetScreenName = "keisavourie";
+		final User twitterUser = analyzer.getProfile(targetScreenName);
+		final TwitterUser corpusUser = new TwitterUser(twitterUser, 1, new DateTime());
+		corpus.ensureUser(corpusUser);
+	}
+
 //	@Test
 //	public void followersCountOfDila() {
 //		final String targetScreenName = "dilamala";
