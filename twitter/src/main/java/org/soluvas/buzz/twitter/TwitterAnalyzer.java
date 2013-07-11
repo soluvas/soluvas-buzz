@@ -2,7 +2,11 @@ package org.soluvas.buzz.twitter;
 
 import java.util.Set;
 
+import javax.annotation.Nullable;
+
 import org.apache.commons.lang3.ArrayUtils;
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.buzz.core.TwitterAppLink;
@@ -30,11 +34,14 @@ public class TwitterAnalyzer {
 	private static final Logger log = LoggerFactory
 			.getLogger(TwitterAnalyzer.class);
 	private final Twitter twitter;
+	private final TwitterCorpus corpus;
 
 	/**
 	 * 
 	 */
-	public TwitterAnalyzer(TwitterAppLink app, TwitterUserLink appUser) {
+	public TwitterAnalyzer(TwitterCorpus corpus, TwitterAppLink app, TwitterUserLink appUser) {
+		super();
+		this.corpus = corpus;
 		final ConfigurationBuilder configBuilder = new ConfigurationBuilder();
 		configBuilder.setOAuthConsumerKey(app.getConsumerKey());
 		configBuilder.setOAuthConsumerSecret(app.getConsumerSecret());
@@ -73,6 +80,48 @@ public class TwitterAnalyzer {
 		} catch (TwitterException e) {
 			throw new RuntimeException("Cannot get Twitter profile for @" + screenName, e);
 		}
+	}
+
+	/**
+	 * Get the Twitter profile.
+	 * @param screenName
+	 * @param maxAge Maximum corpus copy age. If 0, always fetch. If {@code null},
+	 * 		always use corpus copy if exists.
+	 * @param allowFetch Allow fetch if corpus copy too old or non-existent.
+	 * @return
+	 */
+	public TwitterUser getProfile(String screenName, @Nullable Duration maxAge, boolean allowFetch) {
+		final DateTime minFetchTime;
+		final TwitterUser corpusUser;
+		if (maxAge != null) {
+			minFetchTime = new DateTime().minus(maxAge);
+//			corpusUser = corpus.findOneUser(screenName, minFetchTime);
+		} else {
+			minFetchTime = null;
+		}
+		corpusUser = corpus.findOneUserLatest(screenName);
+		
+		// got it?
+		if (corpusUser != null && (corpusUser.getFetchTime().isEqual(minFetchTime) || corpusUser.getFetchTime().isAfter(minFetchTime))) {
+			return corpusUser;
+		} else {
+			if (allowFetch) {
+				final TwitterUser updatedCorpusUser;
+				try {
+					final User twitterUser = twitter.showUser(screenName);
+					int updatedRevId = corpusUser != null ? corpusUser.getRevId() + 1 : 1;
+					updatedCorpusUser = new TwitterUser(twitterUser, updatedRevId, new DateTime());
+				} catch (TwitterException e) {
+					throw new RuntimeException("Cannot fetch Twitter profile for @" + screenName, e);
+				}
+				corpus.ensureUser(updatedCorpusUser);
+				return updatedCorpusUser;
+			} else {
+				throw new RuntimeException(String.format("Cannot find Twitter user @%s in corpus (minFetchTime: %s) but fetch disallowed",
+						screenName, minFetchTime));
+			}
+		}
+		
 	}
 
 //	public long getFriendsCount(String screenName) {

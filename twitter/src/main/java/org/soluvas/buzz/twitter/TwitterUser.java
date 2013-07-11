@@ -497,6 +497,25 @@ public class TwitterUser implements Serializable {
     boolean isFollowRequestSent() {
     	return followRequestSent;
     }
+
+	@Override
+	public String toString() {
+		return "TwitterUser [id="
+				+ id
+				+ ", revId="
+				+ revId
+				+ ", "
+				+ (fetchTime != null ? "fetchTime=" + fetchTime + ", " : "")
+				+ (name != null ? "name=" + name + ", " : "")
+				+ (screenName != null ? "screenName=" + screenName + ", " : "")
+				+ (location != null ? "location=" + location + ", " : "")
+				+ (description != null ? "description=" + description + ", "
+						: "") + "statusesCount=" + statusesCount
+				+ ", followersCount=" + followersCount + ", "
+				+ (status != null ? "status=" + status + ", " : "")
+				+ "friendsCount=" + friendsCount + ", "
+				+ (createdAt != null ? "createdAt=" + createdAt : "") + "]";
+	}
     
     /**
      * Returns Url entities for user description.

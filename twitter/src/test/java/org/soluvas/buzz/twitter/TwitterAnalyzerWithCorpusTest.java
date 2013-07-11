@@ -1,10 +1,13 @@
 package org.soluvas.buzz.twitter;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Set;
 
 import javax.inject.Inject;
 
 import org.joda.time.DateTime;
+import org.joda.time.Duration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,7 +49,7 @@ public class TwitterAnalyzerWithCorpusTest {
 	public void setUp() throws Exception {
 		final BuzzAccounts accounts = new OnDemandXmiLoader<BuzzAccounts>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerWithCorpusTest.class, "/META-INF/twitter.BuzzAccounts.xmi" ).get();
 		aksimataAccount = accounts.getAccounts().get(0);
-		analyzer = new TwitterAnalyzer(aksimataAccount.getTwitterApp(), aksimataAccount.getTwitterAppUser());
+		analyzer = new TwitterAnalyzer(corpus, aksimataAccount.getTwitterApp(), aksimataAccount.getTwitterAppUser());
 	}
 
 	/**
@@ -100,6 +103,14 @@ public class TwitterAnalyzerWithCorpusTest {
 		final User twitterUser = analyzer.getProfile(targetScreenName);
 		final TwitterUser corpusUser = new TwitterUser(twitterUser, 1, new DateTime());
 		corpus.ensureUser(corpusUser);
+	}
+	
+	@Test
+	public void getOrFetchUser() {
+		final String targetScreenName = "keisavourie";
+		final TwitterUser twitterUser = analyzer.getProfile(targetScreenName, Duration.standardDays(30), true);
+		log.info("show @{}: {}", targetScreenName, twitterUser);
+		assertNotNull(twitterUser);
 	}
 
 //	@Test

@@ -31,7 +31,7 @@ public class TwitterAnalyzerTest {
 	public void setUp() throws Exception {
 		final BuzzAccounts accounts = new OnDemandXmiLoader<BuzzAccounts>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/twitter.BuzzAccounts.xmi" ).get();
 		aksimataAccount = accounts.getAccounts().get(0);
-		analyzer = new TwitterAnalyzer(aksimataAccount.getTwitterApp(), aksimataAccount.getTwitterAppUser());
+		analyzer = new TwitterAnalyzer(null, aksimataAccount.getTwitterApp(), aksimataAccount.getTwitterAppUser());
 	}
 
 	/**
