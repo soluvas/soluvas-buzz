@@ -107,8 +107,8 @@ public class TwitterAnalyzerWithCorpusTest {
 	
 	@Test
 	public void getOrFetchUser() {
-		final String targetScreenName = "keisavourie";
-		final TwitterUser twitterUser = analyzer.getProfile(targetScreenName, Duration.standardDays(30), true);
+		final String targetScreenName = "jetveetlev";
+		final TwitterUser twitterUser = analyzer.getProfile(targetScreenName, Duration.standardMinutes(30), true);
 		log.info("show @{}: {}", targetScreenName, twitterUser);
 		assertNotNull(twitterUser);
 	}

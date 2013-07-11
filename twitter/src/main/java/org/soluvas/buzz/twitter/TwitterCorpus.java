@@ -1,11 +1,15 @@
 package org.soluvas.buzz.twitter;
 
+import javax.annotation.Nullable;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 public class TwitterCorpus {
+	private static final Logger log = LoggerFactory
+			.getLogger(TwitterCorpus.class);
 	
 	@PersistenceContext
 	private EntityManager em;
@@ -43,11 +49,18 @@ public class TwitterCorpus {
 	 * @param minFetchTime
 	 * @return
 	 */
+	@Nullable
 	public TwitterUser findOneUserLatest(String screenName) {
 		final TypedQuery<TwitterUser> query = em.createQuery("SELECT tu FROM TwitterUser tu"
 				+ " WHERE lower(screenName) = :screenName ORDER BY fetchTime DESC", TwitterUser.class);
 		query.setParameter("screenName", screenName.toLowerCase());
-		return query.getSingleResult();
+		query.setMaxResults(1);
+		try {
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			log.trace(String.format("No result for findOneUserLatest @%s", screenName), e);
+			return null;
+		}
 	}
 
 	/**
@@ -57,12 +70,19 @@ public class TwitterCorpus {
 	 * @param minFetchTime
 	 * @return
 	 */
+	@Nullable
 	public TwitterUser findOneUser(String screenName, DateTime minFetchTime) {
 		final TypedQuery<TwitterUser> query = em.createQuery("SELECT tu FROM TwitterUser tu"
 				+ " WHERE lower(screenName) = :screenName AND fetchTime > :minFetchTime ORDER BY fetchTime DESC", TwitterUser.class);
 		query.setParameter("screenName", screenName.toLowerCase());
 		query.setParameter("minFetchTime", minFetchTime.toDate(), TemporalType.TIMESTAMP);
-		return query.getSingleResult();
+		query.setMaxResults(1);
+		try {
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			log.trace(String.format("No result for findOneUser @%s minFetchTime=%s", screenName, minFetchTime), e);
+			return null;
+		}
 	}
 
 }
