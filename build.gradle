@@ -1,5 +1,6 @@
 //apply plugin: 'java'
 //apply plugin: 'osgi'
+// Non-Bippo-GK development: please add your own repor at ~/.gradle/init.gradle
 
 apply from: '../soluvas-framework/libraries.gradle'
 
