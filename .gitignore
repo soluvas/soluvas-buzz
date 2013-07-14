@@ -2,4 +2,4 @@
 target
 build
 .directory
-gradle
+.settings
