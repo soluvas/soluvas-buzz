@@ -11,14 +11,20 @@
 	<context:component-scan base-package="org.soluvas.buzz.twitter"/>
 	<tx:annotation-driven/>
 	
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
-		<property name="driverClassName" value="${jpa.driverclassname}" />
-		<property name="url" value="${jpa.url}" />
-		<property name="username" value="${jpa.username}" />
+		<property name="driverClass" value="${jpa.driverclassname}" />
+		<property name="jdbcUrl" value="${jpa.url}" />
+		<property name="user" value="${jpa.username}" />
 		<property name="password" value="${jpa.password}" />
+		<!-- Pool properties -->
+<!-- 		<property name="minPoolSize" value="5" /> -->
+<!-- 		<property name="maxPoolSize" value="20" /> -->
+<!-- 		<property name="maxStatements" value="50" /> -->
+<!-- 		<property name="idleConnectionTestPeriod" value="3000" /> -->
+<!-- 		<property name="loginTimeout" value="300" /> -->
 	</bean>
-	
+
 <!-- 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"/> -->
 	
 <!-- 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"> -->
