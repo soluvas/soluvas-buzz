@@ -52,7 +52,7 @@
 		</init-param>
 		<init-param>
 			<param-name>filterMappingUrlPattern</param-name>
-			<param-value>/app/*</param-value>
+			<param-value>/*</param-value>
 		</init-param>
 		<init-param>
 			<param-name>org.atmosphere.websocket.WebSocketProtocol</param-name>
@@ -68,7 +68,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Atmospherefilter</servlet-name>
-		<url-pattern>/app/*</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 <!-- 	<servlet> -->

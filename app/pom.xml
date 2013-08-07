@@ -23,6 +23,13 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<!-- upstream Jersey not compatible with asm4 -->
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-server</artifactId>
+				<version>1.17.1</version>
+				<classifier>soluvas</classifier>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -42,17 +49,131 @@
 			<artifactId>wicket-bootstrap-extensions</artifactId>
 			<version>0.8.4</version>
 		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>de.agilecoders.wicket</groupId> -->
+<!-- 			<artifactId>wicket-bootstrap-themes</artifactId> -->
+<!-- 			<version>0.8.4</version> -->
+<!-- 		</dependency> -->
 		<dependency>
-			<groupId>de.agilecoders.wicket</groupId>
-			<artifactId>wicket-bootstrap-themes</artifactId>
-			<version>0.8.4</version>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-atmosphere</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>atmosphere-compat-tomcat7</artifactId>
+					<groupId>org.atmosphere</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-spring</artifactId>
+			<version>1.17.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-graphite</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-servlet</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-servlets</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-jvm</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-jersey</artifactId>
+			<version>3.0.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>asm</artifactId>
+					<groupId>asm</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-logback</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-httpclient</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+
+		<!-- logging -->
+		<dependency>
+			<!-- for live site -->
+		    <groupId>com.logentries</groupId>
+		    <artifactId>logentries-appender</artifactId>
+		    <version>1.1.15</version>
+		    <scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.huxhorn.lilith</groupId>
+			<artifactId>de.huxhorn.lilith.logback.appender.multiplex-classic</artifactId>
+			<version>0.9.43</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -64,17 +185,18 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jul-to-slf4j</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -87,6 +209,10 @@
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>logback.xml</exclude>
+					<exclude>META-INF/buzz.properties</exclude>
+				</excludes>
 			</resource>
 			<resource>
 				<directory>src/main/java</directory>
@@ -101,6 +227,9 @@
 		<testResources>
 			<testResource>
 				<directory>src/test/resources</directory>
+				<excludes>
+					<exclude>META-INF/buzz.properties</exclude>
+				</excludes>
 			</testResource>
 			<testResource>
 				<directory>src/test/java</directory>
