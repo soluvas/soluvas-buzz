@@ -1,17 +1,31 @@
 package org.soluvas.buzz.app;
 
-import org.hibernate.jpa.boot.spi.Bootstrap;
+import org.apache.wicket.Page;
+import org.apache.wicket.request.resource.caching.FilenameWithVersionResourceCachingStrategy;
+import org.apache.wicket.request.resource.caching.version.MessageDigestResourceVersion;
+import org.apache.wicket.serialize.java.DeflatedJavaSerializer;
+import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.web.site.AtmosphereApplication;
+
+import com.google.javascript.jscomp.CompilationLevel;
+
+import de.agilecoders.wicket.core.Bootstrap;
+import de.agilecoders.wicket.core.markup.html.RenderJavaScriptToFooterHeaderResponseDecorator;
+import de.agilecoders.wicket.core.settings.BootstrapSettings;
+import de.agilecoders.wicket.core.settings.DefaultThemeProvider;
+import de.agilecoders.wicket.core.settings.ThemeProvider;
+import de.agilecoders.wicket.extensions.javascript.GoogleClosureJavaScriptCompressor;
+import de.agilecoders.wicket.extensions.javascript.YuiCssCompressor;
 
 /**
  * @author ceefour
  *
  */
-public class FrequencyJobApplication extends AtmosphereApplication {
+public class BuzzApplication extends AtmosphereApplication {
 	private static final Logger log = LoggerFactory
-		.getLogger(FrequencyJobApplication.class);
+		.getLogger(BuzzApplication.class);
 
 	@Override
 	public Class<? extends Page> getHomePage() {

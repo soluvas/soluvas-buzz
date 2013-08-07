@@ -12,7 +12,9 @@
 	<url>http://www.soluvas.com/</url>
 
 	<modules>
+		<module>core</module>
 		<module>twitter</module>
+		<module>app</module>
 	</modules>
 
 	<scm>
@@ -44,6 +46,11 @@
 		<dependencies>
 			<dependency>
 				<groupId>org.soluvas.buzz</groupId>
+				<artifactId>org.soluvas.buzz.core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.soluvas.buzz</groupId>
 				<artifactId>org.soluvas.buzz.twitter</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -65,7 +72,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.0</version>
+					<version>3.1</version>
 					<configuration>
 						<source>1.7</source>
 						<target>1.7</target>
@@ -174,13 +181,6 @@
 			<url>http://nexus.bippo.co.id/nexus/content/groups/public/</url>
 			<snapshots>
 				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>JBOSS_NEXUS</id>
-			<url>http://repository.jboss.org/nexus/content/groups/public</url>
-			<snapshots>
-				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 		<repository>
