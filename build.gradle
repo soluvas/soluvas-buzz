@@ -2,6 +2,7 @@
 //apply plugin: 'osgi'
 // IMPORTANT: for development: please add your own proxy repo at ~/.gradle/init.gradle
 // otherwise you're wasting bandwidth!
+apply plugin: 'eclipse'
 
 apply from: '../soluvas-framework/libraries.gradle'
 
@@ -56,6 +57,7 @@ allprojects {
 			}
 		}
 	}
+
 }
 
 ext {

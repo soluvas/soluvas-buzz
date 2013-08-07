@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.commons"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.data"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.image"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.jaxrs"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.ldap"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.mongo"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.security"/>
+	<classpathentry exported="true" kind="src" path="/org.soluvas.web.site"/>
+	<classpathentry exported="true" kind="src" path="/soluvas-buzz.twitter"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

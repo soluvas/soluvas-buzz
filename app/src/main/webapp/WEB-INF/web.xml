@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<listener>
+		<listener-class>ch.qos.logback.classic.selector.servlet.ContextDetachingSCL</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>webappMetricsFilter</filter-name>
+		<filter-class>com.codahale.metrics.servlet.InstrumentedFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>webappMetricsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>org.soluvas.jaxrs.JulToSlf4jConfigurator</listener-class>
+	</listener>
+
+	<servlet>
+		<description>Atmospherefilter</description>
+		<servlet-name>Atmospherefilter</servlet-name>
+		<servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+
+		<!-- Wicket init params -->
+		<init-param>
+			<param-name>applicationFactoryClassName</param-name>
+			<param-value>org.apache.wicket.spring.SpringWebApplicationFactory</param-value>
+		</init-param>
+		<init-param>
+			<param-name>applicationBean</param-name>
+			<param-value>webApp</param-value>
+		</init-param>
+		<!-- X-Forwarded-Proto support, see http://apropos0.blogspot.com/2013/05/wicket-ssl-nginx.html -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>protocolHeader</param-name> -->
+<!-- 			<param-value>X-Forwarded-Proto</param-value> -->
+<!-- 		</init-param> -->
+
+		<!-- If your application uses HttpSession, you need to tell Atmosphere to track the session as well -->
+		<init-param>
+			<param-name>org.atmosphere.cpr.sessionSupport</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>org.atmosphere.cpr.AtmosphereInterceptor</param-name>
+			<param-value>org.atmosphere.interceptor.NginxInterceptor</param-value>
+		</init-param>
+		<init-param>
+			<param-name>filterMappingUrlPattern</param-name>
+			<param-value>/app/*</param-value>
+		</init-param>
+		<init-param>
+			<param-name>org.atmosphere.websocket.WebSocketProtocol</param-name>
+			<param-value>org.atmosphere.websocket.protocol.EchoProtocol</param-value>
+		</init-param>
+		<init-param>
+			<param-name>org.atmosphere.cpr.broadcastFilterClasses</param-name>
+			<param-value>org.apache.wicket.atmosphere.TrackMessageSizeFilter</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		<!-- If you want to use Servlet 3.0 -->
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Atmospherefilter</servlet-name>
+		<url-pattern>/app/*</url-pattern>
+	</servlet-mapping>
+
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>jersey-servlet</servlet-name> -->
+<!-- 		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class> -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>com.sun.jersey.config.property.packages</param-name> -->
+<!-- 			<param-value>com.fasterxml.jackson.jaxrs.json,org.soluvas.jaxrs</param-value> -->
+<!-- 		</init-param> -->
+<!-- 		<load-on-startup>1</load-on-startup> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>jersey-servlet</servlet-name> -->
+<!-- 		<url-pattern>/api/*</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>org.soluvas.buzz.app.AppConfig</param-value>
+	</context-param>
+	<context-param>
+		<param-name>configuration</param-name>
+		<param-value>development</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+</web-app>

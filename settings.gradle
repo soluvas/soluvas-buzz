@@ -1,1 +1,1 @@
-include 'core', 'twitter'
+include 'core', 'twitter', 'app'

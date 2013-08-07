@@ -1,0 +1,9 @@
+<!-- File "META-INF/context.xml" use for tomcat7 -->
+<!-- I thought WebSocket was buggy (in Wicket?),
+	even in HTTP and even more in HTTPS, (esp. with nginx),
+	traditional non-WebSocket Comet can work.
+	Maybe so, but what's really wrong was HttpsMapper
+	https://issues.apache.org/jira/browse/WICKET-5282#comment-13715304 -->
+<Context>
+	<Loader delegate="true" />
+</Context>
