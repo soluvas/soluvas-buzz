@@ -9,3 +9,7 @@ bc. CREATE DATABASE buzz_dev
        ENCODING = 'UTF8'
        LC_COLLATE = 'en_US.UTF-8'
        LC_CTYPE = 'en_US.UTF-8';
+
+h2. Credits
+
+Icon by "Aha-Soft":http://www.aha-soft.com/icon-design.htm, licensed under Creative Commons (Attribution 3.0 Unported).
