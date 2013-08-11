@@ -53,13 +53,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="FacebookPageLink" eSuperTypes="#//SocialLink"/>
   <eClassifiers xsi:type="ecore:EClass" name="FacebookConsumer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="OAuth consumer (not user) info on Twitter for the app itself.&#xA;&#xA;Apps include:&#xA;1. Buzz Cloud&#xA;2. AksiMata&#xA;3. GaulDong"/>
+      <details key="documentation" value="OAuth consumer (not user) info on Twitter for the app itself.&#xA;&#xA;Note: When configuring your Facebook App API, you may want to set Settings > Permissions > Default Activity Privacy to Public.&#xA;Otherwise you get None (User Default) which usually means Friends.&#xA;&#xA;Apps include:&#xA;1. Buzz Cloud&#xA;2. AksiMata&#xA;3. GaulDong"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appSecret" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultScope" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The default set of requested permissions.&#xA;Example: read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_stream,publish_actions,share_item"/>
+        <details key="documentation" value="The default set of requested permissions.&#xA;Example: read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_actions,share_item&#xA;&#xA;Note: When configuring your Facebook App API, you may want to set Settings > Permissions > Default Activity Privacy to Public.&#xA;Otherwise you get None (User Default) which usually means Friends."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customDomain" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">

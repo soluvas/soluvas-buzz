@@ -603,13 +603,13 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		  (facebookConsumerEClass, 
 		   source, 
 		   new String[] {
-			 "documentation", "OAuth consumer (not user) info on Twitter for the app itself.\n\nApps include:\n1. Buzz Cloud\n2. AksiMata\n3. GaulDong"
+			 "documentation", "OAuth consumer (not user) info on Twitter for the app itself.\n\nNote: When configuring your Facebook App API, you may want to set Settings > Permissions > Default Activity Privacy to Public.\nOtherwise you get None (User Default) which usually means Friends.\n\nApps include:\n1. Buzz Cloud\n2. AksiMata\n3. GaulDong"
 		   });		
 		addAnnotation
 		  (getFacebookConsumer_DefaultScope(), 
 		   source, 
 		   new String[] {
-			 "documentation", "The default set of requested permissions.\nExample: read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_stream,publish_actions,share_item"
+			 "documentation", "The default set of requested permissions.\nExample: read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_actions,share_item\n\nNote: When configuring your Facebook App API, you may want to set Settings > Permissions > Default Activity Privacy to Public.\nOtherwise you get None (User Default) which usually means Friends."
 		   });		
 		addAnnotation
 		  (getFacebookConsumer_CustomDomain(), 

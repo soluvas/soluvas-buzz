@@ -12,6 +12,9 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-model-doc -->
  * OAuth consumer (not user) info on Twitter for the app itself.
  * 
+ * Note: When configuring your Facebook App API, you may want to set Settings > Permissions > Default Activity Privacy to Public.
+ * Otherwise you get None (User Default) which usually means Friends.
+ * 
  * Apps include:
  * 1. Buzz Cloud
  * 2. AksiMata
@@ -91,7 +94,10 @@ public interface FacebookConsumer extends EObject {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The default set of requested permissions.
-	 * Example: read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_stream,publish_actions,share_item
+	 * Example: read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_actions,share_item
+	 * 
+	 * Note: When configuring your Facebook App API, you may want to set Settings > Permissions > Default Activity Privacy to Public.
+	 * Otherwise you get None (User Default) which usually means Friends.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Default Scope</em>' attribute.
 	 * @see #setDefaultScope(String)
