@@ -6,27 +6,6 @@
 
 <form class="form form-horizontal">
 	<fieldset>
-		<legend>Twitter</legend>
-		<div class="control-group">
-			<label class="control-label">Consumer Key</label>
-			<div class="controls">
-				<input type="text" wicket:id="twitterKey"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">Consumer Secret</label>
-			<div class="controls">
-				<input type="text" wicket:id="twitterSecret" class="input-xlarge"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">Custom Domain</label>
-			<div class="controls">
-				<input type="text" wicket:id="twitterDomain"/>
-			</div>
-		</div>
-	</fieldset>
-	<fieldset>
 		<legend>Facebook</legend>
 		<div class="control-group">
 			<label class="control-label">App ID</label>
@@ -53,6 +32,27 @@
 			</div>
 		</div>
 	</fieldset>
+	<fieldset>
+		<legend>Twitter</legend>
+		<div class="control-group">
+			<label class="control-label">Consumer Key</label>
+			<div class="controls">
+				<input type="text" wicket:id="twitterKey"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Consumer Secret</label>
+			<div class="controls">
+				<input type="text" wicket:id="twitterSecret" class="input-xlarge"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Custom Domain</label>
+			<div class="controls">
+				<input type="text" wicket:id="twitterDomain"/>
+			</div>
+		</div>
+	</fieldset>
 </form>
 
 <h2>Social Links</h2>
@@ -67,6 +67,12 @@
 
 <div wicket:id="addButtons">
 	<p><a href="#" wicket:id="facebookAdd" class="btn"><i class="icon-plus"></i> Facebook</a></p>
+	<p><a href="#" wicket:id="facebookAddManual" class="btn" title="Manually enter OAuth verifier code. Note: Allow pop-ups in your browser."><i class="icon-plus"></i> Facebook (Manual)</a>
+		<form wicket:id="facebookManualForm" class="form">
+			<input type="text" wicket:id="verifier" placeholder="Verifier Code"/> <button wicket:id="submit" class="btn btn-primary">Verify</button>
+		</form>
+	</p>
+	
 	<p><a href="#" wicket:id="twitterAdd" class="btn"><i class="icon-plus"></i> Twitter</a></p>
 	<p><a href="#" wicket:id="twitterAddManual" class="btn" title="Manually enter OAuth verifier code. Note: Allow pop-ups in your browser."><i class="icon-plus"></i> Twitter (Manual)</a>
 		<form wicket:id="twitterManualForm" class="form">

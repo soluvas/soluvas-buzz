@@ -1,9 +1,19 @@
 package org.soluvas.buzz.app;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.HttpClientUtils;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.core.util.string.JavaScriptUtils;
 import org.apache.wicket.extensions.ajax.markup.html.IndicatingAjaxButton;
@@ -22,10 +32,12 @@ import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.flow.RedirectToUrlException;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.buzz.core.BuzzAccount;
 import org.soluvas.buzz.core.BuzzApp;
+import org.soluvas.buzz.core.FacebookConsumer;
 import org.soluvas.buzz.core.SocialLink;
 import org.soluvas.buzz.core.TwitterConsumer;
 
@@ -69,7 +81,53 @@ public class TenantSettingsPage extends TenantPage {
 		
 		final WebMarkupContainer addButtons = new WebMarkupContainer("addButtons");
 		addButtons.setOutputMarkupId(true);
-		addButtons.add(new ExternalLink("facebookAdd", "/"));
+		
+		final FacebookConsumer facebookConsumer = buzzApp.getFacebookConsumer();
+		final String facebookAuthorizeUri;
+		if (facebookConsumer != null) {
+			try {
+				final String redirectUri = "http://" + facebookConsumer.getCustomDomain() + "/fb_recipient";
+				final URIBuilder fbLoginUriBuilder = new URIBuilder("https://www.facebook.com/dialog/oauth");
+				fbLoginUriBuilder.addParameter("client_id", facebookConsumer.getAppId());
+				fbLoginUriBuilder.addParameter("redirect_uri", redirectUri);
+				fbLoginUriBuilder.addParameter("scope", facebookConsumer.getDefaultScope());
+				facebookAuthorizeUri = fbLoginUriBuilder.toString();
+			} catch (final Exception ex) {
+				throw new RuntimeException("Error when building Facebook Authorization URI for " + facebookConsumer.getAppId(), ex);
+			}
+		} else {
+			facebookAuthorizeUri = "#";
+		}
+		
+		addButtons.add(new ExternalLink("facebookAdd", facebookAuthorizeUri));
+		final IModel<String> facebookVerifierModel = new Model<>("");
+		final Form<String> facebookManualForm = new StatelessForm<String>("facebookManualForm", facebookVerifierModel);
+		facebookManualForm.setVisible(false);
+		addButtons.add(facebookManualForm);
+		facebookManualForm.add(new TextField<>("verifier", facebookVerifierModel).setRequired(true));
+		facebookManualForm.add(new IndicatingAjaxButton("submit") {
+			@Override
+			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+				String verifierUp = facebookVerifierModel.getObject();
+				Matcher matcher = Pattern.compile(".*code=(.+)").matcher(verifierUp);
+				String verifier = matcher.matches() ? matcher.group(1) : verifierUp;
+				FacebookAccessToken token = fetchAccessToken(facebookConsumer.getAppId(), facebookConsumer.getAppSecret(), facebookAuthorizeUri, verifier);
+				log.info("Facebook access: token={} expiry={}", 
+						token.getToken(), token.getExpiryTime());
+				info(String.format("Facebook access: token=%s expiry=%s", 
+						token.getToken(), token.getExpiryTime()));
+			}
+		});
+		addButtons.add(new IndicatingAjaxLink<Void>("facebookAddManual") {
+			@Override
+			public void onClick(AjaxRequestTarget target) {
+				target.appendJavaScript("window.open('" + JavaScriptUtils.escapeQuotes(facebookAuthorizeUri) + "', '_blank');");
+				facebookVerifierModel.setObject("");
+				facebookManualForm.setVisible(true);
+				target.add(addButtons);
+			}
+		});
+		
 		addButtons.add(new IndicatingAjaxLink<Void>("twitterAdd") {
 			@Override
 			public void onClick(AjaxRequestTarget target) {
@@ -139,6 +197,79 @@ public class TenantSettingsPage extends TenantPage {
 		});
 		add(addButtons);
 		
+	}
+	
+	public static class FacebookAccessToken {
+		private final String token;
+		private final DateTime expiryTime;
+		
+		public FacebookAccessToken(String token, DateTime expiryTime) {
+			super();
+			this.token = token;
+			this.expiryTime = expiryTime;
+		}
+		
+		public String getToken() {
+			return token;
+		}
+		
+		/**
+		 * This is only an estimate.
+		 * @return
+		 */
+		public DateTime getExpiryTime() {
+			return expiryTime;
+		}
+		
+	}
+	
+	public FacebookAccessToken fetchAccessToken(String appId, String appSecret, String redirectUri, String code) {
+		final String realAppId = appId;
+		final String realAppSecret = appSecret;
+		final String accessTokenUriStr;
+		try {
+			final URIBuilder accessTokenUri = new URIBuilder("https://graph.facebook.com/oauth/access_token");
+			accessTokenUri.addParameter("client_id", realAppId);
+			accessTokenUri.addParameter("client_secret", realAppSecret);
+			accessTokenUri.addParameter("redirect_uri", redirectUri);
+			accessTokenUri.addParameter("code", code);
+			accessTokenUriStr = accessTokenUri.build().toString();
+		} catch (final Exception ex) {
+			throw new RuntimeException("Error when building Facebook access token URI for appId " + 
+				realAppId + " and redirectUri " + redirectUri, ex);
+		}
+		final HttpGet accessTokenUriRequest = new HttpGet(accessTokenUriStr);
+		final DefaultHttpClient client = new DefaultHttpClient();
+		try {
+			final DateTime requestTime = new DateTime();
+			final HttpResponse responseAccessTokenReq = client.execute(accessTokenUriRequest);
+			try {
+				if (responseAccessTokenReq.getStatusLine().getStatusCode() != 200)
+					throw new IOException(String.format(
+							"GET %s throws HTTP Error %d: %s", accessTokenUriRequest, responseAccessTokenReq
+							.getStatusLine().getStatusCode(), responseAccessTokenReq
+							.getStatusLine().getReasonPhrase()));
+				final Scanner scanner = new Scanner(responseAccessTokenReq.getEntity().getContent());
+				final List<NameValuePair> data = new ArrayList<>();
+				URLEncodedUtils.parse(data, scanner, "UTF-8");
+				
+				// access_token={access-token}&expires={seconds-til-expiration}
+				final String accessToken = data.get(0).getValue();
+				final int expirySeconds = Integer.valueOf(data.get(1).getValue());
+				final DateTime expiryTime = requestTime.plusSeconds(expirySeconds);
+				return new FacebookAccessToken(accessToken, expiryTime);
+			} catch (Exception e) {
+				throw new RuntimeException("Cannot get access token for appId " + realAppId + 
+						" and redirectUri " + redirectUri + ": " + e, e);
+			} finally {
+				HttpClientUtils.closeQuietly(responseAccessTokenReq);
+			}
+		} catch (IllegalStateException | IOException e) {
+			throw new RuntimeException("Cannot get access token for appId " + realAppId + 
+					" and redirectUri " + redirectUri + ": " + e, e);
+		} finally {
+			HttpClientUtils.closeQuietly(client);
+		}
 	}
 	
 }
