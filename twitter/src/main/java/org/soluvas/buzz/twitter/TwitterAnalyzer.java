@@ -9,7 +9,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.soluvas.buzz.core.TwitterAppLink;
+import org.soluvas.buzz.core.TwitterConsumer;
 import org.soluvas.buzz.core.TwitterUserLink;
 
 import twitter4j.IDs;
@@ -39,7 +39,7 @@ public class TwitterAnalyzer {
 	/**
 	 * 
 	 */
-	public TwitterAnalyzer(TwitterCorpus corpus, TwitterAppLink app, TwitterUserLink appUser) {
+	public TwitterAnalyzer(TwitterCorpus corpus, TwitterConsumer app, TwitterUserLink appUser) {
 		super();
 		this.corpus = corpus;
 		final ConfigurationBuilder configBuilder = new ConfigurationBuilder();

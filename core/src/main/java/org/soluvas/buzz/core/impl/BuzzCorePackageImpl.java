@@ -6,13 +6,20 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.soluvas.buzz.core.BuzzAccount;
 import org.soluvas.buzz.core.BuzzAccounts;
+import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.BuzzCoreFactory;
 import org.soluvas.buzz.core.BuzzCorePackage;
-import org.soluvas.buzz.core.TwitterAppLink;
+import org.soluvas.buzz.core.FacebookConsumer;
+import org.soluvas.buzz.core.FacebookPageLink;
+import org.soluvas.buzz.core.FacebookUserLink;
+import org.soluvas.buzz.core.SocialLink;
+import org.soluvas.buzz.core.TwitterConsumer;
 import org.soluvas.buzz.core.TwitterUserLink;
+import org.soluvas.commons.CommonsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +40,7 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass twitterAppLinkEClass = null;
+	private EClass twitterConsumerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -48,6 +55,41 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * @generated
 	 */
 	private EClass twitterUserLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass facebookUserLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass facebookPageLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass facebookConsumerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass socialLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass buzzAppEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -95,6 +137,9 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		CommonsPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theBuzzCorePackage.createPackageContents();
 
@@ -125,8 +170,7 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getBuzzAccount_TwitterApp() {
+	public EReference getBuzzAccount_SocialLinks() {
 		return (EReference)buzzAccountEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -135,9 +179,8 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EAttribute getBuzzAccount_Id() {
-		return (EAttribute)buzzAccountEClass.getEStructuralFeatures().get(1);
+	public EClass getTwitterConsumer() {
+		return twitterConsumerEClass;
 	}
 
 	/**
@@ -145,9 +188,8 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getBuzzAccount_TwitterAppUser() {
-		return (EReference)buzzAccountEClass.getEStructuralFeatures().get(2);
+	public EAttribute getTwitterConsumer_ConsumerKey() {
+		return (EAttribute)twitterConsumerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -155,39 +197,8 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getBuzzAccount_TwitterUsers() {
-		return (EReference)buzzAccountEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTwitterAppLink() {
-		return twitterAppLinkEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTwitterAppLink_ConsumerKey() {
-		return (EAttribute)twitterAppLinkEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTwitterAppLink_ConsumerSecret() {
-		return (EAttribute)twitterAppLinkEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTwitterConsumer_ConsumerSecret() {
+		return (EAttribute)twitterConsumerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -265,6 +276,105 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFacebookUserLink() {
+		return facebookUserLinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFacebookPageLink() {
+		return facebookPageLinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFacebookConsumer() {
+		return facebookConsumerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookConsumer_AppId() {
+		return (EAttribute)facebookConsumerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookConsumer_AppKey() {
+		return (EAttribute)facebookConsumerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSocialLink() {
+		return socialLinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSocialLink_ExpiryTime() {
+		return (EAttribute)socialLinkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSocialLink_Permissions() {
+		return (EAttribute)socialLinkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBuzzApp() {
+		return buzzAppEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBuzzApp_TwitterConsumer() {
+		return (EReference)buzzAppEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBuzzApp_FacebookConsumer() {
+		return (EReference)buzzAppEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public BuzzCoreFactory getBuzzCoreFactory() {
 		return (BuzzCoreFactory)getEFactoryInstance();
@@ -290,14 +400,11 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 
 		// Create classes and their features
 		buzzAccountEClass = createEClass(BUZZ_ACCOUNT);
-		createEReference(buzzAccountEClass, BUZZ_ACCOUNT__TWITTER_APP);
-		createEAttribute(buzzAccountEClass, BUZZ_ACCOUNT__ID);
-		createEReference(buzzAccountEClass, BUZZ_ACCOUNT__TWITTER_APP_USER);
-		createEReference(buzzAccountEClass, BUZZ_ACCOUNT__TWITTER_USERS);
+		createEReference(buzzAccountEClass, BUZZ_ACCOUNT__SOCIAL_LINKS);
 
-		twitterAppLinkEClass = createEClass(TWITTER_APP_LINK);
-		createEAttribute(twitterAppLinkEClass, TWITTER_APP_LINK__CONSUMER_KEY);
-		createEAttribute(twitterAppLinkEClass, TWITTER_APP_LINK__CONSUMER_SECRET);
+		twitterConsumerEClass = createEClass(TWITTER_CONSUMER);
+		createEAttribute(twitterConsumerEClass, TWITTER_CONSUMER__CONSUMER_KEY);
+		createEAttribute(twitterConsumerEClass, TWITTER_CONSUMER__CONSUMER_SECRET);
 
 		buzzAccountsEClass = createEClass(BUZZ_ACCOUNTS);
 		createEReference(buzzAccountsEClass, BUZZ_ACCOUNTS__ACCOUNTS);
@@ -307,6 +414,22 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		createEAttribute(twitterUserLinkEClass, TWITTER_USER_LINK__TOKEN_SECRET);
 		createEAttribute(twitterUserLinkEClass, TWITTER_USER_LINK__TWITTER_ID);
 		createEAttribute(twitterUserLinkEClass, TWITTER_USER_LINK__SCREEN_NAME);
+
+		facebookUserLinkEClass = createEClass(FACEBOOK_USER_LINK);
+
+		facebookPageLinkEClass = createEClass(FACEBOOK_PAGE_LINK);
+
+		facebookConsumerEClass = createEClass(FACEBOOK_CONSUMER);
+		createEAttribute(facebookConsumerEClass, FACEBOOK_CONSUMER__APP_ID);
+		createEAttribute(facebookConsumerEClass, FACEBOOK_CONSUMER__APP_KEY);
+
+		socialLinkEClass = createEClass(SOCIAL_LINK);
+		createEAttribute(socialLinkEClass, SOCIAL_LINK__EXPIRY_TIME);
+		createEAttribute(socialLinkEClass, SOCIAL_LINK__PERMISSIONS);
+
+		buzzAppEClass = createEClass(BUZZ_APP);
+		createEReference(buzzAppEClass, BUZZ_APP__TWITTER_CONSUMER);
+		createEReference(buzzAppEClass, BUZZ_APP__FACEBOOK_CONSUMER);
 	}
 
 	/**
@@ -332,22 +455,33 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		CommonsPackage theCommonsPackage = (CommonsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		buzzAccountEClass.getESuperTypes().add(theCommonsPackage.getIdentifiable());
+		twitterUserLinkEClass.getESuperTypes().add(this.getSocialLink());
+		facebookUserLinkEClass.getESuperTypes().add(this.getSocialLink());
+		facebookPageLinkEClass.getESuperTypes().add(this.getSocialLink());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(buzzAccountEClass, BuzzAccount.class, "BuzzAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBuzzAccount_TwitterApp(), this.getTwitterAppLink(), null, "twitterApp", null, 0, 1, BuzzAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBuzzAccount_Id(), ecorePackage.getEString(), "id", null, 1, 1, BuzzAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBuzzAccount_TwitterAppUser(), this.getTwitterUserLink(), null, "twitterAppUser", null, 0, 1, BuzzAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBuzzAccount_TwitterUsers(), this.getTwitterUserLink(), null, "twitterUsers", null, 0, -1, BuzzAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBuzzAccount_SocialLinks(), this.getSocialLink(), null, "socialLinks", null, 0, -1, BuzzAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(twitterAppLinkEClass, TwitterAppLink.class, "TwitterAppLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTwitterAppLink_ConsumerKey(), ecorePackage.getEString(), "consumerKey", null, 0, 1, TwitterAppLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTwitterAppLink_ConsumerSecret(), ecorePackage.getEString(), "consumerSecret", null, 0, 1, TwitterAppLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		addEOperation(buzzAccountEClass, this.getTwitterUserLink(), "getTwitterUser", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(buzzAccountEClass, this.getFacebookUserLink(), "getFacebookUser", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(buzzAccountEClass, this.getFacebookPageLink(), "getFacebookPage", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(twitterConsumerEClass, TwitterConsumer.class, "TwitterConsumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTwitterConsumer_ConsumerKey(), ecorePackage.getEString(), "consumerKey", null, 0, 1, TwitterConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTwitterConsumer_ConsumerSecret(), ecorePackage.getEString(), "consumerSecret", null, 0, 1, TwitterConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(buzzAccountsEClass, BuzzAccounts.class, "BuzzAccounts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBuzzAccounts_Accounts(), this.getBuzzAccount(), null, "accounts", null, 0, -1, BuzzAccounts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -357,6 +491,22 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		initEAttribute(getTwitterUserLink_TokenSecret(), ecorePackage.getEString(), "tokenSecret", null, 0, 1, TwitterUserLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTwitterUserLink_TwitterId(), ecorePackage.getELongObject(), "twitterId", null, 0, 1, TwitterUserLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTwitterUserLink_ScreenName(), ecorePackage.getEString(), "screenName", null, 0, 1, TwitterUserLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(facebookUserLinkEClass, FacebookUserLink.class, "FacebookUserLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(facebookPageLinkEClass, FacebookPageLink.class, "FacebookPageLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(facebookConsumerEClass, FacebookConsumer.class, "FacebookConsumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFacebookConsumer_AppId(), ecorePackage.getEString(), "appId", null, 0, 1, FacebookConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFacebookConsumer_AppKey(), ecorePackage.getEString(), "appKey", null, 0, 1, FacebookConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(socialLinkEClass, SocialLink.class, "SocialLink", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSocialLink_ExpiryTime(), theCommonsPackage.getDateTime(), "expiryTime", null, 0, 1, SocialLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSocialLink_Permissions(), theEcorePackage.getEString(), "permissions", null, 0, -1, SocialLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(buzzAppEClass, BuzzApp.class, "BuzzApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBuzzApp_TwitterConsumer(), this.getTwitterConsumer(), null, "twitterConsumer", null, 0, 1, BuzzApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBuzzApp_FacebookConsumer(), this.getFacebookConsumer(), null, "facebookConsumer", null, 0, 1, BuzzApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -375,22 +525,76 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";		
 		addAnnotation
-		  (getBuzzAccount_TwitterApp(), 
+		  (buzzAccountEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
-			 "documentation", "OAuth consumer info on Twitter for the app itself."
+			 "documentation", "Get the primary TwitterUserLink, if any."
 		   });		
 		addAnnotation
-		  (getBuzzAccount_TwitterAppUser(), 
+		  (buzzAccountEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
-			 "documentation", "OAuth credentials for the app\'s Twitter user."
+			 "documentation", "Get the primary Facebook User Link, if any."
 		   });		
 		addAnnotation
-		  (getBuzzAccount_TwitterUsers(), 
+		  (buzzAccountEClass.getEOperations().get(2), 
 		   source, 
 		   new String[] {
-			 "documentation", "Collection of OAuth credentials for each registered Twitter user."
+			 "documentation", "Get the primary Facebook Page Link, if any."
+		   });		
+		addAnnotation
+		  (getBuzzAccount_SocialLinks(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Collection of OAuth credentials for each registered Social Link."
+		   });		
+		addAnnotation
+		  (twitterConsumerEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "OAuth consumer (not user) info on Twitter for the app itself.\n\nApps include:\n1. Buzz Cloud\n2. AksiMata\n3. GaulDong"
+		   });		
+		addAnnotation
+		  (buzzAccountsEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "A catalog of Buzz Accounts. It not used by DB, only used by XMI."
+		   });		
+		addAnnotation
+		  (facebookConsumerEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "OAuth consumer (not user) info on Twitter for the app itself.\n\nApps include:\n1. Buzz Cloud\n2. AksiMata\n3. GaulDong"
+		   });		
+		addAnnotation
+		  (socialLinkEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "A social media integration link between an app and an external user, containing:\n1. Type (as concrete class)\n2. ID\n3. Username\n4. OAuth token (and optionally, secret)\n5. Token expiry\n\nThe relationship between the external user (i.e. Arum on Facebook) to an internal user (i.e. Arum on AksiMata) is unspecified."
+		   });		
+		addAnnotation
+		  (getSocialLink_ExpiryTime(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Expiry time of this Social Link token, if known."
+		   });		
+		addAnnotation
+		  (getSocialLink_Permissions(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Social media provider-specific permissions (scope) granted to this Social Link token.\nFacebook uses this (partial permissions is possible). Twitter doesn\'t (either yes or no).\nOperations may optionally check this to ensure required permissions are allowed before posting."
+		   });		
+		addAnnotation
+		  (buzzAppEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "Tenant-wide Buzz consumer credentials.\n\nNote: SocialLinks should be stored *separate* to BuzzApp, because consumer credentials are fixed,\nwhile social tokens are temporary/revokable (esp. for Facebook)."
+		   });		
+		addAnnotation
+		  (getBuzzApp_TwitterConsumer(), 
+		   source, 
+		   new String[] {
+			 "documentation", "OAuth consumer (not user) info on Twitter for the app itself.\n\nApps include:\n1. Buzz Cloud\n2. AksiMata\n3. GaulDong"
 		   });
 	}
 

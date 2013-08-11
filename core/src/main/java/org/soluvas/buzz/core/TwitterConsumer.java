@@ -9,19 +9,28 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Twitter App Link</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * OAuth consumer (not user) info on Twitter for the app itself.
+ * 
+ * Apps include:
+ * 1. Buzz Cloud
+ * 2. AksiMata
+ * 3. GaulDong
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerKey <em>Consumer Key</em>}</li>
- *   <li>{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerSecret <em>Consumer Secret</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerKey <em>Consumer Key</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerSecret <em>Consumer Secret</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.soluvas.buzz.core.BuzzCorePackage#getTwitterAppLink()
+ * @see org.soluvas.buzz.core.BuzzCorePackage#getTwitterConsumer()
  * @model
  * @generated
  */
-public interface TwitterAppLink extends EObject {
+public interface TwitterConsumer extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Consumer Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +41,14 @@ public interface TwitterAppLink extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Consumer Key</em>' attribute.
 	 * @see #setConsumerKey(String)
-	 * @see org.soluvas.buzz.core.BuzzCorePackage#getTwitterAppLink_ConsumerKey()
+	 * @see org.soluvas.buzz.core.BuzzCorePackage#getTwitterConsumer_ConsumerKey()
 	 * @model
 	 * @generated
 	 */
 	String getConsumerKey();
 
 	/**
-	 * Sets the value of the '{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerKey <em>Consumer Key</em>}' attribute.
+	 * Sets the value of the '{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerKey <em>Consumer Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Consumer Key</em>' attribute.
@@ -58,14 +67,14 @@ public interface TwitterAppLink extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Consumer Secret</em>' attribute.
 	 * @see #setConsumerSecret(String)
-	 * @see org.soluvas.buzz.core.BuzzCorePackage#getTwitterAppLink_ConsumerSecret()
+	 * @see org.soluvas.buzz.core.BuzzCorePackage#getTwitterConsumer_ConsumerSecret()
 	 * @model
 	 * @generated
 	 */
 	String getConsumerSecret();
 
 	/**
-	 * Sets the value of the '{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerSecret <em>Consumer Secret</em>}' attribute.
+	 * Sets the value of the '{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerSecret <em>Consumer Secret</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Consumer Secret</em>' attribute.
@@ -74,4 +83,4 @@ public interface TwitterAppLink extends EObject {
 	 */
 	void setConsumerSecret(String value);
 
-} // TwitterAppLink
+} // TwitterConsumer

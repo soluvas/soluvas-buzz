@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.soluvas.buzz.core.*;
+import org.soluvas.commons.Identifiable;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,8 +73,8 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 				return createBuzzAccountAdapter();
 			}
 			@Override
-			public Adapter caseTwitterAppLink(TwitterAppLink object) {
-				return createTwitterAppLinkAdapter();
+			public Adapter caseTwitterConsumer(TwitterConsumer object) {
+				return createTwitterConsumerAdapter();
 			}
 			@Override
 			public Adapter caseBuzzAccounts(BuzzAccounts object) {
@@ -82,6 +83,30 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTwitterUserLink(TwitterUserLink object) {
 				return createTwitterUserLinkAdapter();
+			}
+			@Override
+			public Adapter caseFacebookUserLink(FacebookUserLink object) {
+				return createFacebookUserLinkAdapter();
+			}
+			@Override
+			public Adapter caseFacebookPageLink(FacebookPageLink object) {
+				return createFacebookPageLinkAdapter();
+			}
+			@Override
+			public Adapter caseFacebookConsumer(FacebookConsumer object) {
+				return createFacebookConsumerAdapter();
+			}
+			@Override
+			public Adapter caseSocialLink(SocialLink object) {
+				return createSocialLinkAdapter();
+			}
+			@Override
+			public Adapter caseBuzzApp(BuzzApp object) {
+				return createBuzzAppAdapter();
+			}
+			@Override
+			public Adapter caseIdentifiable(Identifiable object) {
+				return createIdentifiableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -118,16 +143,16 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.TwitterAppLink <em>Twitter App Link</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.TwitterConsumer <em>Twitter Consumer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.soluvas.buzz.core.TwitterAppLink
+	 * @see org.soluvas.buzz.core.TwitterConsumer
 	 * @generated
 	 */
-	public Adapter createTwitterAppLinkAdapter() {
+	public Adapter createTwitterConsumerAdapter() {
 		return null;
 	}
 
@@ -156,6 +181,90 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTwitterUserLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.FacebookUserLink <em>Facebook User Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.buzz.core.FacebookUserLink
+	 * @generated
+	 */
+	public Adapter createFacebookUserLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.FacebookPageLink <em>Facebook Page Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.buzz.core.FacebookPageLink
+	 * @generated
+	 */
+	public Adapter createFacebookPageLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.FacebookConsumer <em>Facebook Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.buzz.core.FacebookConsumer
+	 * @generated
+	 */
+	public Adapter createFacebookConsumerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.SocialLink <em>Social Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.buzz.core.SocialLink
+	 * @generated
+	 */
+	public Adapter createSocialLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.BuzzApp <em>Buzz App</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.buzz.core.BuzzApp
+	 * @generated
+	 */
+	public Adapter createBuzzAppAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.commons.Identifiable <em>Identifiable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.commons.Identifiable
+	 * @generated
+	 */
+	public Adapter createIdentifiableAdapter() {
 		return null;
 	}
 

@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.soluvas.buzz.core.BuzzCorePackage;
-import org.soluvas.buzz.core.TwitterAppLink;
+import org.soluvas.buzz.core.TwitterConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,14 +19,14 @@ import org.soluvas.buzz.core.TwitterAppLink;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl#getConsumerKey <em>Consumer Key</em>}</li>
- *   <li>{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl#getConsumerSecret <em>Consumer Secret</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.TwitterConsumerImpl#getConsumerKey <em>Consumer Key</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.TwitterConsumerImpl#getConsumerSecret <em>Consumer Secret</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
+public class TwitterConsumerImpl extends EObjectImpl implements TwitterConsumer {
 	/**
 	 * The default value of the '{@link #getConsumerKey() <em>Consumer Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterAppLinkImpl() {
+	public TwitterConsumerImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BuzzCorePackage.Literals.TWITTER_APP_LINK;
+		return BuzzCorePackage.Literals.TWITTER_CONSUMER;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 		String oldConsumerKey = consumerKey;
 		consumerKey = newConsumerKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY, oldConsumerKey, consumerKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY, oldConsumerKey, consumerKey));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 		String oldConsumerSecret = consumerSecret;
 		consumerSecret = newConsumerSecret;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET, oldConsumerSecret, consumerSecret));
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET, oldConsumerSecret, consumerSecret));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
 				return getConsumerKey();
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
 				return getConsumerSecret();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
 				setConsumerKey((String)newValue);
 				return;
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
 				setConsumerSecret((String)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
 				setConsumerKey(CONSUMER_KEY_EDEFAULT);
 				return;
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
 				setConsumerSecret(CONSUMER_SECRET_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_KEY:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
 				return CONSUMER_KEY_EDEFAULT == null ? consumerKey != null : !CONSUMER_KEY_EDEFAULT.equals(consumerKey);
-			case BuzzCorePackage.TWITTER_APP_LINK__CONSUMER_SECRET:
+			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
 				return CONSUMER_SECRET_EDEFAULT == null ? consumerSecret != null : !CONSUMER_SECRET_EDEFAULT.equals(consumerSecret);
 		}
 		return super.eIsSet(featureID);
@@ -214,4 +214,4 @@ public class TwitterAppLinkImpl extends EObjectImpl implements TwitterAppLink {
 		return result.toString();
 	}
 
-} //TwitterAppLinkImpl
+} //TwitterConsumerImpl

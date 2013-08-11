@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.buzz.core.BuzzAccount;
-import org.soluvas.buzz.core.BuzzAccounts;
+import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.BuzzCorePackage;
 import org.soluvas.commons.OnDemandXmiLoader;
 
@@ -21,17 +21,17 @@ import org.soluvas.commons.OnDemandXmiLoader;
 public class TwitterAnalyzerTest {
 	private static final Logger log = LoggerFactory
 			.getLogger(TwitterAnalyzerTest.class);
-	private BuzzAccount aksimataAccount;
 	private TwitterAnalyzer analyzer;
+	private BuzzAccount account;
 	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-		final BuzzAccounts accounts = new OnDemandXmiLoader<BuzzAccounts>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/twitter.BuzzAccounts.xmi" ).get();
-		aksimataAccount = accounts.getAccounts().get(0);
-		analyzer = new TwitterAnalyzer(null, aksimataAccount.getTwitterApp(), aksimataAccount.getTwitterAppUser());
+		final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/tenant.BuzzApp.xmi" ).get();
+		account = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/tenant.BuzzAccount.xmi" ).get();
+		analyzer = new TwitterAnalyzer(null, buzzApp.getTwitterConsumer(), account.getTwitterUser());
 	}
 
 	/**

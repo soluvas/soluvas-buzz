@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TwitterUserLink extends EObject {
+public interface TwitterUserLink extends SocialLink {
 	/**
 	 * Returns the value of the '<em><b>Token</b></em>' attribute.
 	 * <!-- begin-user-doc -->

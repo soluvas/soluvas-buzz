@@ -27,7 +27,7 @@ public class BuzzCoreFactoryImpl extends EFactoryImpl implements BuzzCoreFactory
 	 */
 	public static BuzzCoreFactory init() {
 		try {
-			BuzzCoreFactory theBuzzCoreFactory = (BuzzCoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.soluvas.org/schema/buzz-core/1.0"); 
+			BuzzCoreFactory theBuzzCoreFactory = (BuzzCoreFactory)EPackage.Registry.INSTANCE.getEFactory(BuzzCorePackage.eNS_URI);
 			if (theBuzzCoreFactory != null) {
 				return theBuzzCoreFactory;
 			}
@@ -57,9 +57,13 @@ public class BuzzCoreFactoryImpl extends EFactoryImpl implements BuzzCoreFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BuzzCorePackage.BUZZ_ACCOUNT: return createBuzzAccount();
-			case BuzzCorePackage.TWITTER_APP_LINK: return createTwitterAppLink();
+			case BuzzCorePackage.TWITTER_CONSUMER: return createTwitterConsumer();
 			case BuzzCorePackage.BUZZ_ACCOUNTS: return createBuzzAccounts();
 			case BuzzCorePackage.TWITTER_USER_LINK: return createTwitterUserLink();
+			case BuzzCorePackage.FACEBOOK_USER_LINK: return createFacebookUserLink();
+			case BuzzCorePackage.FACEBOOK_PAGE_LINK: return createFacebookPageLink();
+			case BuzzCorePackage.FACEBOOK_CONSUMER: return createFacebookConsumer();
+			case BuzzCorePackage.BUZZ_APP: return createBuzzApp();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,9 +84,9 @@ public class BuzzCoreFactoryImpl extends EFactoryImpl implements BuzzCoreFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterAppLink createTwitterAppLink() {
-		TwitterAppLinkImpl twitterAppLink = new TwitterAppLinkImpl();
-		return twitterAppLink;
+	public TwitterConsumer createTwitterConsumer() {
+		TwitterConsumerImpl twitterConsumer = new TwitterConsumerImpl();
+		return twitterConsumer;
 	}
 
 	/**
@@ -103,6 +107,46 @@ public class BuzzCoreFactoryImpl extends EFactoryImpl implements BuzzCoreFactory
 	public TwitterUserLink createTwitterUserLink() {
 		TwitterUserLinkImpl twitterUserLink = new TwitterUserLinkImpl();
 		return twitterUserLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacebookUserLink createFacebookUserLink() {
+		FacebookUserLinkImpl facebookUserLink = new FacebookUserLinkImpl();
+		return facebookUserLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacebookPageLink createFacebookPageLink() {
+		FacebookPageLinkImpl facebookPageLink = new FacebookPageLinkImpl();
+		return facebookPageLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacebookConsumer createFacebookConsumer() {
+		FacebookConsumerImpl facebookConsumer = new FacebookConsumerImpl();
+		return facebookConsumer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BuzzApp createBuzzApp() {
+		BuzzAppImpl buzzApp = new BuzzAppImpl();
+		return buzzApp;
 	}
 
 	/**

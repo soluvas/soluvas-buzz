@@ -2,13 +2,18 @@
  */
 package org.soluvas.buzz.core.impl;
 
+import java.util.Collection;
+import java.util.Set;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.joda.time.DateTime;
 import org.soluvas.buzz.core.BuzzCorePackage;
 import org.soluvas.buzz.core.TwitterUserLink;
 
@@ -19,6 +24,8 @@ import org.soluvas.buzz.core.TwitterUserLink;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl#getExpiryTime <em>Expiry Time</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl#getToken <em>Token</em>}</li>
  *   <li>{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl#getTokenSecret <em>Token Secret</em>}</li>
  *   <li>{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl#getTwitterId <em>Twitter Id</em>}</li>
@@ -29,6 +36,36 @@ import org.soluvas.buzz.core.TwitterUserLink;
  * @generated
  */
 public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink {
+	/**
+	 * The default value of the '{@link #getExpiryTime() <em>Expiry Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpiryTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DateTime EXPIRY_TIME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getExpiryTime() <em>Expiry Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpiryTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected DateTime expiryTime = EXPIRY_TIME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPermissions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> permissions;
+
 	/**
 	 * The default value of the '{@link #getToken() <em>Token</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -133,6 +170,39 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DateTime getExpiryTime() {
+		return expiryTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExpiryTime(DateTime newExpiryTime) {
+		DateTime oldExpiryTime = expiryTime;
+		expiryTime = newExpiryTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME, oldExpiryTime, expiryTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<String> getPermissions() {
+		if (permissions == null) {
+			permissions = new EDataTypeUniqueEList<String>(String.class, this, BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS);
+		}
+		return permissions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getToken() {
 		return token;
 	}
@@ -220,6 +290,10 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
+				return getExpiryTime();
+			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
+				return getPermissions();
 			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
 				return getToken();
 			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN_SECRET:
@@ -237,9 +311,17 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
+				setExpiryTime((DateTime)newValue);
+				return;
+			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
+				getPermissions().clear();
+				getPermissions().addAll((Collection<? extends String>)newValue);
+				return;
 			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
 				setToken((String)newValue);
 				return;
@@ -264,6 +346,12 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
+				setExpiryTime(EXPIRY_TIME_EDEFAULT);
+				return;
+			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
+				getPermissions().clear();
+				return;
 			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
 				setToken(TOKEN_EDEFAULT);
 				return;
@@ -288,6 +376,10 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
+				return EXPIRY_TIME_EDEFAULT == null ? expiryTime != null : !EXPIRY_TIME_EDEFAULT.equals(expiryTime);
+			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
+				return permissions != null && !permissions.isEmpty();
 			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
 				return TOKEN_EDEFAULT == null ? token != null : !TOKEN_EDEFAULT.equals(token);
 			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN_SECRET:
@@ -310,7 +402,11 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (token: ");
+		result.append(" (expiryTime: ");
+		result.append(expiryTime);
+		result.append(", permissions: ");
+		result.append(permissions);
+		result.append(", token: ");
 		result.append(token);
 		result.append(", tokenSecret: ");
 		result.append(tokenSecret);

@@ -31,13 +31,13 @@ public interface BuzzCoreFactory extends EFactory {
 	BuzzAccount createBuzzAccount();
 
 	/**
-	 * Returns a new object of class '<em>Twitter App Link</em>'.
+	 * Returns a new object of class '<em>Twitter Consumer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter App Link</em>'.
+	 * @return a new object of class '<em>Twitter Consumer</em>'.
 	 * @generated
 	 */
-	TwitterAppLink createTwitterAppLink();
+	TwitterConsumer createTwitterConsumer();
 
 	/**
 	 * Returns a new object of class '<em>Buzz Accounts</em>'.
@@ -56,6 +56,42 @@ public interface BuzzCoreFactory extends EFactory {
 	 * @generated
 	 */
 	TwitterUserLink createTwitterUserLink();
+
+	/**
+	 * Returns a new object of class '<em>Facebook User Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Facebook User Link</em>'.
+	 * @generated
+	 */
+	FacebookUserLink createFacebookUserLink();
+
+	/**
+	 * Returns a new object of class '<em>Facebook Page Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Facebook Page Link</em>'.
+	 * @generated
+	 */
+	FacebookPageLink createFacebookPageLink();
+
+	/**
+	 * Returns a new object of class '<em>Facebook Consumer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Facebook Consumer</em>'.
+	 * @generated
+	 */
+	FacebookConsumer createFacebookConsumer();
+
+	/**
+	 * Returns a new object of class '<em>Buzz App</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Buzz App</em>'.
+	 * @generated
+	 */
+	BuzzApp createBuzzApp();
 
 	/**
 	 * Returns the package supported by this factory.

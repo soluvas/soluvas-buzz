@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.soluvas.commons.CommonsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,40 +67,22 @@ public interface BuzzCorePackage extends EPackage {
 	int BUZZ_ACCOUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Twitter App</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUZZ_ACCOUNT__TWITTER_APP = 0;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUZZ_ACCOUNT__ID = 1;
+	int BUZZ_ACCOUNT__ID = CommonsPackage.IDENTIFIABLE__ID;
 
 	/**
-	 * The feature id for the '<em><b>Twitter App User</b></em>' containment reference.
+	 * The feature id for the '<em><b>Social Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUZZ_ACCOUNT__TWITTER_APP_USER = 2;
-
-	/**
-	 * The feature id for the '<em><b>Twitter Users</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUZZ_ACCOUNT__TWITTER_USERS = 3;
+	int BUZZ_ACCOUNT__SOCIAL_LINKS = CommonsPackage.IDENTIFIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Buzz Account</em>' class.
@@ -108,17 +91,17 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUZZ_ACCOUNT_FEATURE_COUNT = 4;
+	int BUZZ_ACCOUNT_FEATURE_COUNT = CommonsPackage.IDENTIFIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl <em>Twitter App Link</em>}' class.
+	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.TwitterConsumerImpl <em>Twitter Consumer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.soluvas.buzz.core.impl.TwitterAppLinkImpl
-	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterAppLink()
+	 * @see org.soluvas.buzz.core.impl.TwitterConsumerImpl
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterConsumer()
 	 * @generated
 	 */
-	int TWITTER_APP_LINK = 1;
+	int TWITTER_CONSUMER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Consumer Key</b></em>' attribute.
@@ -127,7 +110,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_APP_LINK__CONSUMER_KEY = 0;
+	int TWITTER_CONSUMER__CONSUMER_KEY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Consumer Secret</b></em>' attribute.
@@ -136,16 +119,16 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_APP_LINK__CONSUMER_SECRET = 1;
+	int TWITTER_CONSUMER__CONSUMER_SECRET = 1;
 
 	/**
-	 * The number of structural features of the '<em>Twitter App Link</em>' class.
+	 * The number of structural features of the '<em>Twitter Consumer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_APP_LINK_FEATURE_COUNT = 2;
+	int TWITTER_CONSUMER_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.BuzzAccountsImpl <em>Buzz Accounts</em>}' class.
@@ -177,6 +160,43 @@ public interface BuzzCorePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.soluvas.buzz.core.SocialLink <em>Social Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.soluvas.buzz.core.SocialLink
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getSocialLink()
+	 * @generated
+	 */
+	int SOCIAL_LINK = 7;
+
+	/**
+	 * The feature id for the '<em><b>Expiry Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_LINK__EXPIRY_TIME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_LINK__PERMISSIONS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Social Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_LINK_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.TwitterUserLinkImpl <em>Twitter User Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,13 +207,31 @@ public interface BuzzCorePackage extends EPackage {
 	int TWITTER_USER_LINK = 3;
 
 	/**
+	 * The feature id for the '<em><b>Expiry Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_USER_LINK__EXPIRY_TIME = SOCIAL_LINK__EXPIRY_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_USER_LINK__PERMISSIONS = SOCIAL_LINK__PERMISSIONS;
+
+	/**
 	 * The feature id for the '<em><b>Token</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_USER_LINK__TOKEN = 0;
+	int TWITTER_USER_LINK__TOKEN = SOCIAL_LINK_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Token Secret</b></em>' attribute.
@@ -202,7 +240,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_USER_LINK__TOKEN_SECRET = 1;
+	int TWITTER_USER_LINK__TOKEN_SECRET = SOCIAL_LINK_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Twitter Id</b></em>' attribute.
@@ -211,7 +249,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_USER_LINK__TWITTER_ID = 2;
+	int TWITTER_USER_LINK__TWITTER_ID = SOCIAL_LINK_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Screen Name</b></em>' attribute.
@@ -220,7 +258,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_USER_LINK__SCREEN_NAME = 3;
+	int TWITTER_USER_LINK__SCREEN_NAME = SOCIAL_LINK_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Twitter User Link</em>' class.
@@ -229,7 +267,156 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_USER_LINK_FEATURE_COUNT = 4;
+	int TWITTER_USER_LINK_FEATURE_COUNT = SOCIAL_LINK_FEATURE_COUNT + 4;
+
+
+	/**
+	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl <em>Facebook User Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.soluvas.buzz.core.impl.FacebookUserLinkImpl
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookUserLink()
+	 * @generated
+	 */
+	int FACEBOOK_USER_LINK = 4;
+
+	/**
+	 * The feature id for the '<em><b>Expiry Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_USER_LINK__EXPIRY_TIME = SOCIAL_LINK__EXPIRY_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_USER_LINK__PERMISSIONS = SOCIAL_LINK__PERMISSIONS;
+
+	/**
+	 * The number of structural features of the '<em>Facebook User Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_USER_LINK_FEATURE_COUNT = SOCIAL_LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.FacebookPageLinkImpl <em>Facebook Page Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.soluvas.buzz.core.impl.FacebookPageLinkImpl
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookPageLink()
+	 * @generated
+	 */
+	int FACEBOOK_PAGE_LINK = 5;
+
+	/**
+	 * The feature id for the '<em><b>Expiry Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_PAGE_LINK__EXPIRY_TIME = SOCIAL_LINK__EXPIRY_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_PAGE_LINK__PERMISSIONS = SOCIAL_LINK__PERMISSIONS;
+
+	/**
+	 * The number of structural features of the '<em>Facebook Page Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_PAGE_LINK_FEATURE_COUNT = SOCIAL_LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl <em>Facebook Consumer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.soluvas.buzz.core.impl.FacebookConsumerImpl
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookConsumer()
+	 * @generated
+	 */
+	int FACEBOOK_CONSUMER = 6;
+
+	/**
+	 * The feature id for the '<em><b>App Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_CONSUMER__APP_ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>App Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_CONSUMER__APP_KEY = 1;
+
+	/**
+	 * The number of structural features of the '<em>Facebook Consumer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_CONSUMER_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.BuzzAppImpl <em>Buzz App</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.soluvas.buzz.core.impl.BuzzAppImpl
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getBuzzApp()
+	 * @generated
+	 */
+	int BUZZ_APP = 8;
+
+	/**
+	 * The feature id for the '<em><b>Twitter Consumer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZ_APP__TWITTER_CONSUMER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Facebook Consumer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZ_APP__FACEBOOK_CONSUMER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Buzz App</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUZZ_APP_FEATURE_COUNT = 2;
 
 
 	/**
@@ -243,80 +430,47 @@ public interface BuzzCorePackage extends EPackage {
 	EClass getBuzzAccount();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.soluvas.buzz.core.BuzzAccount#getTwitterApp <em>Twitter App</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.soluvas.buzz.core.BuzzAccount#getSocialLinks <em>Social Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Twitter App</em>'.
-	 * @see org.soluvas.buzz.core.BuzzAccount#getTwitterApp()
+	 * @return the meta object for the containment reference list '<em>Social Links</em>'.
+	 * @see org.soluvas.buzz.core.BuzzAccount#getSocialLinks()
 	 * @see #getBuzzAccount()
 	 * @generated
 	 */
-	EReference getBuzzAccount_TwitterApp();
+	EReference getBuzzAccount_SocialLinks();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.BuzzAccount#getId <em>Id</em>}'.
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.TwitterConsumer <em>Twitter Consumer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.soluvas.buzz.core.BuzzAccount#getId()
-	 * @see #getBuzzAccount()
+	 * @return the meta object for class '<em>Twitter Consumer</em>'.
+	 * @see org.soluvas.buzz.core.TwitterConsumer
 	 * @generated
 	 */
-	EAttribute getBuzzAccount_Id();
+	EClass getTwitterConsumer();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.soluvas.buzz.core.BuzzAccount#getTwitterAppUser <em>Twitter App User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Twitter App User</em>'.
-	 * @see org.soluvas.buzz.core.BuzzAccount#getTwitterAppUser()
-	 * @see #getBuzzAccount()
-	 * @generated
-	 */
-	EReference getBuzzAccount_TwitterAppUser();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.soluvas.buzz.core.BuzzAccount#getTwitterUsers <em>Twitter Users</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Twitter Users</em>'.
-	 * @see org.soluvas.buzz.core.BuzzAccount#getTwitterUsers()
-	 * @see #getBuzzAccount()
-	 * @generated
-	 */
-	EReference getBuzzAccount_TwitterUsers();
-
-	/**
-	 * Returns the meta object for class '{@link org.soluvas.buzz.core.TwitterAppLink <em>Twitter App Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Twitter App Link</em>'.
-	 * @see org.soluvas.buzz.core.TwitterAppLink
-	 * @generated
-	 */
-	EClass getTwitterAppLink();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerKey <em>Consumer Key</em>}'.
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerKey <em>Consumer Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Consumer Key</em>'.
-	 * @see org.soluvas.buzz.core.TwitterAppLink#getConsumerKey()
-	 * @see #getTwitterAppLink()
+	 * @see org.soluvas.buzz.core.TwitterConsumer#getConsumerKey()
+	 * @see #getTwitterConsumer()
 	 * @generated
 	 */
-	EAttribute getTwitterAppLink_ConsumerKey();
+	EAttribute getTwitterConsumer_ConsumerKey();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterAppLink#getConsumerSecret <em>Consumer Secret</em>}'.
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerSecret <em>Consumer Secret</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Consumer Secret</em>'.
-	 * @see org.soluvas.buzz.core.TwitterAppLink#getConsumerSecret()
-	 * @see #getTwitterAppLink()
+	 * @see org.soluvas.buzz.core.TwitterConsumer#getConsumerSecret()
+	 * @see #getTwitterConsumer()
 	 * @generated
 	 */
-	EAttribute getTwitterAppLink_ConsumerSecret();
+	EAttribute getTwitterConsumer_ConsumerSecret();
 
 	/**
 	 * Returns the meta object for class '{@link org.soluvas.buzz.core.BuzzAccounts <em>Buzz Accounts</em>}'.
@@ -394,6 +548,122 @@ public interface BuzzCorePackage extends EPackage {
 	EAttribute getTwitterUserLink_ScreenName();
 
 	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.FacebookUserLink <em>Facebook User Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Facebook User Link</em>'.
+	 * @see org.soluvas.buzz.core.FacebookUserLink
+	 * @generated
+	 */
+	EClass getFacebookUserLink();
+
+	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.FacebookPageLink <em>Facebook Page Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Facebook Page Link</em>'.
+	 * @see org.soluvas.buzz.core.FacebookPageLink
+	 * @generated
+	 */
+	EClass getFacebookPageLink();
+
+	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.FacebookConsumer <em>Facebook Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Facebook Consumer</em>'.
+	 * @see org.soluvas.buzz.core.FacebookConsumer
+	 * @generated
+	 */
+	EClass getFacebookConsumer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookConsumer#getAppId <em>App Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>App Id</em>'.
+	 * @see org.soluvas.buzz.core.FacebookConsumer#getAppId()
+	 * @see #getFacebookConsumer()
+	 * @generated
+	 */
+	EAttribute getFacebookConsumer_AppId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookConsumer#getAppKey <em>App Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>App Key</em>'.
+	 * @see org.soluvas.buzz.core.FacebookConsumer#getAppKey()
+	 * @see #getFacebookConsumer()
+	 * @generated
+	 */
+	EAttribute getFacebookConsumer_AppKey();
+
+	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.SocialLink <em>Social Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Social Link</em>'.
+	 * @see org.soluvas.buzz.core.SocialLink
+	 * @generated
+	 */
+	EClass getSocialLink();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.SocialLink#getExpiryTime <em>Expiry Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expiry Time</em>'.
+	 * @see org.soluvas.buzz.core.SocialLink#getExpiryTime()
+	 * @see #getSocialLink()
+	 * @generated
+	 */
+	EAttribute getSocialLink_ExpiryTime();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.soluvas.buzz.core.SocialLink#getPermissions <em>Permissions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Permissions</em>'.
+	 * @see org.soluvas.buzz.core.SocialLink#getPermissions()
+	 * @see #getSocialLink()
+	 * @generated
+	 */
+	EAttribute getSocialLink_Permissions();
+
+	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.BuzzApp <em>Buzz App</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Buzz App</em>'.
+	 * @see org.soluvas.buzz.core.BuzzApp
+	 * @generated
+	 */
+	EClass getBuzzApp();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.soluvas.buzz.core.BuzzApp#getTwitterConsumer <em>Twitter Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Twitter Consumer</em>'.
+	 * @see org.soluvas.buzz.core.BuzzApp#getTwitterConsumer()
+	 * @see #getBuzzApp()
+	 * @generated
+	 */
+	EReference getBuzzApp_TwitterConsumer();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.soluvas.buzz.core.BuzzApp#getFacebookConsumer <em>Facebook Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Facebook Consumer</em>'.
+	 * @see org.soluvas.buzz.core.BuzzApp#getFacebookConsumer()
+	 * @see #getBuzzApp()
+	 * @generated
+	 */
+	EReference getBuzzApp_FacebookConsumer();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -426,46 +696,22 @@ public interface BuzzCorePackage extends EPackage {
 		EClass BUZZ_ACCOUNT = eINSTANCE.getBuzzAccount();
 
 		/**
-		 * The meta object literal for the '<em><b>Twitter App</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Social Links</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUZZ_ACCOUNT__TWITTER_APP = eINSTANCE.getBuzzAccount_TwitterApp();
+		EReference BUZZ_ACCOUNT__SOCIAL_LINKS = eINSTANCE.getBuzzAccount_SocialLinks();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.TwitterConsumerImpl <em>Twitter Consumer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.impl.TwitterConsumerImpl
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterConsumer()
 		 * @generated
 		 */
-		EAttribute BUZZ_ACCOUNT__ID = eINSTANCE.getBuzzAccount_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Twitter App User</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUZZ_ACCOUNT__TWITTER_APP_USER = eINSTANCE.getBuzzAccount_TwitterAppUser();
-
-		/**
-		 * The meta object literal for the '<em><b>Twitter Users</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUZZ_ACCOUNT__TWITTER_USERS = eINSTANCE.getBuzzAccount_TwitterUsers();
-
-		/**
-		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.TwitterAppLinkImpl <em>Twitter App Link</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.soluvas.buzz.core.impl.TwitterAppLinkImpl
-		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getTwitterAppLink()
-		 * @generated
-		 */
-		EClass TWITTER_APP_LINK = eINSTANCE.getTwitterAppLink();
+		EClass TWITTER_CONSUMER = eINSTANCE.getTwitterConsumer();
 
 		/**
 		 * The meta object literal for the '<em><b>Consumer Key</b></em>' attribute feature.
@@ -473,7 +719,7 @@ public interface BuzzCorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TWITTER_APP_LINK__CONSUMER_KEY = eINSTANCE.getTwitterAppLink_ConsumerKey();
+		EAttribute TWITTER_CONSUMER__CONSUMER_KEY = eINSTANCE.getTwitterConsumer_ConsumerKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Consumer Secret</b></em>' attribute feature.
@@ -481,7 +727,7 @@ public interface BuzzCorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TWITTER_APP_LINK__CONSUMER_SECRET = eINSTANCE.getTwitterAppLink_ConsumerSecret();
+		EAttribute TWITTER_CONSUMER__CONSUMER_SECRET = eINSTANCE.getTwitterConsumer_ConsumerSecret();
 
 		/**
 		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.BuzzAccountsImpl <em>Buzz Accounts</em>}' class.
@@ -542,6 +788,104 @@ public interface BuzzCorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TWITTER_USER_LINK__SCREEN_NAME = eINSTANCE.getTwitterUserLink_ScreenName();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl <em>Facebook User Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.impl.FacebookUserLinkImpl
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookUserLink()
+		 * @generated
+		 */
+		EClass FACEBOOK_USER_LINK = eINSTANCE.getFacebookUserLink();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.FacebookPageLinkImpl <em>Facebook Page Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.impl.FacebookPageLinkImpl
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookPageLink()
+		 * @generated
+		 */
+		EClass FACEBOOK_PAGE_LINK = eINSTANCE.getFacebookPageLink();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl <em>Facebook Consumer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.impl.FacebookConsumerImpl
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookConsumer()
+		 * @generated
+		 */
+		EClass FACEBOOK_CONSUMER = eINSTANCE.getFacebookConsumer();
+
+		/**
+		 * The meta object literal for the '<em><b>App Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_CONSUMER__APP_ID = eINSTANCE.getFacebookConsumer_AppId();
+
+		/**
+		 * The meta object literal for the '<em><b>App Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_CONSUMER__APP_KEY = eINSTANCE.getFacebookConsumer_AppKey();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.SocialLink <em>Social Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.SocialLink
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getSocialLink()
+		 * @generated
+		 */
+		EClass SOCIAL_LINK = eINSTANCE.getSocialLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Expiry Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOCIAL_LINK__EXPIRY_TIME = eINSTANCE.getSocialLink_ExpiryTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Permissions</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOCIAL_LINK__PERMISSIONS = eINSTANCE.getSocialLink_Permissions();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.BuzzAppImpl <em>Buzz App</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.impl.BuzzAppImpl
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getBuzzApp()
+		 * @generated
+		 */
+		EClass BUZZ_APP = eINSTANCE.getBuzzApp();
+
+		/**
+		 * The meta object literal for the '<em><b>Twitter Consumer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUZZ_APP__TWITTER_CONSUMER = eINSTANCE.getBuzzApp_TwitterConsumer();
+
+		/**
+		 * The meta object literal for the '<em><b>Facebook Consumer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUZZ_APP__FACEBOOK_CONSUMER = eINSTANCE.getBuzzApp_FacebookConsumer();
 
 	}
 

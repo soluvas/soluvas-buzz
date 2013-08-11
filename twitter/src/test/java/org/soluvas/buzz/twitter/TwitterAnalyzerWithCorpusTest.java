@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.buzz.core.BuzzAccount;
-import org.soluvas.buzz.core.BuzzAccounts;
+import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.BuzzCorePackage;
 import org.soluvas.commons.OnDemandXmiLoader;
 import org.springframework.context.annotation.PropertySource;
@@ -36,20 +36,20 @@ import com.google.common.collect.Iterables;
 public class TwitterAnalyzerWithCorpusTest {
 	private static final Logger log = LoggerFactory
 			.getLogger(TwitterAnalyzerWithCorpusTest.class);
-	private BuzzAccount aksimataAccount;
 	private TwitterAnalyzer analyzer;
 	
 	@Inject
 	private TwitterCorpus corpus;
+	private BuzzAccount account;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-		final BuzzAccounts accounts = new OnDemandXmiLoader<BuzzAccounts>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerWithCorpusTest.class, "/META-INF/twitter.BuzzAccounts.xmi" ).get();
-		aksimataAccount = accounts.getAccounts().get(0);
-		analyzer = new TwitterAnalyzer(corpus, aksimataAccount.getTwitterApp(), aksimataAccount.getTwitterAppUser());
+		final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/tenant.BuzzApp.xmi" ).get();
+		account = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/tenant.BuzzAccount.xmi" ).get();
+		analyzer = new TwitterAnalyzer(null, buzzApp.getTwitterConsumer(), account.getTwitterUser());
 	}
 
 	/**
