@@ -20,7 +20,9 @@ import org.soluvas.buzz.core.FacebookConsumer;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl#getAppId <em>App Id</em>}</li>
- *   <li>{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl#getAppKey <em>App Key</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl#getAppSecret <em>App Secret</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl#getDefaultScope <em>Default Scope</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl#getCustomDomain <em>Custom Domain</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,24 +50,64 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	protected String appId = APP_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAppKey() <em>App Key</em>}' attribute.
+	 * The default value of the '{@link #getAppSecret() <em>App Secret</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAppKey()
+	 * @see #getAppSecret()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String APP_KEY_EDEFAULT = null;
+	protected static final String APP_SECRET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAppKey() <em>App Key</em>}' attribute.
+	 * The cached value of the '{@link #getAppSecret() <em>App Secret</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAppKey()
+	 * @see #getAppSecret()
 	 * @generated
 	 * @ordered
 	 */
-	protected String appKey = APP_KEY_EDEFAULT;
+	protected String appSecret = APP_SECRET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDefaultScope() <em>Default Scope</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultScope()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEFAULT_SCOPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDefaultScope() <em>Default Scope</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultScope()
+	 * @generated
+	 * @ordered
+	 */
+	protected String defaultScope = DEFAULT_SCOPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCustomDomain() <em>Custom Domain</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomDomain()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CUSTOM_DOMAIN_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCustomDomain() <em>Custom Domain</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomDomain()
+	 * @generated
+	 * @ordered
+	 */
+	protected String customDomain = CUSTOM_DOMAIN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +154,8 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAppKey() {
-		return appKey;
+	public String getAppSecret() {
+		return appSecret;
 	}
 
 	/**
@@ -121,11 +163,53 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAppKey(String newAppKey) {
-		String oldAppKey = appKey;
-		appKey = newAppKey;
+	public void setAppSecret(String newAppSecret) {
+		String oldAppSecret = appSecret;
+		appSecret = newAppSecret;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__APP_KEY, oldAppKey, appKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET, oldAppSecret, appSecret));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDefaultScope() {
+		return defaultScope;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultScope(String newDefaultScope) {
+		String oldDefaultScope = defaultScope;
+		defaultScope = newDefaultScope;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE, oldDefaultScope, defaultScope));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCustomDomain() {
+		return customDomain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCustomDomain(String newCustomDomain) {
+		String oldCustomDomain = customDomain;
+		customDomain = newCustomDomain;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN, oldCustomDomain, customDomain));
 	}
 
 	/**
@@ -138,8 +222,12 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 		switch (featureID) {
 			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
 				return getAppId();
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_KEY:
-				return getAppKey();
+			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
+				return getAppSecret();
+			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
+				return getDefaultScope();
+			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
+				return getCustomDomain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,8 +243,14 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
 				setAppId((String)newValue);
 				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_KEY:
-				setAppKey((String)newValue);
+			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
+				setAppSecret((String)newValue);
+				return;
+			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
+				setDefaultScope((String)newValue);
+				return;
+			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
+				setCustomDomain((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +267,14 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
 				setAppId(APP_ID_EDEFAULT);
 				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_KEY:
-				setAppKey(APP_KEY_EDEFAULT);
+			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
+				setAppSecret(APP_SECRET_EDEFAULT);
+				return;
+			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
+				setDefaultScope(DEFAULT_SCOPE_EDEFAULT);
+				return;
+			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
+				setCustomDomain(CUSTOM_DOMAIN_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,8 +290,12 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 		switch (featureID) {
 			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
 				return APP_ID_EDEFAULT == null ? appId != null : !APP_ID_EDEFAULT.equals(appId);
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_KEY:
-				return APP_KEY_EDEFAULT == null ? appKey != null : !APP_KEY_EDEFAULT.equals(appKey);
+			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
+				return APP_SECRET_EDEFAULT == null ? appSecret != null : !APP_SECRET_EDEFAULT.equals(appSecret);
+			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
+				return DEFAULT_SCOPE_EDEFAULT == null ? defaultScope != null : !DEFAULT_SCOPE_EDEFAULT.equals(defaultScope);
+			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
+				return CUSTOM_DOMAIN_EDEFAULT == null ? customDomain != null : !CUSTOM_DOMAIN_EDEFAULT.equals(customDomain);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,8 +312,12 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (appId: ");
 		result.append(appId);
-		result.append(", appKey: ");
-		result.append(appKey);
+		result.append(", appSecret: ");
+		result.append(appSecret);
+		result.append(", defaultScope: ");
+		result.append(defaultScope);
+		result.append(", customDomain: ");
+		result.append(customDomain);
 		result.append(')');
 		return result.toString();
 	}

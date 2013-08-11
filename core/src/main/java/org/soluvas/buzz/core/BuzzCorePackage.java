@@ -122,13 +122,22 @@ public interface BuzzCorePackage extends EPackage {
 	int TWITTER_CONSUMER__CONSUMER_SECRET = 1;
 
 	/**
+	 * The feature id for the '<em><b>Custom Domain</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWITTER_CONSUMER__CUSTOM_DOMAIN = 2;
+
+	/**
 	 * The number of structural features of the '<em>Twitter Consumer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TWITTER_CONSUMER_FEATURE_COUNT = 2;
+	int TWITTER_CONSUMER_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.BuzzAccountsImpl <em>Buzz Accounts</em>}' class.
@@ -364,13 +373,31 @@ public interface BuzzCorePackage extends EPackage {
 	int FACEBOOK_CONSUMER__APP_ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>App Key</b></em>' attribute.
+	 * The feature id for the '<em><b>App Secret</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACEBOOK_CONSUMER__APP_KEY = 1;
+	int FACEBOOK_CONSUMER__APP_SECRET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Default Scope</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_CONSUMER__DEFAULT_SCOPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Custom Domain</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_CONSUMER__CUSTOM_DOMAIN = 3;
 
 	/**
 	 * The number of structural features of the '<em>Facebook Consumer</em>' class.
@@ -379,7 +406,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACEBOOK_CONSUMER_FEATURE_COUNT = 2;
+	int FACEBOOK_CONSUMER_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.BuzzAppImpl <em>Buzz App</em>}' class.
@@ -471,6 +498,17 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTwitterConsumer_ConsumerSecret();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.TwitterConsumer#getCustomDomain <em>Custom Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Custom Domain</em>'.
+	 * @see org.soluvas.buzz.core.TwitterConsumer#getCustomDomain()
+	 * @see #getTwitterConsumer()
+	 * @generated
+	 */
+	EAttribute getTwitterConsumer_CustomDomain();
 
 	/**
 	 * Returns the meta object for class '{@link org.soluvas.buzz.core.BuzzAccounts <em>Buzz Accounts</em>}'.
@@ -589,15 +627,37 @@ public interface BuzzCorePackage extends EPackage {
 	EAttribute getFacebookConsumer_AppId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookConsumer#getAppKey <em>App Key</em>}'.
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookConsumer#getAppSecret <em>App Secret</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>App Key</em>'.
-	 * @see org.soluvas.buzz.core.FacebookConsumer#getAppKey()
+	 * @return the meta object for the attribute '<em>App Secret</em>'.
+	 * @see org.soluvas.buzz.core.FacebookConsumer#getAppSecret()
 	 * @see #getFacebookConsumer()
 	 * @generated
 	 */
-	EAttribute getFacebookConsumer_AppKey();
+	EAttribute getFacebookConsumer_AppSecret();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookConsumer#getDefaultScope <em>Default Scope</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Scope</em>'.
+	 * @see org.soluvas.buzz.core.FacebookConsumer#getDefaultScope()
+	 * @see #getFacebookConsumer()
+	 * @generated
+	 */
+	EAttribute getFacebookConsumer_DefaultScope();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookConsumer#getCustomDomain <em>Custom Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Custom Domain</em>'.
+	 * @see org.soluvas.buzz.core.FacebookConsumer#getCustomDomain()
+	 * @see #getFacebookConsumer()
+	 * @generated
+	 */
+	EAttribute getFacebookConsumer_CustomDomain();
 
 	/**
 	 * Returns the meta object for class '{@link org.soluvas.buzz.core.SocialLink <em>Social Link</em>}'.
@@ -730,6 +790,14 @@ public interface BuzzCorePackage extends EPackage {
 		EAttribute TWITTER_CONSUMER__CONSUMER_SECRET = eINSTANCE.getTwitterConsumer_ConsumerSecret();
 
 		/**
+		 * The meta object literal for the '<em><b>Custom Domain</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TWITTER_CONSUMER__CUSTOM_DOMAIN = eINSTANCE.getTwitterConsumer_CustomDomain();
+
+		/**
 		 * The meta object literal for the '{@link org.soluvas.buzz.core.impl.BuzzAccountsImpl <em>Buzz Accounts</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -828,12 +896,28 @@ public interface BuzzCorePackage extends EPackage {
 		EAttribute FACEBOOK_CONSUMER__APP_ID = eINSTANCE.getFacebookConsumer_AppId();
 
 		/**
-		 * The meta object literal for the '<em><b>App Key</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>App Secret</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FACEBOOK_CONSUMER__APP_KEY = eINSTANCE.getFacebookConsumer_AppKey();
+		EAttribute FACEBOOK_CONSUMER__APP_SECRET = eINSTANCE.getFacebookConsumer_AppSecret();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Scope</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_CONSUMER__DEFAULT_SCOPE = eINSTANCE.getFacebookConsumer_DefaultScope();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Domain</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_CONSUMER__CUSTOM_DOMAIN = eINSTANCE.getFacebookConsumer_CustomDomain();
 
 		/**
 		 * The meta object literal for the '{@link org.soluvas.buzz.core.SocialLink <em>Social Link</em>}' class.

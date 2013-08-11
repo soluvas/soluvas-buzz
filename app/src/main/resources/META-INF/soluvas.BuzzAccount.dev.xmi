@@ -10,6 +10,6 @@
       xsi:type="buzz-core:TwitterUserLink"
       token="*"
       tokenSecret="*"
-      twitterId="524696721"
-      screenName="AksiMata"/>
+      twitterId="70869718"
+      screenName="Soluvas"/>
 </buzz-core:BuzzAccount>

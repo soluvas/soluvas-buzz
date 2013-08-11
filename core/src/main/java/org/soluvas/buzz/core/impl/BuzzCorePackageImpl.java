@@ -206,6 +206,15 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTwitterConsumer_CustomDomain() {
+		return (EAttribute)twitterConsumerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EClass getBuzzAccounts() {
 		return buzzAccountsEClass;
@@ -312,8 +321,26 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFacebookConsumer_AppKey() {
+	public EAttribute getFacebookConsumer_AppSecret() {
 		return (EAttribute)facebookConsumerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookConsumer_DefaultScope() {
+		return (EAttribute)facebookConsumerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookConsumer_CustomDomain() {
+		return (EAttribute)facebookConsumerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -405,6 +432,7 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		twitterConsumerEClass = createEClass(TWITTER_CONSUMER);
 		createEAttribute(twitterConsumerEClass, TWITTER_CONSUMER__CONSUMER_KEY);
 		createEAttribute(twitterConsumerEClass, TWITTER_CONSUMER__CONSUMER_SECRET);
+		createEAttribute(twitterConsumerEClass, TWITTER_CONSUMER__CUSTOM_DOMAIN);
 
 		buzzAccountsEClass = createEClass(BUZZ_ACCOUNTS);
 		createEReference(buzzAccountsEClass, BUZZ_ACCOUNTS__ACCOUNTS);
@@ -421,7 +449,9 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 
 		facebookConsumerEClass = createEClass(FACEBOOK_CONSUMER);
 		createEAttribute(facebookConsumerEClass, FACEBOOK_CONSUMER__APP_ID);
-		createEAttribute(facebookConsumerEClass, FACEBOOK_CONSUMER__APP_KEY);
+		createEAttribute(facebookConsumerEClass, FACEBOOK_CONSUMER__APP_SECRET);
+		createEAttribute(facebookConsumerEClass, FACEBOOK_CONSUMER__DEFAULT_SCOPE);
+		createEAttribute(facebookConsumerEClass, FACEBOOK_CONSUMER__CUSTOM_DOMAIN);
 
 		socialLinkEClass = createEClass(SOCIAL_LINK);
 		createEAttribute(socialLinkEClass, SOCIAL_LINK__EXPIRY_TIME);
@@ -482,6 +512,7 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		initEClass(twitterConsumerEClass, TwitterConsumer.class, "TwitterConsumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTwitterConsumer_ConsumerKey(), ecorePackage.getEString(), "consumerKey", null, 0, 1, TwitterConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTwitterConsumer_ConsumerSecret(), ecorePackage.getEString(), "consumerSecret", null, 0, 1, TwitterConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTwitterConsumer_CustomDomain(), theEcorePackage.getEString(), "customDomain", null, 0, 1, TwitterConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(buzzAccountsEClass, BuzzAccounts.class, "BuzzAccounts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBuzzAccounts_Accounts(), this.getBuzzAccount(), null, "accounts", null, 0, -1, BuzzAccounts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -498,7 +529,9 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 
 		initEClass(facebookConsumerEClass, FacebookConsumer.class, "FacebookConsumer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFacebookConsumer_AppId(), ecorePackage.getEString(), "appId", null, 0, 1, FacebookConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFacebookConsumer_AppKey(), ecorePackage.getEString(), "appKey", null, 0, 1, FacebookConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFacebookConsumer_AppSecret(), ecorePackage.getEString(), "appSecret", null, 0, 1, FacebookConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFacebookConsumer_DefaultScope(), theEcorePackage.getEString(), "defaultScope", null, 0, 1, FacebookConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFacebookConsumer_CustomDomain(), theEcorePackage.getEString(), "customDomain", null, 0, 1, FacebookConsumer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(socialLinkEClass, SocialLink.class, "SocialLink", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSocialLink_ExpiryTime(), theCommonsPackage.getDateTime(), "expiryTime", null, 0, 1, SocialLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -555,6 +588,12 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 			 "documentation", "OAuth consumer (not user) info on Twitter for the app itself.\n\nApps include:\n1. Buzz Cloud\n2. AksiMata\n3. GaulDong"
 		   });		
 		addAnnotation
+		  (getTwitterConsumer_CustomDomain(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Used for testing, this fixes the domain part of the OAuth redirect URI to the specified hostname."
+		   });		
+		addAnnotation
 		  (buzzAccountsEClass, 
 		   source, 
 		   new String[] {
@@ -565,6 +604,18 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		   source, 
 		   new String[] {
 			 "documentation", "OAuth consumer (not user) info on Twitter for the app itself.\n\nApps include:\n1. Buzz Cloud\n2. AksiMata\n3. GaulDong"
+		   });		
+		addAnnotation
+		  (getFacebookConsumer_DefaultScope(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The default set of requested permissions.\nExample: read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_stream,publish_actions,share_item"
+		   });		
+		addAnnotation
+		  (getFacebookConsumer_CustomDomain(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Used for testing, this fixes the domain part of the OAuth redirect URI to the specified hostname."
 		   });		
 		addAnnotation
 		  (socialLinkEClass, 

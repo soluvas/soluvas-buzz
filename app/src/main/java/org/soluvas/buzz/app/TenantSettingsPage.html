@@ -10,13 +10,19 @@
 		<div class="control-group">
 			<label class="control-label">Consumer Key</label>
 			<div class="controls">
-				<wicket:container wicket:id="twitterKey"/>
+				<input type="text" wicket:id="twitterKey"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">Consumer Secret</label>
 			<div class="controls">
-				<wicket:container wicket:id="twitterSecret"/>
+				<input type="text" wicket:id="twitterSecret" class="input-xlarge"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Custom Domain</label>
+			<div class="controls">
+				<input type="text" wicket:id="twitterDomain"/>
 			</div>
 		</div>
 	</fieldset>
@@ -25,13 +31,25 @@
 		<div class="control-group">
 			<label class="control-label">App ID</label>
 			<div class="controls">
-				<wicket:container wicket:id="facebookAppId"/>
+				<input type="text" wicket:id="facebookAppId" class="input-medium"/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">App Key</label>
+			<label class="control-label">App Secret</label>
 			<div class="controls">
-				<wicket:container wicket:id="facebookAppKey"/>
+				<input type="text" wicket:id="facebookAppSecret" class="input-xlarge"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Default Scope</label>
+			<div class="controls">
+				<input type="text" wicket:id="facebookScope" class="input-xlarge"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Custom Domain</label>
+			<div class="controls">
+				<input type="text" wicket:id="facebookDomain"/>
 			</div>
 		</div>
 	</fieldset>
@@ -46,5 +64,15 @@
 	</li>
 	</div>
 </ol>
+
+<div wicket:id="addButtons">
+	<p><a href="#" wicket:id="facebookAdd" class="btn"><i class="icon-plus"></i> Facebook</a></p>
+	<p><a href="#" wicket:id="twitterAdd" class="btn"><i class="icon-plus"></i> Twitter</a></p>
+	<p><a href="#" wicket:id="twitterAddManual" class="btn" title="Manually enter OAuth verifier code. Note: Allow pop-ups in your browser."><i class="icon-plus"></i> Twitter (Manual)</a>
+		<form wicket:id="twitterManualForm" class="form">
+			<input type="text" wicket:id="verifier" placeholder="Verifier Code"/> <button wicket:id="submit" class="btn btn-primary">Verify</button>
+		</form>
+	</p>
+</div>
 
 </wicket:extend>

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerKey <em>Consumer Key</em>}</li>
  *   <li>{@link org.soluvas.buzz.core.TwitterConsumer#getConsumerSecret <em>Consumer Secret</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.TwitterConsumer#getCustomDomain <em>Custom Domain</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,5 +83,30 @@ public interface TwitterConsumer extends EObject {
 	 * @generated
 	 */
 	void setConsumerSecret(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Custom Domain</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Used for testing, this fixes the domain part of the OAuth redirect URI to the specified hostname.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Custom Domain</em>' attribute.
+	 * @see #setCustomDomain(String)
+	 * @see org.soluvas.buzz.core.BuzzCorePackage#getTwitterConsumer_CustomDomain()
+	 * @model
+	 * @generated
+	 */
+	String getCustomDomain();
+
+	/**
+	 * Sets the value of the '{@link org.soluvas.buzz.core.TwitterConsumer#getCustomDomain <em>Custom Domain</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Custom Domain</em>' attribute.
+	 * @see #getCustomDomain()
+	 * @generated
+	 */
+	void setCustomDomain(String value);
 
 } // TwitterConsumer
