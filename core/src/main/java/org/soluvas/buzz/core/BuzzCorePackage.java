@@ -308,13 +308,122 @@ public interface BuzzCorePackage extends EPackage {
 	int FACEBOOK_USER_LINK__PERMISSIONS = SOCIAL_LINK__PERMISSIONS;
 
 	/**
+	 * The feature id for the '<em><b>Access Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_USER_LINK__ACCESS_TOKEN = SOCIAL_LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Account Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_USER_LINK__ACCOUNT_ID = SOCIAL_LINK_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_USER_LINK__NAME = SOCIAL_LINK_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_USER_LINK__USERNAME = SOCIAL_LINK_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Facebook User Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACEBOOK_USER_LINK_FEATURE_COUNT = SOCIAL_LINK_FEATURE_COUNT + 0;
+	int FACEBOOK_USER_LINK_FEATURE_COUNT = SOCIAL_LINK_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link org.soluvas.buzz.core.FacebookLink <em>Facebook Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.soluvas.buzz.core.FacebookLink
+	 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookLink()
+	 * @generated
+	 */
+	int FACEBOOK_LINK = 9;
+
+	/**
+	 * The feature id for the '<em><b>Expiry Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_LINK__EXPIRY_TIME = SOCIAL_LINK__EXPIRY_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_LINK__PERMISSIONS = SOCIAL_LINK__PERMISSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Access Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_LINK__ACCESS_TOKEN = SOCIAL_LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Account Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_LINK__ACCOUNT_ID = SOCIAL_LINK_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_LINK__NAME = SOCIAL_LINK_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_LINK__USERNAME = SOCIAL_LINK_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Facebook Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_LINK_FEATURE_COUNT = SOCIAL_LINK_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.FacebookPageLinkImpl <em>Facebook Page Link</em>}' class.
@@ -333,7 +442,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACEBOOK_PAGE_LINK__EXPIRY_TIME = SOCIAL_LINK__EXPIRY_TIME;
+	int FACEBOOK_PAGE_LINK__EXPIRY_TIME = FACEBOOK_LINK__EXPIRY_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
@@ -342,7 +451,43 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACEBOOK_PAGE_LINK__PERMISSIONS = SOCIAL_LINK__PERMISSIONS;
+	int FACEBOOK_PAGE_LINK__PERMISSIONS = FACEBOOK_LINK__PERMISSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Access Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_PAGE_LINK__ACCESS_TOKEN = FACEBOOK_LINK__ACCESS_TOKEN;
+
+	/**
+	 * The feature id for the '<em><b>Account Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_PAGE_LINK__ACCOUNT_ID = FACEBOOK_LINK__ACCOUNT_ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_PAGE_LINK__NAME = FACEBOOK_LINK__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACEBOOK_PAGE_LINK__USERNAME = FACEBOOK_LINK__USERNAME;
 
 	/**
 	 * The number of structural features of the '<em>Facebook Page Link</em>' class.
@@ -351,7 +496,7 @@ public interface BuzzCorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FACEBOOK_PAGE_LINK_FEATURE_COUNT = SOCIAL_LINK_FEATURE_COUNT + 0;
+	int FACEBOOK_PAGE_LINK_FEATURE_COUNT = FACEBOOK_LINK_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.soluvas.buzz.core.impl.FacebookConsumerImpl <em>Facebook Consumer</em>}' class.
@@ -724,6 +869,60 @@ public interface BuzzCorePackage extends EPackage {
 	EReference getBuzzApp_FacebookConsumer();
 
 	/**
+	 * Returns the meta object for class '{@link org.soluvas.buzz.core.FacebookLink <em>Facebook Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Facebook Link</em>'.
+	 * @see org.soluvas.buzz.core.FacebookLink
+	 * @generated
+	 */
+	EClass getFacebookLink();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookLink#getAccessToken <em>Access Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access Token</em>'.
+	 * @see org.soluvas.buzz.core.FacebookLink#getAccessToken()
+	 * @see #getFacebookLink()
+	 * @generated
+	 */
+	EAttribute getFacebookLink_AccessToken();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookLink#getAccountId <em>Account Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Account Id</em>'.
+	 * @see org.soluvas.buzz.core.FacebookLink#getAccountId()
+	 * @see #getFacebookLink()
+	 * @generated
+	 */
+	EAttribute getFacebookLink_AccountId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookLink#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.soluvas.buzz.core.FacebookLink#getName()
+	 * @see #getFacebookLink()
+	 * @generated
+	 */
+	EAttribute getFacebookLink_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.soluvas.buzz.core.FacebookLink#getUsername <em>Username</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Username</em>'.
+	 * @see org.soluvas.buzz.core.FacebookLink#getUsername()
+	 * @see #getFacebookLink()
+	 * @generated
+	 */
+	EAttribute getFacebookLink_Username();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -970,6 +1169,48 @@ public interface BuzzCorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BUZZ_APP__FACEBOOK_CONSUMER = eINSTANCE.getBuzzApp_FacebookConsumer();
+
+		/**
+		 * The meta object literal for the '{@link org.soluvas.buzz.core.FacebookLink <em>Facebook Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.soluvas.buzz.core.FacebookLink
+		 * @see org.soluvas.buzz.core.impl.BuzzCorePackageImpl#getFacebookLink()
+		 * @generated
+		 */
+		EClass FACEBOOK_LINK = eINSTANCE.getFacebookLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Access Token</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_LINK__ACCESS_TOKEN = eINSTANCE.getFacebookLink_AccessToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Account Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_LINK__ACCOUNT_ID = eINSTANCE.getFacebookLink_AccountId();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_LINK__NAME = eINSTANCE.getFacebookLink_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACEBOOK_LINK__USERNAME = eINSTANCE.getFacebookLink_Username();
 
 	}
 

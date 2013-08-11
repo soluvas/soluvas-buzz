@@ -105,6 +105,10 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 				return createBuzzAppAdapter();
 			}
 			@Override
+			public Adapter caseFacebookLink(FacebookLink object) {
+				return createFacebookLinkAdapter();
+			}
+			@Override
 			public Adapter caseIdentifiable(Identifiable object) {
 				return createIdentifiableAdapter();
 			}
@@ -251,6 +255,20 @@ public class BuzzCoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBuzzAppAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.soluvas.buzz.core.FacebookLink <em>Facebook Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.soluvas.buzz.core.FacebookLink
+	 * @generated
+	 */
+	public Adapter createFacebookLinkAdapter() {
 		return null;
 	}
 

@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.HttpGet;
@@ -21,7 +22,6 @@ import org.apache.wicket.extensions.ajax.markup.html.IndicatingAjaxLink;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.form.StatelessForm;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.list.ListItem;
@@ -29,6 +29,7 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.model.util.ListModel;
 import org.apache.wicket.request.flow.RedirectToUrlException;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
@@ -40,12 +41,19 @@ import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.FacebookConsumer;
 import org.soluvas.buzz.core.SocialLink;
 import org.soluvas.buzz.core.TwitterConsumer;
+import org.soluvas.web.bootstrap.widget.FacebookPageSelect2;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
+
+import com.google.common.collect.ImmutableList;
+import com.restfb.Connection;
+import com.restfb.DefaultFacebookClient;
+import com.restfb.FacebookClient;
+import com.restfb.types.Account;
 
 public class TenantSettingsPage extends TenantPage {
 	private static final Logger log = LoggerFactory
@@ -82,36 +90,44 @@ public class TenantSettingsPage extends TenantPage {
 		final WebMarkupContainer addButtons = new WebMarkupContainer("addButtons");
 		addButtons.setOutputMarkupId(true);
 		
-		final FacebookConsumer facebookConsumer = buzzApp.getFacebookConsumer();
-		final String facebookAuthorizeUri;
+		FacebookConsumer facebookConsumer = buzzApp.getFacebookConsumer();
+		final String facebookRedirectUri;
+		final String facebookUserAuthorizeUri;
+		final String facebookPageAuthorizeUri;
 		if (facebookConsumer != null) {
 			try {
-				final String redirectUri = "http://" + facebookConsumer.getCustomDomain() + "/fb_recipient";
+				facebookRedirectUri = "http://" + facebookConsumer.getCustomDomain() + "/fb_recipient";
 				final URIBuilder fbLoginUriBuilder = new URIBuilder("https://www.facebook.com/dialog/oauth");
 				fbLoginUriBuilder.addParameter("client_id", facebookConsumer.getAppId());
-				fbLoginUriBuilder.addParameter("redirect_uri", redirectUri);
-				fbLoginUriBuilder.addParameter("scope", facebookConsumer.getDefaultScope());
-				facebookAuthorizeUri = fbLoginUriBuilder.toString();
+				fbLoginUriBuilder.addParameter("redirect_uri", facebookRedirectUri);
+				fbLoginUriBuilder.setParameter("scope", facebookConsumer.getDefaultScope());
+				facebookUserAuthorizeUri = fbLoginUriBuilder.toString();
+				final String pageScope = facebookConsumer.getDefaultScope() + ",manage_pages"; // need this
+				fbLoginUriBuilder.setParameter("scope", pageScope);
+				facebookPageAuthorizeUri = fbLoginUriBuilder.toString();
 			} catch (final Exception ex) {
 				throw new RuntimeException("Error when building Facebook Authorization URI for " + facebookConsumer.getAppId(), ex);
 			}
 		} else {
-			facebookAuthorizeUri = "#";
+			facebookRedirectUri = "#";
+			facebookUserAuthorizeUri = "#";
+			facebookPageAuthorizeUri = "#";
 		}
 		
-		addButtons.add(new ExternalLink("facebookAdd", facebookAuthorizeUri));
-		final IModel<String> facebookVerifierModel = new Model<>("");
-		final Form<String> facebookManualForm = new StatelessForm<String>("facebookManualForm", facebookVerifierModel);
-		facebookManualForm.setVisible(false);
-		addButtons.add(facebookManualForm);
-		facebookManualForm.add(new TextField<>("verifier", facebookVerifierModel).setRequired(true));
-		facebookManualForm.add(new IndicatingAjaxButton("submit") {
+		addButtons.add(new ExternalLink("facebookAdd", facebookUserAuthorizeUri));
+		final IModel<String> facebookUserVerifierModel = new Model<>("");
+		final Form<String> facebookUserManualForm = new Form<>("facebookManualForm", facebookUserVerifierModel);
+		facebookUserManualForm.setVisible(false);
+		addButtons.add(facebookUserManualForm);
+		facebookUserManualForm.add(new TextField<>("verifier", facebookUserVerifierModel).setRequired(true));
+		facebookUserManualForm.add(new IndicatingAjaxButton("submit") {
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
-				String verifierUp = facebookVerifierModel.getObject();
-				Matcher matcher = Pattern.compile(".*code=(.+)").matcher(verifierUp);
+				FacebookConsumer facebookConsumer = buzzApp.getFacebookConsumer();
+				String verifierUp = facebookUserVerifierModel.getObject();
+				Matcher matcher = Pattern.compile(".*code=([^#]+).*").matcher(verifierUp);
 				String verifier = matcher.matches() ? matcher.group(1) : verifierUp;
-				FacebookAccessToken token = fetchAccessToken(facebookConsumer.getAppId(), facebookConsumer.getAppSecret(), facebookAuthorizeUri, verifier);
+				FacebookAccessToken token = fetchAccessToken(facebookConsumer.getAppId(), facebookConsumer.getAppSecret(), facebookRedirectUri, verifier);
 				log.info("Facebook access: token={} expiry={}", 
 						token.getToken(), token.getExpiryTime());
 				info(String.format("Facebook access: token=%s expiry=%s", 
@@ -121,12 +137,85 @@ public class TenantSettingsPage extends TenantPage {
 		addButtons.add(new IndicatingAjaxLink<Void>("facebookAddManual") {
 			@Override
 			public void onClick(AjaxRequestTarget target) {
-				target.appendJavaScript("window.open('" + JavaScriptUtils.escapeQuotes(facebookAuthorizeUri) + "', '_blank');");
-				facebookVerifierModel.setObject("");
-				facebookManualForm.setVisible(true);
+				target.appendJavaScript("window.open('" + JavaScriptUtils.escapeQuotes(facebookUserAuthorizeUri) + "', '_blank');");
+				facebookUserVerifierModel.setObject("");
+				facebookUserManualForm.setVisible(true);
 				target.add(addButtons);
 			}
 		});
+		
+		final Model<String> facebookPageUserTokenModel = new Model<String>();
+		
+		final IModel<List<Account>> accountsModel = new ListModel<>(ImmutableList.<Account>of());
+		addButtons.add(new ExternalLink("facebookPageAdd", facebookPageAuthorizeUri));
+		final IModel<String> facebookPageVerifierModel = new Model<>("");
+		final Form<String> facebookPageManualForm = new Form<String>("facebookPageManualForm", facebookPageVerifierModel);
+		facebookPageManualForm.setVisible(false);
+		addButtons.add(facebookPageManualForm);
+		facebookPageManualForm.add(new TextField<>("verifier", facebookPageVerifierModel).setRequired(true));
+		facebookPageManualForm.add(new IndicatingAjaxButton("submit") {
+			@Override
+			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+				FacebookConsumer facebookConsumer = buzzApp.getFacebookConsumer();
+				String verifierUp = facebookPageVerifierModel.getObject();
+				Matcher matcher = Pattern.compile(".*code=([^#]+).*").matcher(verifierUp);
+				String verifier = matcher.matches() ? matcher.group(1) : verifierUp;
+				FacebookAccessToken token = fetchAccessToken(facebookConsumer.getAppId(), facebookConsumer.getAppSecret(), facebookRedirectUri, verifier);
+				log.info("Facebook access: token={} expiry={}", 
+						token.getToken(), token.getExpiryTime());
+				info(String.format("Facebook access: token=%s expiry=%s", 
+						token.getToken(), token.getExpiryTime()));
+				facebookPageUserTokenModel.setObject(token.getToken());
+				
+				DefaultFacebookClient client = new DefaultFacebookClient(token.getToken());
+				List<Account> accounts = getAccounts(client);
+				info("You are managing " + accounts.size() + " Facebook pages.");
+				accountsModel.setObject(accounts);
+				target.add(addButtons);
+			}
+		});
+		addButtons.add(new IndicatingAjaxLink<Void>("facebookPageAddManual") {
+			@Override
+			public void onClick(AjaxRequestTarget target) {
+				target.appendJavaScript("window.open('" + JavaScriptUtils.escapeQuotes(facebookPageAuthorizeUri) + "', '_blank');");
+				facebookPageVerifierModel.setObject("");
+				facebookPageManualForm.setVisible(true);
+				target.add(addButtons);
+			}
+		});
+
+		final Form<String> facebookPageTokenForm = new Form<>("facebookPageTokenForm", facebookPageUserTokenModel);
+		facebookPageTokenForm.add(new TextField("userToken", facebookPageUserTokenModel));
+		facebookPageTokenForm.add(new IndicatingAjaxButton("submit") {
+			@Override
+			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+				DefaultFacebookClient client = new DefaultFacebookClient(facebookPageUserTokenModel.getObject());
+				List<Account> accounts = getAccounts(client);
+				info("You are managing " + accounts.size() + " Facebook pages.");
+				accountsModel.setObject(accounts);
+				target.add(addButtons);
+			};
+		});
+		addButtons.add(facebookPageTokenForm);
+
+		final Model<Account> facebookPageModel = new Model<Account>();
+		final Form<Account> facebookPageChoiceForm = new Form<Account>("facebookPageChoiceForm", facebookPageModel);
+		facebookPageChoiceForm.add(new FacebookPageSelect2("choice", facebookPageModel, accountsModel));
+		facebookPageChoiceForm.add(new IndicatingAjaxButton("submit") {
+			@Override
+			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+				Account page = facebookPageModel.getObject();
+				if (page != null) {
+					log.info("You selected {} ­· #{} token {}",
+							page.getName(), page.getId(), page.getAccessToken());
+					info(String.format("You selected %s ­· #%s token %s",
+							page.getName(), page.getId(), page.getAccessToken()));
+				} else {
+					warn("No managed page selected.");
+				}
+			};
+		});
+		addButtons.add(facebookPageChoiceForm);
 		
 		addButtons.add(new IndicatingAjaxLink<Void>("twitterAdd") {
 			@Override
@@ -147,7 +236,7 @@ public class TenantSettingsPage extends TenantPage {
 		});
 		
 		final IModel<String> twitterVerifierModel = new Model<>("");
-		final Form<String> twitterManualForm = new StatelessForm<String>("twitterManualForm", twitterVerifierModel);
+		final Form<String> twitterManualForm = new Form<String>("twitterManualForm", twitterVerifierModel);
 		twitterManualForm.setVisible(false);
 		addButtons.add(twitterManualForm);
 		twitterManualForm.add(new TextField<>("verifier", twitterVerifierModel).setRequired(true));
@@ -196,7 +285,6 @@ public class TenantSettingsPage extends TenantPage {
 			}
 		});
 		add(addButtons);
-		
 	}
 	
 	public static class FacebookAccessToken {
@@ -226,6 +314,8 @@ public class TenantSettingsPage extends TenantPage {
 	public FacebookAccessToken fetchAccessToken(String appId, String appSecret, String redirectUri, String code) {
 		final String realAppId = appId;
 		final String realAppSecret = appSecret;
+		log.debug("Getting Facebook access token for app {} verifier={} redirectUri={}",
+				realAppId, StringUtils.abbreviateMiddle(code, "…", 20), redirectUri);
 		final String accessTokenUriStr;
 		try {
 			final URIBuilder accessTokenUri = new URIBuilder("https://graph.facebook.com/oauth/access_token");
@@ -270,6 +360,20 @@ public class TenantSettingsPage extends TenantPage {
 		} finally {
 			HttpClientUtils.closeQuietly(client);
 		}
+	}
+	
+	/**
+	 * Example:
+	 * accessToken=CAAA…OHASB category=Product/service id=140100115934 metadata=null name=Soluvas type=null
+	 * 
+	 * @param client
+	 * @return
+	 */
+	public List<Account> getAccounts(FacebookClient client) {
+		log.debug("Getting managed Facebook pages");
+		Connection<Account> accounts = client.fetchConnection("me/accounts", Account.class);
+		log.info("Got {} managed Facebook pages: {}", accounts.getData().size(), accounts.getData());
+		return accounts.getData();
 	}
 	
 }

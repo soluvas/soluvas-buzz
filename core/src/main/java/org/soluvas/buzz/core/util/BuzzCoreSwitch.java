@@ -96,6 +96,7 @@ public class BuzzCoreSwitch<T> extends Switch<T> {
 			case BuzzCorePackage.FACEBOOK_USER_LINK: {
 				FacebookUserLink facebookUserLink = (FacebookUserLink)theEObject;
 				T result = caseFacebookUserLink(facebookUserLink);
+				if (result == null) result = caseFacebookLink(facebookUserLink);
 				if (result == null) result = caseSocialLink(facebookUserLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -103,6 +104,7 @@ public class BuzzCoreSwitch<T> extends Switch<T> {
 			case BuzzCorePackage.FACEBOOK_PAGE_LINK: {
 				FacebookPageLink facebookPageLink = (FacebookPageLink)theEObject;
 				T result = caseFacebookPageLink(facebookPageLink);
+				if (result == null) result = caseFacebookLink(facebookPageLink);
 				if (result == null) result = caseSocialLink(facebookPageLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -122,6 +124,13 @@ public class BuzzCoreSwitch<T> extends Switch<T> {
 			case BuzzCorePackage.BUZZ_APP: {
 				BuzzApp buzzApp = (BuzzApp)theEObject;
 				T result = caseBuzzApp(buzzApp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BuzzCorePackage.FACEBOOK_LINK: {
+				FacebookLink facebookLink = (FacebookLink)theEObject;
+				T result = caseFacebookLink(facebookLink);
+				if (result == null) result = caseSocialLink(facebookLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -261,6 +270,21 @@ public class BuzzCoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBuzzApp(BuzzApp object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Facebook Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Facebook Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFacebookLink(FacebookLink object) {
 		return null;
 	}
 

@@ -66,12 +66,28 @@
 </ol>
 
 <div wicket:id="addButtons">
-	<p><a href="#" wicket:id="facebookAdd" class="btn"><i class="icon-plus"></i> Facebook</a></p>
-	<p><a href="#" wicket:id="facebookAddManual" class="btn" title="Manually enter OAuth verifier code. Note: Allow pop-ups in your browser."><i class="icon-plus"></i> Facebook (Manual)</a>
+	<p><a href="#" wicket:id="facebookAdd" class="btn"><i class="icon-plus"></i> Facebook User</a></p>
+	<p><a href="#" wicket:id="facebookAddManual" class="btn" title="Manually enter OAuth verifier code. Note: Allow pop-ups in your browser."><i class="icon-plus"></i> Facebook User (Manual)</a>
 		<form wicket:id="facebookManualForm" class="form">
 			<input type="text" wicket:id="verifier" placeholder="Verifier Code"/> <button wicket:id="submit" class="btn btn-primary">Verify</button>
 		</form>
 	</p>
+	
+	<p><a href="#" wicket:id="facebookPageAdd" class="btn"><i class="icon-plus"></i> Facebook Page</a></p>
+	<p><a href="#" wicket:id="facebookPageAddManual" class="btn" title="Manually enter OAuth verifier code. Note: Allow pop-ups in your browser."><i class="icon-plus"></i> Facebook Page (Manual)</a>
+		<form wicket:id="facebookPageManualForm" class="form">
+			<input type="text" wicket:id="verifier" placeholder="Verifier Code"/>
+			<button wicket:id="submit" class="btn btn-primary">Verify</button>
+		</form>
+	</p>
+	<form wicket:id="facebookPageTokenForm" class="form">
+		<input type="text" wicket:id="userToken" placeholder="Access Token of User managing the pages"/>
+		<button wicket:id="submit" class="btn btn-primary">List Pages</button>
+	</form>
+	<form wicket:id="facebookPageChoiceForm" class="form">
+		<input type="hidden" wicket:id="choice" placeholder="Select Page to Link"/>
+		<button wicket:id="submit" class="btn btn-primary">Link</button>
+	</form>
 	
 	<p><a href="#" wicket:id="twitterAdd" class="btn"><i class="icon-plus"></i> Twitter</a></p>
 	<p><a href="#" wicket:id="twitterAddManual" class="btn" title="Manually enter OAuth verifier code. Note: Allow pop-ups in your browser."><i class="icon-plus"></i> Twitter (Manual)</a>

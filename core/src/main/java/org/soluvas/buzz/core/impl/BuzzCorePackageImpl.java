@@ -14,6 +14,7 @@ import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.BuzzCoreFactory;
 import org.soluvas.buzz.core.BuzzCorePackage;
 import org.soluvas.buzz.core.FacebookConsumer;
+import org.soluvas.buzz.core.FacebookLink;
 import org.soluvas.buzz.core.FacebookPageLink;
 import org.soluvas.buzz.core.FacebookUserLink;
 import org.soluvas.buzz.core.SocialLink;
@@ -90,6 +91,13 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * @generated
 	 */
 	private EClass buzzAppEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass facebookLinkEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -402,6 +410,51 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFacebookLink() {
+		return facebookLinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookLink_AccessToken() {
+		return (EAttribute)facebookLinkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookLink_AccountId() {
+		return (EAttribute)facebookLinkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookLink_Name() {
+		return (EAttribute)facebookLinkEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFacebookLink_Username() {
+		return (EAttribute)facebookLinkEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public BuzzCoreFactory getBuzzCoreFactory() {
 		return (BuzzCoreFactory)getEFactoryInstance();
@@ -460,6 +513,12 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		buzzAppEClass = createEClass(BUZZ_APP);
 		createEReference(buzzAppEClass, BUZZ_APP__TWITTER_CONSUMER);
 		createEReference(buzzAppEClass, BUZZ_APP__FACEBOOK_CONSUMER);
+
+		facebookLinkEClass = createEClass(FACEBOOK_LINK);
+		createEAttribute(facebookLinkEClass, FACEBOOK_LINK__ACCESS_TOKEN);
+		createEAttribute(facebookLinkEClass, FACEBOOK_LINK__ACCOUNT_ID);
+		createEAttribute(facebookLinkEClass, FACEBOOK_LINK__NAME);
+		createEAttribute(facebookLinkEClass, FACEBOOK_LINK__USERNAME);
 	}
 
 	/**
@@ -497,7 +556,9 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		buzzAccountEClass.getESuperTypes().add(theCommonsPackage.getIdentifiable());
 		twitterUserLinkEClass.getESuperTypes().add(this.getSocialLink());
 		facebookUserLinkEClass.getESuperTypes().add(this.getSocialLink());
-		facebookPageLinkEClass.getESuperTypes().add(this.getSocialLink());
+		facebookUserLinkEClass.getESuperTypes().add(this.getFacebookLink());
+		facebookPageLinkEClass.getESuperTypes().add(this.getFacebookLink());
+		facebookLinkEClass.getESuperTypes().add(this.getSocialLink());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(buzzAccountEClass, BuzzAccount.class, "BuzzAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -540,6 +601,12 @@ public class BuzzCorePackageImpl extends EPackageImpl implements BuzzCorePackage
 		initEClass(buzzAppEClass, BuzzApp.class, "BuzzApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBuzzApp_TwitterConsumer(), this.getTwitterConsumer(), null, "twitterConsumer", null, 0, 1, BuzzApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBuzzApp_FacebookConsumer(), this.getFacebookConsumer(), null, "facebookConsumer", null, 0, 1, BuzzApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(facebookLinkEClass, FacebookLink.class, "FacebookLink", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFacebookLink_AccessToken(), theEcorePackage.getEString(), "accessToken", null, 0, 1, FacebookLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFacebookLink_AccountId(), theEcorePackage.getELongObject(), "accountId", null, 0, 1, FacebookLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFacebookLink_Name(), theEcorePackage.getEString(), "name", null, 0, 1, FacebookLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFacebookLink_Username(), theEcorePackage.getEString(), "username", null, 0, 1, FacebookLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

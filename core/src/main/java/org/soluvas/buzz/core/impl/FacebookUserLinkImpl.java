@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.joda.time.DateTime;
 
 import org.soluvas.buzz.core.BuzzCorePackage;
+import org.soluvas.buzz.core.FacebookLink;
 import org.soluvas.buzz.core.FacebookUserLink;
 
 /**
@@ -28,6 +29,10 @@ import org.soluvas.buzz.core.FacebookUserLink;
  * <ul>
  *   <li>{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl#getExpiryTime <em>Expiry Time</em>}</li>
  *   <li>{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl#getAccessToken <em>Access Token</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl#getAccountId <em>Account Id</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.soluvas.buzz.core.impl.FacebookUserLinkImpl#getUsername <em>Username</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +68,86 @@ public class FacebookUserLinkImpl extends EObjectImpl implements FacebookUserLin
 	 * @ordered
 	 */
 	protected EList<String> permissions;
+
+	/**
+	 * The default value of the '{@link #getAccessToken() <em>Access Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ACCESS_TOKEN_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAccessToken() <em>Access Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccessToken()
+	 * @generated
+	 * @ordered
+	 */
+	protected String accessToken = ACCESS_TOKEN_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAccountId() <em>Account Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Long ACCOUNT_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAccountId() <em>Account Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Long accountId = ACCOUNT_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUsername() <em>Username</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsername()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String USERNAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUsername() <em>Username</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsername()
+	 * @generated
+	 * @ordered
+	 */
+	protected String username = USERNAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,6 +206,90 @@ public class FacebookUserLinkImpl extends EObjectImpl implements FacebookUserLin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getAccessToken() {
+		return accessToken;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAccessToken(String newAccessToken) {
+		String oldAccessToken = accessToken;
+		accessToken = newAccessToken;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_USER_LINK__ACCESS_TOKEN, oldAccessToken, accessToken));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Long getAccountId() {
+		return accountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAccountId(Long newAccountId) {
+		Long oldAccountId = accountId;
+		accountId = newAccountId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_USER_LINK__ACCOUNT_ID, oldAccountId, accountId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_USER_LINK__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUsername(String newUsername) {
+		String oldUsername = username;
+		username = newUsername;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_USER_LINK__USERNAME, oldUsername, username));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -128,6 +297,14 @@ public class FacebookUserLinkImpl extends EObjectImpl implements FacebookUserLin
 				return getExpiryTime();
 			case BuzzCorePackage.FACEBOOK_USER_LINK__PERMISSIONS:
 				return getPermissions();
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCESS_TOKEN:
+				return getAccessToken();
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCOUNT_ID:
+				return getAccountId();
+			case BuzzCorePackage.FACEBOOK_USER_LINK__NAME:
+				return getName();
+			case BuzzCorePackage.FACEBOOK_USER_LINK__USERNAME:
+				return getUsername();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,6 +325,18 @@ public class FacebookUserLinkImpl extends EObjectImpl implements FacebookUserLin
 				getPermissions().clear();
 				getPermissions().addAll((Collection<? extends String>)newValue);
 				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCESS_TOKEN:
+				setAccessToken((String)newValue);
+				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCOUNT_ID:
+				setAccountId((Long)newValue);
+				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__NAME:
+				setName((String)newValue);
+				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__USERNAME:
+				setUsername((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,6 +355,18 @@ public class FacebookUserLinkImpl extends EObjectImpl implements FacebookUserLin
 			case BuzzCorePackage.FACEBOOK_USER_LINK__PERMISSIONS:
 				getPermissions().clear();
 				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCESS_TOKEN:
+				setAccessToken(ACCESS_TOKEN_EDEFAULT);
+				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCOUNT_ID:
+				setAccountId(ACCOUNT_ID_EDEFAULT);
+				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case BuzzCorePackage.FACEBOOK_USER_LINK__USERNAME:
+				setUsername(USERNAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -182,8 +383,54 @@ public class FacebookUserLinkImpl extends EObjectImpl implements FacebookUserLin
 				return EXPIRY_TIME_EDEFAULT == null ? expiryTime != null : !EXPIRY_TIME_EDEFAULT.equals(expiryTime);
 			case BuzzCorePackage.FACEBOOK_USER_LINK__PERMISSIONS:
 				return permissions != null && !permissions.isEmpty();
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCESS_TOKEN:
+				return ACCESS_TOKEN_EDEFAULT == null ? accessToken != null : !ACCESS_TOKEN_EDEFAULT.equals(accessToken);
+			case BuzzCorePackage.FACEBOOK_USER_LINK__ACCOUNT_ID:
+				return ACCOUNT_ID_EDEFAULT == null ? accountId != null : !ACCOUNT_ID_EDEFAULT.equals(accountId);
+			case BuzzCorePackage.FACEBOOK_USER_LINK__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case BuzzCorePackage.FACEBOOK_USER_LINK__USERNAME:
+				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == FacebookLink.class) {
+			switch (derivedFeatureID) {
+				case BuzzCorePackage.FACEBOOK_USER_LINK__ACCESS_TOKEN: return BuzzCorePackage.FACEBOOK_LINK__ACCESS_TOKEN;
+				case BuzzCorePackage.FACEBOOK_USER_LINK__ACCOUNT_ID: return BuzzCorePackage.FACEBOOK_LINK__ACCOUNT_ID;
+				case BuzzCorePackage.FACEBOOK_USER_LINK__NAME: return BuzzCorePackage.FACEBOOK_LINK__NAME;
+				case BuzzCorePackage.FACEBOOK_USER_LINK__USERNAME: return BuzzCorePackage.FACEBOOK_LINK__USERNAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == FacebookLink.class) {
+			switch (baseFeatureID) {
+				case BuzzCorePackage.FACEBOOK_LINK__ACCESS_TOKEN: return BuzzCorePackage.FACEBOOK_USER_LINK__ACCESS_TOKEN;
+				case BuzzCorePackage.FACEBOOK_LINK__ACCOUNT_ID: return BuzzCorePackage.FACEBOOK_USER_LINK__ACCOUNT_ID;
+				case BuzzCorePackage.FACEBOOK_LINK__NAME: return BuzzCorePackage.FACEBOOK_USER_LINK__NAME;
+				case BuzzCorePackage.FACEBOOK_LINK__USERNAME: return BuzzCorePackage.FACEBOOK_USER_LINK__USERNAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -200,6 +447,14 @@ public class FacebookUserLinkImpl extends EObjectImpl implements FacebookUserLin
 		result.append(expiryTime);
 		result.append(", permissions: ");
 		result.append(permissions);
+		result.append(", accessToken: ");
+		result.append(accessToken);
+		result.append(", accountId: ");
+		result.append(accountId);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", username: ");
+		result.append(username);
 		result.append(')');
 		return result.toString();
 	}

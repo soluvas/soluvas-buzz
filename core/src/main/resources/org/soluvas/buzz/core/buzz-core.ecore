@@ -49,8 +49,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="twitterId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="screenName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FacebookUserLink" eSuperTypes="#//SocialLink"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FacebookPageLink" eSuperTypes="#//SocialLink"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FacebookUserLink" eSuperTypes="#//SocialLink #//FacebookLink"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FacebookPageLink" eSuperTypes="#//FacebookLink"/>
   <eClassifiers xsi:type="ecore:EClass" name="FacebookConsumer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="OAuth consumer (not user) info on Twitter for the app itself.&#xA;&#xA;Note: When configuring your Facebook App API, you may want to set Settings > Permissions > Default Activity Privacy to Public.&#xA;Otherwise you get None (User Default) which usually means Friends.&#xA;&#xA;Apps include:&#xA;1. Buzz Cloud&#xA;2. AksiMata&#xA;3. GaulDong"/>
@@ -96,5 +96,12 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="facebookConsumer" eType="#//FacebookConsumer"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FacebookLink" abstract="true" interface="true"
+      eSuperTypes="#//SocialLink">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessToken" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accountId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

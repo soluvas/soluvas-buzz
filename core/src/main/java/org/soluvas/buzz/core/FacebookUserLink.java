@@ -13,5 +13,5 @@ package org.soluvas.buzz.core;
  * @model
  * @generated
  */
-public interface FacebookUserLink extends SocialLink {
+public interface FacebookUserLink extends SocialLink, FacebookLink {
 } // FacebookUserLink
