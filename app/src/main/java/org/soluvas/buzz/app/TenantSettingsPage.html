@@ -1,0 +1,50 @@
+<wicket:extend>
+
+<h1>Tenant Settings</h1>
+
+<h2>Social Media APIs</h2>
+
+<form class="form form-horizontal">
+	<fieldset>
+		<legend>Twitter</legend>
+		<div class="control-group">
+			<label class="control-label">Consumer Key</label>
+			<div class="controls">
+				<wicket:container wicket:id="twitterKey"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Consumer Secret</label>
+			<div class="controls">
+				<wicket:container wicket:id="twitterSecret"/>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Facebook</legend>
+		<div class="control-group">
+			<label class="control-label">App ID</label>
+			<div class="controls">
+				<wicket:container wicket:id="facebookAppId"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">App Key</label>
+			<div class="controls">
+				<wicket:container wicket:id="facebookAppKey"/>
+			</div>
+		</div>
+	</fieldset>
+</form>
+
+<h2>Social Links</h2>
+
+<ol>
+	<div wicket:id="socialLinks">
+	<li><strong wicket:id="provider">Facebook</strong>.
+		<wicket:container wicket:id="description">ID: 123124. Username: Hello.</wicket:container>
+	</li>
+	</div>
+</ol>
+
+</wicket:extend>

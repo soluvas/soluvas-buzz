@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commons:AppManifest
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:commons="http://www.soluvas.org/schema/commons/1.0"
+    xsi:schemaLocation="http://www.soluvas.org/schema/commons/1.0 ../../../../../org.soluvas.commons/src/main/resources/org/soluvas/commons/commons.ecore"
+    title="Soluvas Buzz"
+    description="Social media, your way"
+    domain="soluvas.com"
+    generalEmail="info@soluvas.com"
+    organizationName="Soluvas"
+    organizationAddress="Perum Wisma Asri D-9, Pesantren, Kediri 64131, Jawa Timur, Indonesia"
+    defaultTimeZoneId="Asia/Jakarta"
+    defaultCurrencyCode="IDR"/>

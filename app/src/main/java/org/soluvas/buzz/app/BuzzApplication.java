@@ -89,9 +89,37 @@ public class BuzzApplication extends AtmosphereApplication {
 //				return servletRequest.isSecure() ? Scheme.HTTPS : Scheme.ANY;
 //			}
 //		});
+		
+		mountPages();
 	}
 	
-    /**
+    private void mountPages() {
+    	/* Atmosphere bug: Any URI with first path segment containing '_' will throw:
+    	 * org.atmosphere.cpr.AtmosphereMappingException: No AtmosphereHandler maps request for /_
+    	 * 	org.atmosphere.cpr.AsynchronousProcessor.map(AsynchronousProcessor.java:400)
+    	 * 	org.atmosphere.cpr.AsynchronousProcessor.action(AsynchronousProcessor.java:204)
+    	 * 	org.atmosphere.cpr.AsynchronousProcessor.suspended(AsynchronousProcessor.java:166)
+    	 * 	org.atmosphere.container.Tomcat7CometSupport.service(Tomcat7CometSupport.java:88)
+    	 * 	org.atmosphere.container.Tomcat7AsyncSupportWithWebSocket.doService(Tomcat7AsyncSupportWithWebSocket.java:63)
+    	 * 	org.atmosphere.container.TomcatWebSocketUtil.doService(TomcatWebSocketUtil.java:87)
+    	 * 	org.atmosphere.container.Tomcat7AsyncSupportWithWebSocket.service(Tomcat7AsyncSupportWithWebSocket.java:59)
+    	 * 	org.atmosphere.cpr.AtmosphereFramework.doCometSupport(AtmosphereFramework.java:1441)
+    	 * 	org.atmosphere.cpr.AtmosphereServlet.event(AtmosphereServlet.java:361)
+    	 * 	org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+    	 * 	org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+    	 * 	org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+    	 * 	org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+    	 * 	org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1023)
+    	 * 	org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:589)
+    	 * 	org.apache.tomcat.util.net.AprEndpoint$SocketWithOptionsProcessor.run(AprEndpoint.java:1810)
+    	 * 	java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    	 * 	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    	 * 	java.lang.Thread.run(Thread.java:724)
+    	 */
+    	mountPage("tenantsettings", TenantSettingsPage.class);
+	}
+
+	/**
      * configures wicket-bootstrap and installs the settings.
      */
     private void configureBootstrap() {
