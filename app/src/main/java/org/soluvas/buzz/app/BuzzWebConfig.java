@@ -29,6 +29,10 @@ public class BuzzWebConfig {
 //	@Autowired @Qualifier("")
 //	private Map<String, BuzzApp> buzzApps;
 	
+	/**
+	 * @return
+	 * @throws IOException
+	 */
 	@Bean @Scope("request")
 	public BuzzApp buzzApp() throws IOException {
 		final String tenantId = webConfig.tenantRef().getTenantId();
