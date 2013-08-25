@@ -104,4 +104,9 @@
 	<listener>
 		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
+
+	<session-config>
+		<!-- session timeout in 2 days, relogin each weekstart -->
+		<session-timeout>2880</session-timeout>
+	</session-config>
 </web-app>
