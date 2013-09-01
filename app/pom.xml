@@ -23,13 +23,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!-- upstream Jersey not compatible with asm4 -->
-			<dependency>
-				<groupId>com.sun.jersey</groupId>
-				<artifactId>jersey-server</artifactId>
-				<version>1.17.1</version>
-				<classifier>soluvas</classifier>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -78,7 +71,11 @@
 		<dependency>
 			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-spring</artifactId>
-			<version>1.17.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<classifier>soluvas</classifier>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
@@ -88,43 +85,30 @@
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-graphite</artifactId>
-			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-servlet</artifactId>
-			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-servlets</artifactId>
-			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-jvm</artifactId>
-			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-jersey</artifactId>
-			<version>3.0.1</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>asm</artifactId>
-					<groupId>asm</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-logback</artifactId>
-			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-httpclient</artifactId>
-			<version>3.0.1</version>
 		</dependency>
 		
 		<dependency>
