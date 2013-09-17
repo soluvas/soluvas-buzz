@@ -66,6 +66,11 @@
 			<param-name>org.atmosphere.cpr.broadcasterCacheClass</param-name>
 			<param-value>org.atmosphere.cache.UUIDBroadcasterCache</param-value>
 		</init-param>		
+		<init-param>
+			<!-- https://groups.google.com/forum/#!topic/atmosphere-framework/7YXJLymUwN8 -->
+			<param-name>org.atmosphere.cpr.CometSupport.maxInactiveActivity</param-name>
+			<param-value>30000</param-value>
+		</init-param>		
 		<load-on-startup>1</load-on-startup>
 		<!-- If you want to use Servlet 3.0 -->
 		<async-supported>true</async-supported>
