@@ -11,7 +11,6 @@ import org.eclipse.emf.texo.model.ModelFeatureMapEntry;
 import org.eclipse.emf.texo.model.ModelObject;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.soluvas.jpa.jpa.Geolocation;
 
 /**
@@ -233,7 +232,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			case BuzzJpaModelPackage.TWITTERUSER_DESCRIPTION_FEATURE_ID:
 				return getTarget().getDescription();
 			case BuzzJpaModelPackage.TWITTERUSER_CONTRIBUTORSENABLED_FEATURE_ID:
-				return getTarget().getContributorsEnabled();
+				return getTarget().isContributorsEnabled();
 			case BuzzJpaModelPackage.TWITTERUSER_PROFILEIMAGEURL_FEATURE_ID:
 				return getTarget().getProfileImageUrl();
 			case BuzzJpaModelPackage.TWITTERUSER_BIGGERPROFILEIMAGEURL_FEATURE_ID:
@@ -271,13 +270,13 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			case BuzzJpaModelPackage.TWITTERUSER_LISTEDCOUNT_FEATURE_ID:
 				return getTarget().getListedCount();
 			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWREQUESTSENT_FEATURE_ID:
-				return getTarget().getFollowRequestSent();
+				return getTarget().isFollowRequestSent();
 			case BuzzJpaModelPackage.TWITTERUSER_URL_FEATURE_ID:
 				return getTarget().getUrl();
 			case BuzzJpaModelPackage.TWITTERUSER_PROTECTEDSTATE_FEATURE_ID:
 				return getTarget().isProtectedState();
 			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWERSCOUNT_FEATURE_ID:
-				return getTarget().isFollowersCount();
+				return getTarget().getFollowersCount();
 			case BuzzJpaModelPackage.TWITTERUSER_PROFILEBACKGROUNDCOLOR_FEATURE_ID:
 				return getTarget().getProfileBackgroundColor();
 			case BuzzJpaModelPackage.TWITTERUSER_PROFILETEXTCOLOR_FEATURE_ID:
@@ -350,7 +349,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				getTarget().setDescription((String) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_CONTRIBUTORSENABLED_FEATURE_ID:
-				getTarget().setContributorsEnabled((String) value);
+				getTarget().setContributorsEnabled((Boolean) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_PROFILEIMAGEURL_FEATURE_ID:
 				getTarget().setProfileImageUrl((String) value);
@@ -407,7 +406,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				getTarget().setListedCount((Integer) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWREQUESTSENT_FEATURE_ID:
-				getTarget().setFollowRequestSent((Integer) value);
+				getTarget().setFollowRequestSent((Boolean) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_URL_FEATURE_ID:
 				getTarget().setUrl((String) value);
@@ -416,7 +415,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				getTarget().setProtectedState((Boolean) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWERSCOUNT_FEATURE_ID:
-				getTarget().setFollowersCount((Boolean) value);
+				getTarget().setFollowersCount((Integer) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_PROFILEBACKGROUNDCOLOR_FEATURE_ID:
 				getTarget().setProfileBackgroundColor((String) value);
@@ -443,7 +442,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				getTarget().setFriendsCount((Integer) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_CREATEDAT_FEATURE_ID:
-				getTarget().setCreatedAt((Integer) value);
+				getTarget().setCreatedAt((DateTime) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_FAVOURITESCOUNT_FEATURE_ID:
 				getTarget().setFavouritesCount((Integer) value);
@@ -452,7 +451,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				getTarget().setUtcOffset((Integer) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_TIMEZONE_FEATURE_ID:
-				getTarget().setTimeZone((DateTimeZone) value);
+				getTarget().setTimeZone((String) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_STATUS_FEATURE_ID:
 				getTarget().setStatus((TwitterStatusEmbed) value);

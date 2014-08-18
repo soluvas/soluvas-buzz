@@ -2,6 +2,7 @@ package org.soluvas.buzz.core.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Nullable;
 import javax.persistence.Basic;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
@@ -10,6 +11,10 @@ import javax.persistence.Embedded;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 import org.soluvas.jpa.jpa.Geolocation;
+import com.google.common.primitives.Longs;
+import twitter4j.GeoLocation;
+import twitter4j.Place;
+import twitter4j.Status;
 
 /**
  * A representation of the model object '<em><b>TwitterStatusEmbed</b></em>'.
@@ -643,4 +648,54 @@ public class TwitterStatusEmbed {
 				+ " [currentUserRetweetId: " + getCurrentUserRetweetId() + "]"
 				+ " [possiblySensitive: " + isPossiblySensitive() + "]";
 	}
+
+	public void copyFrom(@Nullable Status src) {
+		if (src == null) {
+			return;
+		}
+		setId(src.getId());
+		setCreatedAt(new DateTime(src.getCreatedAt()));
+		setText(src.getText());
+		setSource(src.getSource());
+		setTruncated(src.isTruncated());
+		setInReplyToStatusId(src.getInReplyToStatusId());
+		setInReplyToUserId(src.getInReplyToUserId());
+		setInReplyToScreenName(src.getInReplyToScreenName());
+		setFavorited(src.isFavorited());
+		setRetweet(src.isRetweet());
+		setContributors(Longs.asList(src.getContributors()));
+		setRetweetCount(src.getRetweetCount());
+		setRetweetedByMe(src.isRetweetedByMe());
+		setCurrentUserRetweetId(src.getCurrentUserRetweetId());
+		setPossiblySensitive(src.isPossiblySensitive());
+		setGeoLocationFromTwitter(src.getGeoLocation());
+		setPlaceFromTwitter(src.getPlace());
+	}
+
+	private void setPlaceFromTwitter(@Nullable Place src) {
+		TwitterPlace place = new TwitterPlace();
+		if (src != null) {
+			place.setBoundingBoxType(src.getBoundingBoxType());
+			place.setCountry(src.getCountry());
+			place.setCountryCode(src.getCountryCode());
+			place.setFullName(src.getFullName());
+			place.setGeometryType(src.getGeometryType());
+			place.setId(src.getId());
+			place.setName(src.getName());
+			place.setPlaceType(src.getPlaceType());
+			place.setStreetAddress(src.getStreetAddress());
+			place.setUrl(src.getURL());
+		}
+		setPlace(place);
+	}
+
+	private void setGeoLocationFromTwitter(@Nullable GeoLocation src) {
+		Geolocation geol = new Geolocation();
+		if (src != null) {
+			geol.setLatitude(src.getLatitude());
+			geol.setLongitude(src.getLongitude());
+		}
+		setGeoLocation(geol);
+	}
+
 }

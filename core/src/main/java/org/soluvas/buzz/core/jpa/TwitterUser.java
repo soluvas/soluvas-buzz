@@ -10,7 +10,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
+
+import twitter4j.User;
 
 /**
  * A representation of the model object '<em><b>TwitterUser</b></em>'. <!--
@@ -19,7 +20,7 @@ import org.joda.time.DateTimeZone;
  * 
  */
 @Entity()
-@Table(schema="buzz", indexes = {
+@Table(schema = "buzz", indexes = {
 		@Index(name = "twitteruser_revid_idx", columnList = "revId"),
 		@Index(name = "twitteruser_screenname_idx", columnList = "screenName") })
 public class TwitterUser {
@@ -112,7 +113,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
-	private String contributorsEnabled = null;
+	private boolean contributorsEnabled = false;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
@@ -265,7 +266,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
-	private int followRequestSent = 0;
+	private boolean followRequestSent = false;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -289,7 +290,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
-	private boolean followersCount = false;
+	private int followersCount = 0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -358,10 +359,10 @@ public class TwitterUser {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	@Basic()
-	private int createdAt = 0;
+	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+	private DateTime createdAt = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -380,12 +381,14 @@ public class TwitterUser {
 	private int utcOffset = 0;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * Time zone string, Twitter-style, this is not standard. :( <!--
+	 * end-model-doc -->
 	 * 
+	 * @generated
 	 */
 	@Basic()
-	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTimeZoneAsString")
-	private DateTimeZone timeZone = null;
+	private String timeZone = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -681,12 +684,12 @@ public class TwitterUser {
 	 * @return the value of '<em><b>contributorsEnabled</b></em>' feature
 	 * @generated
 	 */
-	public String getContributorsEnabled() {
+	public boolean isContributorsEnabled() {
 		return contributorsEnabled;
 	}
 
 	/**
-	 * Sets the '{@link TwitterUser#getContributorsEnabled()
+	 * Sets the '{@link TwitterUser#isContributorsEnabled()
 	 * <em>contributorsEnabled</em>}' feature.
 	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
@@ -694,11 +697,11 @@ public class TwitterUser {
 	 * 
 	 * @param newContributorsEnabled
 	 *            the new value of the '
-	 *            {@link TwitterUser#getContributorsEnabled()
+	 *            {@link TwitterUser#isContributorsEnabled()
 	 *            contributorsEnabled}' feature.
 	 * @generated
 	 */
-	public void setContributorsEnabled(String newContributorsEnabled) {
+	public void setContributorsEnabled(boolean newContributorsEnabled) {
 		contributorsEnabled = newContributorsEnabled;
 	}
 
@@ -1215,23 +1218,23 @@ public class TwitterUser {
 	 * @return the value of '<em><b>followRequestSent</b></em>' feature
 	 * @generated
 	 */
-	public int getFollowRequestSent() {
+	public boolean isFollowRequestSent() {
 		return followRequestSent;
 	}
 
 	/**
-	 * Sets the '{@link TwitterUser#getFollowRequestSent()
+	 * Sets the '{@link TwitterUser#isFollowRequestSent()
 	 * <em>followRequestSent</em>}' feature.
 	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newFollowRequestSent
 	 *            the new value of the '
-	 *            {@link TwitterUser#getFollowRequestSent() followRequestSent}'
+	 *            {@link TwitterUser#isFollowRequestSent() followRequestSent}'
 	 *            feature.
 	 * @generated
 	 */
-	public void setFollowRequestSent(int newFollowRequestSent) {
+	public void setFollowRequestSent(boolean newFollowRequestSent) {
 		followRequestSent = newFollowRequestSent;
 	}
 
@@ -1296,22 +1299,22 @@ public class TwitterUser {
 	 * @return the value of '<em><b>followersCount</b></em>' feature
 	 * @generated
 	 */
-	public boolean isFollowersCount() {
+	public int getFollowersCount() {
 		return followersCount;
 	}
 
 	/**
-	 * Sets the '{@link TwitterUser#isFollowersCount() <em>followersCount</em>}'
-	 * feature.
+	 * Sets the '{@link TwitterUser#getFollowersCount() <em>followersCount</em>}
+	 * ' feature.
 	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newFollowersCount
-	 *            the new value of the '{@link TwitterUser#isFollowersCount()
+	 *            the new value of the '{@link TwitterUser#getFollowersCount()
 	 *            followersCount}' feature.
 	 * @generated
 	 */
-	public void setFollowersCount(boolean newFollowersCount) {
+	public void setFollowersCount(int newFollowersCount) {
 		followersCount = newFollowersCount;
 	}
 
@@ -1547,7 +1550,7 @@ public class TwitterUser {
 	 * @return the value of '<em><b>createdAt</b></em>' feature
 	 * @generated
 	 */
-	public int getCreatedAt() {
+	public DateTime getCreatedAt() {
 		return createdAt;
 	}
 
@@ -1561,7 +1564,7 @@ public class TwitterUser {
 	 *            createdAt}' feature.
 	 * @generated
 	 */
-	public void setCreatedAt(int newCreatedAt) {
+	public void setCreatedAt(DateTime newCreatedAt) {
 		createdAt = newCreatedAt;
 	}
 
@@ -1621,26 +1624,30 @@ public class TwitterUser {
 	/**
 	 * Returns the value of '<em><b>timeZone</b></em>' feature.
 	 *
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * Time zone string, Twitter-style, this is not standard. :( <!--
+	 * end-model-doc -->
 	 * 
 	 * @return the value of '<em><b>timeZone</b></em>' feature
 	 * @generated
 	 */
-	public DateTimeZone getTimeZone() {
+	public String getTimeZone() {
 		return timeZone;
 	}
 
 	/**
 	 * Sets the '{@link TwitterUser#getTimeZone() <em>timeZone</em>}' feature.
 	 *
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * Time zone string, Twitter-style, this is not standard. :( <!--
+	 * end-model-doc -->
 	 * 
 	 * @param newTimeZone
 	 *            the new value of the '{@link TwitterUser#getTimeZone()
 	 *            timeZone}' feature.
 	 * @generated
 	 */
-	public void setTimeZone(DateTimeZone newTimeZone) {
+	public void setTimeZone(String newTimeZone) {
 		timeZone = newTimeZone;
 	}
 
@@ -1775,7 +1782,7 @@ public class TwitterUser {
 				+ getName() + "]" + " [screenName: " + getScreenName() + "]"
 				+ " [location: " + getLocation() + "]" + " [description: "
 				+ getDescription() + "]" + " [contributorsEnabled: "
-				+ getContributorsEnabled() + "]" + " [profileImageUrl: "
+				+ isContributorsEnabled() + "]" + " [profileImageUrl: "
 				+ getProfileImageUrl() + "]" + " [biggerProfileImageUrl: "
 				+ getBiggerProfileImageUrl() + "]" + " [miniProfileImageUrl: "
 				+ getMiniProfileImageUrl() + "]"
@@ -1795,10 +1802,10 @@ public class TwitterUser {
 				+ getStatusesCount() + "]" + " [geoEnabled: " + isGeoEnabled()
 				+ "]" + " [verified: " + isVerified() + "]" + " [translator: "
 				+ isTranslator() + "]" + " [listedCount: " + getListedCount()
-				+ "]" + " [followRequestSent: " + getFollowRequestSent() + "]"
+				+ "]" + " [followRequestSent: " + isFollowRequestSent() + "]"
 				+ " [url: " + getUrl() + "]" + " [protectedState: "
 				+ isProtectedState() + "]" + " [followersCount: "
-				+ isFollowersCount() + "]" + " [profileBackgroundColor: "
+				+ getFollowersCount() + "]" + " [profileBackgroundColor: "
 				+ getProfileBackgroundColor() + "]" + " [profileTextColor: "
 				+ getProfileTextColor() + "]" + " [profileLinkColor: "
 				+ getProfileLinkColor() + "]" + " [profileSidebarFillColor: "
@@ -1819,4 +1826,56 @@ public class TwitterUser {
 				+ " [miniProfileImageUrlHttps: "
 				+ getMiniProfileImageUrlHttps() + "]";
 	}
+
+	public void copyFrom(User src) {
+		setId(src.getId());
+		setName(src.getName());
+		setScreenName(src.getScreenName());
+		setLocation(src.getLocation());
+		setDescription(src.getDescription());
+		setContributorsEnabled(src.isContributorsEnabled());
+		setProfileImageUrl(src.getProfileImageURL());
+		setBiggerProfileImageUrl(src.getBiggerProfileImageURL());
+		setMiniProfileImageUrl(src.getMiniProfileImageURL());
+		setOriginalProfileImageUrl(src.getOriginalProfileImageURL());
+		setProfileImageUrlHttps(src.getProfileImageURLHttps());
+		setBiggerProfileImageUrlHttps(src.getBiggerProfileImageURLHttps());
+		setMiniProfileImageUrlHttps(src.getMiniProfileImageURLHttps());
+		setOriginalProfileImageUrlHttps(src.getOriginalProfileImageURLHttps());
+		setUrl(src.getURL());
+		setProtectedState(src.isProtected());
+		setFollowersCount(src.getFollowersCount());
+		setStatus(new TwitterStatusEmbed());
+		getStatus().copyFrom(src.getStatus());
+		setProfileBackgroundColor(src.getProfileBackgroundColor());
+		setProfileTextColor(src.getProfileTextColor());
+		setProfileLinkColor(src.getProfileLinkColor());
+		setProfileSidebarFillColor(src.getProfileSidebarFillColor());
+		setProfileSidebarBorderColor(src.getProfileSidebarBorderColor());
+		setProfileUseBackgroundImage(src.isProfileUseBackgroundImage());
+		setShowAllInlineMedia(src.isShowAllInlineMedia());
+		setFriendsCount(src.getFriendsCount());
+		setCreatedAt(new DateTime(src.getCreatedAt()));
+		setFavouritesCount(src.getFavouritesCount());
+		setUtcOffset(src.getUtcOffset());
+		setTimeZone(src.getTimeZone());
+		setProfileBackgroundImageUrl(src.getProfileBackgroundImageURL());
+		setProfileBackgroundImageUrlHttps(src
+				.getProfileBackgroundImageUrlHttps());
+		setProfileBannerUrl(src.getProfileBannerURL());
+		setProfileBannerRetinaUrl(src.getProfileBannerRetinaURL());
+		setProfileBannerIpadUrl(src.getProfileBannerIPadURL());
+		setProfileBannerIpadRetinaUrl(src.getProfileBannerIPadRetinaURL());
+		setProfileBannerMobileUrl(src.getProfileBannerMobileURL());
+		setProfileBannerMobileRetinaUrl(src.getProfileBannerMobileRetinaURL());
+		setProfileBackgroundTiled(src.isProfileBackgroundTiled());
+		setLang(src.getLang());
+		setStatusesCount(src.getStatusesCount());
+		setGeoEnabled(src.isGeoEnabled());
+		setVerified(src.isVerified());
+		setTranslator(src.isTranslator());
+		setListedCount(src.getListedCount());
+		setFollowRequestSent(src.isFollowRequestSent());
+	}
+
 }

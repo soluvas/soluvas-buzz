@@ -156,7 +156,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_LLu-0ybCEeSr66kxgULwHg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_LLuXwSbCEeSr66kxgULwHg" fontName="OxygenSans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLuXwibCEeSr66kxgULwHg" x="24" y="36" width="286" height="757"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLuXwibCEeSr66kxgULwHg" x="24" y="36" width="286" height="783"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Ft0AwCbGEeSr66kxgULwHg" type="2003" element="_FtpBoCbGEeSr66kxgULwHg">
             <children xmi:type="notation:Node" xmi:id="_Ft0AwybGEeSr66kxgULwHg" type="5007"/>
@@ -267,7 +267,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_COYQBibHEeSr66kxgULwHg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_COYQASbHEeSr66kxgULwHg" fontName="OxygenSans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_COYQAibHEeSr66kxgULwHg" x="660" y="564" width="120" height="279"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_COYQAibHEeSr66kxgULwHg" x="720" y="432" width="195" height="195"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_G4-wMibCEeSr66kxgULwHg"/>
           <edges xmi:type="notation:Edge" xmi:id="_-mDecCbGEeSr66kxgULwHg" type="4001" element="_-l9-4CbGEeSr66kxgULwHg" source="_Ft0AwCbGEeSr66kxgULwHg" target="_-mBpQCbGEeSr66kxgULwHg">
@@ -528,7 +528,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZkbisCbCEeSr66kxgULwHg" name="contributorsEnabled : EString" tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZkbisCbCEeSr66kxgULwHg" name="contributorsEnabled : EBoolean = false" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/contributorsEnabled"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/contributorsEnabled"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_aZRgACbCEeSr66kxgULwHg" labelAlignment="LEFT">
@@ -737,7 +737,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_LDVl4CbEEeSr66kxgULwHg" name="followRequestSent : EInt = 0" tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_LDVl4CbEEeSr66kxgULwHg" name="followRequestSent : EBoolean = false" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/followRequestSent"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/followRequestSent"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_LqyncCbEEeSr66kxgULwHg" labelAlignment="LEFT">
@@ -770,7 +770,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NMRoUCbEEeSr66kxgULwHg" name="followersCount : EBoolean = false" tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NMRoUCbEEeSr66kxgULwHg" name="followersCount : EInt = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/followersCount"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/followersCount"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_N1gykCbEEeSr66kxgULwHg" labelAlignment="LEFT">
@@ -869,7 +869,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_f4yKwCbEEeSr66kxgULwHg" name="createdAt : EInt = 0" tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_f4yKwCbEEeSr66kxgULwHg" name="createdAt : DateTime" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/createdAt"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/createdAt"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_gXVvACbEEeSr66kxgULwHg" labelAlignment="LEFT">
@@ -902,7 +902,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_hzrxMCbEEeSr66kxgULwHg" name="timeZone : DateTimeZone" tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_hzrxMCbEEeSr66kxgULwHg" name="timeZone : EString" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/timeZone"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/timeZone"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_iM4UUCbEEeSr66kxgULwHg" labelAlignment="LEFT">
