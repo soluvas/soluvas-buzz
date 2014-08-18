@@ -29,8 +29,8 @@ public class TwitterAnalyzerTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/tenant.BuzzApp.xmi" ).get();
-		account = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/META-INF/tenant.BuzzAccount.xmi" ).get();
+		final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/config/buzz.BuzzApp.xmi" ).get();
+		account = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/config/buzz.BuzzAccount.xmi" ).get();
 		analyzer = new TwitterAnalyzer(null, buzzApp.getTwitterConsumer(), account.getTwitterUser());
 	}
 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotationsmodel:AnnotatedModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotationsmodel="http://www.eclipse.org/emf/texo/annotations/model" xmlns:ormannotations="http://www.eclipse.org/emf/texo/orm/ormannotations">
+  <annotatedEPackages>
+    <ePackage href="buzz-jpa.ecore#/"/>
+    <ePackageAnnotations xsi:type="ormannotations:EPackageORMAnnotation" generateFullDbSchemaNames="false" maximumSqlNameLength="255" lowerCasedNames="false" upperCasedNames="false" enforceUniqueNames="false" useJoinTablesForContainment="false" useJoinTablesForNonContainment="true" generateJavaAnnotations="false" addOrderColumnToListMappings="false" renameSQLReservedNames="false" uniqueEntityNames="false" setDelimitedIdentifierTagInORM="true"/>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterUser"/>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterUser/id"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <basic>
+            <column nullable="false"/>
+          </basic>
+          <id/>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterUser/revId"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <basic>
+            <column nullable="false"/>
+          </basic>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterUser/screenName"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <basic>
+            <column nullable="false"/>
+          </basic>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterUser/status"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <embedded/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterStatusEmbed"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <embeddable/>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterStatusEmbed/geoLocation"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <embedded/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterStatusEmbed/place"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <embedded/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterPlace"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <embeddable/>
+      </eClassAnnotations>
+    </annotatedEClassifiers>
+  </annotatedEPackages>
+</annotationsmodel:AnnotatedModel>

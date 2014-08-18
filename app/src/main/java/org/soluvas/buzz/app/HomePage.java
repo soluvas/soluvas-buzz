@@ -16,9 +16,9 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.Navbar.ComponentP
 import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.Navbar.Position;
 import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.NavbarButton;
 
+@SuppressWarnings("serial")
 public class HomePage extends WebPage {
 
-	private static final long serialVersionUID = 1L;
 	private final Navbar navbar;
 
 	public HomePage(PageParameters parameters) {
@@ -28,15 +28,16 @@ public class HomePage extends WebPage {
         add(new OptimizedMobileViewportMetaTag("viewport"));
         
 		add(new BootstrapBaseBehavior());
-		add(new GrowlBehavior(false));
+		add(new GrowlBehavior());
 		add(new HeaderResponseContainer("footer-container", "footer-container"));
 		
 		navbar = new Navbar("navbar");
 		navbar.setOutputMarkupId(true);
 		navbar.setPosition(Position.TOP);
-		add(navbar.brandName(new Model<>("Buzz")));
+		navbar.setBrandName(new Model<>("Buzz"));
 		navbar.addComponents(new ImmutableNavbarComponent(new NavbarButton<>(TenantSettingsPage.class, new Model<>("Tenant Settings")), 
 				ComponentPosition.RIGHT));
+		add(navbar);
 
 		final BreadCrumbBar breadCrumbBar = new BreadCrumbBar("breadCrumbBar");
 		add(breadCrumbBar);

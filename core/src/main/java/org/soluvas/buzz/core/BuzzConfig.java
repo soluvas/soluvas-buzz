@@ -34,7 +34,7 @@ public class BuzzConfig {
 	@Bean
 	public Map<String, BuzzApp> buzzApps() throws IOException {
 		final Resource[] resources = new PathMatchingResourcePatternResolver(BuzzConfig.class.getClassLoader())
-			.getResources("classpath*:/META-INF/*.BuzzApp.xmi");
+			.getResources("classpath*:/config/*.BuzzApp.xmi");
 		log.info("Loading {} BuzzApp resources from classpath: {}", resources.length, resources);
 		Pattern tenantIdPattern = Pattern.compile("([^.]+).+");
 		ImmutableMap.Builder<String, BuzzApp> builder = ImmutableMap.builder();
@@ -57,7 +57,7 @@ public class BuzzConfig {
 	@Bean
 	public Map<String, BuzzAccount> buzzAccounts() throws IOException {
 		final Resource[] resources = new PathMatchingResourcePatternResolver(BuzzConfig.class.getClassLoader())
-			.getResources("classpath*:/META-INF/*.BuzzAccount.xmi");
+			.getResources("classpath*:/config/*.BuzzAccount.xmi");
 		log.info("Loading {} BuzzAccount resources from classpath: {}", resources.length, resources);
 		Pattern tenantIdPattern = Pattern.compile("([^.]+).+");
 		ImmutableMap.Builder<String, BuzzAccount> builder = ImmutableMap.builder();

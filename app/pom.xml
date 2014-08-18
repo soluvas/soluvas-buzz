@@ -14,18 +14,6 @@
 	<name>Soluvas Buzz App</name>
 	<description>Buzz Web Application.</description>
 	
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.soluvas</groupId>
-				<artifactId>org.soluvas.web.parent</artifactId>
-				<version>2.1.0-SNAPSHOT</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.soluvas.buzz</groupId>
@@ -43,22 +31,26 @@
 		</dependency>
 
 		<dependency>
-			<groupId>de.agilecoders.wicket</groupId>
-			<artifactId>wicket-bootstrap-extensions</artifactId>
-			<version>0.8.4</version>
-		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>de.agilecoders.wicket</groupId> -->
-<!-- 			<artifactId>wicket-bootstrap-themes</artifactId> -->
-<!-- 			<version>0.8.4</version> -->
-<!-- 		</dependency> -->
-		<dependency>
 			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket.experimental.wicket6</groupId>
 			<artifactId>wicket-atmosphere</artifactId>
 			<exclusions>
 				<exclusion>
-					<artifactId>atmosphere-compat-tomcat7</artifactId>
+					<artifactId>atmosphere-runtime</artifactId>
 					<groupId>org.atmosphere</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.atmosphere</groupId>
+			<artifactId>atmosphere-runtime-native</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.atmosphere</groupId>
+					<artifactId>atmosphere-compat-tomcat7</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -66,20 +58,6 @@
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.jersey.contribs</groupId>
-			<artifactId>jersey-spring</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<classifier>soluvas</classifier>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
 		</dependency>
 
 		<dependency>
@@ -200,7 +178,7 @@
 				<directory>src/main/resources</directory>
 				<excludes>
 					<exclude>logback.xml</exclude>
-					<exclude>META-INF/buzz.properties</exclude>
+					<exclude>config/application.properties</exclude>
 				</excludes>
 			</resource>
 			<resource>

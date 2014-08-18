@@ -21,51 +21,43 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.twitter4j</groupId>
 			<artifactId>twitter4j-core</artifactId>
-			<version>3.0.3</version>
+			<version>4.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
-			<version>0.9.5-pre3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.0.Beta3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.2-1003-jdbc4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jadira.usertype</groupId>
 			<artifactId>usertype.core</artifactId>
-			<version>3.1.0.CR8</version>
 		</dependency>
 		
 		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.2.0</version>
-		    <exclusions>
-		    	<exclusion>
-		    		<artifactId>c3p0</artifactId>
-		    		<groupId>c3p0</groupId>
-		    	</exclusion>
-		    </exclusions>
+			<groupId>org.soluvas</groupId>
+			<artifactId>org.soluvas.schedule</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
 			<artifactId>spring-batch-core</artifactId>
-			<version>2.2.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
 			<artifactId>spring-batch-test</artifactId>
-			<version>2.2.1.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		

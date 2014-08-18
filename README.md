@@ -1,6 +1,6 @@
-h1. Soluvas Buzz
+# Soluvas Buzz
 
-h2. Two Primary Use Cases
+## Two Primary Use Cases
 
 Buzz is used for 2+1 different modes of operation:
 
@@ -65,7 +65,7 @@ automatically multi-consumer, although the multi-consumer support is only
 usable at the webapp/shell level, not inside a tenant. And that there is
 1:1 correspondence between consumer and tenant. 
 
-h2. Storage: XMI, MongoDB, CouchDB
+## Storage: XMI, MongoDB, CouchDB
 
 All data can be stored in XMI, where they're usually uneditable.
 
@@ -75,27 +75,28 @@ Experimental support for CouchDB, where the same data structure can be used in A
 
 With or without CouchDB, the data model is designed to be replicatable with offline support a la COuchDB.
 
-h2. Spring Batch
+## PostgreSQL
+
+Create the database:
+
+	CREATE DATABASE buzz_buzz_dev
+	  WITH TEMPLATE = template0
+	       ENCODING = 'UTF8'
+	       LC_COLLATE = 'en_US.UTF-8'
+	       LC_CTYPE = 'en_US.UTF-8';
+
+## Spring Batch
 
 All operations (whether on-demand or scheduled) are performed using Spring Batch. This ensure operations are logged properly,
 and can be retried if failed, for example due to Twitter's rate limiting.
 
-h2. Quartz Scheduling
+## Quartz Scheduling
 
-Scheduled jobs are done using Quartz.
+Scheduled jobs are done using Quartz (app-wide), and persisted in PostgreSQL in `public` schema.
 
-TBD: Persistence of triggers in Quartz, or own, or hybrid?
+    psql -hlocalhost -Upostgres -w -fquartz.sql buzz_buzz_dev
 
-h2. PostgreSQL
 
-Create the database:
-
-bc. CREATE DATABASE buzz_dev
-  WITH TEMPLATE = template0
-       ENCODING = 'UTF8'
-       LC_COLLATE = 'en_US.UTF-8'
-       LC_CTYPE = 'en_US.UTF-8';
-
-h2. Credits
+## Credits
 
 Icon by "Aha-Soft":http://www.aha-soft.com/icon-design.htm, licensed under Creative Commons (Attribution 3.0 Unported).
