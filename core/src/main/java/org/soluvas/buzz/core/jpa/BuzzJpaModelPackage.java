@@ -592,6 +592,167 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	public static final int TWITTERPLACE_GEOMETRYTYPE_FEATURE_ID = 9;
 
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFRIENDCOUNT_CLASSIFIER_ID = 3;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFRIENDCOUNT_TWITTERUSERID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFRIENDCOUNT_FETCHTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFRIENDCOUNT_FRIENDCOUNT_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERCOUNT_CLASSIFIER_ID = 5;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERCOUNT_TWITTERUSERID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERCOUNT_FETCHTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERCOUNT_CLASSIFIER_ID = 4;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERCOUNT_TWITTERUSERID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERCOUNT_FETCHTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERCOUNT_FOLLOWERCOUNT_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERLISTEDCOUNT_CLASSIFIER_ID = 6;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERLISTEDCOUNT_TWITTERUSERID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERLISTEDCOUNT_FETCHTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERLISTEDCOUNT_LISTEDCOUNT_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERSTATUSCOUNT_CLASSIFIER_ID = 7;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERSTATUSCOUNT_TWITTERUSERID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERSTATUSCOUNT_FETCHTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERSTATUSCOUNT_STATUSCOUNT_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFAVORITECOUNT_CLASSIFIER_ID = 8;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFAVORITECOUNT_TWITTERUSERID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFAVORITECOUNT_FETCHTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFAVORITECOUNT_FAVORITECOUNT_FEATURE_ID = 2;
+
+	/**
 	 * The static member with the instance of this {@link ModelPackage}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -640,6 +801,24 @@ public class BuzzJpaModelPackage extends ModelPackage {
 		ModelResolver.getInstance().registerClassModelMapping(
 				TwitterPlace.class, modelPackage.getTwitterPlaceEClass(),
 				modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterFriendCount.class,
+				modelPackage.getTwitterFriendCountEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterCount.class, modelPackage.getTwitterCountEClass(),
+				modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterFavoriteCount.class,
+				modelPackage.getTwitterFavoriteCountEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterFollowerCount.class,
+				modelPackage.getTwitterFollowerCountEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterListedCount.class,
+				modelPackage.getTwitterListedCountEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterStatusCount.class,
+				modelPackage.getTwitterStatusCountEClass(), modelPackage);
 
 		// and return ourselves
 		return modelPackage;
@@ -1779,6 +1958,336 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	}
 
 	/**
+	 * Returns the {@link EClass} '<em><b>TwitterFriendCount</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterFriendCount</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterFriendCountEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERFRIENDCOUNT_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFriendCount.twitterUserId</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFriendCount.twitterUserId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFriendCount_TwitterUserId() {
+		return (EAttribute) getTwitterFriendCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFRIENDCOUNT_TWITTERUSERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFriendCount.fetchTime</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFriendCount.fetchTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFriendCount_FetchTime() {
+		return (EAttribute) getTwitterFriendCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFRIENDCOUNT_FETCHTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFriendCount.friendCount</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFriendCount.friendCount</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFriendCount_FriendCount() {
+		return (EAttribute) getTwitterFriendCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFRIENDCOUNT_FRIENDCOUNT_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EClass} '<em><b>TwitterCount</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '<em><b>TwitterCount</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterCountEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERCOUNT_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterCount.twitterUserId</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterCount.twitterUserId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterCount_TwitterUserId() {
+		return (EAttribute) getTwitterCountEClass().getEAllStructuralFeatures()
+				.get(TWITTERCOUNT_TWITTERUSERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterCount.fetchTime</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterCount.fetchTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterCount_FetchTime() {
+		return (EAttribute) getTwitterCountEClass().getEAllStructuralFeatures()
+				.get(TWITTERCOUNT_FETCHTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EClass} '<em><b>TwitterFollowerCount</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterFollowerCount</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterFollowerCountEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERFOLLOWERCOUNT_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerCount.twitterUserId</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerCount.twitterUserId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerCount_TwitterUserId() {
+		return (EAttribute) getTwitterFollowerCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERCOUNT_TWITTERUSERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerCount.fetchTime</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerCount.fetchTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerCount_FetchTime() {
+		return (EAttribute) getTwitterFollowerCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERCOUNT_FETCHTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerCount.followerCount</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerCount.followerCount</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerCount_FollowerCount() {
+		return (EAttribute) getTwitterFollowerCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERCOUNT_FOLLOWERCOUNT_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EClass} '<em><b>TwitterListedCount</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterListedCount</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterListedCountEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERLISTEDCOUNT_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterListedCount.twitterUserId</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterListedCount.twitterUserId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterListedCount_TwitterUserId() {
+		return (EAttribute) getTwitterListedCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERLISTEDCOUNT_TWITTERUSERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterListedCount.fetchTime</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterListedCount.fetchTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterListedCount_FetchTime() {
+		return (EAttribute) getTwitterListedCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERLISTEDCOUNT_FETCHTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterListedCount.listedCount</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterListedCount.listedCount</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterListedCount_ListedCount() {
+		return (EAttribute) getTwitterListedCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERLISTEDCOUNT_LISTEDCOUNT_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EClass} '<em><b>TwitterStatusCount</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterStatusCount</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterStatusCountEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERSTATUSCOUNT_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterStatusCount.twitterUserId</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterStatusCount.twitterUserId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterStatusCount_TwitterUserId() {
+		return (EAttribute) getTwitterStatusCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERSTATUSCOUNT_TWITTERUSERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterStatusCount.fetchTime</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterStatusCount.fetchTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterStatusCount_FetchTime() {
+		return (EAttribute) getTwitterStatusCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERSTATUSCOUNT_FETCHTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterStatusCount.statusCount</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterStatusCount.statusCount</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterStatusCount_StatusCount() {
+		return (EAttribute) getTwitterStatusCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERSTATUSCOUNT_STATUSCOUNT_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EClass} '<em><b>TwitterFavoriteCount</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterFavoriteCount</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterFavoriteCountEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERFAVORITECOUNT_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFavoriteCount.twitterUserId</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFavoriteCount.twitterUserId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFavoriteCount_TwitterUserId() {
+		return (EAttribute) getTwitterFavoriteCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFAVORITECOUNT_TWITTERUSERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFavoriteCount.fetchTime</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFavoriteCount.fetchTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFavoriteCount_FetchTime() {
+		return (EAttribute) getTwitterFavoriteCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFAVORITECOUNT_FETCHTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFavoriteCount.favoriteCount</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFavoriteCount.favoriteCount</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFavoriteCount_FavoriteCount() {
+		return (EAttribute) getTwitterFavoriteCountEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFAVORITECOUNT_FAVORITECOUNT_FEATURE_ID);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param eClassifier
@@ -1795,6 +2304,18 @@ public class BuzzJpaModelPackage extends ModelPackage {
 			return TwitterStatusEmbed.class;
 		case TWITTERPLACE_CLASSIFIER_ID:
 			return TwitterPlace.class;
+		case TWITTERFRIENDCOUNT_CLASSIFIER_ID:
+			return TwitterFriendCount.class;
+		case TWITTERCOUNT_CLASSIFIER_ID:
+			return TwitterCount.class;
+		case TWITTERFAVORITECOUNT_CLASSIFIER_ID:
+			return TwitterFavoriteCount.class;
+		case TWITTERFOLLOWERCOUNT_CLASSIFIER_ID:
+			return TwitterFollowerCount.class;
+		case TWITTERLISTEDCOUNT_CLASSIFIER_ID:
+			return TwitterListedCount.class;
+		case TWITTERSTATUSCOUNT_CLASSIFIER_ID:
+			return TwitterStatusCount.class;
 		default:
 			throw new IllegalArgumentException("The EClassifier '"
 					+ eClassifier + "' is not defined in this EPackage");

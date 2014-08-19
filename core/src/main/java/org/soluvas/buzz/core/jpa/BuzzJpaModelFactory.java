@@ -1,6 +1,7 @@
 package org.soluvas.buzz.core.jpa;
 
 import java.util.List;
+import java.util.Locale;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -40,6 +41,16 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			return createTwitterStatusEmbed();
 		case BuzzJpaModelPackage.TWITTERPLACE_CLASSIFIER_ID:
 			return createTwitterPlace();
+		case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_CLASSIFIER_ID:
+			return createTwitterFriendCount();
+		case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_CLASSIFIER_ID:
+			return createTwitterFavoriteCount();
+		case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_CLASSIFIER_ID:
+			return createTwitterFollowerCount();
+		case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_CLASSIFIER_ID:
+			return createTwitterListedCount();
+		case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_CLASSIFIER_ID:
+			return createTwitterStatusCount();
 		default:
 			throw new IllegalArgumentException("The EClass '"
 					+ eClass.getName()
@@ -70,6 +81,24 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			break;
 		case BuzzJpaModelPackage.TWITTERPLACE_CLASSIFIER_ID:
 			modelObject = new TwitterPlaceModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_CLASSIFIER_ID:
+			modelObject = new TwitterFriendCountModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERCOUNT_CLASSIFIER_ID:
+			modelObject = new TwitterCountModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_CLASSIFIER_ID:
+			modelObject = new TwitterFavoriteCountModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_CLASSIFIER_ID:
+			modelObject = new TwitterFollowerCountModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_CLASSIFIER_ID:
+			modelObject = new TwitterListedCountModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_CLASSIFIER_ID:
+			modelObject = new TwitterStatusCountModelObject();
 			break;
 		default:
 			throw new IllegalArgumentException("The EClass '" + eClass
@@ -141,6 +170,61 @@ public class BuzzJpaModelFactory implements ModelFactory {
 	 */
 	public TwitterPlace createTwitterPlace() {
 		return new TwitterPlace();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterFriendCount
+	 * @generated
+	 */
+	public TwitterFriendCount createTwitterFriendCount() {
+		return new TwitterFriendCount();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterFollowerCount
+	 * @generated
+	 */
+	public TwitterFollowerCount createTwitterFollowerCount() {
+		return new TwitterFollowerCount();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterListedCount
+	 * @generated
+	 */
+	public TwitterListedCount createTwitterListedCount() {
+		return new TwitterListedCount();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterStatusCount
+	 * @generated
+	 */
+	public TwitterStatusCount createTwitterStatusCount() {
+		return new TwitterStatusCount();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterFavoriteCount
+	 * @generated
+	 */
+	public TwitterFavoriteCount createTwitterFavoriteCount() {
+		return new TwitterFavoriteCount();
 	}
 
 	/**
@@ -388,7 +472,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				getTarget().setProfileBackgroundTiled((Boolean) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_LANG_FEATURE_ID:
-				getTarget().setLang((String) value);
+				getTarget().setLang((Locale) value);
 				return;
 			case BuzzJpaModelPackage.TWITTERUSER_STATUSESCOUNT_FEATURE_ID:
 				getTarget().setStatusesCount((Integer) value);
@@ -764,6 +848,567 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				return;
 			case BuzzJpaModelPackage.TWITTERPLACE_GEOMETRYTYPE_FEATURE_ID:
 				getTarget().setGeometryType((String) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterFriendCount</b></em>'.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterFriendCountModelObject<E extends TwitterFriendCount>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterFriendCountEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_TWITTERUSERID_FEATURE_ID:
+				return getTarget().getTwitterUserId();
+			case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_FETCHTIME_FEATURE_ID:
+				return getTarget().getFetchTime();
+			case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_FRIENDCOUNT_FEATURE_ID:
+				return getTarget().getFriendCount();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_TWITTERUSERID_FEATURE_ID:
+				getTarget().setTwitterUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_FETCHTIME_FEATURE_ID:
+				getTarget().setFetchTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_FRIENDCOUNT_FEATURE_ID:
+				getTarget().setFriendCount((Integer) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterCount</b></em>'.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterCountModelObject<E extends TwitterCount> extends
+			AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterCountEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERCOUNT_TWITTERUSERID_FEATURE_ID:
+				return getTarget().getTwitterUserId();
+			case BuzzJpaModelPackage.TWITTERCOUNT_FETCHTIME_FEATURE_ID:
+				return getTarget().getFetchTime();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERCOUNT_TWITTERUSERID_FEATURE_ID:
+				getTarget().setTwitterUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERCOUNT_FETCHTIME_FEATURE_ID:
+				getTarget().setFetchTime((DateTime) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterFollowerCount</b></em>
+	 * '.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterFollowerCountModelObject<E extends TwitterFollowerCount>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterFollowerCountEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_TWITTERUSERID_FEATURE_ID:
+				return getTarget().getTwitterUserId();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_FETCHTIME_FEATURE_ID:
+				return getTarget().getFetchTime();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_FOLLOWERCOUNT_FEATURE_ID:
+				return getTarget().getFollowerCount();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_TWITTERUSERID_FEATURE_ID:
+				getTarget().setTwitterUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_FETCHTIME_FEATURE_ID:
+				getTarget().setFetchTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERCOUNT_FOLLOWERCOUNT_FEATURE_ID:
+				getTarget().setFollowerCount((Integer) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterListedCount</b></em>'.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterListedCountModelObject<E extends TwitterListedCount>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterListedCountEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_TWITTERUSERID_FEATURE_ID:
+				return getTarget().getTwitterUserId();
+			case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_FETCHTIME_FEATURE_ID:
+				return getTarget().getFetchTime();
+			case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_LISTEDCOUNT_FEATURE_ID:
+				return getTarget().getListedCount();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_TWITTERUSERID_FEATURE_ID:
+				getTarget().setTwitterUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_FETCHTIME_FEATURE_ID:
+				getTarget().setFetchTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERLISTEDCOUNT_LISTEDCOUNT_FEATURE_ID:
+				getTarget().setListedCount((Integer) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterStatusCount</b></em>'.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterStatusCountModelObject<E extends TwitterStatusCount>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterStatusCountEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_TWITTERUSERID_FEATURE_ID:
+				return getTarget().getTwitterUserId();
+			case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_FETCHTIME_FEATURE_ID:
+				return getTarget().getFetchTime();
+			case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_STATUSCOUNT_FEATURE_ID:
+				return getTarget().getStatusCount();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_TWITTERUSERID_FEATURE_ID:
+				getTarget().setTwitterUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_FETCHTIME_FEATURE_ID:
+				getTarget().setFetchTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_STATUSCOUNT_FEATURE_ID:
+				getTarget().setStatusCount((Integer) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterFavoriteCount</b></em>
+	 * '.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterFavoriteCountModelObject<E extends TwitterFavoriteCount>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterFavoriteCountEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_TWITTERUSERID_FEATURE_ID:
+				return getTarget().getTwitterUserId();
+			case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_FETCHTIME_FEATURE_ID:
+				return getTarget().getFetchTime();
+			case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_FAVORITECOUNT_FEATURE_ID:
+				return getTarget().getFavoriteCount();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_TWITTERUSERID_FEATURE_ID:
+				getTarget().setTwitterUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_FETCHTIME_FEATURE_ID:
+				getTarget().setFetchTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_FAVORITECOUNT_FEATURE_ID:
+				getTarget().setFavoriteCount((Integer) value);
 				return;
 			default:
 				super.eSet(eStructuralFeature, value);

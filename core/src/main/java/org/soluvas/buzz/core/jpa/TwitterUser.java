@@ -1,5 +1,6 @@
 package org.soluvas.buzz.core.jpa;
 
+import java.util.Locale;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -7,10 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
-
 import twitter4j.User;
 
 /**
@@ -215,10 +214,10 @@ public class TwitterUser {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	@Basic()
-	private String lang = null;
+	@Type(type = "org.soluvas.jpa.PersistentLocale")
+	private Locale lang = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1058,7 +1057,7 @@ public class TwitterUser {
 	 * @return the value of '<em><b>lang</b></em>' feature
 	 * @generated
 	 */
-	public String getLang() {
+	public Locale getLang() {
 		return lang;
 	}
 
@@ -1072,7 +1071,7 @@ public class TwitterUser {
 	 *            feature.
 	 * @generated
 	 */
-	public void setLang(String newLang) {
+	public void setLang(Locale newLang) {
 		lang = newLang;
 	}
 
@@ -1869,7 +1868,7 @@ public class TwitterUser {
 		setProfileBannerMobileUrl(src.getProfileBannerMobileURL());
 		setProfileBannerMobileRetinaUrl(src.getProfileBannerMobileRetinaURL());
 		setProfileBackgroundTiled(src.isProfileBackgroundTiled());
-		setLang(src.getLang());
+		setLang(Locale.forLanguageTag(src.getLang()));
 		setStatusesCount(src.getStatusesCount());
 		setGeoEnabled(src.isGeoEnabled());
 		setVerified(src.isVerified());

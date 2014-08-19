@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
 import javax.persistence.Basic;
-import javax.persistence.CollectionTable;
-import javax.persistence.ElementCollection;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import org.hibernate.annotations.Type;
@@ -124,10 +123,11 @@ public class TwitterStatusEmbed {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
-	@ElementCollection()
-	@CollectionTable()
+	@Column(columnDefinition = "bigint[]")
+	// TODO: workaround for
+	// https://github.com/JadiraOrg/jadira/issues/21#issuecomment-52621705
+	@Type(type = "org.soluvas.jpa.PersistentLongList")
 	private List<Long> contributors = new ArrayList<Long>();
 
 	/**

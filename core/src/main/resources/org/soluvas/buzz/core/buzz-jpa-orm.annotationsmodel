@@ -61,5 +61,68 @@
         <embeddable/>
       </eClassAnnotations>
     </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterFriendCount"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+          <idClass class="org.soluvas.buzz.core.TwitterCountKey"/>
+        </entity>
+      </eClassAnnotations>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterCount"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <mappedSuperclass/>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterCountKey/twitterUserId"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <id/>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterCountKey/fetchTime"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <id/>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterFavoriteCount"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+          <idClass class="org.soluvas.buzz.core.TwitterCountKey"/>
+        </entity>
+      </eClassAnnotations>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterFollowerCount"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+          <idClass class="org.soluvas.buzz.core.TwitterCountKey"/>
+        </entity>
+      </eClassAnnotations>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterListedCount"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+          <idClass class="org.soluvas.buzz.core.TwitterCountKey"/>
+        </entity>
+      </eClassAnnotations>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterStatusCount"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+          <idClass class="org.soluvas.buzz.core.TwitterCountKey"/>
+        </entity>
+      </eClassAnnotations>
+    </annotatedEClassifiers>
   </annotatedEPackages>
 </annotationsmodel:AnnotatedModel>

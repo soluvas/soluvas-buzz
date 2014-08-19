@@ -10,6 +10,11 @@ import org.quartz.JobExecutionException;
 import org.soluvas.buzz.core.BuzzAccount;
 import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.BuzzCorePackage;
+import org.soluvas.buzz.core.jpa.TwitterFavoriteCount;
+import org.soluvas.buzz.core.jpa.TwitterFollowerCount;
+import org.soluvas.buzz.core.jpa.TwitterFriendCount;
+import org.soluvas.buzz.core.jpa.TwitterListedCount;
+import org.soluvas.buzz.core.jpa.TwitterStatusCount;
 import org.soluvas.buzz.core.jpa.TwitterUser;
 import org.soluvas.commons.OnDemandXmiLoader;
 import org.soluvas.commons.tenant.CommandRequestAttributes;
@@ -31,7 +36,7 @@ import com.google.common.base.Throwables;
 
 /**
  * Using specified {@link #setCampaignId(String)}, fetches the Twitter {@link User} specified by {@link #setScreenNames(Set)}
- * and saves it into {@link TwitterUser}.
+ * and saves it into {@link TwitterUser} + counts.
  * @author ceefour
  */
 public class LookupUsersJob extends TenantJob {
@@ -65,6 +70,11 @@ public class LookupUsersJob extends TenantJob {
 		Preconditions.checkNotNull(campaignId, "campaignId is required");
 		Preconditions.checkNotNull(screenNames, "screenNames is required");
 		TwitterUserRepository twitterUserRepo = getBean(TwitterUserRepository.class);
+		TwitterStatusCountRepository statusCountRepo = getBean(TwitterStatusCountRepository.class);
+		TwitterFavoriteCountRepository favoriteCountRepo = getBean(TwitterFavoriteCountRepository.class);
+		TwitterFriendCountRepository friendCountRepo = getBean(TwitterFriendCountRepository.class);
+		TwitterFollowerCountRepository followerCountRepo = getBean(TwitterFollowerCountRepository.class);
+		TwitterListedCountRepository listedCountRepo = getBean(TwitterListedCountRepository.class);
 		
 		try (Closeable cl = CommandRequestAttributes.withTenant(tenantId)) {
 			final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/config/" + tenantId + ".BuzzApp.xmi" ).get();
@@ -90,9 +100,41 @@ public class LookupUsersJob extends TenantJob {
 						twitterUser = new TwitterUser();
 						twitterUser.setRevId(1);
 					}
-					twitterUser.setFetchTime(new DateTime(/*FIXME: timezone*/));
+					final DateTime fetchTime = new DateTime(/*FIXME: timezone*/);
+					twitterUser.setFetchTime(fetchTime);
 					twitterUser.copyFrom(user);
 					twitterUserRepo.save(twitterUser);
+					
+					final TwitterStatusCount statusCount = new TwitterStatusCount(user.getId(), fetchTime, twitterUser.getStatusesCount());
+					try {
+						statusCountRepo.save( statusCount );
+					} catch (Exception e) {
+						log.error("Cannot add statusCount " + statusCount, e);
+					}
+					final TwitterFavoriteCount favoriteCount = new TwitterFavoriteCount(user.getId(), fetchTime, twitterUser.getFavouritesCount());
+					try {
+						favoriteCountRepo.save( favoriteCount );
+					} catch (Exception e) {
+						log.error("Cannot add favoriteCount " + favoriteCount, e);
+					}
+					final TwitterFriendCount friendCount = new TwitterFriendCount(user.getId(), fetchTime, twitterUser.getFriendsCount());
+					try {
+						friendCountRepo.save( friendCount );
+					} catch (Exception e) {
+						log.error("Cannot add friendCount " + friendCount, e);
+					}
+					final TwitterFollowerCount followerCount = new TwitterFollowerCount(user.getId(), fetchTime, twitterUser.getFollowersCount());
+					try {
+						followerCountRepo.save( followerCount );
+					} catch (Exception e) {
+						log.error("Cannot add followerCount " + followerCount, e);
+					}
+					final TwitterListedCount listedCount = new TwitterListedCount(user.getId(), fetchTime, twitterUser.getListedCount());
+					try {
+						listedCountRepo.save( listedCount );
+					} catch (Exception e) {
+						log.error("Cannot add statusCount " + listedCount, e);
+					}
 				}
 			} catch (TwitterException e) {
 				throw new JobExecutionException("Cannot lookup " + screenNames, e);
