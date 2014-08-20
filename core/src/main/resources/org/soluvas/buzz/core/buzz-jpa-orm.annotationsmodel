@@ -26,7 +26,7 @@
         <eAttribute href="buzz-jpa.ecore#//TwitterUser/screenName"/>
         <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
           <basic>
-            <column nullable="false"/>
+            <column nullable="false" unique="true"/>
           </basic>
         </eAttributeAnnotations>
       </annotatedEStructuralFeatures>
@@ -34,6 +34,12 @@
         <eReference href="buzz-jpa.ecore#//TwitterUser/status"/>
         <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
           <embedded/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterUser/followers"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <oneToMany mappedBy="user"/>
         </eReferenceAnnotations>
       </annotatedEStructuralFeatures>
     </annotatedEClassifiers>
@@ -123,6 +129,75 @@
           <idClass class="org.soluvas.buzz.core.TwitterCountKey"/>
         </entity>
       </eClassAnnotations>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterFollowerSnapshot"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+        </entity>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterFollowerSnapshot/pages"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <oneToMany mappedBy="snapshot"/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterFollowerSnapshot/id"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <id>
+            <generatedValue strategy="IDENTITY"/>
+          </id>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterFollowerPage"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+          <idClass class="org.soluvas.buzz.core.TwitterFollowerPageKey"/>
+        </entity>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterFollowerPage/followers"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <oneToMany mappedBy="page"/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterFollowerPage/pageCursor"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <id/>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterFollowerPage/snapshot"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <manyToOne id="true"/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="buzz-jpa.ecore#//TwitterFollower"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <table schema="buzz"/>
+        </entity>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="buzz-jpa.ecore#//TwitterFollower/page"/>
+        <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
+          <manyToOne id="true"/>
+        </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="buzz-jpa.ecore#//TwitterFollower/userId"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <id/>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
     </annotatedEClassifiers>
   </annotatedEPackages>
 </annotationsmodel:AnnotatedModel>

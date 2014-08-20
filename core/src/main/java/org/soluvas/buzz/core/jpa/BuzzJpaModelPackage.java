@@ -393,6 +393,13 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
+	public static final int TWITTERUSER_FOLLOWERS_FEATURE_ID = 48;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public static final int TWITTERSTATUSEMBED_CLASSIFIER_ID = 1;
 
 	/**
@@ -729,6 +736,174 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
+	public static final int TWITTERFOLLOWERSNAPSHOT_CLASSIFIER_ID = 11;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERSNAPSHOT_ID_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERSNAPSHOT_PAGES_FEATURE_ID = 3;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERSNAPSHOT_USER_FEATURE_ID = 4;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERSNAPSHOT_SCREENNAME_FEATURE_ID = 5;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERSNAPSHOT_CREATIONTIME_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERSNAPSHOT_MODIFICATIONTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_CLASSIFIER_ID = 9;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_SCREENNAME_FEATURE_ID = 6;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID = 7;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_SNAPSHOT_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_USERID_FEATURE_ID = 8;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_PAGECURSOR_FEATURE_ID = 5;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_PREVIOUSCURSOR_FEATURE_ID = 3;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_NEXTCURSOR_FEATURE_ID = 4;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_PAGESIZE_FEATURE_ID = 9;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_CREATIONTIME_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWER_CLASSIFIER_ID = 10;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWER_USERID_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWER_SCREENNAME_FEATURE_ID = 3;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWER_PAGE_FEATURE_ID = 4;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWER_SNAPSHOTID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWER_PAGECURSOR_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public static final int TWITTERFAVORITECOUNT_CLASSIFIER_ID = 8;
 
 	/**
@@ -819,6 +994,15 @@ public class BuzzJpaModelPackage extends ModelPackage {
 		ModelResolver.getInstance().registerClassModelMapping(
 				TwitterStatusCount.class,
 				modelPackage.getTwitterStatusCountEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterFollowerSnapshot.class,
+				modelPackage.getTwitterFollowerSnapshotEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterFollowerPage.class,
+				modelPackage.getTwitterFollowerPageEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterFollower.class, modelPackage.getTwitterFollowerEClass(),
+				modelPackage);
 
 		// and return ourselves
 		return modelPackage;
@@ -1541,6 +1725,20 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	}
 
 	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterUser.followers</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterUser.followers</b></em>'.
+	 * @generated
+	 */
+	public EReference getTwitterUser_Followers() {
+		return (EReference) getTwitterUserEClass().getEAllStructuralFeatures()
+				.get(TWITTERUSER_FOLLOWERS_FEATURE_ID);
+	}
+
+	/**
 	 * Returns the {@link EClass} '<em><b>TwitterStatusEmbed</b></em>'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2230,6 +2428,360 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	}
 
 	/**
+	 * Returns the {@link EClass} '<em><b>TwitterFollowerSnapshot</b></em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterFollowerSnapshot</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterFollowerSnapshotEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERFOLLOWERSNAPSHOT_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerSnapshot.id</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerSnapshot.id</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerSnapshot_Id() {
+		return (EAttribute) getTwitterFollowerSnapshotEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERSNAPSHOT_ID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerSnapshot.pages</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerSnapshot.pages</b></em>'.
+	 * @generated
+	 */
+	public EReference getTwitterFollowerSnapshot_Pages() {
+		return (EReference) getTwitterFollowerSnapshotEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERSNAPSHOT_PAGES_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerSnapshot.user</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerSnapshot.user</b></em>'.
+	 * @generated
+	 */
+	public EReference getTwitterFollowerSnapshot_User() {
+		return (EReference) getTwitterFollowerSnapshotEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERSNAPSHOT_USER_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerSnapshot.screenName</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerSnapshot.screenName</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerSnapshot_ScreenName() {
+		return (EAttribute) getTwitterFollowerSnapshotEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERSNAPSHOT_SCREENNAME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerSnapshot.creationTime</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerSnapshot.creationTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerSnapshot_CreationTime() {
+		return (EAttribute) getTwitterFollowerSnapshotEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERSNAPSHOT_CREATIONTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerSnapshot.modificationTime</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerSnapshot.modificationTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerSnapshot_ModificationTime() {
+		return (EAttribute) getTwitterFollowerSnapshotEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERSNAPSHOT_MODIFICATIONTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EClass} '<em><b>TwitterFollowerPage</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterFollowerPage</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterFollowerPageEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERFOLLOWERPAGE_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.screenName</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.screenName</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_ScreenName() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_SCREENNAME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.followers</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.followers</b></em>'.
+	 * @generated
+	 */
+	public EReference getTwitterFollowerPage_Followers() {
+		return (EReference) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.snapshot</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.snapshot</b></em>'.
+	 * @generated
+	 */
+	public EReference getTwitterFollowerPage_Snapshot() {
+		return (EReference) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_SNAPSHOT_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.userId</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.userId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_UserId() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_USERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.pageCursor</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.pageCursor</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_PageCursor() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_PAGECURSOR_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.previousCursor</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.previousCursor</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_PreviousCursor() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_PREVIOUSCURSOR_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.nextCursor</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.nextCursor</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_NextCursor() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_NEXTCURSOR_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.pageSize</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.pageSize</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_PageSize() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_PAGESIZE_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.creationTime</b></em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.creationTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_CreationTime() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_CREATIONTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.modificationTime</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.modificationTime</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_ModificationTime() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EClass} '<em><b>TwitterFollower</b></em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EClass} '
+	 *         <em><b>TwitterFollower</b></em>'
+	 * @generated
+	 */
+	public EClass getTwitterFollowerEClass() {
+		return (EClass) getEPackage().getEClassifiers().get(
+				TWITTERFOLLOWER_CLASSIFIER_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollower.userId</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollower.userId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollower_UserId() {
+		return (EAttribute) getTwitterFollowerEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWER_USERID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollower.screenName</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollower.screenName</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollower_ScreenName() {
+		return (EAttribute) getTwitterFollowerEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWER_SCREENNAME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollower.page</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollower.page</b></em>'.
+	 * @generated
+	 */
+	public EReference getTwitterFollower_Page() {
+		return (EReference) getTwitterFollowerEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWER_PAGE_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollower.snapshotId</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollower.snapshotId</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollower_SnapshotId() {
+		return (EAttribute) getTwitterFollowerEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWER_SNAPSHOTID_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollower.pageCursor</b></em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollower.pageCursor</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollower_PageCursor() {
+		return (EAttribute) getTwitterFollowerEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWER_PAGECURSOR_FEATURE_ID);
+	}
+
+	/**
 	 * Returns the {@link EClass} '<em><b>TwitterFavoriteCount</b></em>'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -2316,6 +2868,12 @@ public class BuzzJpaModelPackage extends ModelPackage {
 			return TwitterListedCount.class;
 		case TWITTERSTATUSCOUNT_CLASSIFIER_ID:
 			return TwitterStatusCount.class;
+		case TWITTERFOLLOWERSNAPSHOT_CLASSIFIER_ID:
+			return TwitterFollowerSnapshot.class;
+		case TWITTERFOLLOWERPAGE_CLASSIFIER_ID:
+			return TwitterFollowerPage.class;
+		case TWITTERFOLLOWER_CLASSIFIER_ID:
+			return TwitterFollower.class;
 		default:
 			throw new IllegalArgumentException("The EClassifier '"
 					+ eClassifier + "' is not defined in this EPackage");

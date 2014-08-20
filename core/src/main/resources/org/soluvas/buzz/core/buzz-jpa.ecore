@@ -16,7 +16,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="profileBackgroundImageUrlHttps"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="name of the user"/>
       </eAnnotations>
@@ -107,6 +107,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="miniProfileImageUrlHttps"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="followers" upperBound="-1"
+        eType="#//TwitterFollowerSnapshot" containment="true" eOpposite="#//TwitterFollowerSnapshot/user"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TwitterStatusEmbed">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdAt" eType="ecore:EDataType ../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//DateTime"/>
@@ -178,5 +180,71 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fetchTime" eType="ecore:EDataType ../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//DateTime"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="favoriteCount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterFollowerPage" eSuperTypes="../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//Timestamped">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="snapshot" lowerBound="1"
+        eType="#//TwitterFollowerSnapshot" eOpposite="#//TwitterFollowerSnapshot/pages"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousCursor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextCursor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageCursor" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="screenName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Shortcut for query purposes so no lookup to {@link TwitterUser} is needed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="followers" upperBound="-1"
+        eType="#//TwitterFollower" containment="true" eOpposite="#//TwitterFollower/page"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Shortcut for query purposes so no lookup to {@link TwitterUser} is needed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageSize" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Usually either 20 or 200 for full fetch, or 5000 (IDs only)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterFollower">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This contain at least {@code #userId}. The rest should be looked up (if available) in {@link TwitterUser}.&#xA;&#xA;&lt;p>It was decided to use a dedicated TwitterFollower table instead of List of Long, to make it easy to SQL join."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="snapshotId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageCursor" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is &lt;b>not&lt;/b> guaranteed to exist in {@link TwitterUser}."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="screenName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provided as a convenience, in case {@link TwitterUser} is deleted. This attribute is not always available."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" lowerBound="1" eType="#//TwitterFollowerPage"
+        eOpposite="#//TwitterFollowerPage/followers"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterFollowerSnapshot" eSuperTypes="../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//Timestamped">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A snapshot groups a set of follower pages that are &quot;somewhat consistent&quot;.&#xA;i.e. To retrieve 200,000 followers (typical selebtwit followers), you need 1,000 pages of 200 followers each, which is one snapshot.&#xA;To detect unfollowers, first you need to fetch all followers into a snapshot, then you need to fetch again all followers into the second snapshot, and compare two snapshots.&#xA;&#xA;&lt;p>A parent {@link TwitterUser} is required."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
+        eType="#//TwitterFollowerPage" containment="true" eOpposite="#//TwitterFollowerPage/snapshot"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" lowerBound="1" eType="#//TwitterUser"
+        eOpposite="#//TwitterUser/followers"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="screenName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Shortcut for query purposes so no lookup to {@link TwitterUser} is needed."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

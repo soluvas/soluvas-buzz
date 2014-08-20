@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 import org.soluvas.buzz.core.TwitterCountKey;
@@ -30,7 +29,7 @@ public class TwitterFriendCount {
 	 */
 	@Id
 	@Basic()
-	@Column(name="twitteruserid")
+	@Column(name = "twitteruserid")
 	private long twitterUserId = 0;
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -38,7 +37,7 @@ public class TwitterFriendCount {
 	 */
 	@Id
 	@Basic()
-	@Column(name="fetchtime")
+	@Column(name = "fetchtime")
 	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime fetchTime = null;
 	/**

@@ -51,6 +51,12 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			return createTwitterListedCount();
 		case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_CLASSIFIER_ID:
 			return createTwitterStatusCount();
+		case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_CLASSIFIER_ID:
+			return createTwitterFollowerSnapshot();
+		case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_CLASSIFIER_ID:
+			return createTwitterFollowerPage();
+		case BuzzJpaModelPackage.TWITTERFOLLOWER_CLASSIFIER_ID:
+			return createTwitterFollower();
 		default:
 			throw new IllegalArgumentException("The EClass '"
 					+ eClass.getName()
@@ -99,6 +105,15 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			break;
 		case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_CLASSIFIER_ID:
 			modelObject = new TwitterStatusCountModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_CLASSIFIER_ID:
+			modelObject = new TwitterFollowerSnapshotModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_CLASSIFIER_ID:
+			modelObject = new TwitterFollowerPageModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERFOLLOWER_CLASSIFIER_ID:
+			modelObject = new TwitterFollowerModelObject();
 			break;
 		default:
 			throw new IllegalArgumentException("The EClass '" + eClass
@@ -214,6 +229,39 @@ public class BuzzJpaModelFactory implements ModelFactory {
 	 */
 	public TwitterStatusCount createTwitterStatusCount() {
 		return new TwitterStatusCount();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterFollowerSnapshot
+	 * @generated
+	 */
+	public TwitterFollowerSnapshot createTwitterFollowerSnapshot() {
+		return new TwitterFollowerSnapshot();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterFollowerPage
+	 * @generated
+	 */
+	public TwitterFollowerPage createTwitterFollowerPage() {
+		return new TwitterFollowerPage();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the model object representing the EClass
+	 *         TwitterFollower
+	 * @generated
+	 */
+	public TwitterFollower createTwitterFollower() {
+		return new TwitterFollower();
 	}
 
 	/**
@@ -393,6 +441,8 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				return getTarget().getBiggerProfileImageUrlHttps();
 			case BuzzJpaModelPackage.TWITTERUSER_MINIPROFILEIMAGEURLHTTPS_FEATURE_ID:
 				return getTarget().getMiniProfileImageUrlHttps();
+			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWERS_FEATURE_ID:
+				return getTarget().getFollowers();
 			default:
 				return super.eGet(eStructuralFeature);
 			}
@@ -401,6 +451,7 @@ public class BuzzJpaModelFactory implements ModelFactory {
 		/**
 		 * @generated
 		 */
+		@SuppressWarnings("unchecked")
 		@Override
 		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
@@ -549,6 +600,9 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			case BuzzJpaModelPackage.TWITTERUSER_MINIPROFILEIMAGEURLHTTPS_FEATURE_ID:
 				getTarget().setMiniProfileImageUrlHttps((String) value);
 				return;
+			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWERS_FEATURE_ID:
+				getTarget().setFollowers((List<TwitterFollowerSnapshot>) value);
+				return;
 			default:
 				super.eSet(eStructuralFeature, value);
 			}
@@ -563,6 +617,9 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWERS_FEATURE_ID:
+				return getTarget().addToFollowers(
+						(TwitterFollowerSnapshot) value);
 			default:
 				return super.eAddTo(eStructuralFeature, value);
 			}
@@ -577,6 +634,9 @@ public class BuzzJpaModelFactory implements ModelFactory {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			case BuzzJpaModelPackage.TWITTERUSER_FOLLOWERS_FEATURE_ID:
+				return getTarget().removeFromFollowers(
+						(TwitterFollowerSnapshot) value);
 			default:
 				return super.eRemoveFrom(eStructuralFeature, value);
 			}
@@ -1314,6 +1374,364 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				return;
 			case BuzzJpaModelPackage.TWITTERSTATUSCOUNT_STATUSCOUNT_FEATURE_ID:
 				getTarget().setStatusCount((Integer) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '
+	 * <em><b>TwitterFollowerSnapshot</b></em>'.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterFollowerSnapshotModelObject<E extends TwitterFollowerSnapshot>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE
+					.getTwitterFollowerSnapshotEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_ID_FEATURE_ID:
+				return getTarget().getId();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_PAGES_FEATURE_ID:
+				return getTarget().getPages();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_USER_FEATURE_ID:
+				return getTarget().getUser();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_SCREENNAME_FEATURE_ID:
+				return getTarget().getScreenName();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_CREATIONTIME_FEATURE_ID:
+				return getTarget().getCreationTime();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_MODIFICATIONTIME_FEATURE_ID:
+				return getTarget().getModificationTime();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@SuppressWarnings("unchecked")
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_ID_FEATURE_ID:
+				getTarget().setId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_PAGES_FEATURE_ID:
+				getTarget().setPages((List<TwitterFollowerPage>) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_USER_FEATURE_ID:
+				getTarget().setUser((TwitterUser) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_SCREENNAME_FEATURE_ID:
+				getTarget().setScreenName((String) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_CREATIONTIME_FEATURE_ID:
+				getTarget().setCreationTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_MODIFICATIONTIME_FEATURE_ID:
+				getTarget().setModificationTime((DateTime) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_PAGES_FEATURE_ID:
+				return getTarget().addToPages((TwitterFollowerPage) value);
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			case BuzzJpaModelPackage.TWITTERFOLLOWERSNAPSHOT_PAGES_FEATURE_ID:
+				return getTarget().removeFromPages((TwitterFollowerPage) value);
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterFollowerPage</b></em>'.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterFollowerPageModelObject<E extends TwitterFollowerPage>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterFollowerPageEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_SNAPSHOT_FEATURE_ID:
+				return getTarget().getSnapshot();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_PREVIOUSCURSOR_FEATURE_ID:
+				return getTarget().getPreviousCursor();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_NEXTCURSOR_FEATURE_ID:
+				return getTarget().getNextCursor();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_PAGECURSOR_FEATURE_ID:
+				return getTarget().getPageCursor();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_SCREENNAME_FEATURE_ID:
+				return getTarget().getScreenName();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID:
+				return getTarget().getFollowers();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_USERID_FEATURE_ID:
+				return getTarget().getUserId();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_PAGESIZE_FEATURE_ID:
+				return getTarget().getPageSize();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_CREATIONTIME_FEATURE_ID:
+				return getTarget().getCreationTime();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID:
+				return getTarget().getModificationTime();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@SuppressWarnings("unchecked")
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_SNAPSHOT_FEATURE_ID:
+				getTarget().setSnapshot((TwitterFollowerSnapshot) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_PREVIOUSCURSOR_FEATURE_ID:
+				getTarget().setPreviousCursor((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_NEXTCURSOR_FEATURE_ID:
+				getTarget().setNextCursor((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_PAGECURSOR_FEATURE_ID:
+				getTarget().setPageCursor((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_SCREENNAME_FEATURE_ID:
+				getTarget().setScreenName((String) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID:
+				getTarget().setFollowers((List<TwitterFollower>) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_USERID_FEATURE_ID:
+				getTarget().setUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_PAGESIZE_FEATURE_ID:
+				getTarget().setPageSize((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_CREATIONTIME_FEATURE_ID:
+				getTarget().setCreationTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID:
+				getTarget().setModificationTime((DateTime) value);
+				return;
+			default:
+				super.eSet(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eAddTo(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID:
+				return getTarget().addToFollowers((TwitterFollower) value);
+
+			default:
+				return super.eAddTo(eStructuralFeature, value);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
+				Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID:
+				return getTarget().removeFromFollowers((TwitterFollower) value);
+
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
+			}
+		}
+	}
+
+	/**
+	 * The adapter/wrapper for the EClass '<em><b>TwitterFollower</b></em>'.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
+	 * @generated
+	 */
+	public static class TwitterFollowerModelObject<E extends TwitterFollower>
+			extends AbstractModelObject<E> {
+		/**
+		 * @generated
+		 */
+		public EClass eClass() {
+			return BuzzJpaModelPackage.INSTANCE.getTwitterFollowerEClass();
+		}
+
+		/**
+		 * @generated
+		 */
+		public ModelPackage getModelPackage() {
+			return BuzzJpaModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Object eGet(EStructuralFeature eStructuralFeature) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_SNAPSHOTID_FEATURE_ID:
+				return getTarget().getSnapshotId();
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_PAGECURSOR_FEATURE_ID:
+				return getTarget().getPageCursor();
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_USERID_FEATURE_ID:
+				return getTarget().getUserId();
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_SCREENNAME_FEATURE_ID:
+				return getTarget().getScreenName();
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_PAGE_FEATURE_ID:
+				return getTarget().getPage();
+			default:
+				return super.eGet(eStructuralFeature);
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
+			final int featureID = eClass().getFeatureID(eStructuralFeature);
+			switch (featureID) {
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_SNAPSHOTID_FEATURE_ID:
+				getTarget().setSnapshotId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_PAGECURSOR_FEATURE_ID:
+				getTarget().setPageCursor((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_USERID_FEATURE_ID:
+				getTarget().setUserId((Long) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_SCREENNAME_FEATURE_ID:
+				getTarget().setScreenName((String) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWER_PAGE_FEATURE_ID:
+				getTarget().setPage((TwitterFollowerPage) value);
 				return;
 			default:
 				super.eSet(eStructuralFeature, value);

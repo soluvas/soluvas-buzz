@@ -1,12 +1,16 @@
 package org.soluvas.buzz.core.jpa;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
@@ -74,7 +78,7 @@ public class TwitterUser {
 	 * 
 	 * @generated
 	 */
-	@Basic()
+	@Basic(optional = false)
 	private String name = null;
 
 	/**
@@ -84,7 +88,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String screenName = null;
 
 	/**
@@ -421,6 +425,14 @@ public class TwitterUser {
 	 */
 	@Basic()
 	private String miniProfileImageUrlHttps = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "user")
+	private List<TwitterFollowerSnapshot> followers = new ArrayList<TwitterFollowerSnapshot>();
 
 	/**
 	 * Returns the value of '<em><b>id</b></em>' feature.
@@ -1762,6 +1774,78 @@ public class TwitterUser {
 	 */
 	public void setMiniProfileImageUrlHttps(String newMiniProfileImageUrlHttps) {
 		miniProfileImageUrlHttps = newMiniProfileImageUrlHttps;
+	}
+
+	/**
+	 * Returns the value of '<em><b>followers</b></em>' feature.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the value of '<em><b>followers</b></em>' feature
+	 * @generated
+	 */
+	public List<TwitterFollowerSnapshot> getFollowers() {
+		return followers;
+	}
+
+	/**
+	 * Adds to the <em>followers</em> feature.
+	 *
+	 * @param followersValue
+	 *            the value to add
+	 * @return true if the value is added to the collection (it was not yet
+	 *         present in the collection), false otherwise
+	 * @generated
+	 */
+	public boolean addToFollowers(TwitterFollowerSnapshot followersValue) {
+		if (!followers.contains(followersValue)) {
+			boolean result = followers.add(followersValue);
+			return result;
+		}
+		return false;
+	}
+
+	/**
+	 * Removes from the <em>followers</em> feature.
+	 *
+	 * @param followersValue
+	 *            the value to remove
+	 * @return true if the value is removed from the collection (it existed in
+	 *         the collection before removing), false otherwise
+	 *
+	 * @generated
+	 */
+	public boolean removeFromFollowers(TwitterFollowerSnapshot followersValue) {
+		if (followers.contains(followersValue)) {
+			boolean result = followers.remove(followersValue);
+			return result;
+		}
+		return false;
+	}
+
+	/**
+	 * Clears the <em>followers</em> feature.
+	 * 
+	 * @generated
+	 */
+	public void clearFollowers() {
+		while (!followers.isEmpty()) {
+			removeFromFollowers(followers.iterator().next());
+		}
+	}
+
+	/**
+	 * Sets the '{@link TwitterUser#getFollowers() <em>followers</em>}' feature.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param newFollowers
+	 *            the new value of the '{@link TwitterUser#getFollowers()
+	 *            followers}' feature.
+	 * @generated
+	 */
+	public void setFollowers(List<TwitterFollowerSnapshot> newFollowers) {
+		followers = newFollowers;
 	}
 
 	/**

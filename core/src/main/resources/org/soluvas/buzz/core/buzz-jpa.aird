@@ -155,7 +155,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_LLu-0ybCEeSr66kxgULwHg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_LLuXwSbCEeSr66kxgULwHg" fontName="OxygenSans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLuXwibCEeSr66kxgULwHg" x="24" y="36" width="286" height="783"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LLuXwibCEeSr66kxgULwHg" x="36" y="36" width="286" height="783"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Ft0AwCbGEeSr66kxgULwHg" type="2003" element="_FtpBoCbGEeSr66kxgULwHg">
             <children xmi:type="notation:Node" xmi:id="_Ft0AwybGEeSr66kxgULwHg" type="5007"/>
@@ -227,7 +227,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_-mCQUybGEeSr66kxgULwHg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_-mBpQSbGEeSr66kxgULwHg" fontName="OxygenSans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-mBpQibGEeSr66kxgULwHg" x="648" y="144"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-mBpQibGEeSr66kxgULwHg" x="744" y="324"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_COYQACbHEeSr66kxgULwHg" type="2003" element="_COK0oCbHEeSr66kxgULwHg">
             <children xmi:type="notation:Node" xmi:id="_COYQAybHEeSr66kxgULwHg" type="5007"/>
@@ -335,7 +335,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_5upDUydlEeStJ6qJ7cDCmg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_5uocQSdlEeStJ6qJ7cDCmg" fontName="OxygenSans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5uocQidlEeStJ6qJ7cDCmg" x="768" y="708" width="145" height="100"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5uocQidlEeStJ6qJ7cDCmg" x="768" y="708" width="159" height="100"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_6j8ToCdlEeStJ6qJ7cDCmg" type="2003" element="_6jtqICdlEeStJ6qJ7cDCmg">
             <children xmi:type="notation:Node" xmi:id="_6j8ToydlEeStJ6qJ7cDCmg" type="5007"/>
@@ -372,6 +372,69 @@
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_71bJoSdlEeStJ6qJ7cDCmg" fontName="OxygenSans" fontHeight="8"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_71bJoidlEeStJ6qJ7cDCmg" x="1620" y="708" width="156" height="100"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_KTpBQCgXEeSnNqFJrc3SlQ" type="2003" element="_KSsmECgXEeSnNqFJrc3SlQ">
+            <children xmi:type="notation:Node" xmi:id="_KTvH4CgXEeSnNqFJrc3SlQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_KTvu8CgXEeSnNqFJrc3SlQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_txgOwCgcEeSnNqFJrc3SlQ" type="3010" element="_txLeoCgcEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_txgOwSgcEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uI5bECgcEeSnNqFJrc3SlQ" type="3010" element="_uIl5ECgcEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_uI5bESgcEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_Wd9CACgXEeSnNqFJrc3SlQ" type="3010" element="_WdaPcCgXEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Wd9CASgXEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_tE5ncCgcEeSnNqFJrc3SlQ" type="3010" element="_tEjCICgcEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_tE5ncSgcEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_zgm8ECgbEeSnNqFJrc3SlQ" type="3010" element="_zgSL8CgbEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_zgm8ESgbEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_6hqHgCgcEeSnNqFJrc3SlQ" type="3010" element="_6hWlgCgcEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_6hqHgSgcEeSnNqFJrc3SlQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_KTvu8SgXEeSnNqFJrc3SlQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_KTvu8igXEeSnNqFJrc3SlQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_KTpBQSgXEeSnNqFJrc3SlQ" fontName="OxygenSans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KTpBQigXEeSnNqFJrc3SlQ" x="564" y="144" width="194" height="147"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LoIvACgXEeSnNqFJrc3SlQ" type="2003" element="_Lni5ICgXEeSnNqFJrc3SlQ">
+            <children xmi:type="notation:Node" xmi:id="_LoJ9ICgXEeSnNqFJrc3SlQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_LoJ9ISgXEeSnNqFJrc3SlQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_QB97YCgqEeSnNqFJrc3SlQ" type="3010" element="_QBcW8CgqEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_QB97YSgqEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_QqmosCgqEeSnNqFJrc3SlQ" type="3010" element="_QqQqcCgqEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_QqmosSgqEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_JHNYcCgZEeSnNqFJrc3SlQ" type="3010" element="_JG3aMCgZEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_JHNYcSgZEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_KPIp0CgZEeSnNqFJrc3SlQ" type="3010" element="_KOzSoCgZEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_KPIp0SgZEeSnNqFJrc3SlQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_LoJ9IigXEeSnNqFJrc3SlQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_LoJ9IygXEeSnNqFJrc3SlQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LoIvASgXEeSnNqFJrc3SlQ" fontName="OxygenSans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LoIvAigXEeSnNqFJrc3SlQ" x="780" y="180" width="168" height="100"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ltuX0CgXEeSnNqFJrc3SlQ" type="2003" element="_ltRr4CgXEeSnNqFJrc3SlQ">
+            <children xmi:type="notation:Node" xmi:id="_ltu-4CgXEeSnNqFJrc3SlQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_ltu-4SgXEeSnNqFJrc3SlQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_obha0CgXEeSnNqFJrc3SlQ" type="3010" element="_obEH0CgXEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_obha0SgXEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ujaCQCgbEeSnNqFJrc3SlQ" type="3010" element="_ujStgCgbEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_ujaCQSgbEeSnNqFJrc3SlQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_ltu-4igXEeSnNqFJrc3SlQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_ltu-4ygXEeSnNqFJrc3SlQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ltuX0SgXEeSnNqFJrc3SlQ" fontName="OxygenSans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ltuX0igXEeSnNqFJrc3SlQ" x="372" y="96" width="172" height="100"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_G4-wMibCEeSr66kxgULwHg"/>
           <edges xmi:type="notation:Edge" xmi:id="_-mDecCbGEeSr66kxgULwHg" type="4001" element="_-l9-4CbGEeSr66kxgULwHg" source="_Ft0AwCbGEeSr66kxgULwHg" target="_-mBpQCbGEeSr66kxgULwHg">
@@ -420,99 +483,224 @@
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nZv6cybHEeSr66kxgULwHg" points="[32, 75, -94, -97]$[126, 419, 0, 247]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nZwhhibHEeSr66kxgULwHg" id="(0.8881118881118881,0.27080581241743723)"/>
           </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_y_OiwCgaEeSnNqFJrc3SlQ" type="4001" element="_y_H1ECgaEeSnNqFJrc3SlQ" source="_KTpBQCgXEeSnNqFJrc3SlQ" target="_ltuX0CgXEeSnNqFJrc3SlQ">
+            <children xmi:type="notation:Node" xmi:id="_y_OixCgaEeSnNqFJrc3SlQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y_OixSgaEeSnNqFJrc3SlQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_y_OixigaEeSnNqFJrc3SlQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y_OixygaEeSnNqFJrc3SlQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_y_OiyCgaEeSnNqFJrc3SlQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y_OiySgaEeSnNqFJrc3SlQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_y_OiwSgaEeSnNqFJrc3SlQ" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_y_OiwigaEeSnNqFJrc3SlQ" fontName="OxygenSans" fontHeight="8" bold="true"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_y_OiwygaEeSnNqFJrc3SlQ" points="[48, -49, 323, -1]$[48, -85, 323, -37]$[-190, -85, 85, -37]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y_PJ0CgaEeSnNqFJrc3SlQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y_PJ0SgaEeSnNqFJrc3SlQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_1m3TYCgaEeSnNqFJrc3SlQ" type="4001" element="_1mvXkCgaEeSnNqFJrc3SlQ" source="_LLuXwCbCEeSr66kxgULwHg" target="_ltuX0CgXEeSnNqFJrc3SlQ">
+            <children xmi:type="notation:Node" xmi:id="_1m3TZCgaEeSnNqFJrc3SlQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1m3TZSgaEeSnNqFJrc3SlQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_1m3TZigaEeSnNqFJrc3SlQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1m3TZygaEeSnNqFJrc3SlQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_1m3TaCgaEeSnNqFJrc3SlQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1m3TaSgaEeSnNqFJrc3SlQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_1m3TYSgaEeSnNqFJrc3SlQ" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_1m3TYigaEeSnNqFJrc3SlQ" fontName="OxygenSans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1m3TYygaEeSnNqFJrc3SlQ" points="[142, -378, -149, -97]$[290, -378, -1, -97]$[290, -330, -1, -49]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1m3TaigaEeSnNqFJrc3SlQ" id="(0.5,0.49936143039591313)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1m36cCgaEeSnNqFJrc3SlQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_9lwckCgaEeSnNqFJrc3SlQ" type="4001" element="_9lpH0CgaEeSnNqFJrc3SlQ" source="_KTpBQCgXEeSnNqFJrc3SlQ" target="_LoIvACgXEeSnNqFJrc3SlQ">
+            <children xmi:type="notation:Node" xmi:id="_9lwclCgaEeSnNqFJrc3SlQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9lwclSgaEeSnNqFJrc3SlQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9lwcligaEeSnNqFJrc3SlQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9lwclygaEeSnNqFJrc3SlQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9lxDoCgaEeSnNqFJrc3SlQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9lxDoSgaEeSnNqFJrc3SlQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_9lwckSgaEeSnNqFJrc3SlQ" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_9lwckigaEeSnNqFJrc3SlQ" fontName="OxygenSans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9lwckygaEeSnNqFJrc3SlQ" points="[96, -37, -215, -73]$[312, -37, 1, -73]$[312, -13, 1, -49]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9lxDoigaEeSnNqFJrc3SlQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9lxDoygaEeSnNqFJrc3SlQ" id="(0.5,0.5)"/>
+          </edges>
         </data>
       </ownedAnnotationEntries>
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_L7g18CbCEeSr66kxgULwHg" source="DANNOTATION_CUSTOMIZATION_KEY">
         <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_L7g18SbCEeSr66kxgULwHg">
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_E3FBcieUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50FxsSguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
             <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_E3FohieUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50FxuSguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
             <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_E3GPkieUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50GYwiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
             <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_E3QnoieUEeStJ6qJ7cDCmg" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50GYyiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50LRQiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50LRSiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50L4UiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50MfYiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50MfaiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50NGciguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50NGeiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50NthiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50NtjiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50OUkSguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50OUmSguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50OUoSguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50PisiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_50PiuiguEeSnNqFJrc3SlQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_50RX4iguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
             <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_E3QnoyeUEeStJ6qJ7cDCmg" showIcon="false" labelExpression="service:render">
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_50RX4yguEeSnNqFJrc3SlQ" showIcon="false" labelExpression="service:render">
               <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
-            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_E3QnpCeUEeStJ6qJ7cDCmg" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_50RX5CguEeSnNqFJrc3SlQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
               <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </endLabelStyleDescription>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_E3ROsieUEeStJ6qJ7cDCmg" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_50R-8iguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
             <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_E3ROsyeUEeStJ6qJ7cDCmg" showIcon="false" labelExpression="service:render">
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_50R-8yguEeSnNqFJrc3SlQ" showIcon="false" labelExpression="service:render">
               <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
-            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_E3ROtCeUEeStJ6qJ7cDCmg" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_50R-9CguEeSnNqFJrc3SlQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
               <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </endLabelStyleDescription>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_E3ROvieUEeStJ6qJ7cDCmg" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_50R-_iguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
             <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_E3ROvyeUEeStJ6qJ7cDCmg" showIcon="false" labelExpression="service:render">
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_50R-_yguEeSnNqFJrc3SlQ" showIcon="false" labelExpression="service:render">
               <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
-            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_E3ROwCeUEeStJ6qJ7cDCmg" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_50R_ACguEeSnNqFJrc3SlQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
               <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </endLabelStyleDescription>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_PxoqhieUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_50SmAiguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_50SmAyguEeSnNqFJrc3SlQ" showIcon="false" labelExpression="service:renderEOpposite">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_50SmBCguEeSnNqFJrc3SlQ" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_Sw-wgieUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_50TNEiguEeSnNqFJrc3SlQ" sourceArrow="InputArrow" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_50TNEyguEeSnNqFJrc3SlQ" labelFormat="bold" showIcon="false" labelExpression="service:renderEOpposite">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_50TNFCguEeSnNqFJrc3SlQ" labelFormat="bold" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_TCAPEieUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_TURq0ieUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_T1AZUCeUEeStJ6qJ7cDCmg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_50TNHiguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_50TNHyguEeSnNqFJrc3SlQ" showIcon="false" labelExpression="service:renderEOpposite">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_50TNICguEeSnNqFJrc3SlQ" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
           </computedStyleDescriptions>
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_PsgCACbHEeSr66kxgULwHg">
             <key xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_E3QnoCeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50RX4CguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterUser/status"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_E3QnoSeUEeStJ6qJ7cDCmg" key="_nZk7UCbHEeSr66kxgULwHg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_E3QnpSeUEeStJ6qJ7cDCmg" value="_E3QnoieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50RX4SguEeSnNqFJrc3SlQ" key="_nZk7UCbHEeSr66kxgULwHg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50RX5SguEeSnNqFJrc3SlQ" value="_50RX4iguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EPackage" href="buzz-jpa.ecore#/"/>
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_E3ROsCeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50R-8CguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterStatusEmbed/geoLocation"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_E3ROsSeUEeStJ6qJ7cDCmg" key="_-l9-4CbGEeSr66kxgULwHg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_E3ROtSeUEeStJ6qJ7cDCmg" value="_E3ROsieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50R-8SguEeSnNqFJrc3SlQ" key="_-l9-4CbGEeSr66kxgULwHg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50R-9SguEeSnNqFJrc3SlQ" value="_50R-8iguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EPackage" href="buzz-jpa.ecore#/"/>
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_E3ROvCeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50R-_CguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterStatusEmbed/place"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_E3ROvSeUEeStJ6qJ7cDCmg" key="_O3UtgCbHEeSr66kxgULwHg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_E3ROwSeUEeStJ6qJ7cDCmg" value="_E3ROvieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50R-_SguEeSnNqFJrc3SlQ" key="_O3UtgCbHEeSr66kxgULwHg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50R_ASguEeSnNqFJrc3SlQ" value="_50R-_iguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EPackage" href="buzz-jpa.ecore#/"/>
                 </value>
               </value>
@@ -520,96 +708,211 @@
           </cache>
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_8oZCcCbHEeSr66kxgULwHg">
             <key xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_E3FBcCeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50FKoCguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/id"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_E3FBcSeUEeStJ6qJ7cDCmg" key="_L7fn0CbCEeSr66kxgULwHg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_E3FBcyeUEeStJ6qJ7cDCmg" value="_E3FBcieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50FxsCguEeSnNqFJrc3SlQ" key="_L7fn0CbCEeSr66kxgULwHg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50FxsiguEeSnNqFJrc3SlQ" value="_50FxsSguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterUser"/>
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_E3FohCeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50FxtyguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/revId"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_E3FohSeUEeStJ6qJ7cDCmg" key="_M03f0CbCEeSr66kxgULwHg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_E3FohyeUEeStJ6qJ7cDCmg" value="_E3FohieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50FxuCguEeSnNqFJrc3SlQ" key="_M03f0CbCEeSr66kxgULwHg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50FxuiguEeSnNqFJrc3SlQ" value="_50FxuSguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterUser"/>
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_E3GPkCeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50GYwCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/name"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50GYwSguEeSnNqFJrc3SlQ" key="_WcsVsCbCEeSr66kxgULwHg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50GYwyguEeSnNqFJrc3SlQ" value="_50GYwiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterUser"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50GYyCguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/screenName"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_E3GPkSeUEeStJ6qJ7cDCmg" key="_Wv7awCbCEeSr66kxgULwHg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_E3GPkyeUEeStJ6qJ7cDCmg" value="_E3GPkieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50GYySguEeSnNqFJrc3SlQ" key="_Wv7awCbCEeSr66kxgULwHg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50GYyyguEeSnNqFJrc3SlQ" value="_50GYyiguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterUser"/>
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_PxoqhCeUEeStJ6qJ7cDCmg">
-              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterListedCount/listedCount"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_PxoqhSeUEeStJ6qJ7cDCmg" key="_A9108CdmEeStJ6qJ7cDCmg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_PxoqhyeUEeStJ6qJ7cDCmg" value="_PxoqhieUEeStJ6qJ7cDCmg">
-                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterListedCount"/>
-                </value>
-              </value>
-            </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_Sw-wgCeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50LRQCguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFriendCount/friendCount"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_Sw-wgSeUEeStJ6qJ7cDCmg" key="_hbIjgCdiEeStJ6qJ7cDCmg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_Sw-wgyeUEeStJ6qJ7cDCmg" value="_Sw-wgieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50LRQSguEeSnNqFJrc3SlQ" key="_hbIjgCdiEeStJ6qJ7cDCmg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50LRQyguEeSnNqFJrc3SlQ" value="_50LRQiguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFriendCount"/>
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_TCAPECeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50LRSCguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerCount/followerCount"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_TCAPESeUEeStJ6qJ7cDCmg" key="_rt5scCdlEeStJ6qJ7cDCmg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_TCAPEyeUEeStJ6qJ7cDCmg" value="_TCAPEieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50LRSSguEeSnNqFJrc3SlQ" key="_rt5scCdlEeStJ6qJ7cDCmg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50LRSyguEeSnNqFJrc3SlQ" value="_50LRSiguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerCount"/>
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_TURq0CeUEeStJ6qJ7cDCmg">
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50L4UCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterListedCount/listedCount"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50L4USguEeSnNqFJrc3SlQ" key="_A9108CdmEeStJ6qJ7cDCmg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50L4UyguEeSnNqFJrc3SlQ" value="_50L4UiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterListedCount"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50MfYCguEeSnNqFJrc3SlQ">
               <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterStatusCount/statusCount"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_TURq0SeUEeStJ6qJ7cDCmg" key="__JVxcCdlEeStJ6qJ7cDCmg">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_TURq0yeUEeStJ6qJ7cDCmg" value="_TURq0ieUEeStJ6qJ7cDCmg">
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50MfYSguEeSnNqFJrc3SlQ" key="__JVxcCdlEeStJ6qJ7cDCmg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50MfYyguEeSnNqFJrc3SlQ" value="_50MfYiguEeSnNqFJrc3SlQ">
                   <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterStatusCount"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50MfaCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFavoriteCount/favoriteCount"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50MfaSguEeSnNqFJrc3SlQ" key="_C9A3YCdmEeStJ6qJ7cDCmg">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50MfayguEeSnNqFJrc3SlQ" value="_50MfaiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFavoriteCount"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50NGcCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageCursor"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50NGcSguEeSnNqFJrc3SlQ" key="_tEjCICgcEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50NGcyguEeSnNqFJrc3SlQ" value="_50NGciguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerPage"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50NGeCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/screenName"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50NGeSguEeSnNqFJrc3SlQ" key="_WdaPcCgXEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50NGeyguEeSnNqFJrc3SlQ" value="_50NGeiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerPage"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50NthCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/userId"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50NthSguEeSnNqFJrc3SlQ" key="_zgSL8CgbEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50NthyguEeSnNqFJrc3SlQ" value="_50NthiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerPage"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50NtjCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageSize"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50NtjSguEeSnNqFJrc3SlQ" key="_6hWlgCgcEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50NtjyguEeSnNqFJrc3SlQ" value="_50NtjiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerPage"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50NtlCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/snapshotId"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50OUkCguEeSnNqFJrc3SlQ" key="_QBcW8CgqEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50OUkiguEeSnNqFJrc3SlQ" value="_50OUkSguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollower"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50OUlyguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/pageCursor"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50OUmCguEeSnNqFJrc3SlQ" key="_QqQqcCgqEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50OUmiguEeSnNqFJrc3SlQ" value="_50OUmSguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollower"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50OUnyguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/userId"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50OUoCguEeSnNqFJrc3SlQ" key="_JG3aMCgZEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50OUoiguEeSnNqFJrc3SlQ" value="_50OUoSguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollower"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50PisCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/id"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50PisSguEeSnNqFJrc3SlQ" key="_obEH0CgXEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50PisyguEeSnNqFJrc3SlQ" value="_50PisiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerSnapshot"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50PiuCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/screenName"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50PiuSguEeSnNqFJrc3SlQ" key="_ujStgCgbEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50PiuyguEeSnNqFJrc3SlQ" value="_50PiuiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerSnapshot"/>
+                </value>
+              </value>
+            </value>
+          </cache>
+          <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_vwQFUCgaEeSnNqFJrc3SlQ">
+            <key xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50SmACguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterUser/followers"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50SmASguEeSnNqFJrc3SlQ" key="_1mvXkCgaEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50SmBSguEeSnNqFJrc3SlQ" value="_50SmAiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EPackage" href="buzz-jpa.ecore#/"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50TNECguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerPage/snapshot"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50TNESguEeSnNqFJrc3SlQ" key="_y_H1ECgaEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50TNFSguEeSnNqFJrc3SlQ" value="_50TNEiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EPackage" href="buzz-jpa.ecore#/"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_50TNHCguEeSnNqFJrc3SlQ">
+              <key xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerPage/followers"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_50TNHSguEeSnNqFJrc3SlQ" key="_9lpH0CgaEeSnNqFJrc3SlQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_50TNISguEeSnNqFJrc3SlQ" value="_50TNHiguEeSnNqFJrc3SlQ">
+                  <key xmi:type="ecore:EPackage" href="buzz-jpa.ecore#/"/>
                 </value>
               </value>
             </value>
           </cache>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_LLhjcCbCEeSr66kxgULwHg" name="TwitterUser" tooltipText="" outgoingEdges="_nZk7UCbHEeSr66kxgULwHg" width="12" height="10">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_LLhjcCbCEeSr66kxgULwHg" name="TwitterUser" tooltipText="" outgoingEdges="_nZk7UCbHEeSr66kxgULwHg _1mvXkCgaEeSnNqFJrc3SlQ" width="12" height="10">
         <target xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterUser"/>
         <semanticElements xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterUser"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_txjUkCbIEeSr66kxgULwHg" backgroundStyle="Liquid">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_txjUkSbIEeSr66kxgULwHg"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_bPMG8CgYEeSnNqFJrc3SlQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_bPMG8SgYEeSnNqFJrc3SlQ"/>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_txjUkibIEeSr66kxgULwHg"/>
-          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_txjUkybIEeSr66kxgULwHg" red="255" green="255" blue="255"/>
-          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_txjUlCbIEeSr66kxgULwHg" red="255" green="252" blue="216"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_bPMG8igYEeSnNqFJrc3SlQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_bPMG8ygYEeSnNqFJrc3SlQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_bPMG9CgYEeSnNqFJrc3SlQ" red="255" green="252" blue="216"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_L7fn0CbCEeSr66kxgULwHg" name="id : ELong = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/id"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/id"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_E3FogCeUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_E3FBcieUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3FogSeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_E3FogieUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_E3FogyeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50FxsyguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50FxsSguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50FxtCguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50FxtSguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50FxtiguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_M03f0CbCEeSr66kxgULwHg" name="revId : EInt = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/revId"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/revId"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_E3FoiCeUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_E3FohieUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3FoiSeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_E3FoiieUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_E3FoiyeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50FxuyguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50FxuSguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50FxvCguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50FxvSguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50FxviguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -649,21 +952,20 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_WcsVsCbCEeSr66kxgULwHg" name="name : EString" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/name"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/name"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_YO2P0CbCEeSr66kxgULwHg" labelAlignment="LEFT">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_YO2P0SbCEeSr66kxgULwHg"/>
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_YO2P0ibCEeSr66kxgULwHg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_YO2P0ybCEeSr66kxgULwHg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50GYxCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50GYwiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50GYxSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50GYxiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50GYxyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Wv7awCbCEeSr66kxgULwHg" name="screenName : EString" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/screenName"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/screenName"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_E3GPlCeUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_E3GPkieUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3GPlSeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_E3GPlieUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_E3GPlyeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50GYzCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50GYyiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50GYzSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50GYziguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50GYzyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -835,11 +1137,11 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GCmP4CbEEeSr66kxgULwHg" name="lang : Locale" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/lang"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterUser/lang"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_GYSMACbEEeSr66kxgULwHg" labelAlignment="LEFT">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_GYSMASbEEeSr66kxgULwHg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_bPQ_cCgYEeSnNqFJrc3SlQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_bPQ_cSgYEeSnNqFJrc3SlQ"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_GYSMAibEEeSr66kxgULwHg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_GYSMAybEEeSr66kxgULwHg"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_bPQ_cigYEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_bPQ_cygYEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -1339,13 +1641,13 @@
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_-l9-4CbGEeSr66kxgULwHg" name="[0..1] geoLocation" sourceNode="_FtpBoCbGEeSr66kxgULwHg" targetNode="_-lqc4CbGEeSr66kxgULwHg">
         <target xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterStatusEmbed/geoLocation"/>
         <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterStatusEmbed/geoLocation"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_E3ROtieUEeStJ6qJ7cDCmg" description="_E3ROsieUEeStJ6qJ7cDCmg" sourceArrow="FillDiamond" routingStyle="manhattan">
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_E3ROtyeUEeStJ6qJ7cDCmg"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_E3ROuCeUEeStJ6qJ7cDCmg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3ROuSeUEeStJ6qJ7cDCmg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_50R-9iguEeSnNqFJrc3SlQ" description="_50R-8iguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_50R-9yguEeSnNqFJrc3SlQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_50R--CguEeSnNqFJrc3SlQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50R--SguEeSnNqFJrc3SlQ"/>
           </centerLabelStyle>
-          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_E3ROuieUEeStJ6qJ7cDCmg" labelSize="6" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3ROuyeUEeStJ6qJ7cDCmg" red="39" green="76" blue="114"/>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_50R--iguEeSnNqFJrc3SlQ" labelSize="6" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50R--yguEeSnNqFJrc3SlQ" red="39" green="76" blue="114"/>
           </endLabelStyle>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
@@ -1478,13 +1780,13 @@
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_O3UtgCbHEeSr66kxgULwHg" name="[0..1] place" sourceNode="_FtpBoCbGEeSr66kxgULwHg" targetNode="_COK0oCbHEeSr66kxgULwHg">
         <target xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterStatusEmbed/place"/>
         <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterStatusEmbed/place"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_E3ROwieUEeStJ6qJ7cDCmg" description="_E3ROvieUEeStJ6qJ7cDCmg" sourceArrow="FillDiamond" routingStyle="manhattan">
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_E3ROwyeUEeStJ6qJ7cDCmg"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_E3ROxCeUEeStJ6qJ7cDCmg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3ROxSeUEeStJ6qJ7cDCmg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_50R_AiguEeSnNqFJrc3SlQ" description="_50R-_iguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_50R_AyguEeSnNqFJrc3SlQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_50R_BCguEeSnNqFJrc3SlQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50R_BSguEeSnNqFJrc3SlQ"/>
           </centerLabelStyle>
-          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_E3ROxieUEeStJ6qJ7cDCmg" labelSize="6" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3ROxyeUEeStJ6qJ7cDCmg" red="39" green="76" blue="114"/>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_50R_BiguEeSnNqFJrc3SlQ" labelSize="6" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50R_ByguEeSnNqFJrc3SlQ" red="39" green="76" blue="114"/>
           </endLabelStyle>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
@@ -1492,13 +1794,13 @@
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nZk7UCbHEeSr66kxgULwHg" name="[0..1] status" sourceNode="_LLhjcCbCEeSr66kxgULwHg" targetNode="_FtpBoCbGEeSr66kxgULwHg">
         <target xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterUser/status"/>
         <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterUser/status"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_E3QnpieUEeStJ6qJ7cDCmg" description="_E3QnoieUEeStJ6qJ7cDCmg" sourceArrow="FillDiamond" routingStyle="manhattan">
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_E3QnpyeUEeStJ6qJ7cDCmg"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_E3QnqCeUEeStJ6qJ7cDCmg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3QnqSeUEeStJ6qJ7cDCmg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_50RX5iguEeSnNqFJrc3SlQ" description="_50RX4iguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_50RX5yguEeSnNqFJrc3SlQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_50RX6CguEeSnNqFJrc3SlQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50RX6SguEeSnNqFJrc3SlQ"/>
           </centerLabelStyle>
-          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_E3QnqieUEeStJ6qJ7cDCmg" labelSize="6" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_E3QnqyeUEeStJ6qJ7cDCmg" red="39" green="76" blue="114"/>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_50RX6iguEeSnNqFJrc3SlQ" labelSize="6" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50RX6yguEeSnNqFJrc3SlQ" red="39" green="76" blue="114"/>
           </endLabelStyle>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
@@ -1542,10 +1844,10 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_hbIjgCdiEeStJ6qJ7cDCmg" name="friendCount : EInt = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFriendCount/friendCount"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFriendCount/friendCount"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Sw-whCeUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_Sw-wgieUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Sw-whSeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_Sw-whieUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_Sw-whyeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50LRRCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50LRQiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50LRRSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50LRRiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50LRRyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -1589,10 +1891,10 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_rt5scCdlEeStJ6qJ7cDCmg" name="followerCount : EInt = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerCount/followerCount"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerCount/followerCount"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_TCAPFCeUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_TCAPEieUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_TCAPFSeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_TCAPFieUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_TCAPFyeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50LRTCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50LRSiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50LRTSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50LRTiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50LRTyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -1673,10 +1975,10 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_A9108CdmEeStJ6qJ7cDCmg" name="listedCount : EInt = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterListedCount/listedCount"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterListedCount/listedCount"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PxoqiCeUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_PxoqhieUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_PxoqiSeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_PxoqiieUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_PxoqiyeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50L4VCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50L4UiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50L4VSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50L4ViguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50L4VyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -1720,10 +2022,10 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__JVxcCdlEeStJ6qJ7cDCmg" name="statusCount : EInt = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterStatusCount/statusCount"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterStatusCount/statusCount"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_TURq1CeUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_TURq0ieUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_TURq1SeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_TURq1ieUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_TURq1yeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50MfZCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50MfYiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50MfZSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50MfZiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50MfZyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -1767,13 +2069,226 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_C9A3YCdmEeStJ6qJ7cDCmg" name="favoriteCount : EInt = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFavoriteCount/favoriteCount"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFavoriteCount/favoriteCount"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_T1AZUieUEeStJ6qJ7cDCmg" labelFormat="bold" labelAlignment="LEFT" description="_T1AZUCeUEeStJ6qJ7cDCmg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_T1AZUyeUEeStJ6qJ7cDCmg"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_T1AZVCeUEeStJ6qJ7cDCmg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_T1AZVSeUEeStJ6qJ7cDCmg"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50MfbCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50MfaiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50MfbSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50MfbiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50MfbyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_KSsmECgXEeSnNqFJrc3SlQ" name="TwitterFollowerPage" tooltipText="" outgoingEdges="_y_H1ECgaEeSnNqFJrc3SlQ _9lpH0CgaEeSnNqFJrc3SlQ" width="12" height="10">
+        <target xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerPage"/>
+        <semanticElements xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerPage"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_64DOQCgcEeSnNqFJrc3SlQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_64DOQSgcEeSnNqFJrc3SlQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_64DOQigcEeSnNqFJrc3SlQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_64DOQygcEeSnNqFJrc3SlQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_64DORCgcEeSnNqFJrc3SlQ" red="255" green="252" blue="216"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_txLeoCgcEeSnNqFJrc3SlQ" name="previousCursor : ELongObject" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/previousCursor"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/previousCursor"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_vZ5v8CgcEeSnNqFJrc3SlQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_vZ5v8SgcEeSnNqFJrc3SlQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_vZ5v8igcEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_vZ5v8ygcEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uIl5ECgcEeSnNqFJrc3SlQ" name="nextCursor : ELongObject" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/nextCursor"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/nextCursor"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_v7DVMCgcEeSnNqFJrc3SlQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_v7DVMSgcEeSnNqFJrc3SlQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_v7DVMigcEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_v7DVMygcEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_WdaPcCgXEeSnNqFJrc3SlQ" name="screenName : EString" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/screenName"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/screenName"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50NtgCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50NGeiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtgSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtgiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50NtgyguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tEjCICgcEeSnNqFJrc3SlQ" name="pageCursor : ELong = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageCursor"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageCursor"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50NGdCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50NGciguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50NGdSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50NGdiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50NGdyguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_zgSL8CgbEeSnNqFJrc3SlQ" name="userId : ELong = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/userId"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/userId"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50NtiCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50NthiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtiSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtiiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50NtiyguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_6hWlgCgcEeSnNqFJrc3SlQ" name="pageSize : ELong = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageSize"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageSize"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50NtkCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50NtjiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtkSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtkiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50NtkyguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Lni5ICgXEeSnNqFJrc3SlQ" name="TwitterFollower" tooltipText="" incomingEdges="_9lpH0CgaEeSnNqFJrc3SlQ" width="12" height="10">
+        <target xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollower"/>
+        <semanticElements xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollower"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_RG6xQCgqEeSnNqFJrc3SlQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_RG6xQSgqEeSnNqFJrc3SlQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_RG6xQigqEeSnNqFJrc3SlQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_RG6xQygqEeSnNqFJrc3SlQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_RG6xRCgqEeSnNqFJrc3SlQ" red="255" green="252" blue="216"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_QBcW8CgqEeSnNqFJrc3SlQ" name="snapshotId : ELong = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/snapshotId"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/snapshotId"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50OUkyguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50OUkSguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50OUlCguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50OUlSguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50OUliguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_QqQqcCgqEeSnNqFJrc3SlQ" name="pageCursor : ELong = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/pageCursor"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/pageCursor"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50OUmyguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50OUmSguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50OUnCguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50OUnSguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50OUniguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JG3aMCgZEeSnNqFJrc3SlQ" name="userId : ELong = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/userId"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/userId"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50O7oCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50OUoSguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50O7oSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50O7oiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50O7oyguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_KOzSoCgZEeSnNqFJrc3SlQ" name="screenName : EString" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/screenName"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollower/screenName"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Kv50kCgZEeSnNqFJrc3SlQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Kv50kSgZEeSnNqFJrc3SlQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_Kv50kigZEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_Kv50kygZEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_ltRr4CgXEeSnNqFJrc3SlQ" name="TwitterFollowerSnapshot" tooltipText="" incomingEdges="_y_H1ECgaEeSnNqFJrc3SlQ _1mvXkCgaEeSnNqFJrc3SlQ" width="12" height="10">
+        <target xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerSnapshot"/>
+        <semanticElements xmi:type="ecore:EClass" href="buzz-jpa.ecore#//TwitterFollowerSnapshot"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_1mmNoCgaEeSnNqFJrc3SlQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_1mmNoSgaEeSnNqFJrc3SlQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_1mmNoigaEeSnNqFJrc3SlQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_1mmNoygaEeSnNqFJrc3SlQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_1mmNpCgaEeSnNqFJrc3SlQ" red="255" green="252" blue="216"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_obEH0CgXEeSnNqFJrc3SlQ" name="id : ELong = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/id"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/id"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50PitCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50PisiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50PitSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50PitiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50PityguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ujStgCgbEeSnNqFJrc3SlQ" name="screenName : EString" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/screenName"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/screenName"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50QJwCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50PiuiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50QJwSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50QJwiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50QJwyguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_y_H1ECgaEeSnNqFJrc3SlQ" sourceNode="_KSsmECgXEeSnNqFJrc3SlQ" targetNode="_ltRr4CgXEeSnNqFJrc3SlQ" beginLabel="[0..*] pages" endLabel="[1..1] snapshot">
+        <target xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerPage/snapshot"/>
+        <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/pages"/>
+        <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerPage/snapshot"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_50TNFiguEeSnNqFJrc3SlQ" description="_50TNEiguEeSnNqFJrc3SlQ" sourceArrow="InputArrow" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_50TNFyguEeSnNqFJrc3SlQ"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_50TNGCguEeSnNqFJrc3SlQ" labelFormat="bold" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50TNGSguEeSnNqFJrc3SlQ"/>
+          </beginLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_50TNGiguEeSnNqFJrc3SlQ" labelFormat="bold" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50TNGyguEeSnNqFJrc3SlQ"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_1mvXkCgaEeSnNqFJrc3SlQ" sourceNode="_LLhjcCbCEeSr66kxgULwHg" targetNode="_ltRr4CgXEeSnNqFJrc3SlQ" beginLabel="[1..1] user" endLabel="[0..*] followers">
+        <target xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterUser/followers"/>
+        <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterUser/followers"/>
+        <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerSnapshot/user"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_50SmBiguEeSnNqFJrc3SlQ" description="_50SmAiguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_50SmByguEeSnNqFJrc3SlQ"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_50SmCCguEeSnNqFJrc3SlQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50SmCSguEeSnNqFJrc3SlQ"/>
+          </beginLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_50SmCiguEeSnNqFJrc3SlQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50SmCyguEeSnNqFJrc3SlQ"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9lpH0CgaEeSnNqFJrc3SlQ" sourceNode="_KSsmECgXEeSnNqFJrc3SlQ" targetNode="_Lni5ICgXEeSnNqFJrc3SlQ" beginLabel="[1..1] page" endLabel="[0..*] followers">
+        <target xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerPage/followers"/>
+        <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollowerPage/followers"/>
+        <semanticElements xmi:type="ecore:EReference" href="buzz-jpa.ecore#//TwitterFollower/page"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_50TNIiguEeSnNqFJrc3SlQ" description="_50TNHiguEeSnNqFJrc3SlQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_50TNIyguEeSnNqFJrc3SlQ"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_50TNJCguEeSnNqFJrc3SlQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50TNJSguEeSnNqFJrc3SlQ"/>
+          </beginLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_50TNJiguEeSnNqFJrc3SlQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50TNJyguEeSnNqFJrc3SlQ"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
       </ownedDiagramElements>
       <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_G4-JJSbCEeSr66kxgULwHg"/>
