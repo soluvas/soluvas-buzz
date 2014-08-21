@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import org.quartz.ListenerManager;
+import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.jdbcjobstore.PostgreSQLDelegate;
@@ -91,9 +92,10 @@ public class SchedulerConfig {
 	 */
 	@Bean
 	public LoggingJobHistoryPlugin loggingJobHistoryPlugin() throws SchedulerException {
-		final LoggingJobHistoryPlugin logJobListener = new LoggingJobHistoryPlugin();
-		scheduler().getObject().getListenerManager().addJobListener(logJobListener);
-		return logJobListener;
+		final Scheduler scheduler = scheduler().getObject();
+		final LoggingJobHistoryPlugin loggingJobListener = new LoggingJobHistoryPlugin();
+		loggingJobListener.initialize("logging", scheduler, null);
+		return loggingJobListener;
 	}
 	
 }
