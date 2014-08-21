@@ -102,8 +102,10 @@ public class FetchFollowersPageJob extends TenantJob {
 			txTemplate.execute(new TransactionCallback<Void>() {
 				@Override
 				public Void doInTransaction(TransactionStatus status) {
-					final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/config/" + tenantId + ".BuzzApp.xmi" ).get();
-					final BuzzAccount campaign = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE, TwitterAnalyzerTest.class, "/config/" + campaignId + ".BuzzAccount.xmi" ).get();
+					final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, 
+							FetchFollowersPageJob.class, "/config/" + tenantId + ".BuzzApp.xmi" ).get();
+					final BuzzAccount campaign = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE, 
+							FetchFollowersPageJob.class, "/config/" + campaignId + ".BuzzAccount.xmi" ).get();
 					final ConfigurationBuilder configBuilder = new ConfigurationBuilder();
 					configBuilder.setOAuthConsumerKey(buzzApp.getTwitterConsumer().getConsumerKey());
 					configBuilder.setOAuthConsumerSecret(buzzApp.getTwitterConsumer().getConsumerSecret());

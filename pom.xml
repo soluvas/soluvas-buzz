@@ -19,6 +19,7 @@
 	<modules>
 		<module>core</module>
 		<module>twitter</module>
+		<module>cli</module>
 		<module>app</module>
 	</modules>
 
