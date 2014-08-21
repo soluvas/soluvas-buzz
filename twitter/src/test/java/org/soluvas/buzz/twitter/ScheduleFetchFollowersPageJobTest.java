@@ -80,7 +80,7 @@ public class ScheduleFetchFollowersPageJobTest {
 				.usingJobData("tenantId", "buzz")
 				.usingJobData("campaignId", "buzz")
 				.startNow()
-				.withSchedule(SimpleScheduleBuilder.repeatMinutelyForever())
+				.withSchedule(SimpleScheduleBuilder.repeatMinutelyForever(2))
 				.build();
 		scheduler.scheduleJob(jobDetail, trigger);
 		log.info("Waiting 10 minutes...");

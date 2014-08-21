@@ -43,7 +43,7 @@ public class ScheduleFetchFollowersPageJobApp implements CommandLineRunner {
 				.usingJobData("tenantId", "buzz")
 				.usingJobData("campaignId", "buzz")
 				.startNow()
-				.withSchedule(SimpleScheduleBuilder.repeatMinutelyForever())
+				.withSchedule(SimpleScheduleBuilder.repeatMinutelyForever(2))
 				.build();
 		scheduler.scheduleJob(jobDetail, trigger);
 		log.info("Joining thread, press Ctrl+C to exit...");
