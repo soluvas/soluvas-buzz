@@ -12,14 +12,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.jpa.SoluvasMultiTenantConnectionProviderImpl;
 import org.soluvas.jpa.SoluvasTenantIdentifierResolver;
+import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
@@ -35,6 +38,15 @@ public class BuzzSqlConfig {
 	@Inject
 	DataSource dataSource;
 	
+	@Bean @Primary
+	public JpaTransactionManager transactionManager() throws PropertyVetoException {
+		return new JpaTransactionManager(entityManagerFactory().getObject());
+	}
+	
+	/**
+	 * The {@link JpaTransactionManager} <b>must</b> be marked {@link Primary}, otherwise you'll get {@link NoUniqueBeanDefinitionException}.
+	 * @return
+	 */
 	@Bean
 	public DataSourceTransactionManager dsTxMgr() {
 		return new DataSourceTransactionManager(dataSource);

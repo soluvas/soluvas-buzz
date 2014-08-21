@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.joda.time.DateTime;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.quartz.TriggerKey;
 import org.soluvas.buzz.core.BuzzAccount;
 import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.BuzzCorePackage;
@@ -42,6 +43,11 @@ import com.google.common.base.Throwables;
  * @author ceefour
  */
 public class FetchFollowersPageJob extends TenantJob {
+	
+	public static TriggerKey triggerKey(String tenantId, String campaignId, String screenName, long snapshotId, long cursor) {
+		return new TriggerKey(String.format("%s://%s/%s/%s/%s/%s", 
+				tenantId, FetchFollowersPageJob.class.getSimpleName(), campaignId, screenName.toLowerCase(), snapshotId, cursor));
+	}
 	
 	String campaignId;
 	String screenName;
@@ -152,9 +158,11 @@ public class FetchFollowersPageJob extends TenantJob {
 						TwitterUser twitterUser = twitterUserRepo.findOne(follower.getId());
 						if (twitterUser != null) {
 							twitterUser.setRevId(twitterUser.getRevId() + 1);
+							log.info("Updating Twitter User @{} ({}) rev {}", follower.getId(), follower.getScreenName(), twitterUser.getRevId());
 						} else {
 							twitterUser = new TwitterUser();
 							twitterUser.setRevId(1);
+							log.info("Adding Twitter User @{} ({})", follower.getId(), follower.getScreenName());
 						}
 						final DateTime fetchTime = new DateTime(/*FIXME: timezone*/);
 						twitterUser.setFetchTime(fetchTime);

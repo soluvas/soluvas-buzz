@@ -5,8 +5,11 @@ import java.util.Properties;
 import javax.inject.Inject;
 import javax.sql.DataSource;
 
+import org.quartz.ListenerManager;
+import org.quartz.SchedulerException;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.jdbcjobstore.PostgreSQLDelegate;
+import org.quartz.plugins.history.LoggingJobHistoryPlugin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.buzz.core.BuzzSqlConfig;
@@ -80,4 +83,17 @@ public class SchedulerConfig {
 		log.info("Creating Scheduler '{}' using: {}", schedulerName, props);
 		return schedulerFactoryBean;
 	}
+	
+	/**
+	 * Creates and adds {@link LoggingJobHistoryPlugin} using {@link ListenerManager}.
+	 * @return
+	 * @throws SchedulerException
+	 */
+	@Bean
+	public LoggingJobHistoryPlugin loggingJobHistoryPlugin() throws SchedulerException {
+		final LoggingJobHistoryPlugin logJobListener = new LoggingJobHistoryPlugin();
+		scheduler().getObject().getListenerManager().addJobListener(logJobListener);
+		return logJobListener;
+	}
+	
 }

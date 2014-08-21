@@ -3,6 +3,7 @@ package org.soluvas.buzz.core.jpa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,8 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
+
 import twitter4j.User;
 
 /**
