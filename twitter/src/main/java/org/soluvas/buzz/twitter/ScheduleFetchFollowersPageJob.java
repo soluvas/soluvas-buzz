@@ -17,6 +17,7 @@ import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
+import org.soluvas.buzz.core.jpa.TwitterFollowerSnapshot;
 import org.soluvas.buzz.twitter.TwitterFollowerManager.TwitterUnfetchedFollowerPage;
 import org.soluvas.commons.tenant.CommandRequestAttributes;
 import org.soluvas.schedule.TenantJob;
@@ -31,7 +32,7 @@ import com.google.common.collect.ImmutableMap;
  * Uses {@link TwitterFollowerManager#findAllUnfetchedFollowerPages()}
  * to schedule {@link FetchFollowersPageJob}. This job itself
  * needs to be scheduled periodically.
- * @todo Must know whether there's already {@link JobDetail} for an unfetched page.
+ * @todo Also schedule {@link TwitterFollowerSnapshot} without any existing page.
  * @author ceefour
  */
 @DisallowConcurrentExecution

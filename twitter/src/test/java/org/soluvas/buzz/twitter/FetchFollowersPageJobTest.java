@@ -63,10 +63,25 @@ public class FetchFollowersPageJobTest {
 		twitterFollowerSnapshotRepo.save(snapshot);
 	}
 	
+	@Test
+	public void addSnapshotForFelixSiauw() throws SchedulerException, InterruptedException {
+		org.soluvas.buzz.core.jpa.TwitterUser felixsiauw = twitterUserRepo.findOneByScreenName("felixsiauw");
+		
+		TwitterFollowerSnapshot snapshot = new TwitterFollowerSnapshot();
+		snapshot.setCreationTime(new DateTime());
+		snapshot.setModificationTime(new DateTime());
+		snapshot.setUser(felixsiauw);
+		snapshot.setId(felixsiauw.getId());
+		snapshot.setScreenName(felixsiauw.getScreenName());
+		twitterFollowerSnapshotRepo.save(snapshot);
+	}
+	
 	final Object lock = new Object();
 	
 	@Test
 	public void followersOfAsmanadia() throws SchedulerException, InterruptedException {
+		TwitterFollowerSnapshot snapshot = twitterFollowerSnapshotRepo.findOneByScreenName("asmanadia");
+		
 		JobDetail jobDetail = JobBuilder.newJob(FetchFollowersPageJob.class).build();
 		scheduler.getListenerManager().addJobListener(new JobListenerSupport() {
 			@Override
@@ -87,8 +102,8 @@ public class FetchFollowersPageJobTest {
 		Trigger trigger = TriggerBuilder.newTrigger().forJob(jobDetail)
 				.usingJobData("tenantId", "buzz")
 				.usingJobData("campaignId", "buzz")
-				.usingJobData("screenName", "asmanadia")
-				.usingJobData("snapshotId", 1L)
+				.usingJobData("screenName", snapshot.getScreenName())
+				.usingJobData("snapshotId", snapshot.getId())
 				.usingJobData("cursor", -1L)
 				.startNow().build();
 		scheduler.scheduleJob(jobDetail, trigger);
@@ -101,6 +116,23 @@ public class FetchFollowersPageJobTest {
 //			log.info("trigger {} state: {}", trigger.getKey(), state);
 //			// TODO: aneh nich padahal jobnya belum selesai tapi triggerstatenya udah COMPLETE :(
 //		} while (state == TriggerState.NORMAL);
+	}
+	
+	@Test
+	public void followersOfFelixSiauw() throws SchedulerException, InterruptedException {
+		TwitterFollowerSnapshot snapshot = twitterFollowerSnapshotRepo.findOneByScreenName("felixsiauw");
+
+		JobDetail jobDetail = JobBuilder.newJob(FetchFollowersPageJob.class).build();
+		Trigger trigger = TriggerBuilder.newTrigger().forJob(jobDetail)
+				.usingJobData("tenantId", "buzz")
+				.usingJobData("campaignId", "buzz")
+				.usingJobData("screenName", snapshot.getScreenName())
+				.usingJobData("snapshotId", snapshot.getId())
+				.usingJobData("cursor", -1L)
+				.startNow().build();
+		scheduler.scheduleJob(jobDetail, trigger);
+		
+		Thread.sleep(5000);
 	}
 	
 }

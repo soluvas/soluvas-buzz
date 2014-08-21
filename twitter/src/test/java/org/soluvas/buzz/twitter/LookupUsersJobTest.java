@@ -63,4 +63,16 @@ public class LookupUsersJobTest {
 		} while (state == TriggerState.NORMAL);
 	}
 
+	@Test
+	public void fetchFelixsiauw() throws SchedulerException, InterruptedException {
+		JobDetail jobDetail = JobBuilder.newJob(LookupUsersJob.class).build();
+		Trigger trigger = TriggerBuilder.newTrigger().forJob(jobDetail)
+				.usingJobData("tenantId", "buzz")
+				.usingJobData("campaignId", "buzz")
+				.usingJobData("screenNames", JsonUtils.asJson(ImmutableSet.of("felixsiauw")))
+				.startNow().build();
+		scheduler.scheduleJob(jobDetail, trigger);
+		Thread.sleep(1000);
+	}
+
 }

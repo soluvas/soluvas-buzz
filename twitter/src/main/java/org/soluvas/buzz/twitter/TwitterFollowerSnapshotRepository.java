@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TwitterFollowerSnapshotRepository extends PagingAndSortingRepository<TwitterFollowerSnapshot, Long> {
 	
+	public TwitterFollowerSnapshot findOneByScreenName(String screenName);
+	
 }
