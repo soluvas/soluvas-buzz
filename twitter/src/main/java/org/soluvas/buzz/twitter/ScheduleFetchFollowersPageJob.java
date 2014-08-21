@@ -112,7 +112,7 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 						.build();
 				log.info("Scheduling fetch followers page job {} at {}", jobDataMap, curSchedule);
 				scheduler.scheduleJob(jobDetail, trigger);
-				curSchedule = curSchedule.plusMinutes(2); // for next job, 2 minutes apart
+				curSchedule = curSchedule.plusMinutes(1); // for next job, 1 minute apart
 			}
 		} catch (IOException | SchedulerException e) {
 			throw new JobExecutionException("Can't schedule fetch followers page jobs for campaign " + campaignId + ": " + e, e);

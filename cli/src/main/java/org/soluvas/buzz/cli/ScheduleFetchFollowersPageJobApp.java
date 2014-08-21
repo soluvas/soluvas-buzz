@@ -4,10 +4,12 @@ import javax.inject.Inject;
 
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
+import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
+import org.quartz.TriggerKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soluvas.buzz.core.BuzzConfig;
@@ -38,14 +40,21 @@ public class ScheduleFetchFollowersPageJobApp implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		JobDetail jobDetail = JobBuilder.newJob(ScheduleFetchFollowersPageJob.class).build();
-		Trigger trigger = TriggerBuilder.newTrigger().forJob(jobDetail)
+		int minutes = 1;
+		JobKey jobKey = new JobKey(ScheduleFetchFollowersPageJob.class.getSimpleName());
+		TriggerKey triggerKey = new TriggerKey(ScheduleFetchFollowersPageJob.class.getSimpleName() + "://repeated");
+		JobDetail jobDetail = JobBuilder.newJob(ScheduleFetchFollowersPageJob.class).withIdentity(jobKey).build();
+		Trigger trigger = TriggerBuilder.newTrigger().withIdentity(triggerKey).forJob(jobDetail)
 				.usingJobData("tenantId", "buzz")
 				.usingJobData("campaignId", "buzz")
 				.startNow()
-				.withSchedule(SimpleScheduleBuilder.repeatMinutelyForever(2))
+				.withSchedule(SimpleScheduleBuilder.repeatMinutelyForever(minutes))
 				.build();
-		scheduler.scheduleJob(jobDetail, trigger);
+		try {
+			scheduler.scheduleJob(jobDetail, trigger);
+		} catch (Exception e) {
+			log.warn("Cannot schedule job, probably already exists: " + e);
+		}
 		log.info("Joining thread, press Ctrl+C to exit...");
 		Thread.currentThread().join();
 	}
