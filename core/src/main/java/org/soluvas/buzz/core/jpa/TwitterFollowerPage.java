@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 import org.soluvas.buzz.core.TwitterFollowerPageKey;
+import org.soluvas.jpa.jpa.Positionable;
 import org.soluvas.jpa.jpa.Timestamped;
 
 /**
@@ -27,7 +28,7 @@ import org.soluvas.jpa.jpa.Timestamped;
 @Entity()
 @Table(schema = "buzz")
 @IdClass(TwitterFollowerPageKey.class)
-public class TwitterFollowerPage implements Timestamped {
+public class TwitterFollowerPage implements Timestamped, Positionable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -116,6 +117,15 @@ public class TwitterFollowerPage implements Timestamped {
 	@Basic(optional = false)
 	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime modificationTime = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Basic()
+	@Column(nullable = false)
+	private int positioner = 0;
 
 	/**
 	 * Returns the value of '<em><b>screenName</b></em>' feature.
@@ -452,6 +462,34 @@ public class TwitterFollowerPage implements Timestamped {
 	}
 
 	/**
+	 * Returns the value of '<em><b>positioner</b></em>' feature.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the value of '<em><b>positioner</b></em>' feature
+	 * @generated
+	 */
+	public int getPositioner() {
+		return positioner;
+	}
+
+	/**
+	 * Sets the '{@link TwitterFollowerPage#getPositioner() <em>positioner</em>}
+	 * ' feature.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param newPositioner
+	 *            the new value of the '
+	 *            {@link TwitterFollowerPage#getPositioner() positioner}'
+	 *            feature.
+	 * @generated
+	 */
+	public void setPositioner(int newPositioner) {
+		positioner = newPositioner;
+	}
+
+	/**
 	 * A toString method which prints the values of all EAttributes of this
 	 * instance. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -465,6 +503,7 @@ public class TwitterFollowerPage implements Timestamped {
 				+ "]" + " [screenName: " + getScreenName() + "]" + " [userId: "
 				+ getUserId() + "]" + " [pageSize: " + getPageSize() + "]"
 				+ " [creationTime: " + getCreationTime() + "]"
-				+ " [modificationTime: " + getModificationTime() + "]";
+				+ " [modificationTime: " + getModificationTime() + "]"
+				+ " [positioner: " + getPositioner() + "]";
 	}
 }

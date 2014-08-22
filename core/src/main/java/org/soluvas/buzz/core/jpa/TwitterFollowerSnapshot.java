@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
@@ -50,6 +51,7 @@ public class TwitterFollowerSnapshot implements Timestamped {
 	 * @generated
 	 */
 	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "snapshot")
+	@OrderColumn(name = "positioner")
 	private List<TwitterFollowerPage> pages = new ArrayList<TwitterFollowerPage>();
 
 	/**

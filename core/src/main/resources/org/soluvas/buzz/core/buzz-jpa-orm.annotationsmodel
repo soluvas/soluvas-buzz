@@ -293,6 +293,7 @@
         <eReference href="buzz-jpa.ecore#//TwitterFollowerSnapshot/pages"/>
         <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
           <oneToMany mappedBy="snapshot"/>
+          <orderColumn name="positioner"/>
         </eReferenceAnnotations>
       </annotatedEStructuralFeatures>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
@@ -329,6 +330,14 @@
         <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
           <manyToOne id="true"/>
         </eReferenceAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//Positionable/positioner"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <basic>
+            <column nullable="false"/>
+          </basic>
+        </eAttributeAnnotations>
       </annotatedEStructuralFeatures>
     </annotatedEClassifiers>
     <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">

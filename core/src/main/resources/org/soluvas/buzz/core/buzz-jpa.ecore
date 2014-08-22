@@ -181,7 +181,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="favoriteCount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterFollowerPage" eSuperTypes="../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//Timestamped">
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterFollowerPage" eSuperTypes="../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//Timestamped ../../../../../../../../org.soluvas.jpa/src/main/resources/org/soluvas/jpa/jpa.ecore#//Positionable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="snapshot" lowerBound="1"
         eType="#//TwitterFollowerSnapshot" eOpposite="#//TwitterFollowerSnapshot/pages"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousCursor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>

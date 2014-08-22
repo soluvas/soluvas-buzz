@@ -544,7 +544,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterFollowerPage" eSuperTypes="http://www.soluvas.org/jpa.jpa/#//Timestamped">
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterFollowerPage" eSuperTypes="http://www.soluvas.org/jpa.jpa/#//Timestamped http://www.soluvas.org/jpa.jpa/#//Positionable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="snapshot" lowerBound="1"
         eType="#//TwitterFollowerSnapshot" eOpposite="#//TwitterFollowerSnapshot/pages">
       <eAnnotations source="org.eclipse.emf.texo">

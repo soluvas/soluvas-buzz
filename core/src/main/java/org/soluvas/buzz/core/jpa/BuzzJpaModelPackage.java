@@ -792,56 +792,56 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_SCREENNAME_FEATURE_ID = 6;
+	public static final int TWITTERFOLLOWERPAGE_SCREENNAME_FEATURE_ID = 7;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID = 7;
+	public static final int TWITTERFOLLOWERPAGE_FOLLOWERS_FEATURE_ID = 8;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_SNAPSHOT_FEATURE_ID = 2;
+	public static final int TWITTERFOLLOWERPAGE_SNAPSHOT_FEATURE_ID = 3;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_USERID_FEATURE_ID = 8;
+	public static final int TWITTERFOLLOWERPAGE_USERID_FEATURE_ID = 9;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_PAGECURSOR_FEATURE_ID = 5;
+	public static final int TWITTERFOLLOWERPAGE_PAGECURSOR_FEATURE_ID = 6;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_PREVIOUSCURSOR_FEATURE_ID = 3;
+	public static final int TWITTERFOLLOWERPAGE_PREVIOUSCURSOR_FEATURE_ID = 4;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_NEXTCURSOR_FEATURE_ID = 4;
+	public static final int TWITTERFOLLOWERPAGE_NEXTCURSOR_FEATURE_ID = 5;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TWITTERFOLLOWERPAGE_PAGESIZE_FEATURE_ID = 9;
+	public static final int TWITTERFOLLOWERPAGE_PAGESIZE_FEATURE_ID = 10;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -856,6 +856,13 @@ public class BuzzJpaModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public static final int TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TWITTERFOLLOWERPAGE_POSITIONER_FEATURE_ID = 2;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -2691,6 +2698,21 @@ public class BuzzJpaModelPackage extends ModelPackage {
 		return (EAttribute) getTwitterFollowerPageEClass()
 				.getEAllStructuralFeatures().get(
 						TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID);
+	}
+
+	/**
+	 * Returns the {@link EStructuralFeature} '
+	 * <em><b>TwitterFollowerPage.positioner</b></em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return an instance of the {@link EStructuralFeature}: '
+	 *         <em><b>TwitterFollowerPage.positioner</b></em>'.
+	 * @generated
+	 */
+	public EAttribute getTwitterFollowerPage_Positioner() {
+		return (EAttribute) getTwitterFollowerPageEClass()
+				.getEAllStructuralFeatures().get(
+						TWITTERFOLLOWERPAGE_POSITIONER_FEATURE_ID);
 	}
 
 	/**

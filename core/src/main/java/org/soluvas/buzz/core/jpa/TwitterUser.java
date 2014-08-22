@@ -3,6 +3,7 @@ package org.soluvas.buzz.core.jpa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,8 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
+
 import twitter4j.User;
 
 /**
@@ -1928,6 +1931,11 @@ public class TwitterUser {
 				+ getMiniProfileImageUrlHttps() + "]";
 	}
 
+	/**
+	 * @param src
+	 * @todo If the existing is public, and the updated is protected, then only copy the public fields
+	 * 		so that the protected fields stay intact and not removed. 
+	 */
 	public void copyFrom(User src) {
 		setId(src.getId());
 		setName(src.getName());

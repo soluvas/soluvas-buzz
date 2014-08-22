@@ -1580,6 +1580,8 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				return getTarget().getCreationTime();
 			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID:
 				return getTarget().getModificationTime();
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_POSITIONER_FEATURE_ID:
+				return getTarget().getPositioner();
 			default:
 				return super.eGet(eStructuralFeature);
 			}
@@ -1622,6 +1624,9 @@ public class BuzzJpaModelFactory implements ModelFactory {
 				return;
 			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_MODIFICATIONTIME_FEATURE_ID:
 				getTarget().setModificationTime((DateTime) value);
+				return;
+			case BuzzJpaModelPackage.TWITTERFOLLOWERPAGE_POSITIONER_FEATURE_ID:
+				getTarget().setPositioner((Integer) value);
 				return;
 			default:
 				super.eSet(eStructuralFeature, value);
