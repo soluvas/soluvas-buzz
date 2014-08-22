@@ -1,6 +1,7 @@
 package org.soluvas.buzz.core.jpa;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 /**
@@ -66,6 +67,7 @@ public class TwitterPlace {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String url = null;
 
 	/**

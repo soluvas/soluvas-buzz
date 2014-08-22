@@ -12,6 +12,7 @@ import org.quartz.JobDataMap;
 import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
@@ -76,7 +77,6 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 		Preconditions.checkNotNull(maxJobs, "maxJobs is required");
 		TwitterFollowerManager twitterFollowerMgr = getBean(TwitterFollowerManager.class);
 		
-		JobDetail jobDetail = JobBuilder.newJob(FetchFollowersPageJob.class).build();
 		try (Closeable cl = CommandRequestAttributes.withTenant(tenantId)) {
 			Scheduler scheduler = context.getScheduler();
 			List<TwitterUnfetchedFollowerPage> followerPagesAll = twitterFollowerMgr.findAllUnfetchedFollowerPages();
@@ -99,6 +99,10 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 			log.info("Will be scheduling {} out of {} unfetched-unscheduled follower pages", unscheduledPages.size(), followerPagesAll.size()); 
 			DateTime curSchedule = new DateTime().plusSeconds(1).withMillisOfSecond(0);
 			for (TwitterUnfetchedFollowerPage followerPage : unscheduledPages) {
+				JobKey jobKey = new JobKey(String.format("%s://%s/%s/%s/%s/%s/%s",
+						tenantId, ScheduleFetchFollowersPageJob.class.getSimpleName(), campaignId, maxJobs, 
+						followerPage.screenName, followerPage.snapshotId, followerPage.unfetchedCursor));
+				JobDetail jobDetail = JobBuilder.newJob(FetchFollowersPageJob.class).withIdentity(jobKey).build();
 				final Map<String, Object> jobDataMap = ImmutableMap.of(
 						"tenantId", tenantId,
 						"campaignId", campaignId,

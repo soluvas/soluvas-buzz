@@ -38,6 +38,18 @@
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
 		</dependency>
+		
+		<!-- logging -->
+		<dependency>
+			<!-- for live site -->
+		    <groupId>com.logentries</groupId>
+		    <artifactId>logentries-appender</artifactId>
+		</dependency>
+		<dependency>
+			<!-- for development -->
+			<groupId>de.huxhorn.lilith</groupId>
+			<artifactId>de.huxhorn.lilith.logback.appender.multiplex-classic</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>

@@ -2,7 +2,6 @@ package org.soluvas.buzz.core.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,7 +13,6 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 import org.soluvas.buzz.core.TwitterFollowerPageKey;
@@ -30,7 +28,7 @@ import org.soluvas.jpa.jpa.Timestamped;
 @Table(schema = "buzz")
 @IdClass(TwitterFollowerPageKey.class)
 public class TwitterFollowerPage implements Timestamped {
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -40,7 +38,7 @@ public class TwitterFollowerPage implements Timestamped {
 			CascadeType.REFRESH }, optional = false)
 	@JoinColumns({ @JoinColumn(name = "snapshot_id") })
 	private TwitterFollowerSnapshot snapshot = null;
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -405,7 +403,6 @@ public class TwitterFollowerPage implements Timestamped {
 	 * @return the value of '<em><b>creationTime</b></em>' feature
 	 * @generated
 	 */
-	@Override
 	public DateTime getCreationTime() {
 		return creationTime;
 	}
@@ -422,7 +419,6 @@ public class TwitterFollowerPage implements Timestamped {
 	 *            feature.
 	 * @generated
 	 */
-	@Override
 	public void setCreationTime(DateTime newCreationTime) {
 		creationTime = newCreationTime;
 	}
@@ -435,7 +431,6 @@ public class TwitterFollowerPage implements Timestamped {
 	 * @return the value of '<em><b>modificationTime</b></em>' feature
 	 * @generated
 	 */
-	@Override
 	public DateTime getModificationTime() {
 		return modificationTime;
 	}
@@ -452,7 +447,6 @@ public class TwitterFollowerPage implements Timestamped {
 	 *            modificationTime}' feature.
 	 * @generated
 	 */
-	@Override
 	public void setModificationTime(DateTime newModificationTime) {
 		modificationTime = newModificationTime;
 	}

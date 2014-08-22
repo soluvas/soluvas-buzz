@@ -382,11 +382,11 @@
               <children xmi:type="notation:Node" xmi:id="_uI5bECgcEeSnNqFJrc3SlQ" type="3010" element="_uIl5ECgcEeSnNqFJrc3SlQ">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_uI5bESgcEeSnNqFJrc3SlQ"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_Wd9CACgXEeSnNqFJrc3SlQ" type="3010" element="_WdaPcCgXEeSnNqFJrc3SlQ">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_Wd9CASgXEeSnNqFJrc3SlQ"/>
-              </children>
               <children xmi:type="notation:Node" xmi:id="_tE5ncCgcEeSnNqFJrc3SlQ" type="3010" element="_tEjCICgcEeSnNqFJrc3SlQ">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_tE5ncSgcEeSnNqFJrc3SlQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_Wd9CACgXEeSnNqFJrc3SlQ" type="3010" element="_WdaPcCgXEeSnNqFJrc3SlQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Wd9CASgXEeSnNqFJrc3SlQ"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_zgm8ECgbEeSnNqFJrc3SlQ" type="3010" element="_zgSL8CgbEeSnNqFJrc3SlQ">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_zgm8ESgbEeSnNqFJrc3SlQ"/>
@@ -2113,16 +2113,6 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_WdaPcCgXEeSnNqFJrc3SlQ" name="screenName : EString" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/screenName"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/screenName"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50NtgCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50NGeiguEeSnNqFJrc3SlQ">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtgSguEeSnNqFJrc3SlQ"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtgiguEeSnNqFJrc3SlQ"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_50NtgyguEeSnNqFJrc3SlQ"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-        </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tEjCICgcEeSnNqFJrc3SlQ" name="pageCursor : ELong = 0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageCursor"/>
           <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/pageCursor"/>
@@ -2130,6 +2120,16 @@
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50NGdSguEeSnNqFJrc3SlQ"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50NGdiguEeSnNqFJrc3SlQ"/>
             <color xmi:type="viewpoint:RGBValues" xmi:id="_50NGdyguEeSnNqFJrc3SlQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_WdaPcCgXEeSnNqFJrc3SlQ" name="screenName : EString" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/screenName"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="buzz-jpa.ecore#//TwitterFollowerPage/screenName"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_50NtgCguEeSnNqFJrc3SlQ" labelFormat="bold" labelAlignment="LEFT" description="_50NGeiguEeSnNqFJrc3SlQ">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtgSguEeSnNqFJrc3SlQ"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_50NtgiguEeSnNqFJrc3SlQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_50NtgyguEeSnNqFJrc3SlQ"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>

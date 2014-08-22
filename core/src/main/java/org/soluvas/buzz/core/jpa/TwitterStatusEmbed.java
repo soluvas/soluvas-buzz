@@ -46,6 +46,7 @@ public class TwitterStatusEmbed {
 	 * @generated
 	 */
 	@Basic()
+	@Column(columnDefinition = "text")
 	private String text = null;
 
 	/**
@@ -54,6 +55,7 @@ public class TwitterStatusEmbed {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String source = null;
 
 	/**

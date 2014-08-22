@@ -88,11 +88,11 @@ public class BuzzJpaModelFactory implements ModelFactory {
 		case BuzzJpaModelPackage.TWITTERPLACE_CLASSIFIER_ID:
 			modelObject = new TwitterPlaceModelObject();
 			break;
-		case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_CLASSIFIER_ID:
-			modelObject = new TwitterFriendCountModelObject();
-			break;
 		case BuzzJpaModelPackage.TWITTERCOUNT_CLASSIFIER_ID:
 			modelObject = new TwitterCountModelObject();
+			break;
+		case BuzzJpaModelPackage.TWITTERFRIENDCOUNT_CLASSIFIER_ID:
+			modelObject = new TwitterFriendCountModelObject();
 			break;
 		case BuzzJpaModelPackage.TWITTERFAVORITECOUNT_CLASSIFIER_ID:
 			modelObject = new TwitterFavoriteCountModelObject();

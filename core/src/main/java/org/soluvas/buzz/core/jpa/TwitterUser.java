@@ -3,7 +3,6 @@ package org.soluvas.buzz.core.jpa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,10 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
-
 import twitter4j.User;
 
 /**
@@ -65,6 +62,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBackgroundImageUrl = null;
 
 	/**
@@ -73,6 +71,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBackgroundImageUrlHttps = null;
 
 	/**
@@ -110,6 +109,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(columnDefinition = "text")
 	private String description = null;
 
 	/**
@@ -128,6 +128,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileImageUrl = null;
 
 	/**
@@ -136,6 +137,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String biggerProfileImageUrl = null;
 
 	/**
@@ -144,6 +146,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String miniProfileImageUrl = null;
 
 	/**
@@ -152,6 +155,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String originalProfileImageUrl = null;
 
 	/**
@@ -160,6 +164,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String originalProfileImageUrlHttps = null;
 
 	/**
@@ -168,6 +173,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBannerUrl = null;
 
 	/**
@@ -176,6 +182,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBannerRetinaUrl = null;
 
 	/**
@@ -184,6 +191,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBannerIpadUrl = null;
 
 	/**
@@ -192,6 +200,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBannerIpadRetinaUrl = null;
 
 	/**
@@ -200,6 +209,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBannerMobileUrl = null;
 
 	/**
@@ -208,6 +218,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileBannerMobileRetinaUrl = null;
 
 	/**
@@ -280,6 +291,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String url = null;
 
 	/**
@@ -411,6 +423,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String profileImageUrlHttps = null;
 
 	/**
@@ -419,6 +432,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String biggerProfileImageUrlHttps = null;
 
 	/**
@@ -427,6 +441,7 @@ public class TwitterUser {
 	 * @generated
 	 */
 	@Basic()
+	@Column(length = 4096)
 	private String miniProfileImageUrlHttps = null;
 
 	/**

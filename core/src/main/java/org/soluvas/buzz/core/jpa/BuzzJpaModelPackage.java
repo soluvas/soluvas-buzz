@@ -977,11 +977,11 @@ public class BuzzJpaModelPackage extends ModelPackage {
 				TwitterPlace.class, modelPackage.getTwitterPlaceEClass(),
 				modelPackage);
 		ModelResolver.getInstance().registerClassModelMapping(
-				TwitterFriendCount.class,
-				modelPackage.getTwitterFriendCountEClass(), modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(
 				TwitterCount.class, modelPackage.getTwitterCountEClass(),
 				modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(
+				TwitterFriendCount.class,
+				modelPackage.getTwitterFriendCountEClass(), modelPackage);
 		ModelResolver.getInstance().registerClassModelMapping(
 				TwitterFavoriteCount.class,
 				modelPackage.getTwitterFavoriteCountEClass(), modelPackage);
@@ -2856,10 +2856,10 @@ public class BuzzJpaModelPackage extends ModelPackage {
 			return TwitterStatusEmbed.class;
 		case TWITTERPLACE_CLASSIFIER_ID:
 			return TwitterPlace.class;
-		case TWITTERFRIENDCOUNT_CLASSIFIER_ID:
-			return TwitterFriendCount.class;
 		case TWITTERCOUNT_CLASSIFIER_ID:
 			return TwitterCount.class;
+		case TWITTERFRIENDCOUNT_CLASSIFIER_ID:
+			return TwitterFriendCount.class;
 		case TWITTERFAVORITECOUNT_CLASSIFIER_ID:
 			return TwitterFavoriteCount.class;
 		case TWITTERFOLLOWERCOUNT_CLASSIFIER_ID:
