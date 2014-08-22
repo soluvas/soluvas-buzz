@@ -51,7 +51,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_HIMGWSbBEeSr66kxgULwHg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_HIMGVCbBEeSr66kxgULwHg" fontName="OxygenSans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HIMGVSbBEeSr66kxgULwHg" x="48" y="324"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HIMGVSbBEeSr66kxgULwHg" x="48" y="336"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_HIMtYCbBEeSr66kxgULwHg" type="2003" element="_HF3yICbBEeSr66kxgULwHg">
             <children xmi:type="notation:Node" xmi:id="_HIMtYybBEeSr66kxgULwHg" type="5007"/>
@@ -473,6 +473,9 @@
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_HF188CbBEeSr66kxgULwHg" name="BuzzAccounts" tooltipText="" outgoingEdges="_HHoFoCbBEeSr66kxgULwHg" width="12" height="10">
         <target xmi:type="ecore:EClass" href="buzz-core.ecore#//BuzzAccounts"/>
         <semanticElements xmi:type="ecore:EClass" href="buzz-core.ecore#//BuzzAccounts"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_HF3LECbBEeSr66kxgULwHg" backgroundStyle="Liquid">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_HF3LESbBEeSr66kxgULwHg"/>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
