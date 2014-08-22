@@ -79,8 +79,21 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 		
 		try (Closeable cl = CommandRequestAttributes.withTenant(tenantId)) {
 			Scheduler scheduler = context.getScheduler();
+			
+			// TODO: should be per access token, not per campaign: https://github.com/soluvas/soluvas-buzz/issues/2
+			JobKey jobKey = new JobKey(String.format("%s://%s/%s",
+					tenantId, FetchFollowersPageJob.class.getSimpleName(), campaignId));
+			JobDetail jobDetail = JobBuilder.newJob(FetchFollowersPageJob.class).withIdentity(jobKey).storeDurably().build();
+			scheduler.addJob(jobDetail, true);
+			// if any existing trigger then 1 minute after the most future trigger, otherwise immediately
+			DateTime curSchedule = new DateTime().plusSeconds(1).withMillisOfSecond(0);
+			for (Trigger trigger : scheduler.getTriggersOfJob(jobKey)) {
+				if (trigger.getNextFireTime() != null && new DateTime(trigger.getNextFireTime()).isAfter(curSchedule)) {
+					curSchedule = new DateTime(trigger.getNextFireTime()).plusMinutes(1);
+				}
+			}
+			
 			List<TwitterUnfetchedFollowerPage> followerPagesAll = twitterFollowerMgr.findAllUnfetchedFollowerPages();
-
 			final ImmutableList<TwitterUnfetchedFollowerPage> unscheduledPages = FluentIterable.from(followerPagesAll)
 				.filter(new Predicate<TwitterUnfetchedFollowerPage>() {
 					@Override
@@ -96,13 +109,9 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 				})
 				.limit(maxJobs)
 				.toList();
-			log.info("Will be scheduling {} out of {} unfetched-unscheduled follower pages", unscheduledPages.size(), followerPagesAll.size()); 
-			DateTime curSchedule = new DateTime().plusSeconds(1).withMillisOfSecond(0);
+			log.info("Will be scheduling {} out of {} unfetched-unscheduled follower pages from {}", 
+					unscheduledPages.size(), followerPagesAll.size(), curSchedule); 
 			for (TwitterUnfetchedFollowerPage followerPage : unscheduledPages) {
-				JobKey jobKey = new JobKey(String.format("%s://%s/%s/%s/%s/%s/%s",
-						tenantId, ScheduleFetchFollowersPageJob.class.getSimpleName(), campaignId, maxJobs, 
-						followerPage.screenName, followerPage.snapshotId, followerPage.unfetchedCursor));
-				JobDetail jobDetail = JobBuilder.newJob(FetchFollowersPageJob.class).withIdentity(jobKey).build();
 				final Map<String, Object> jobDataMap = ImmutableMap.of(
 						"tenantId", tenantId,
 						"campaignId", campaignId,
@@ -116,7 +125,7 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 						.startAt(curSchedule.toDate())
 						.build();
 				log.info("Scheduling fetch followers page job {} at {}", jobDataMap, curSchedule);
-				scheduler.scheduleJob(jobDetail, trigger);
+				scheduler.scheduleJob(trigger);
 				curSchedule = curSchedule.plusMinutes(1); // for next job, 1 minute apart
 			}
 		} catch (IOException | SchedulerException e) {

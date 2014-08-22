@@ -2,6 +2,8 @@ package org.soluvas.buzz.twitter;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.joda.time.DateTime;
 import org.quartz.JobExecutionContext;
@@ -127,6 +129,11 @@ public class FetchFollowersPageJob extends TenantJob {
 					try {
 						log.info("Fetching followers of @{} ({}) page {}...", user.getScreenName(), user.getId(), cursor);
 						resp = twitter.getFollowersList(user.getId(), cursor, pageSize);
+						log.debug("Rate limit: {}", resp.getRateLimitStatus());
+						if (resp.getRateLimitStatus() != null && resp.getRateLimitStatus().getRemaining() <= 1) {
+							log.warn("Approaching rate limit! {} After fetching followers of @{} ({}) page {}",
+									resp.getRateLimitStatus(), user.getScreenName(), user.getId(), cursor);
+						}
 					} catch (TwitterException e) {
 						throw new RuntimeException("Cannot get followers for @" + user.getScreenName() + " (" + user.getId() + ") page " + cursor, e);
 					}
@@ -147,6 +154,8 @@ public class FetchFollowersPageJob extends TenantJob {
 //					page = twitterFollowerPageRepo.save(page);
 					
 					log.info("User @{} ({}) page {} has {} followers", user.getScreenName(), user.getId(), cursor, resp.size());
+					List<String> addedUsers = new ArrayList<>();
+					List<String> updatedUsers = new ArrayList<>();
 					for (User follower : resp) {
 						// add to Page
 						TwitterFollower followerEntity = new TwitterFollower();
@@ -160,11 +169,13 @@ public class FetchFollowersPageJob extends TenantJob {
 						TwitterUser twitterUser = twitterUserRepo.findOne(follower.getId());
 						if (twitterUser != null) {
 							twitterUser.setRevId(twitterUser.getRevId() + 1);
-							log.info("Updating Twitter User @{} ({}) rev {}", follower.getScreenName(), follower.getId(), twitterUser.getRevId());
+							log.trace("Updating Twitter User @{} ({}) rev {}", follower.getScreenName(), follower.getId(), twitterUser.getRevId());
+							updatedUsers.add(String.format("@%s (%s) rev %s", follower.getScreenName(), follower.getId(), twitterUser.getRevId()));
 						} else {
 							twitterUser = new TwitterUser();
 							twitterUser.setRevId(1);
-							log.info("Adding Twitter User @{} ({})", follower.getScreenName(), follower.getId());
+							log.trace("Adding Twitter User @{} ({})", follower.getScreenName(), follower.getId());
+							addedUsers.add(String.format("@%s (%s)", follower.getScreenName(), follower.getId()));
 						}
 						final DateTime fetchTime = new DateTime(/*FIXME: timezone*/);
 						twitterUser.setFetchTime(fetchTime);
@@ -202,6 +213,8 @@ public class FetchFollowersPageJob extends TenantJob {
 							log.error("Cannot add statusCount " + listedCount, e);
 						}
 					}
+					log.info("Adding {} Twitter Users: {}", addedUsers.size(), addedUsers);
+					log.info("Updating {} Twitter Users: {}", updatedUsers.size(), updatedUsers);
 					
 					// save page + followers
 					page = twitterFollowerPageRepo.save(page);

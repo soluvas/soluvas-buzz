@@ -53,7 +53,7 @@ public class ScheduleFetchFollowersPageJobApp implements CommandLineRunner {
 		try {
 			scheduler.scheduleJob(jobDetail, trigger);
 		} catch (Exception e) {
-			log.warn("Cannot schedule job, probably already exists: " + e);
+			log.info("Cannot schedule job, probably already exists: " + e);
 		}
 		log.info("Joining thread, press Ctrl+C to exit...");
 		Thread.currentThread().join();
