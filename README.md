@@ -99,4 +99,4 @@ Scheduled jobs are done using Quartz (app-wide), and persisted in PostgreSQL in 
 
 ## Credits
 
-Icon by "Aha-Soft":http://www.aha-soft.com/icon-design.htm, licensed under Creative Commons (Attribution 3.0 Unported).
+[Icon by "Aha-Soft"](http://www.aha-soft.com/icon-design.htm), licensed under Creative Commons (Attribution 3.0 Unported).
