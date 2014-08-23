@@ -19,6 +19,8 @@ import org.joda.time.DateTime;
 
 import twitter4j.User;
 
+import com.google.common.base.Strings;
+
 /**
  * A representation of the model object '<em><b>TwitterUser</b></em>'. <!--
  * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> A data
@@ -1933,8 +1935,6 @@ public class TwitterUser {
 
 	/**
 	 * @param src
-	 * @todo If the existing is public, and the updated is protected, then only copy the public fields
-	 * 		so that the protected fields stay intact and not removed. 
 	 */
 	public void copyFrom(User src) {
 		setId(src.getId());
@@ -1954,8 +1954,14 @@ public class TwitterUser {
 		setUrl(src.getURL());
 		setProtectedState(src.isProtected());
 		setFollowersCount(src.getFollowersCount());
-		setStatus(new TwitterStatusEmbed());
-		getStatus().copyFrom(src.getStatus());
+
+		// If the new src is protected, then do not copy the protected fields (AFAIK only "status")
+		// so that they're not removed.
+		if (!src.isProtected() || src.getStatus() != null && !Strings.isNullOrEmpty(src.getStatus().getText())) {
+			setStatus(new TwitterStatusEmbed());
+			getStatus().copyFrom(src.getStatus());
+		}
+		
 		setProfileBackgroundColor(src.getProfileBackgroundColor());
 		setProfileTextColor(src.getProfileTextColor());
 		setProfileLinkColor(src.getProfileLinkColor());

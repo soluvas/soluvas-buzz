@@ -86,10 +86,10 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 			JobDetail jobDetail = JobBuilder.newJob(FetchFollowersPageJob.class).withIdentity(jobKey).storeDurably().build();
 			scheduler.addJob(jobDetail, true);
 			// if any existing trigger then 1 minute after the most future trigger, otherwise immediately
-			DateTime curSchedule = new DateTime().plusSeconds(1).withMillisOfSecond(0);
+			Trigger futurestTrigger = null;
 			for (Trigger trigger : scheduler.getTriggersOfJob(jobKey)) {
-				if (trigger.getNextFireTime() != null && new DateTime(trigger.getNextFireTime()).isAfter(curSchedule)) {
-					curSchedule = new DateTime(trigger.getNextFireTime()).plusMinutes(1);
+				if (trigger.getNextFireTime() != null && (futurestTrigger == null || trigger.getNextFireTime().after(futurestTrigger.getNextFireTime()))) {
+					futurestTrigger = trigger;
 				}
 			}
 			
@@ -109,8 +109,16 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 				})
 				.limit(maxJobs)
 				.toList();
-			log.info("Will be scheduling {} out of {} unfetched-unscheduled follower pages from {}", 
-					unscheduledPages.size(), followerPagesAll.size(), curSchedule); 
+			DateTime curSchedule;
+			if (futurestTrigger != null) {
+				curSchedule = new DateTime(futurestTrigger.getNextFireTime()).plusMinutes(1);
+				log.info("Scheduling {} out of {} unfetched-unscheduled follower pages from {} after {}", 
+						unscheduledPages.size(), followerPagesAll.size(), curSchedule, futurestTrigger.getKey()); 
+			} else {
+				curSchedule = new DateTime().plusSeconds(1).withMillisOfSecond(0);
+				log.info("Scheduling {} out of {} unfetched-unscheduled follower pages immediately from {}", 
+						unscheduledPages.size(), followerPagesAll.size(), curSchedule); 
+			}
 			for (TwitterUnfetchedFollowerPage followerPage : unscheduledPages) {
 				final Map<String, Object> jobDataMap = ImmutableMap.of(
 						"tenantId", tenantId,
