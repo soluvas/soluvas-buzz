@@ -1957,7 +1957,7 @@ public class TwitterUser {
 
 		// If the new src is protected, then do not copy the protected fields (AFAIK only "status")
 		// so that they're not removed.
-		if (!src.isProtected() || src.getStatus() != null && !Strings.isNullOrEmpty(src.getStatus().getText())) {
+		if (getStatus() == null || !src.isProtected() || (src.getStatus() != null && !Strings.isNullOrEmpty(src.getStatus().getText()))) {
 			setStatus(new TwitterStatusEmbed());
 			getStatus().copyFrom(src.getStatus());
 		}
