@@ -76,10 +76,11 @@ public class TwitterFollowerManager {
 	public List<TwitterUnfetchedFollowerPage>findAllUnfetchedFollowerPages() {
 		List<Object[]> result = em.createNativeQuery(
 				  "SELECT snapshot_id, nextcursor unfetchedcursor, pagecursor refcursor, pagesize, userid, screenname, creationtime refcreationtime"
-				+ " FROM buzz.twitterfollowerpage tfp"
-				+ " WHERE NOT EXISTS ("
-				+ "   SELECT pagecursor FROM buzz.twitterfollowerpage"
-				+ "   WHERE snapshot_id=tfp.snapshot_id AND pagecursor=tfp.nextcursor)"
+				+ " FROM twitterfollowerpage tfp"
+				+ " WHERE tfp.nextcursor IS NOT NULL"
+				+ "   AND NOT EXISTS ("
+				+ "     SELECT pagecursor FROM buzz.twitterfollowerpage"
+				+ "     WHERE snapshot_id=tfp.snapshot_id AND pagecursor=tfp.nextcursor)"
 				+ " ORDER BY creationtime").getResultList();
 		ArrayList<TwitterUnfetchedFollowerPage> pages = new ArrayList<>();
 		for (Object[] row : result) {
