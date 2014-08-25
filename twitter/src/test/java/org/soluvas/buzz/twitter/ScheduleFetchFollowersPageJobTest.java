@@ -56,7 +56,7 @@ public class ScheduleFetchFollowersPageJobTest {
 	
 	@Test
 	public void findAllUnfetchedFollowerPages() throws SchedulerException, InterruptedException {
-		List<TwitterUnfetchedFollowerPage> followerPages = twitterFollowerMgr.findAllUnfetchedFollowerPages();
+		List<TwitterUnfetchedFollowerPage> followerPages = twitterFollowerMgr.findAllUnfetchedFollowerPages("buzz");
 		assertThat(followerPages, not(empty()));
 	}
 	

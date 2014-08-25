@@ -93,7 +93,7 @@ public class ScheduleFetchFollowersPageJob extends TenantJob {
 				}
 			}
 			
-			List<TwitterUnfetchedFollowerPage> followerPagesAll = twitterFollowerMgr.findAllUnfetchedFollowerPages();
+			List<TwitterUnfetchedFollowerPage> followerPagesAll = twitterFollowerMgr.findAllUnfetchedFollowerPages(tenantId);
 			final ImmutableList<TwitterUnfetchedFollowerPage> unscheduledPages = FluentIterable.from(followerPagesAll)
 				.filter(new Predicate<TwitterUnfetchedFollowerPage>() {
 					@Override

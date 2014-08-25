@@ -73,13 +73,13 @@ public class TwitterFollowerManager {
 	 * 
 	 */
 	@Transactional(readOnly=true)
-	public List<TwitterUnfetchedFollowerPage>findAllUnfetchedFollowerPages() {
+	public List<TwitterUnfetchedFollowerPage>findAllUnfetchedFollowerPages(String tenantId) {
 		List<Object[]> result = em.createNativeQuery(
 				  "SELECT snapshot_id, nextcursor unfetchedcursor, pagecursor refcursor, pagesize, userid, screenname, creationtime refcreationtime"
-				+ " FROM twitterfollowerpage tfp"
+				+ " FROM " + tenantId + ".twitterfollowerpage tfp"
 				+ " WHERE tfp.nextcursor IS NOT NULL"
 				+ "   AND NOT EXISTS ("
-				+ "     SELECT pagecursor FROM buzz.twitterfollowerpage"
+				+ "     SELECT pagecursor FROM " + tenantId + ".twitterfollowerpage"
 				+ "     WHERE snapshot_id=tfp.snapshot_id AND pagecursor=tfp.nextcursor)"
 				+ " ORDER BY creationtime").getResultList();
 		ArrayList<TwitterUnfetchedFollowerPage> pages = new ArrayList<>();
@@ -89,7 +89,7 @@ public class TwitterFollowerManager {
 					((BigInteger) row[4]).longValue(), (String) row[5], new DateTime(row[6]));
 			pages.add(rowPage);
 		}
-		log.info("Got {} unfetched follower pages: {}", pages.size(), pages);
+		log.info("{}» Got {} unfetched follower pages: {}", tenantId, pages.size(), pages);
 		return pages;
 	}
 	
