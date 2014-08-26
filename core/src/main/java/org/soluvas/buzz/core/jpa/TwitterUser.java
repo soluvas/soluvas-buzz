@@ -16,6 +16,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
+import org.soluvas.commons.SlugUtils;
 
 import twitter4j.User;
 
@@ -1932,11 +1933,12 @@ public class TwitterUser {
 				+ " [miniProfileImageUrlHttps: "
 				+ getMiniProfileImageUrlHttps() + "]";
 	}
-
+	
 	/**
 	 * @param src
 	 */
 	public void copyFrom(User src) {
+		SlugUtils.checkUtf8(src.getScreenName(), User.class, src);
 		setId(src.getId());
 		setName(src.getName());
 		setScreenName(src.getScreenName());

@@ -124,7 +124,7 @@ public class FetchFollowersPageJob extends TenantJob {
 					final TwitterFollowerSnapshot snapshot = Preconditions.checkNotNull(twitterFollowerSnapshotRepo.findOne(snapshotId),
 							"Cannot find Twitter follower snapshot '%s'", snapshotId);				
 					
-					final int pageSize = 200;
+					final int pageSize = 1;
 					final PagableResponseList<User> resp;
 					try {
 						log.info("Fetching followers of @{} ({}) page {}...", user.getScreenName(), user.getId(), cursor);

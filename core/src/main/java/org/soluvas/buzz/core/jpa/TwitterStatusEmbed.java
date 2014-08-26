@@ -2,18 +2,23 @@ package org.soluvas.buzz.core.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.annotation.Nullable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
+
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
+import org.soluvas.commons.SlugUtils;
 import org.soluvas.jpa.jpa.Geolocation;
-import com.google.common.primitives.Longs;
+
 import twitter4j.GeoLocation;
 import twitter4j.Place;
 import twitter4j.Status;
+
+import com.google.common.primitives.Longs;
 
 /**
  * A representation of the model object '<em><b>TwitterStatusEmbed</b></em>'.
@@ -655,6 +660,7 @@ public class TwitterStatusEmbed {
 		if (src == null) {
 			return;
 		}
+		SlugUtils.checkUtf8(src.getText(), Status.class, src);
 		setId(src.getId());
 		setCreatedAt(new DateTime(src.getCreatedAt()));
 		setText(src.getText());
@@ -677,6 +683,7 @@ public class TwitterStatusEmbed {
 	private void setPlaceFromTwitter(@Nullable Place src) {
 		TwitterPlace place = new TwitterPlace();
 		if (src != null) {
+			SlugUtils.checkUtf8(src.getFullName(), Place.class, src);
 			place.setBoundingBoxType(src.getBoundingBoxType());
 			place.setCountry(src.getCountry());
 			place.setCountryCode(src.getCountryCode());
