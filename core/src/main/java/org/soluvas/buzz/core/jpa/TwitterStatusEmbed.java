@@ -656,15 +656,18 @@ public class TwitterStatusEmbed {
 				+ " [possiblySensitive: " + isPossiblySensitive() + "]";
 	}
 
-	public void copyFrom(@Nullable Status src) {
+	public void copyFrom(String screenName, @Nullable Status src) {
 		if (src == null) {
 			return;
 		}
-		SlugUtils.checkUtf8(src.getText(), Status.class, src);
+//		SlugUtils.checkUtf8("@" + screenName + " status=" + src.getId(), Status.class, src);
 		setId(src.getId());
 		setCreatedAt(new DateTime(src.getCreatedAt()));
-		setText(src.getText());
-		setSource(src.getSource());
+		// status.text in followers/list also has trailing 00s: https://dev.twitter.com/issues/1908
+		// Caused by: java.lang.RuntimeException: @rediantihera status:502781160297332736: public abstract java.lang.String twitter4j.Status.getText() result contains 00 at index 142: RT @JobsDBIndonesia: ..Nah, untuk lebih lengkapnya daftar Kementerian dan instansi yang membuka formasi 2014, klik: http://t.co/VsCZwJkSyk … - 525420404a6f62734442496e646f6e657369613a202e2e4e61682c20756e74756b206c65626968206c656e676b61706e796120646166746172204b656d656e74657269616e2064616e20696e7374616e73692079616e67206d656d62756b6120666f726d61736920323031342c206b6c696b3a20687474703a2f2f742e636f2f5673435a774a6b53796b20e280a6000000000000000000000000
+		setText(SlugUtils.stripNullChars(src.getText()));
+		// @@rediantihera status=502781160297332736: public abstract java.lang.String twitter4j.Status.getSource() result contains 00 at index 67: <a href="http://www.makeatweet.com" rel="nofollow">Make a Tweet</a> - 3c6120687265663d22687474703a2f2f7777772e6d616b656174776565742e636f6d222072656c3d226e6f666f6c6c6f77223e4d616b6520612054776565743c2f613e000000000000
+		setSource(SlugUtils.stripNullChars(src.getSource()));
 		setTruncated(src.isTruncated());
 		setInReplyToStatusId(src.getInReplyToStatusId());
 		setInReplyToUserId(src.getInReplyToUserId());
@@ -677,23 +680,30 @@ public class TwitterStatusEmbed {
 		setCurrentUserRetweetId(src.getCurrentUserRetweetId());
 		setPossiblySensitive(src.isPossiblySensitive());
 		setGeoLocationFromTwitter(src.getGeoLocation());
-		setPlaceFromTwitter(src.getPlace());
+		setPlaceFromTwitter(screenName, src.getPlace());
+		SlugUtils.checkUtf8("@" + screenName + " status=" + src.getId(), TwitterStatusEmbed.class, this);
 	}
 
-	private void setPlaceFromTwitter(@Nullable Place src) {
+	private void setPlaceFromTwitter(String id, @Nullable Place src) {
 		TwitterPlace place = new TwitterPlace();
 		if (src != null) {
-			SlugUtils.checkUtf8(src.getFullName(), Place.class, src);
+//			SlugUtils.checkUtf8("@" + screenName + " place=" + src.getFullName(), Place.class, src);
 			place.setBoundingBoxType(src.getBoundingBoxType());
 			place.setCountry(src.getCountry());
 			place.setCountryCode(src.getCountryCode());
-			place.setFullName(src.getFullName());
+			// https://dev.twitter.com/issues/1908
+			// @asriRuwiati place:Ciracas, Jakarta Timur: public abstract java.lang.String twitter4j.Place.getFullName() result contains 00 at index 22: Ciracas, Jakarta Timur - 436972616361732c204a616b617274612054696d75720000
+			place.setFullName(SlugUtils.stripNullChars(src.getFullName()));
 			place.setGeometryType(src.getGeometryType());
-			place.setId(src.getId());
+			// @@asriRuwiati place=Ciracas, Jakarta Timur: public abstract java.lang.String twitter4j.Place.getId() result contains 00 at index 16: 7b6a59ab52ddb419 - 3762366135396162353264646234313900
+			place.setId(SlugUtils.stripNullChars(src.getId()));
 			place.setName(src.getName());
 			place.setPlaceType(src.getPlaceType());
 			place.setStreetAddress(src.getStreetAddress());
-			place.setUrl(src.getURL());
+			// @@asriRuwiati place=Ciracas, Jakarta Timur: public abstract java.lang.String twitter4j.Place.getURL() result contains 00 at index 56: https://api.twitter.com/1.1/geo/id/7b6a59ab52ddb419.json - 68747470733a2f2f6170692e747769747465722e636f6d2f312e312f67656f2f69642f376236613539616235326464623431392e6a736f6e0000000000
+			place.setUrl(SlugUtils.stripNullChars(src.getURL()));
+			
+			SlugUtils.checkUtf8(id + " place=" + src.getFullName(), TwitterPlace.class, place);
 		}
 		setPlace(place);
 	}

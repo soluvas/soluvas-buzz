@@ -1938,11 +1938,12 @@ public class TwitterUser {
 	 * @param src
 	 */
 	public void copyFrom(User src) {
-		SlugUtils.checkUtf8(src.getScreenName(), User.class, src);
+//		SlugUtils.checkUtf8(src.getScreenName(), User.class, src); // already checked getTimeZone, thanks! https://dev.twitter.com/issues/1908
 		setId(src.getId());
-		setName(src.getName());
+		// rediantihera: public java.lang.String org.soluvas.buzz.core.jpa.TwitterUser.getName() result contains 00 at index 0: 004800657261 UTF-16: 0 48 0 65 72 61  - 
+		setName(SlugUtils.stripNullChars(src.getName()));
 		setScreenName(src.getScreenName());
-		setLocation(src.getLocation());
+		setLocation(SlugUtils.stripNullChars(src.getLocation()));
 		setDescription(src.getDescription());
 		setContributorsEnabled(src.isContributorsEnabled());
 		setProfileImageUrl(src.getProfileImageURL());
@@ -1961,7 +1962,7 @@ public class TwitterUser {
 		// so that they're not removed.
 		if (getStatus() == null || !src.isProtected() || (src.getStatus() != null && !Strings.isNullOrEmpty(src.getStatus().getText()))) {
 			setStatus(new TwitterStatusEmbed());
-			getStatus().copyFrom(src.getStatus());
+			getStatus().copyFrom(getScreenName(), src.getStatus());
 		}
 		
 		setProfileBackgroundColor(src.getProfileBackgroundColor());
@@ -1975,7 +1976,7 @@ public class TwitterUser {
 		setCreatedAt(new DateTime(src.getCreatedAt()));
 		setFavouritesCount(src.getFavouritesCount());
 		setUtcOffset(src.getUtcOffset());
-		setTimeZone(src.getTimeZone());
+		setTimeZone(SlugUtils.stripNullChars(src.getTimeZone())); // Pacific Time (US & Canada) ends with \u0000. https://dev.twitter.com/issues/1908
 		setProfileBackgroundImageUrl(src.getProfileBackgroundImageURL());
 		setProfileBackgroundImageUrlHttps(src
 				.getProfileBackgroundImageUrlHttps());
@@ -1993,6 +1994,8 @@ public class TwitterUser {
 		setTranslator(src.isTranslator());
 		setListedCount(src.getListedCount());
 		setFollowRequestSent(src.isFollowRequestSent());
+		
+		SlugUtils.checkUtf8(getScreenName(), TwitterUser.class, this);
 	}
 
 }
