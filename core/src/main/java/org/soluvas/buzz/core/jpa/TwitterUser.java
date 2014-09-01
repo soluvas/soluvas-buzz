@@ -1944,7 +1944,7 @@ public class TwitterUser {
 		setName(SlugUtils.stripNullChars(src.getName()));
 		setScreenName(src.getScreenName());
 		setLocation(SlugUtils.stripNullChars(src.getLocation()));
-		setDescription(src.getDescription());
+		setDescription(SlugUtils.stripNullChars(src.getDescription()));
 		setContributorsEnabled(src.isContributorsEnabled());
 		setProfileImageUrl(src.getProfileImageURL());
 		setBiggerProfileImageUrl(src.getBiggerProfileImageURL());
