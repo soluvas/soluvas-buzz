@@ -1,5 +1,7 @@
 package org.soluvas.buzz.core;
 
+import org.soluvas.data.EntityLookupException;
+
 import java.util.List;
 
 /**
@@ -8,6 +10,7 @@ import java.util.List;
  */
 public interface BuzzAccountRepository {
 
-	List<BuzzAccount> getRoot(String tenantId);
+	List<BuzzAccount> findAll(String tenantId);
+	BuzzAccount findOne(String tenantId, String accountId) throws EntityLookupException;
 
 }

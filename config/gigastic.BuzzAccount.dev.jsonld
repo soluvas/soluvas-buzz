@@ -1,0 +1,13 @@
+{
+  "@type": "BuzzAccount",
+  "id": "gigastic",
+  "socialLinks": [
+    {
+      "@type": "TwitterUserLink",
+      "token": "*",
+      "tokenSecret": "*",
+      "twitterId": 712236974,
+      "screenName": "gigastic"
+    }
+  ]
+}

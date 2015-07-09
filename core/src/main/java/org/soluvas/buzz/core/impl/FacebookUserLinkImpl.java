@@ -2,24 +2,11 @@
  */
 package org.soluvas.buzz.core.impl;
 
-import java.util.Collection;
+import org.joda.time.DateTime;
+import org.soluvas.buzz.core.FacebookUserLink;
+
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.joda.time.DateTime;
-
-import org.soluvas.buzz.core.BuzzCorePackage;
-import org.soluvas.buzz.core.FacebookLink;
-import org.soluvas.buzz.core.FacebookUserLink;
 
 /**
  * <!-- begin-user-doc -->

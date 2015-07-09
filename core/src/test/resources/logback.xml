@@ -1,12 +1,11 @@
 <configuration scan="true" scanPeriod="15 seconds">
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
-			by default -->
+	<!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 		</encoder>
-	</appender>
+	</appender>-->
 
 	<logger name="org.apache.directory.shared" level="INFO" />
 	<logger name="id.co" level="DEBUG" />
@@ -33,8 +32,8 @@
 	<logger name="org.hibernate.tool.hbm2ddl" level="DEBUG"/>
 	<logger name="liquibase" level="DEBUG"/>
 
-	<root level="INFO">
+	<!--<root level="INFO">
 		<appender-ref ref="STDOUT" />
-	</root>
+	</root>-->
 
 </configuration>

@@ -2,7 +2,12 @@
  */
 package org.soluvas.buzz.core;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.eclipse.emf.ecore.EObject;
+import org.soluvas.buzz.core.impl.BuzzAccountImpl;
+import org.soluvas.buzz.core.impl.BuzzAppImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +33,9 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes(@com.fasterxml.jackson.annotation.JsonSubTypes.Type(name="BuzzApp", value=BuzzAppImpl.class))
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public interface BuzzApp {
 	/**
 	 * Returns the value of the '<em><b>Twitter Consumer</b></em>' containment reference.

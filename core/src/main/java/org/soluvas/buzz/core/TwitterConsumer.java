@@ -2,7 +2,14 @@
  */
 package org.soluvas.buzz.core;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.eclipse.emf.ecore.EObject;
+import org.soluvas.buzz.core.impl.FacebookPageLinkImpl;
+import org.soluvas.buzz.core.impl.FacebookUserLinkImpl;
+import org.soluvas.buzz.core.impl.TwitterConsumerImpl;
+import org.soluvas.buzz.core.impl.TwitterUserLinkImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +38,9 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes(@JsonSubTypes.Type(name="TwitterConsumer", value=TwitterConsumerImpl.class))
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public interface TwitterConsumer {
 	/**
 	 * Returns the value of the '<em><b>Consumer Key</b></em>' attribute.

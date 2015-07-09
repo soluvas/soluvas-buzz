@@ -2,27 +2,11 @@
  */
 package org.soluvas.buzz.core.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-import org.soluvas.buzz.core.BuzzAccount;
-import org.soluvas.buzz.core.BuzzCorePackage;
-import org.soluvas.buzz.core.FacebookPageLink;
-import org.soluvas.buzz.core.FacebookUserLink;
-import org.soluvas.buzz.core.SocialLink;
-import org.soluvas.buzz.core.TwitterUserLink;
-
 import com.google.common.collect.Iterables;
+import org.soluvas.buzz.core.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -137,11 +121,9 @@ public class BuzzAccountImpl implements BuzzAccount {
 
 	@Override
 	public String toString() {
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(')');
-		return result.toString();
+		return "BuzzAccountImpl{" +
+				"id='" + id + '\'' +
+				", socialLinks=" + socialLinks +
+				'}';
 	}
-
 } //BuzzAccountImpl

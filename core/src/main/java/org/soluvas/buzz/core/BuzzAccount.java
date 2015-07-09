@@ -4,7 +4,11 @@ package org.soluvas.buzz.core;
 
 import javax.annotation.Nullable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.eclipse.emf.common.util.EList;
+import org.soluvas.buzz.core.impl.BuzzAccountImpl;
 import org.soluvas.commons.Identifiable;
 
 import java.util.ArrayList;
@@ -26,6 +30,9 @@ import java.util.List;
  * @model
  * @generated
  */
+@JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes(@com.fasterxml.jackson.annotation.JsonSubTypes.Type(name="BuzzAccount", value=BuzzAccountImpl.class))
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public interface BuzzAccount {
 
 	String getId();

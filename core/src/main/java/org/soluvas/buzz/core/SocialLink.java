@@ -5,10 +5,17 @@ package org.soluvas.buzz.core;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import org.joda.time.DateTime;
+import org.soluvas.buzz.core.impl.BuzzAccountImpl;
+import org.soluvas.buzz.core.impl.FacebookPageLinkImpl;
+import org.soluvas.buzz.core.impl.FacebookUserLinkImpl;
+import org.soluvas.buzz.core.impl.TwitterUserLinkImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +45,13 @@ import org.joda.time.DateTime;
  * @model interface="true" abstract="true"
  * @generated
  */
+@JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes({
+		@JsonSubTypes.Type(name="TwitterUserLink", value=TwitterUserLinkImpl.class),
+		@JsonSubTypes.Type(name="FacebookUserLink", value= FacebookUserLinkImpl.class),
+		@JsonSubTypes.Type(name="FacebookPageLink", value= FacebookPageLinkImpl.class),
+})
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public interface SocialLink {
 	/**
 	 * Returns the value of the '<em><b>Expiry Time</b></em>' attribute.

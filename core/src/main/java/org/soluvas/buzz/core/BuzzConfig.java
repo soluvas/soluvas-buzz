@@ -7,8 +7,11 @@ import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.soluvas.buzz.core.impl.JsonBuzzAccountRepository;
 import org.soluvas.commons.OnDemandXmiLoader;
 import org.soluvas.commons.ResourceType;
+import org.soluvas.json.JsonUtils;
+import org.soluvas.json.LowerEnumSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
@@ -24,7 +27,11 @@ import com.google.common.collect.ImmutableMap;
 @Configuration
 public class BuzzConfig {
 	private static final Logger log = LoggerFactory.getLogger(BuzzConfig.class);
-	
+
+	static {
+		LowerEnumSerializer.LOWER = false;
+	}
+
 	/**
 	 * Tenant-specific BuzzApp configurations.
 	 * The key is ${tenantId}.
@@ -34,15 +41,15 @@ public class BuzzConfig {
 	@Bean
 	public Map<String, BuzzApp> buzzApps() throws IOException {
 		final Resource[] resources = new PathMatchingResourcePatternResolver(BuzzConfig.class.getClassLoader())
-			.getResources("classpath*:/config/*.BuzzApp.xmi");
-		log.info("Loading {} BuzzApp resources from classpath: {}", resources.length, resources);
+			.getResources("file:config/*.BuzzApp.jsonld");
+		log.info("Loading {} BuzzApp resources from config folder: {}", resources.length, resources);
 		Pattern tenantIdPattern = Pattern.compile("([^.]+).+");
-		ImmutableMap.Builder<String, BuzzApp> builder = ImmutableMap.builder();
+		final ImmutableMap.Builder<String, BuzzApp> builder = ImmutableMap.builder();
 		for (Resource res : resources) {
 			Matcher tenantIdMatcher = tenantIdPattern.matcher(res.getFilename());
 			Preconditions.checkState(tenantIdMatcher.matches(), "Invalid BuzzApp resource name: %s", res.getFilename());
 			String tenantId = tenantIdMatcher.group(1);
-			BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>(BuzzCorePackage.eINSTANCE, res.getURL(), ResourceType.CLASSPATH).get();
+			final BuzzApp buzzApp = JsonUtils.mapper.readValue(res.getFile(), BuzzApp.class);
 			builder.put(tenantId, buzzApp);
 		}
 		return builder.build();
@@ -50,25 +57,26 @@ public class BuzzConfig {
 	
 	/**
 	 * Tenant-specific {@link BuzzAccount} ({@link SocialLink}s container).
-	 * The key is ${tenantId}.
+	 * The key depend is from filename.
+	 * For loading from config folder, only "buzz" tenantId is supported.
 	 * @return
 	 * @throws IOException 
 	 */
 	@Bean
-	public Map<String, BuzzAccount> buzzAccounts() throws IOException {
+	public JsonBuzzAccountRepository buzzAccountRepo() throws IOException {
+		final JsonBuzzAccountRepository buzzAccountRepo = new JsonBuzzAccountRepository();
 		final Resource[] resources = new PathMatchingResourcePatternResolver(BuzzConfig.class.getClassLoader())
-			.getResources("classpath*:/config/*.BuzzAccount.xmi");
-		log.info("Loading {} BuzzAccount resources from classpath: {}", resources.length, resources);
-		Pattern tenantIdPattern = Pattern.compile("([^.]+).+");
-		ImmutableMap.Builder<String, BuzzAccount> builder = ImmutableMap.builder();
+			.getResources("file:config/*.BuzzAccount.jsonld");
+		log.info("Loading {} BuzzAccount resources from config folder: {}", resources.length, resources);
+		Pattern accountIdPattern = Pattern.compile("([^.]+).+");
 		for (Resource res : resources) {
-			Matcher tenantIdMatcher = tenantIdPattern.matcher(res.getFilename());
-			Preconditions.checkState(tenantIdMatcher.matches(), "Invalid BuzzAccount resource name: %s", res.getFilename());
-			String tenantId = tenantIdMatcher.group(1);
-			BuzzAccount buzzAccount = new OnDemandXmiLoader<BuzzAccount>(BuzzCorePackage.eINSTANCE, res.getURL(), ResourceType.CLASSPATH).get();
-			builder.put(tenantId, buzzAccount);
+			Matcher accountIdMatcher = accountIdPattern.matcher(res.getFilename());
+			Preconditions.checkState(accountIdMatcher.matches(), "Invalid BuzzAccount resource name: %s", res.getFilename());
+			String accountId = accountIdMatcher.group(1);
+			final BuzzAccount buzzAccount = JsonUtils.mapper.readValue(res.getFile(), BuzzAccount.class);
+			buzzAccountRepo.put("buzz", accountId, buzzAccount);
 		}
-		return builder.build();
+		return buzzAccountRepo;
 	}
 	
 }

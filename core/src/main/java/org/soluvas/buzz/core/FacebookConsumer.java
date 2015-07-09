@@ -2,7 +2,10 @@
  */
 package org.soluvas.buzz.core;
 
-import org.eclipse.emf.ecore.EObject;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.soluvas.buzz.core.impl.FacebookConsumerImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +38,9 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property="@type")
+@JsonSubTypes(@JsonSubTypes.Type(name="FacebookConsumer", value=FacebookConsumerImpl.class))
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public interface FacebookConsumer {
 	/**
 	 * Returns the value of the '<em><b>App Id</b></em>' attribute.

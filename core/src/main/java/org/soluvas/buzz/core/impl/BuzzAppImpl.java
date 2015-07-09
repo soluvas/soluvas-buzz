@@ -2,17 +2,7 @@
  */
 package org.soluvas.buzz.core.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.soluvas.buzz.core.BuzzApp;
-import org.soluvas.buzz.core.BuzzCorePackage;
 import org.soluvas.buzz.core.FacebookConsumer;
 import org.soluvas.buzz.core.TwitterConsumer;
 
@@ -96,4 +86,11 @@ public class BuzzAppImpl implements BuzzApp {
 		facebookConsumer = newFacebookConsumer;
 	}
 
+	@Override
+	public String toString() {
+		return "BuzzAppImpl{" +
+				"twitterConsumer=" + twitterConsumer +
+				", facebookConsumer=" + facebookConsumer +
+				'}';
+	}
 } //BuzzAppImpl

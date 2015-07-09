@@ -1,0 +1,16 @@
+{
+  "@type": "BuzzApp",
+  "twitterConsumer": {
+    "@type": "TwitterConsumer",
+    "consumerKey": "esHZigGF1Y6041gWVA",
+    "consumerSecret": "*",
+    "customDomain": "buzz.buzz.soluvas.com"
+  },
+  "facebookConsumer": {
+    "@type": "FacebookConsumer",
+    "appId": "283756670299",
+    "appSecret": "*",
+    "defaultScope": "read_stream,email,user_birthday,user_hometown,user_about_me,user_religion_politics,user_relationships,user_work_history,user_education_history,user_website,offline_access,publish_actions,share_item",
+    "customDomain": "buzz.buzz.soluvas.com"
+  }
+}
