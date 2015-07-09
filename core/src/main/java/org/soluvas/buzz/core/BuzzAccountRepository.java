@@ -1,12 +1,13 @@
 package org.soluvas.buzz.core;
 
-import org.soluvas.data.repository.PagingAndSortingRepository;
+import java.util.List;
 
 /**
  * @author ceefour
  *
  */
-public interface BuzzAccountRepository extends
-		PagingAndSortingRepository<BuzzAccount, String> {
+public interface BuzzAccountRepository {
+
+	List<BuzzAccount> getRoot(String tenantId);
 
 }

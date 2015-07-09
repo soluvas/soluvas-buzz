@@ -2,7 +2,9 @@
  */
 package org.soluvas.buzz.core.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -36,7 +38,7 @@ import com.google.common.collect.Iterables;
  *
  * @generated
  */
-public class BuzzAccountImpl extends EObjectImpl implements BuzzAccount {
+public class BuzzAccountImpl implements BuzzAccount {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,7 +67,7 @@ public class BuzzAccountImpl extends EObjectImpl implements BuzzAccount {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SocialLink> socialLinks;
+	protected List<SocialLink> socialLinks = new ArrayList<>();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,16 +76,6 @@ public class BuzzAccountImpl extends EObjectImpl implements BuzzAccount {
 	 */
 	public BuzzAccountImpl() {
 		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return BuzzCorePackage.Literals.BUZZ_ACCOUNT;
 	}
 
 	/**
@@ -103,10 +95,7 @@ public class BuzzAccountImpl extends EObjectImpl implements BuzzAccount {
 	 */
 	@Override
 	public void setId(String newId) {
-		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.BUZZ_ACCOUNT__ID, oldId, id));
 	}
 
 	/**
@@ -115,10 +104,7 @@ public class BuzzAccountImpl extends EObjectImpl implements BuzzAccount {
 	 * @generated
 	 */
 	@Override
-	public EList<SocialLink> getSocialLinks() {
-		if (socialLinks == null) {
-			socialLinks = new EObjectContainmentEList<SocialLink>(SocialLink.class, this, BuzzCorePackage.BUZZ_ACCOUNT__SOCIAL_LINKS);
-		}
+	public List<SocialLink> getSocialLinks() {
 		return socialLinks;
 	}
 
@@ -149,99 +135,8 @@ public class BuzzAccountImpl extends EObjectImpl implements BuzzAccount {
 		return Iterables.getFirst(Iterables.filter(getSocialLinks(), FacebookPageLink.class), null);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BuzzCorePackage.BUZZ_ACCOUNT__SOCIAL_LINKS:
-				return ((InternalEList<?>)getSocialLinks()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BuzzCorePackage.BUZZ_ACCOUNT__ID:
-				return getId();
-			case BuzzCorePackage.BUZZ_ACCOUNT__SOCIAL_LINKS:
-				return getSocialLinks();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BuzzCorePackage.BUZZ_ACCOUNT__ID:
-				setId((String)newValue);
-				return;
-			case BuzzCorePackage.BUZZ_ACCOUNT__SOCIAL_LINKS:
-				getSocialLinks().clear();
-				getSocialLinks().addAll((Collection<? extends SocialLink>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.BUZZ_ACCOUNT__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case BuzzCorePackage.BUZZ_ACCOUNT__SOCIAL_LINKS:
-				getSocialLinks().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.BUZZ_ACCOUNT__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case BuzzCorePackage.BUZZ_ACCOUNT__SOCIAL_LINKS:
-				return socialLinks != null && !socialLinks.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);

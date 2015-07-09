@@ -28,7 +28,7 @@ import org.soluvas.buzz.core.FacebookConsumer;
  *
  * @generated
  */
-public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsumer {
+public class FacebookConsumerImpl implements FacebookConsumer {
 	/**
 	 * The default value of the '{@link #getAppId() <em>App Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -123,16 +123,6 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return BuzzCorePackage.Literals.FACEBOOK_CONSUMER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getAppId() {
 		return appId;
 	}
@@ -143,10 +133,7 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 * @generated
 	 */
 	public void setAppId(String newAppId) {
-		String oldAppId = appId;
 		appId = newAppId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID, oldAppId, appId));
 	}
 
 	/**
@@ -164,10 +151,7 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 * @generated
 	 */
 	public void setAppSecret(String newAppSecret) {
-		String oldAppSecret = appSecret;
 		appSecret = newAppSecret;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET, oldAppSecret, appSecret));
 	}
 
 	/**
@@ -185,10 +169,7 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 * @generated
 	 */
 	public void setDefaultScope(String newDefaultScope) {
-		String oldDefaultScope = defaultScope;
 		defaultScope = newDefaultScope;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE, oldDefaultScope, defaultScope));
 	}
 
 	/**
@@ -206,98 +187,7 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 * @generated
 	 */
 	public void setCustomDomain(String newCustomDomain) {
-		String oldCustomDomain = customDomain;
 		customDomain = newCustomDomain;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN, oldCustomDomain, customDomain));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
-				return getAppId();
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
-				return getAppSecret();
-			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
-				return getDefaultScope();
-			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
-				return getCustomDomain();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
-				setAppId((String)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
-				setAppSecret((String)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
-				setDefaultScope((String)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
-				setCustomDomain((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
-				setAppId(APP_ID_EDEFAULT);
-				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
-				setAppSecret(APP_SECRET_EDEFAULT);
-				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
-				setDefaultScope(DEFAULT_SCOPE_EDEFAULT);
-				return;
-			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
-				setCustomDomain(CUSTOM_DOMAIN_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_ID:
-				return APP_ID_EDEFAULT == null ? appId != null : !APP_ID_EDEFAULT.equals(appId);
-			case BuzzCorePackage.FACEBOOK_CONSUMER__APP_SECRET:
-				return APP_SECRET_EDEFAULT == null ? appSecret != null : !APP_SECRET_EDEFAULT.equals(appSecret);
-			case BuzzCorePackage.FACEBOOK_CONSUMER__DEFAULT_SCOPE:
-				return DEFAULT_SCOPE_EDEFAULT == null ? defaultScope != null : !DEFAULT_SCOPE_EDEFAULT.equals(defaultScope);
-			case BuzzCorePackage.FACEBOOK_CONSUMER__CUSTOM_DOMAIN:
-				return CUSTOM_DOMAIN_EDEFAULT == null ? customDomain != null : !CUSTOM_DOMAIN_EDEFAULT.equals(customDomain);
-		}
-		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -307,8 +197,6 @@ public class FacebookConsumerImpl extends EObjectImpl implements FacebookConsume
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (appId: ");
 		result.append(appId);

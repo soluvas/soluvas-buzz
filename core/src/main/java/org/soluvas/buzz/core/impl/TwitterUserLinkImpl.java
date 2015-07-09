@@ -3,6 +3,7 @@
 package org.soluvas.buzz.core.impl;
 
 import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -35,7 +36,7 @@ import org.soluvas.buzz.core.TwitterUserLink;
  *
  * @generated
  */
-public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink {
+public class TwitterUserLinkImpl implements TwitterUserLink {
 	/**
 	 * The default value of the '{@link #getExpiryTime() <em>Expiry Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,7 +65,7 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> permissions;
+	protected Set<String> permissions = new LinkedHashSet<>();
 
 	/**
 	 * The default value of the '{@link #getToken() <em>Token</em>}' attribute.
@@ -160,16 +161,6 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return BuzzCorePackage.Literals.TWITTER_USER_LINK;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DateTime getExpiryTime() {
 		return expiryTime;
 	}
@@ -180,10 +171,7 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * @generated
 	 */
 	public void setExpiryTime(DateTime newExpiryTime) {
-		DateTime oldExpiryTime = expiryTime;
 		expiryTime = newExpiryTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME, oldExpiryTime, expiryTime));
 	}
 
 	/**
@@ -191,10 +179,7 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getPermissions() {
-		if (permissions == null) {
-			permissions = new EDataTypeUniqueEList<String>(String.class, this, BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS);
-		}
+	public Set<String> getPermissions() {
 		return permissions;
 	}
 
@@ -213,10 +198,7 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * @generated
 	 */
 	public void setToken(String newToken) {
-		String oldToken = token;
 		token = newToken;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_USER_LINK__TOKEN, oldToken, token));
 	}
 
 	/**
@@ -234,10 +216,7 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * @generated
 	 */
 	public void setTokenSecret(String newTokenSecret) {
-		String oldTokenSecret = tokenSecret;
 		tokenSecret = newTokenSecret;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_USER_LINK__TOKEN_SECRET, oldTokenSecret, tokenSecret));
 	}
 
 	/**
@@ -255,10 +234,7 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * @generated
 	 */
 	public void setTwitterId(Long newTwitterId) {
-		Long oldTwitterId = twitterId;
 		twitterId = newTwitterId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_USER_LINK__TWITTER_ID, oldTwitterId, twitterId));
 	}
 
 	/**
@@ -276,120 +252,7 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 * @generated
 	 */
 	public void setScreenName(String newScreenName) {
-		String oldScreenName = screenName;
 		screenName = newScreenName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_USER_LINK__SCREEN_NAME, oldScreenName, screenName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
-				return getExpiryTime();
-			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
-				return getPermissions();
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
-				return getToken();
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN_SECRET:
-				return getTokenSecret();
-			case BuzzCorePackage.TWITTER_USER_LINK__TWITTER_ID:
-				return getTwitterId();
-			case BuzzCorePackage.TWITTER_USER_LINK__SCREEN_NAME:
-				return getScreenName();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
-				setExpiryTime((DateTime)newValue);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
-				getPermissions().clear();
-				getPermissions().addAll((Collection<? extends String>)newValue);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
-				setToken((String)newValue);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN_SECRET:
-				setTokenSecret((String)newValue);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__TWITTER_ID:
-				setTwitterId((Long)newValue);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__SCREEN_NAME:
-				setScreenName((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
-				setExpiryTime(EXPIRY_TIME_EDEFAULT);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
-				getPermissions().clear();
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
-				setToken(TOKEN_EDEFAULT);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN_SECRET:
-				setTokenSecret(TOKEN_SECRET_EDEFAULT);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__TWITTER_ID:
-				setTwitterId(TWITTER_ID_EDEFAULT);
-				return;
-			case BuzzCorePackage.TWITTER_USER_LINK__SCREEN_NAME:
-				setScreenName(SCREEN_NAME_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_USER_LINK__EXPIRY_TIME:
-				return EXPIRY_TIME_EDEFAULT == null ? expiryTime != null : !EXPIRY_TIME_EDEFAULT.equals(expiryTime);
-			case BuzzCorePackage.TWITTER_USER_LINK__PERMISSIONS:
-				return permissions != null && !permissions.isEmpty();
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN:
-				return TOKEN_EDEFAULT == null ? token != null : !TOKEN_EDEFAULT.equals(token);
-			case BuzzCorePackage.TWITTER_USER_LINK__TOKEN_SECRET:
-				return TOKEN_SECRET_EDEFAULT == null ? tokenSecret != null : !TOKEN_SECRET_EDEFAULT.equals(tokenSecret);
-			case BuzzCorePackage.TWITTER_USER_LINK__TWITTER_ID:
-				return TWITTER_ID_EDEFAULT == null ? twitterId != null : !TWITTER_ID_EDEFAULT.equals(twitterId);
-			case BuzzCorePackage.TWITTER_USER_LINK__SCREEN_NAME:
-				return SCREEN_NAME_EDEFAULT == null ? screenName != null : !SCREEN_NAME_EDEFAULT.equals(screenName);
-		}
-		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -399,8 +262,6 @@ public class TwitterUserLinkImpl extends EObjectImpl implements TwitterUserLink 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (expiryTime: ");
 		result.append(expiryTime);

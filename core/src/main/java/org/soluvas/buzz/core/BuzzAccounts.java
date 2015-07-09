@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import java.util.List;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Buzz Accounts</b></em>'.
@@ -26,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BuzzAccounts extends EObject {
+public interface BuzzAccounts {
 	/**
 	 * Returns the value of the '<em><b>Accounts</b></em>' containment reference list.
 	 * The list contents are of type {@link org.soluvas.buzz.core.BuzzAccount}.
@@ -41,6 +43,6 @@ public interface BuzzAccounts extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<BuzzAccount> getAccounts();
+	List<BuzzAccount> getAccounts();
 
 } // BuzzAccounts

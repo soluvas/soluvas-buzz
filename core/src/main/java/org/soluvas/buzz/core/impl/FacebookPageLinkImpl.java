@@ -2,8 +2,7 @@
  */
 package org.soluvas.buzz.core.impl;
 
-import java.util.Collection;
-import java.util.Set;
+import java.util.*;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -37,7 +36,7 @@ import org.soluvas.buzz.core.FacebookPageLink;
  *
  * @generated
  */
-public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLink {
+public class FacebookPageLinkImpl implements FacebookPageLink {
 	/**
 	 * The default value of the '{@link #getExpiryTime() <em>Expiry Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +65,7 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> permissions;
+	protected Set<String> permissions = new LinkedHashSet<>();
 
 	/**
 	 * The default value of the '{@link #getAccessToken() <em>Access Token</em>}' attribute.
@@ -162,16 +161,6 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return BuzzCorePackage.Literals.FACEBOOK_PAGE_LINK;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DateTime getExpiryTime() {
 		return expiryTime;
 	}
@@ -182,10 +171,7 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * @generated
 	 */
 	public void setExpiryTime(DateTime newExpiryTime) {
-		DateTime oldExpiryTime = expiryTime;
 		expiryTime = newExpiryTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_PAGE_LINK__EXPIRY_TIME, oldExpiryTime, expiryTime));
 	}
 
 	/**
@@ -193,10 +179,7 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getPermissions() {
-		if (permissions == null) {
-			permissions = new EDataTypeUniqueEList<String>(String.class, this, BuzzCorePackage.FACEBOOK_PAGE_LINK__PERMISSIONS);
-		}
+	public Set<String> getPermissions() {
 		return permissions;
 	}
 
@@ -215,10 +198,7 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * @generated
 	 */
 	public void setAccessToken(String newAccessToken) {
-		String oldAccessToken = accessToken;
 		accessToken = newAccessToken;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCESS_TOKEN, oldAccessToken, accessToken));
 	}
 
 	/**
@@ -236,10 +216,7 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * @generated
 	 */
 	public void setAccountId(Long newAccountId) {
-		Long oldAccountId = accountId;
 		accountId = newAccountId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCOUNT_ID, oldAccountId, accountId));
 	}
 
 	/**
@@ -257,10 +234,7 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * @generated
 	 */
 	public void setName(String newName) {
-		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_PAGE_LINK__NAME, oldName, name));
 	}
 
 	/**
@@ -278,120 +252,7 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 * @generated
 	 */
 	public void setUsername(String newUsername) {
-		String oldUsername = username;
 		username = newUsername;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.FACEBOOK_PAGE_LINK__USERNAME, oldUsername, username));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__EXPIRY_TIME:
-				return getExpiryTime();
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__PERMISSIONS:
-				return getPermissions();
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCESS_TOKEN:
-				return getAccessToken();
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCOUNT_ID:
-				return getAccountId();
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__NAME:
-				return getName();
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__USERNAME:
-				return getUsername();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__EXPIRY_TIME:
-				setExpiryTime((DateTime)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__PERMISSIONS:
-				getPermissions().clear();
-				getPermissions().addAll((Collection<? extends String>)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCESS_TOKEN:
-				setAccessToken((String)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCOUNT_ID:
-				setAccountId((Long)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__NAME:
-				setName((String)newValue);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__USERNAME:
-				setUsername((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__EXPIRY_TIME:
-				setExpiryTime(EXPIRY_TIME_EDEFAULT);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__PERMISSIONS:
-				getPermissions().clear();
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCESS_TOKEN:
-				setAccessToken(ACCESS_TOKEN_EDEFAULT);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCOUNT_ID:
-				setAccountId(ACCOUNT_ID_EDEFAULT);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__USERNAME:
-				setUsername(USERNAME_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__EXPIRY_TIME:
-				return EXPIRY_TIME_EDEFAULT == null ? expiryTime != null : !EXPIRY_TIME_EDEFAULT.equals(expiryTime);
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__PERMISSIONS:
-				return permissions != null && !permissions.isEmpty();
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCESS_TOKEN:
-				return ACCESS_TOKEN_EDEFAULT == null ? accessToken != null : !ACCESS_TOKEN_EDEFAULT.equals(accessToken);
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__ACCOUNT_ID:
-				return ACCOUNT_ID_EDEFAULT == null ? accountId != null : !ACCOUNT_ID_EDEFAULT.equals(accountId);
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case BuzzCorePackage.FACEBOOK_PAGE_LINK__USERNAME:
-				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
-		}
-		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -401,8 +262,6 @@ public class FacebookPageLinkImpl extends EObjectImpl implements FacebookPageLin
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (expiryTime: ");
 		result.append(expiryTime);

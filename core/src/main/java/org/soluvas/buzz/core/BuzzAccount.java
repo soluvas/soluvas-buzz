@@ -7,6 +7,9 @@ import javax.annotation.Nullable;
 import org.eclipse.emf.common.util.EList;
 import org.soluvas.commons.Identifiable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Buzz Account</b></em>'.
@@ -23,7 +26,11 @@ import org.soluvas.commons.Identifiable;
  * @model
  * @generated
  */
-public interface BuzzAccount extends Identifiable {
+public interface BuzzAccount {
+
+	String getId();
+	void setId(String id);
+
 	/**
 	 * Returns the value of the '<em><b>Social Links</b></em>' containment reference list.
 	 * The list contents are of type {@link org.soluvas.buzz.core.SocialLink}.
@@ -37,7 +44,7 @@ public interface BuzzAccount extends Identifiable {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SocialLink> getSocialLinks();
+	List<SocialLink> getSocialLinks();
 
 	/**
 	 * <!-- begin-user-doc -->

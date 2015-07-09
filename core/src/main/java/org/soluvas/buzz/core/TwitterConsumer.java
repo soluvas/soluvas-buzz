@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TwitterConsumer extends EObject {
+public interface TwitterConsumer {
 	/**
 	 * Returns the value of the '<em><b>Consumer Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->

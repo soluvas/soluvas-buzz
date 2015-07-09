@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BuzzApp extends EObject {
+public interface BuzzApp {
 	/**
 	 * Returns the value of the '<em><b>Twitter Consumer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -2,6 +2,7 @@
  */
 package org.soluvas.buzz.core;
 
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
@@ -37,7 +38,7 @@ import org.joda.time.DateTime;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface SocialLink extends EObject {
+public interface SocialLink {
 	/**
 	 * Returns the value of the '<em><b>Expiry Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -78,6 +79,6 @@ public interface SocialLink extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<String> getPermissions();
+	Set<String> getPermissions();
 
 } // SocialLink

@@ -27,7 +27,7 @@ import org.soluvas.buzz.core.TwitterConsumer;
  *
  * @generated
  */
-public class TwitterConsumerImpl extends EObjectImpl implements TwitterConsumer {
+public class TwitterConsumerImpl implements TwitterConsumer {
 	/**
 	 * The default value of the '{@link #getConsumerKey() <em>Consumer Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -102,16 +102,6 @@ public class TwitterConsumerImpl extends EObjectImpl implements TwitterConsumer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return BuzzCorePackage.Literals.TWITTER_CONSUMER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getConsumerKey() {
 		return consumerKey;
 	}
@@ -122,10 +112,7 @@ public class TwitterConsumerImpl extends EObjectImpl implements TwitterConsumer 
 	 * @generated
 	 */
 	public void setConsumerKey(String newConsumerKey) {
-		String oldConsumerKey = consumerKey;
 		consumerKey = newConsumerKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY, oldConsumerKey, consumerKey));
 	}
 
 	/**
@@ -143,10 +130,7 @@ public class TwitterConsumerImpl extends EObjectImpl implements TwitterConsumer 
 	 * @generated
 	 */
 	public void setConsumerSecret(String newConsumerSecret) {
-		String oldConsumerSecret = consumerSecret;
 		consumerSecret = newConsumerSecret;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET, oldConsumerSecret, consumerSecret));
 	}
 
 	/**
@@ -164,88 +148,7 @@ public class TwitterConsumerImpl extends EObjectImpl implements TwitterConsumer 
 	 * @generated
 	 */
 	public void setCustomDomain(String newCustomDomain) {
-		String oldCustomDomain = customDomain;
 		customDomain = newCustomDomain;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BuzzCorePackage.TWITTER_CONSUMER__CUSTOM_DOMAIN, oldCustomDomain, customDomain));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
-				return getConsumerKey();
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
-				return getConsumerSecret();
-			case BuzzCorePackage.TWITTER_CONSUMER__CUSTOM_DOMAIN:
-				return getCustomDomain();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
-				setConsumerKey((String)newValue);
-				return;
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
-				setConsumerSecret((String)newValue);
-				return;
-			case BuzzCorePackage.TWITTER_CONSUMER__CUSTOM_DOMAIN:
-				setCustomDomain((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
-				setConsumerKey(CONSUMER_KEY_EDEFAULT);
-				return;
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
-				setConsumerSecret(CONSUMER_SECRET_EDEFAULT);
-				return;
-			case BuzzCorePackage.TWITTER_CONSUMER__CUSTOM_DOMAIN:
-				setCustomDomain(CUSTOM_DOMAIN_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_KEY:
-				return CONSUMER_KEY_EDEFAULT == null ? consumerKey != null : !CONSUMER_KEY_EDEFAULT.equals(consumerKey);
-			case BuzzCorePackage.TWITTER_CONSUMER__CONSUMER_SECRET:
-				return CONSUMER_SECRET_EDEFAULT == null ? consumerSecret != null : !CONSUMER_SECRET_EDEFAULT.equals(consumerSecret);
-			case BuzzCorePackage.TWITTER_CONSUMER__CUSTOM_DOMAIN:
-				return CUSTOM_DOMAIN_EDEFAULT == null ? customDomain != null : !CUSTOM_DOMAIN_EDEFAULT.equals(customDomain);
-		}
-		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -255,8 +158,6 @@ public class TwitterConsumerImpl extends EObjectImpl implements TwitterConsumer 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (consumerKey: ");
 		result.append(consumerKey);

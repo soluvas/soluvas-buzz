@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface FacebookConsumer extends EObject {
+public interface FacebookConsumer {
 	/**
 	 * Returns the value of the '<em><b>App Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
