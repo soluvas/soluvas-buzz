@@ -10,7 +10,7 @@ import org.soluvas.web.bootstrap.GrowlBehavior;
 
 import de.agilecoders.wicket.core.markup.html.bootstrap.behavior.BootstrapBaseBehavior;
 import de.agilecoders.wicket.core.markup.html.bootstrap.html.HtmlTag;
-import de.agilecoders.wicket.core.markup.html.bootstrap.html.OptimizedMobileViewportMetaTag;
+import de.agilecoders.wicket.core.markup.html.bootstrap.html.MobileViewportMetaTag;
 import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.ImmutableNavbarComponent;
 import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.Navbar;
 import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.Navbar.ComponentPosition;
@@ -42,7 +42,7 @@ public class TenantPage extends WebPage {
 	protected void onInitialize() {
 		super.onInitialize();
 		add(new HtmlTag("html"));
-        add(new OptimizedMobileViewportMetaTag("viewport"));
+        add(new MobileViewportMetaTag("viewport"));
         
 		add(new BootstrapBaseBehavior());
 		add(new GrowlBehavior());

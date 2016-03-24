@@ -2,6 +2,7 @@ package org.soluvas.buzz.app;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
@@ -9,6 +10,7 @@ import org.soluvas.buzz.core.BuzzAccount;
 import org.soluvas.buzz.core.BuzzApp;
 import org.soluvas.buzz.core.BuzzConfig;
 import org.soluvas.commons.config.MultiTenantWebConfig;
+import org.soluvas.data.EntityLookupException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -47,11 +49,12 @@ public class BuzzWebConfig {
 	 * @throws IOException
 	 */
 	@Bean @Scope("request")
-	public BuzzAccount buzzAccount() throws IOException {
+	public BuzzAccount buzzAccount() throws IOException, EntityLookupException {
 		final String tenantId = webConfig.tenantRef().getTenantId();
-		Map<String, BuzzAccount> buzzAccounts = buzzConfig.buzzAccounts();
-		return Preconditions.checkNotNull(buzzAccounts.get(tenantId), "No BuzzAccount for tenant %s. %s available BuzzAccounts: %s",
-				tenantId, buzzAccounts.size(), buzzAccounts.keySet());
+		final String accountId = tenantId;
+		return Preconditions.checkNotNull(buzzConfig.buzzAccountRepo().findOne(tenantId, accountId),
+				"No BuzzAccount for tenant '%s' account '%s'. Available BuzzAccounts for this tenant: %s",
+				tenantId, buzzConfig.buzzAccountRepo().findAll(tenantId).stream().map(BuzzAccount::getId).collect(Collectors.toList()));
 	}
 
 }

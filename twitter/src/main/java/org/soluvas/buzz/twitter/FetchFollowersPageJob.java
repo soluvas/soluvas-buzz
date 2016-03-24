@@ -11,7 +11,6 @@ import org.quartz.JobExecutionException;
 import org.quartz.TriggerKey;
 import org.soluvas.buzz.core.BuzzAccount;
 import org.soluvas.buzz.core.BuzzApp;
-import org.soluvas.buzz.core.BuzzCorePackage;
 import org.soluvas.buzz.core.jpa.TwitterFavoriteCount;
 import org.soluvas.buzz.core.jpa.TwitterFollower;
 import org.soluvas.buzz.core.jpa.TwitterFollowerCount;
@@ -104,121 +103,123 @@ public class FetchFollowersPageJob extends TenantJob {
 			txTemplate.execute(new TransactionCallback<Void>() {
 				@Override
 				public Void doInTransaction(TransactionStatus status) {
-					final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE, 
-							FetchFollowersPageJob.class, "/config/" + tenantId + ".BuzzApp.xmi" ).get();
-					final BuzzAccount campaign = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE, 
-							FetchFollowersPageJob.class, "/config/" + campaignId + ".BuzzAccount.xmi" ).get();
-					final ConfigurationBuilder configBuilder = new ConfigurationBuilder();
-					configBuilder.setOAuthConsumerKey(buzzApp.getTwitterConsumer().getConsumerKey());
-					configBuilder.setOAuthConsumerSecret(buzzApp.getTwitterConsumer().getConsumerSecret());
-					configBuilder.setDebugEnabled(true);
-					configBuilder.setGZIPEnabled(true);
-					configBuilder.setOAuthAccessToken(campaign.getTwitterUser().getToken());
-					configBuilder.setOAuthAccessTokenSecret(campaign.getTwitterUser().getTokenSecret());
-					final Configuration config = configBuilder.build();
-					final TwitterFactory twitterFactory = new TwitterFactory(config);
-					final Twitter twitter = twitterFactory.getInstance();
-					
-					TwitterUser user = Preconditions.checkNotNull(twitterUserRepo.findOneByScreenName(screenName),
-							"Cannot find Twitter user '%s'", screenName);
-					final TwitterFollowerSnapshot snapshot = Preconditions.checkNotNull(twitterFollowerSnapshotRepo.findOne(snapshotId),
-							"Cannot find Twitter follower snapshot '%s'", snapshotId);				
-					
-					final int pageSize = 200;
-					final PagableResponseList<User> resp;
-					try {
-						log.info("Fetching followers of @{} ({}) page {}...", user.getScreenName(), user.getId(), cursor);
-						resp = twitter.getFollowersList(user.getId(), cursor, pageSize);
-						log.debug("Rate limit: {}", resp.getRateLimitStatus());
-						if (resp.getRateLimitStatus() != null && resp.getRateLimitStatus().getRemaining() <= 1) {
-							log.warn("Approaching rate limit! {} After fetching followers of @{} ({}) page {}",
-									resp.getRateLimitStatus(), user.getScreenName(), user.getId(), cursor);
-						}
-					} catch (TwitterException e) {
-						throw new RuntimeException("Cannot get followers for @" + user.getScreenName() + " (" + user.getId() + ") page " + cursor, e);
-					}
-					TwitterFollowerPage page = new TwitterFollowerPage();
-					page.setSnapshot(snapshot);
-					page.setPageCursor(cursor);
-					if (resp.hasPrevious()) {
-						page.setPreviousCursor(resp.getPreviousCursor());
-					}
-					if (resp.hasNext()) {
-						page.setNextCursor(resp.getNextCursor());
-					}
-					page.setPageSize(pageSize);
-					page.setCreationTime(new DateTime());
-					page.setModificationTime(new DateTime());
-					page.setUserId(user.getId());
-					page.setScreenName(user.getScreenName());
+					throw new UnsupportedOperationException("Need porting from OnDemandXmiLoader to JSON-LD!");
+
+//					final BuzzApp buzzApp = new OnDemandXmiLoader<BuzzApp>( BuzzCorePackage.eINSTANCE,
+//							FetchFollowersPageJob.class, "/config/" + tenantId + ".BuzzApp.xmi" ).get();
+//					final BuzzAccount campaign = new OnDemandXmiLoader<BuzzAccount>( BuzzCorePackage.eINSTANCE,
+//							FetchFollowersPageJob.class, "/config/" + campaignId + ".BuzzAccount.xmi" ).get();
+//					final ConfigurationBuilder configBuilder = new ConfigurationBuilder();
+//					configBuilder.setOAuthConsumerKey(buzzApp.getTwitterConsumer().getConsumerKey());
+//					configBuilder.setOAuthConsumerSecret(buzzApp.getTwitterConsumer().getConsumerSecret());
+//					configBuilder.setDebugEnabled(true);
+//					configBuilder.setGZIPEnabled(true);
+//					configBuilder.setOAuthAccessToken(campaign.getTwitterUser().getToken());
+//					configBuilder.setOAuthAccessTokenSecret(campaign.getTwitterUser().getTokenSecret());
+//					final Configuration config = configBuilder.build();
+//					final TwitterFactory twitterFactory = new TwitterFactory(config);
+//					final Twitter twitter = twitterFactory.getInstance();
+//
+//					TwitterUser user = Preconditions.checkNotNull(twitterUserRepo.findOneByScreenName(screenName),
+//							"Cannot find Twitter user '%s'", screenName);
+//					final TwitterFollowerSnapshot snapshot = Preconditions.checkNotNull(twitterFollowerSnapshotRepo.findOne(snapshotId),
+//							"Cannot find Twitter follower snapshot '%s'", snapshotId);
+//
+//					final int pageSize = 200;
+//					final PagableResponseList<User> resp;
+//					try {
+//						log.info("Fetching followers of @{} ({}) page {}...", user.getScreenName(), user.getId(), cursor);
+//						resp = twitter.getFollowersList(user.getId(), cursor, pageSize);
+//						log.debug("Rate limit: {}", resp.getRateLimitStatus());
+//						if (resp.getRateLimitStatus() != null && resp.getRateLimitStatus().getRemaining() <= 1) {
+//							log.warn("Approaching rate limit! {} After fetching followers of @{} ({}) page {}",
+//									resp.getRateLimitStatus(), user.getScreenName(), user.getId(), cursor);
+//						}
+//					} catch (TwitterException e) {
+//						throw new RuntimeException("Cannot get followers for @" + user.getScreenName() + " (" + user.getId() + ") page " + cursor, e);
+//					}
+//					TwitterFollowerPage page = new TwitterFollowerPage();
+//					page.setSnapshot(snapshot);
+//					page.setPageCursor(cursor);
+//					if (resp.hasPrevious()) {
+//						page.setPreviousCursor(resp.getPreviousCursor());
+//					}
+//					if (resp.hasNext()) {
+//						page.setNextCursor(resp.getNextCursor());
+//					}
+//					page.setPageSize(pageSize);
+//					page.setCreationTime(new DateTime());
+//					page.setModificationTime(new DateTime());
+//					page.setUserId(user.getId());
+//					page.setScreenName(user.getScreenName());
+////					page = twitterFollowerPageRepo.save(page);
+//
+//					log.info("User @{} ({}) page {} has {} followers", user.getScreenName(), user.getId(), cursor, resp.size());
+//					List<String> addedUsers = new ArrayList<>();
+//					List<String> updatedUsers = new ArrayList<>();
+//					for (User follower : resp) {
+//						// add to Page
+//						TwitterFollower followerEntity = new TwitterFollower();
+//						followerEntity.setPage(page);
+//						followerEntity.setUserId(follower.getId());
+//						followerEntity.setScreenName(follower.getScreenName());
+//						page.addToFollowers(followerEntity);
+////						twitterFollowerRepo.save(followerEntity);
+//
+//						// add to TwitterUser
+//						TwitterUser twitterUser = twitterUserRepo.findOne(follower.getId());
+//						if (twitterUser != null) {
+//							twitterUser.setRevId(twitterUser.getRevId() + 1);
+//							log.trace("Updating Twitter User @{} ({}) rev {}", follower.getScreenName(), follower.getId(), twitterUser.getRevId());
+//							updatedUsers.add(String.format("@%s (%s) rev %s", follower.getScreenName(), follower.getId(), twitterUser.getRevId()));
+//						} else {
+//							twitterUser = new TwitterUser();
+//							twitterUser.setRevId(1);
+//							log.trace("Adding Twitter User @{} ({})", follower.getScreenName(), follower.getId());
+//							addedUsers.add(String.format("@%s (%s)", follower.getScreenName(), follower.getId()));
+//						}
+//						final DateTime fetchTime = new DateTime(/*FIXME: timezone*/);
+//						twitterUser.setFetchTime(fetchTime);
+//						twitterUser.copyFrom(follower);
+//						twitterUserRepo.save(twitterUser);
+//
+//						final TwitterStatusCount statusCount = new TwitterStatusCount(follower.getId(), fetchTime, twitterUser.getStatusesCount());
+//						try {
+//							statusCountRepo.save( statusCount );
+//						} catch (Exception e) {
+//							log.error("Cannot add statusCount " + statusCount, e);
+//						}
+//						final TwitterFavoriteCount favoriteCount = new TwitterFavoriteCount(follower.getId(), fetchTime, twitterUser.getFavouritesCount());
+//						try {
+//							favoriteCountRepo.save( favoriteCount );
+//						} catch (Exception e) {
+//							log.error("Cannot add favoriteCount " + favoriteCount, e);
+//						}
+//						final TwitterFriendCount friendCount = new TwitterFriendCount(follower.getId(), fetchTime, twitterUser.getFriendsCount());
+//						try {
+//							friendCountRepo.save( friendCount );
+//						} catch (Exception e) {
+//							log.error("Cannot add friendCount " + friendCount, e);
+//						}
+//						final TwitterFollowerCount followerCount = new TwitterFollowerCount(follower.getId(), fetchTime, twitterUser.getFollowersCount());
+//						try {
+//							followerCountRepo.save( followerCount );
+//						} catch (Exception e) {
+//							log.error("Cannot add followerCount " + followerCount, e);
+//						}
+//						final TwitterListedCount listedCount = new TwitterListedCount(follower.getId(), fetchTime, twitterUser.getListedCount());
+//						try {
+//							listedCountRepo.save( listedCount );
+//						} catch (Exception e) {
+//							log.error("Cannot add statusCount " + listedCount, e);
+//						}
+//					}
+//					log.info("Adding {} Twitter Users: {}", addedUsers.size(), addedUsers);
+//					log.info("Updating {} Twitter Users: {}", updatedUsers.size(), updatedUsers);
+//
+//					// save page + followers
 //					page = twitterFollowerPageRepo.save(page);
-					
-					log.info("User @{} ({}) page {} has {} followers", user.getScreenName(), user.getId(), cursor, resp.size());
-					List<String> addedUsers = new ArrayList<>();
-					List<String> updatedUsers = new ArrayList<>();
-					for (User follower : resp) {
-						// add to Page
-						TwitterFollower followerEntity = new TwitterFollower();
-						followerEntity.setPage(page);
-						followerEntity.setUserId(follower.getId());
-						followerEntity.setScreenName(follower.getScreenName());
-						page.addToFollowers(followerEntity);
-//						twitterFollowerRepo.save(followerEntity);
-						
-						// add to TwitterUser
-						TwitterUser twitterUser = twitterUserRepo.findOne(follower.getId());
-						if (twitterUser != null) {
-							twitterUser.setRevId(twitterUser.getRevId() + 1);
-							log.trace("Updating Twitter User @{} ({}) rev {}", follower.getScreenName(), follower.getId(), twitterUser.getRevId());
-							updatedUsers.add(String.format("@%s (%s) rev %s", follower.getScreenName(), follower.getId(), twitterUser.getRevId()));
-						} else {
-							twitterUser = new TwitterUser();
-							twitterUser.setRevId(1);
-							log.trace("Adding Twitter User @{} ({})", follower.getScreenName(), follower.getId());
-							addedUsers.add(String.format("@%s (%s)", follower.getScreenName(), follower.getId()));
-						}
-						final DateTime fetchTime = new DateTime(/*FIXME: timezone*/);
-						twitterUser.setFetchTime(fetchTime);
-						twitterUser.copyFrom(follower);
-						twitterUserRepo.save(twitterUser);
-						
-						final TwitterStatusCount statusCount = new TwitterStatusCount(follower.getId(), fetchTime, twitterUser.getStatusesCount());
-						try {
-							statusCountRepo.save( statusCount );
-						} catch (Exception e) {
-							log.error("Cannot add statusCount " + statusCount, e);
-						}
-						final TwitterFavoriteCount favoriteCount = new TwitterFavoriteCount(follower.getId(), fetchTime, twitterUser.getFavouritesCount());
-						try {
-							favoriteCountRepo.save( favoriteCount );
-						} catch (Exception e) {
-							log.error("Cannot add favoriteCount " + favoriteCount, e);
-						}
-						final TwitterFriendCount friendCount = new TwitterFriendCount(follower.getId(), fetchTime, twitterUser.getFriendsCount());
-						try {
-							friendCountRepo.save( friendCount );
-						} catch (Exception e) {
-							log.error("Cannot add friendCount " + friendCount, e);
-						}
-						final TwitterFollowerCount followerCount = new TwitterFollowerCount(follower.getId(), fetchTime, twitterUser.getFollowersCount());
-						try {
-							followerCountRepo.save( followerCount );
-						} catch (Exception e) {
-							log.error("Cannot add followerCount " + followerCount, e);
-						}
-						final TwitterListedCount listedCount = new TwitterListedCount(follower.getId(), fetchTime, twitterUser.getListedCount());
-						try {
-							listedCountRepo.save( listedCount );
-						} catch (Exception e) {
-							log.error("Cannot add statusCount " + listedCount, e);
-						}
-					}
-					log.info("Adding {} Twitter Users: {}", addedUsers.size(), addedUsers);
-					log.info("Updating {} Twitter Users: {}", updatedUsers.size(), updatedUsers);
-					
-					// save page + followers
-					page = twitterFollowerPageRepo.save(page);
-					return null;
+//					return null;
 				}
 			});
 		} catch (IOException e) {

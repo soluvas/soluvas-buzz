@@ -35,26 +35,6 @@
 			<artifactId>wicket-spring</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.wicket.experimental.wicket6</groupId>
-			<artifactId>wicket-atmosphere</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>atmosphere-runtime</artifactId>
-					<groupId>org.atmosphere</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.atmosphere</groupId>
-			<artifactId>atmosphere-runtime-native</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.atmosphere</groupId>
-					<artifactId>atmosphere-compat-tomcat7</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
