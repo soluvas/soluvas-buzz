@@ -1,0 +1,279 @@
+databaseChangeLog:
+  - changeSet:
+      id: postgis
+      author: ceefour
+      changes:
+        - sql: |
+            CREATE EXTENSION IF NOT EXISTS postgis SCHEMA public
+  - changeSet:
+      id: twitterstatus
+      author: ceefour
+      changes:
+        - createTable:
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: project_id
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: statusid
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fetchtime
+                  type: timestamp with time zone
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: creationtime
+                  type: timestamp with time zone
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: timezone
+                  type: varchar(255)
+                  defaultValue: UTC
+                  constraints:
+                    nullable: false
+              - column:
+                  name: userscreenname
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: userid
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: userlocation
+                  type: varchar(255)
+              - column:
+                  name: userlang
+                  type: varchar(255)
+                  defaultValue: en-US
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lang
+                  type: varchar(255)
+                  defaultValue: en-US
+                  constraints:
+                    nullable: false
+              - column:
+                  name: retweet
+                  type: boolean
+                  defaultValue: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: inreplytostatusid
+                  type: bigint
+              - column:
+                  name: inreplytouserid
+                  type: bigint
+              - column:
+                  name: inreplytoscreenname
+                  type: varchar(255)
+              - column:
+                  name: placeid
+                  type: varchar(255)
+              - column:
+                  name: placename
+                  type: varchar(255)
+              - column:
+                  name: placefullname
+                  type: varchar(255)
+              - column:
+                  name: placetype
+                  type: varchar(255)
+              - column:
+                  name: placeuri
+                  type: varchar(4000)
+              - column:
+                  name: placecountry
+                  type: varchar(255)
+              - column:
+                  name: placecountrycode
+                  type: varchar(255)
+              - column:
+                  name: placestreetaddress
+                  type: varchar(255)
+              - column:
+                  name: placeboundingbox
+                  type: geography(POLYGON,4326)
+              - column:
+                  name: placeboundingboxswlat
+                  type: double
+              - column:
+                  name: placeboundingboxswlon
+                  type: double
+              - column:
+                  name: placeboundingboxnelat
+                  type: double
+              - column:
+                  name: placeboundingboxnelon
+                  type: double
+              - column:
+                  name: placeboundingboxtype
+                  type: varchar(255)
+              - column:
+                  name: point
+                  type: geography(POINT,4326)
+              - column:
+                  name: lat
+                  type: double
+              - column:
+                  name: lon
+                  type: double
+              - column:
+                  name: mediaid
+                  type: bigint
+              - column:
+                  name: mediatext
+                  type: text
+              - column:
+                  name: mediaurihttp
+                  type: varchar(4000)
+              - column:
+                  name: mediaurihttps
+                  type: varchar(4000)
+              - column:
+                  name: mediatype
+                  type: varchar(255)
+              - column:
+                  name: medianormaluri
+                  type: varchar(4000)
+              - column:
+                  name: mediadisplayuri
+                  type: varchar(4000)
+              - column:
+                  name: mediaexpandeduri
+                  type: varchar(4000)
+              - column:
+                  name: mediasizes
+                  type: text
+              - column:
+                  name: mediacontenttype
+                  type: varchar(255)
+              - column:
+                  name: mediacontentlength
+                  type: integer
+              - column:
+                  name: mediaextension
+                  type: varchar(255)
+              - column:
+                  name: mediacontent
+                  type: bytea
+              - column:
+                  name: mediawidth
+                  type: integer
+              - column:
+                  name: mediaheight
+                  type: integer
+        - createIndex:
+            indexName: ik_twitterstatus_project_id
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: project_id
+        - createIndex:
+            indexName: ik_twitterstatus_statusid
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: statusid
+        - createIndex:
+            indexName: ik_twitterstatus_fetchtime
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: fetchtime
+        - createIndex:
+            indexName: ik_twitterstatus_creationtime
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: creationtime
+        - createIndex:
+            indexName: ik_twitterstatus_timezone
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: timezone
+        - createIndex:
+            indexName: ik_twitterstatus_userscreenname
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: userscreenname
+        - createIndex:
+            indexName: ik_twitterstatus_userid
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: userid
+        - createIndex:
+            indexName: ik_twitterstatus_userlang
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: userlang
+        - createIndex:
+            indexName: ik_twitterstatus_lang
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: lang
+        - createIndex:
+            indexName: ik_twitterstatus_retweet
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: retweet
+        - createIndex:
+            indexName: ik_twitterstatus_inreplytostatusid
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: inreplytostatusid
+        - createIndex:
+            indexName: ik_twitterstatus_inreplytouserid
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: inreplytouserid
+        - createIndex:
+            indexName: ik_twitterstatus_inreplytoscreenname
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: inreplytoscreenname
+        - createIndex:
+            indexName: ik_twitterstatus_placeid
+            schemaName: buzz
+            tableName: twitterstatus
+            columns:
+              - name: placeid
+        - sql: |
+            CREATE INDEX ik_twitterstatus_placeboundingbox ON buzz.twitterstatus USING GIST (placeboundingbox)
+        - sql: |
+            CREATE INDEX ik_twitterstatus_point ON buzz.twitterstatus USING GIST (point)
