@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TwitterCollectorApp helpdesk indosatcare" type="Application" factoryName="Application" singleton="true">
+  <configuration default="false" name="TwitterCollectorApp lumenrobot helpdesk_telkomsel" type="Application" factoryName="Application" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
       <pattern>
         <option name="PATTERN" value="org.soluvas.buzz.twitter.collector.*" />
@@ -8,7 +8,7 @@
     </extension>
     <option name="MAIN_CLASS_NAME" value="org.soluvas.buzz.twitter.collector.TwitterCollectorApp" />
     <option name="VM_PARAMETERS" value="" />
-    <option name="PROGRAM_PARAMETERS" value="-p helpdesk indosatcare" />
+    <option name="PROGRAM_PARAMETERS" value="-a lumen -u lumenrobot -p helpdesk_telkomsel telkomsel" />
     <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" />

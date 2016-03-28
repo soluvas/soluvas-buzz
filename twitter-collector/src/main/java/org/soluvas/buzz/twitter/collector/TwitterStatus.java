@@ -65,6 +65,7 @@ public class TwitterStatus implements Serializable {
     private Double placeBoundingBoxNeLat;
     private Double placeBoundingBoxNeLon;
     private String placeBoundingBoxType;
+    @Type(type = "org.hibernate.spatial.GeometryType")
     private Point point;
     private Double lat;
     private Double lon;
@@ -210,6 +211,11 @@ public class TwitterStatus implements Serializable {
         this.retweet = retweet;
     }
 
+    /**
+     * When empty, {@link TwitterCollectorApp} will translate {@code -1} into {@code NULL}. Make sure to take this into account
+     * when processing with R/Spark.
+     * @return
+     */
     public Long getInReplyToStatusId() {
         return inReplyToStatusId;
     }
@@ -218,6 +224,11 @@ public class TwitterStatus implements Serializable {
         this.inReplyToStatusId = inReplyToStatusId;
     }
 
+    /**
+     * When empty, {@link TwitterCollectorApp} will translate {@code -1} into {@code NULL}. Make sure to take this into account
+     * when processing with R/Spark.
+     * @return
+     */
     public Long getInReplyToUserId() {
         return inReplyToUserId;
     }

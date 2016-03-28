@@ -15,13 +15,13 @@ import java.util.Set;
 @Repository
 public interface TwitterStatusRepository extends PagingAndSortingRepository<TwitterStatus, Long> {
 
-    @Query("SELECT DISTINCT(LOWER(rt.userScreenName)) FROM Tweet rt")
+    @Query("SELECT DISTINCT(LOWER(rt.userScreenName)) FROM TwitterStatus rt")
     Set<String> findAllDistinctScreenNames();
 
-    @Query("SELECT DISTINCT(LOWER(rt.userScreenName)) FROM Tweet rt WHERE LOWER(rt.userScreenName) NOT IN (:exclusionsLower)")
+    @Query("SELECT DISTINCT(LOWER(rt.userScreenName)) FROM TwitterStatus rt WHERE LOWER(rt.userScreenName) NOT IN (:exclusionsLower)")
     Set<String> findAllDistinctScreenNamesExcluding(@Param("exclusionsLower") Set<String> exclusionsLower);
 
-    @Query("SELECT rt FROM Tweet rt WHERE rt.lat IS NOT NULL OR rt.placeBoundingBoxSwLat IS NOT NULL")
+    @Query("SELECT rt FROM TwitterStatus rt WHERE rt.lat IS NOT NULL OR rt.placeBoundingBoxSwLat IS NOT NULL")
     Page<TwitterStatus> findAllWithLocation(Pageable pageable);
 
 }

@@ -59,6 +59,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
                   name: userlocation
                   type: varchar(255)
               - column:
@@ -277,3 +282,20 @@ databaseChangeLog:
             CREATE INDEX ik_twitterstatus_placeboundingbox ON buzz.twitterstatus USING GIST (placeboundingbox)
         - sql: |
             CREATE INDEX ik_twitterstatus_point ON buzz.twitterstatus USING GIST (point)
+  - changeSet:
+      id: uk_twitterstatus_project_id_statusid
+      author: ceefour
+      changes:
+        - addUniqueConstraint:
+            schemaName: buzz
+            tableName: twitterstatus
+            constraintName: uk_twitterstatus_project_id_statusid
+            columnNames: project_id, statusid
+  - changeSet:
+      id: twitterstatus_timezone_nullable
+      author: ceefour
+      changes:
+        - dropNotNullConstraint:
+            schemaName: buzz
+            tableName: twitterstatus
+            columnName: timezone
