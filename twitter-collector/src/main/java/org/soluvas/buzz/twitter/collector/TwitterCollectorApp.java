@@ -30,6 +30,9 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.retry.annotation.EnableRetry;
+import org.springframework.retry.annotation.Retryable;
+import org.springframework.stereotype.Service;
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
 
@@ -47,6 +50,7 @@ import java.util.Optional;
 })
 @Profile("twittercollector")
 @Import({CommonsWebConfig.class})
+@EnableRetry
 //@ComponentScan(excludeFilters=@ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=CommandLineRunner.class))
 public class TwitterCollectorApp implements CommandLineRunner {
 
@@ -55,6 +59,16 @@ public class TwitterCollectorApp implements CommandLineRunner {
     public static final double INDONESIA_CENTER_LAT = -2.7;
     public static final double INDONESIA_CENTER_LON = 117.0;
     public static final DateTimeZone WIB = DateTimeZone.forID("Asia/Jakarta");
+
+    @Service
+    public static class RetryableTwitter {
+
+        @Retryable
+        public QueryResult search(Twitter twitter, Query query) throws TwitterException {
+            return twitter.search(query);
+        }
+
+    }
 
     @Inject
     private Environment env;
@@ -66,6 +80,8 @@ public class TwitterCollectorApp implements CommandLineRunner {
     private DataSource dataSource;
     @Inject
     private ObjectMapper mapper;
+    @Inject
+    private RetryableTwitter retryableTwitter;
 
     enum CollectMode {
         USER,
@@ -142,11 +158,11 @@ public class TwitterCollectorApp implements CommandLineRunner {
                     throw new UnsupportedOperationException("Unsupported mode: " + params.mode);
             }
             Query query = new Query(queryStr).count(100)
-                    //.geoCode(new GeoLocation(INDONESIA_CENTER_LAT, INDONESIA_CENTER_LON), 2000, SI.KILOMETRE.toString()) // Indonesia. TODO: use JSR36 in the future
+                    //.geoCode(new GeoLocation(INDONESIA_CENTER_LAT, INDONESIA_CENTER_LON), 2000, SI.KILOMETRE.toString()) // Indonesia. TODO: use JSR363 in the future
                     .sinceId(since)
                     .until(until.toString())
                     .resultType(Query.ResultType.recent);
-            final QueryResult results = twitter.search(query);
+            final QueryResult results = retryableTwitter.search(twitter, query);
             log.info("Got {} tweets this time", results.getTweets().size());
             for (Status status : results.getTweets()) {
                 if (since == null || status.getId() > since) {
