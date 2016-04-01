@@ -5,8 +5,9 @@ import com.beust.jcommander.Parameter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import com.vividsolutions.jts.geom.*;
-import com.vividsolutions.jts.geom.impl.CoordinateArraySequence;
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.PrecisionModel;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -17,25 +18,20 @@ import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.soluvas.commons.ProxyConfig;
 import org.soluvas.commons.config.CommonsWebConfig;
 import org.soluvas.socmed.TwitterApp;
 import org.soluvas.socmed.TwitterAuthorization;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration;
-import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.retry.RetryCallback;
-import org.springframework.retry.annotation.EnableRetry;
-import org.springframework.retry.annotation.Retryable;
 import org.springframework.retry.backoff.ExponentialBackOffPolicy;
 import org.springframework.retry.support.RetryTemplate;
-import org.springframework.stereotype.Service;
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
 
@@ -53,7 +49,6 @@ import java.util.Optional;
 })
 @Profile("twittercollector")
 @Import({CommonsWebConfig.class})
-@EnableRetry
 //@ComponentScan(excludeFilters=@ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=CommandLineRunner.class))
 public class TwitterCollectorApp implements CommandLineRunner {
 
@@ -157,7 +152,7 @@ public class TwitterCollectorApp implements CommandLineRunner {
                     .resultType(Query.ResultType.recent);
 
             final QueryResult results = retryTemplate.execute(
-                    (RetryCallback<QueryResult, TwitterException>)(Void -> twitter.search(query)));
+                    (RetryCallback<QueryResult, TwitterException>) (Void -> twitter.search(query)));
             log.info("Got {} tweets this time", results.getTweets().size());
             for (Status status : results.getTweets()) {
                 if (since == null || status.getId() > since) {
