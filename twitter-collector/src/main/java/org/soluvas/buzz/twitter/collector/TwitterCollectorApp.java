@@ -30,6 +30,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.retry.RetryCallback;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.retry.backoff.ExponentialBackOffPolicy;
@@ -155,13 +156,8 @@ public class TwitterCollectorApp implements CommandLineRunner {
                     .until(until.toString())
                     .resultType(Query.ResultType.recent);
 
-            final QueryResult results = retryTemplate.execute(Void -> {
-                try {
-                    return twitter.search(query);
-                } catch (TwitterException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+            final QueryResult results = retryTemplate.execute(
+                    (RetryCallback<QueryResult, TwitterException>)(Void -> twitter.search(query)));
             log.info("Got {} tweets this time", results.getTweets().size());
             for (Status status : results.getTweets()) {
                 if (since == null || status.getId() > since) {
