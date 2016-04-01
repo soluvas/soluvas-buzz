@@ -32,6 +32,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.retry.annotation.Retryable;
+import org.springframework.retry.backoff.ExponentialBackOffPolicy;
+import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Service;
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
@@ -60,16 +62,6 @@ public class TwitterCollectorApp implements CommandLineRunner {
     public static final double INDONESIA_CENTER_LON = 117.0;
     public static final DateTimeZone WIB = DateTimeZone.forID("Asia/Jakarta");
 
-    @Service
-    public static class RetryableTwitter {
-
-        @Retryable
-        public QueryResult search(Twitter twitter, Query query) throws TwitterException {
-            return twitter.search(query);
-        }
-
-    }
-
     @Inject
     private Environment env;
     @Inject
@@ -80,8 +72,6 @@ public class TwitterCollectorApp implements CommandLineRunner {
     private DataSource dataSource;
     @Inject
     private ObjectMapper mapper;
-    @Inject
-    private RetryableTwitter retryableTwitter;
 
     enum CollectMode {
         USER,
@@ -136,6 +126,8 @@ public class TwitterCollectorApp implements CommandLineRunner {
         twitter.setOAuthConsumer(twitterApp.getApiKey(), twitterApp.getApiSecret());
         twitter.setOAuthAccessToken(new AccessToken(twitterAuth.getAccessToken(), twitterAuth.getAccessTokenSecret()));
 
+        final RetryTemplate retryTemplate = new RetryTemplate();
+        retryTemplate.setBackOffPolicy(new ExponentialBackOffPolicy());
         final String screenName = params.screenNames.get(0);
         LocalDate until = new LocalDate(WIB).minusDays(6);
         Long since = 0l; // oldest
@@ -162,7 +154,14 @@ public class TwitterCollectorApp implements CommandLineRunner {
                     .sinceId(since)
                     .until(until.toString())
                     .resultType(Query.ResultType.recent);
-            final QueryResult results = retryableTwitter.search(twitter, query);
+
+            final QueryResult results = retryTemplate.execute(Void -> {
+                try {
+                    return twitter.search(query);
+                } catch (TwitterException e) {
+                    throw new RuntimeException(e);
+                }
+            });
             log.info("Got {} tweets this time", results.getTweets().size());
             for (Status status : results.getTweets()) {
                 if (since == null || status.getId() > since) {
