@@ -300,12 +300,12 @@ databaseChangeLog:
             tableName: twitterstatus
             columnName: timezone
   - changeSet:
-      id: twitterstatus_clean
+      id: twitterstatus_simple
       author: ceefour
       changes:
         - createView:
             schemaName: buzz
-            viewName: twitterstatus_clean
+            viewName: twitterstatus_simple
             replaceIfExists: true
             runOnChange: true
             selectQuery: |
