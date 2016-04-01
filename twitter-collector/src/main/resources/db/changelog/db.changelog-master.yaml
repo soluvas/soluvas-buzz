@@ -299,3 +299,24 @@ databaseChangeLog:
             schemaName: buzz
             tableName: twitterstatus
             columnName: timezone
+  - changeSet:
+      id: twitterstatus_clean
+      author: ceefour
+      changes:
+        - createView:
+            schemaName: buzz
+            viewName: twitterstatus_clean
+            replaceIfExists: true
+            runOnChange: true
+            selectQuery: |
+              SELECT id, project_id, statusid, fetchtime, creationtime, timezone,
+                userscreenname, userid, username, userlocation, userlang, text,
+                lang, retweet, inreplytostatusid, inreplytouserid, inreplytoscreenname,
+                placeid, placename, placefullname, placetype, placeuri, placecountry,
+                placecountrycode, placestreetaddress, placeboundingboxswlat,
+                placeboundingboxswlon, placeboundingboxnelat, placeboundingboxnelon,
+                placeboundingboxtype, lat, lon, mediaid, mediatext, mediaurihttp,
+                mediaurihttps, mediatype, medianormaluri, mediadisplayuri, mediaexpandeduri,
+                mediasizes, mediacontenttype, mediacontentlength, mediaextension,
+                mediawidth, mediaheight
+              FROM buzz.twitterstatus
